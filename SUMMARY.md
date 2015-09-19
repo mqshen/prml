@@ -3,6 +3,7 @@
 * [介绍](Chapter1/README.md)
     * [例子：多项式曲线拟合](Chapter1/polynomial_curve_fitting.md)
     * [概率论](Chapter1/probability_theory.md)
+        * [概率密度](Chapter1/probability/probability_densities.md)
     * [模型选择](Chapter1/model_selection.md)
     * [维度灾难](Chapter1/the_curse_of_dimensionality.md)
     * [决策论](Chapter1/decision_theory.md)

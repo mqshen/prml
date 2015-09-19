@@ -29,7 +29,7 @@
         
     
     
-    <link rel="next" href="../Chapter1/model_selection.html" />
+    <link rel="next" href="../Chapter1/probability/probability_densities.html" />
     
     
     <link rel="prev" href="../Chapter1/polynomial_curve_fitting.html" />
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="1.2" data-basepath=".." data-revision="Thu Sep 17 2015 23:45:33 GMT+0800 (CST)">
+    <div class="book" data-level="1.2" data-basepath=".." data-revision="Sat Sep 19 2015 15:10:01 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -114,6 +114,27 @@
                         概率论
                     </a>
             
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Chapter1/probability/probability_densities.html">
+            
+                
+                    <a href="../Chapter1/probability/probability_densities.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.1.</b>
+                        
+                        概率密度
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -384,7 +405,60 @@
                 
                     <section class="normal" id="section-">
                     
-                        
+                        <p>&#x6A21;&#x5F0F;&#x8BC6;&#x522B;&#x7684;&#x4E00;&#x4E2A;&#x6838;&#x5FC3;&#x6982;&#x5FF5;&#x662F;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x3002;&#x8FD9;&#x662F;&#x7531;&#x6D4B;&#x91CF;&#x65F6;&#x7684;&#x566A;&#x58F0;&#x4EE5;&#x53CA;&#x6709;&#x9650;&#x7684;&#x6570;&#x636E;&#x96C6;&#x9020;&#x6210;&#x7684;&#x3002;&#x6982;&#x7387;&#x8BBA;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x91CF;&#x5316;&#xFF0C;&#x63A7;&#x5236;&#x8FD9;&#x6837;&#x7684;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x6846;&#x67B6;&#xFF0C;&#x662F;&#x6A21;&#x5F0F;&#x8BC6;&#x522B;&#x7684;&#x6838;&#x5FC3;&#x57FA;&#x7840;&#x3002;&#x5F53;&#x4E8E;1.5&#x8282;&#x4E2D;&#x8BA8;&#x8BBA;&#x7684;&#x51B3;&#x7B56;&#x8BBA;&#x76F8;&#x7ED3;&#x5408;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;&#x6709;&#x9650;&#x7684;&#x4FE1;&#x606F;&#x4E2D;&#x505A;&#x51FA;&#x6700;&#x4F18;&#x7684;&#x51B3;&#x5B9A;&#xFF0C;&#x5C3D;&#x7BA1;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x662F;&#x4E0D;&#x5B8C;&#x6574;&#x7684;&#x3001;&#x6709;&#x6B67;&#x4E49;&#x7684;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x4EE5;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x4ECB;&#x7ECD;&#x6982;&#x7387;&#x8BBA;&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x3002;&#x60F3;&#x8C61;&#x4E00;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x4E24;&#x4E2A;&#x76D2;&#x5B50;&#xFF0C;&#x4E00;&#x4E2A;&#x7EA2;&#x7684;&#x4E00;&#x4E2A;&#x84DD;&#x7684;&#xFF0C;&#x7EA2;&#x7684;&#x76D2;&#x5B50;&#x4E2D;&#x6709;2&#x4E2A;&#x82F9;&#x679C;6&#x4E2A;&#x6A58;&#x5B50;&#xFF0C;&#x84DD;&#x8272;&#x76D2;&#x5B50;&#x4E2D;&#x6709;3&#x4E2A;&#x82F9;&#x679C;1&#x4E2A;&#x6A58;&#x5B50;&#xFF0C;&#x5C31;&#x50CF;&#x56FE;1.9&#x4E2D;&#x5C55;&#x793A;&#x7684;&#x90A3;&#x6837;&#x3002;</p>
+<p><img src="images/apple_orange.png" alt="&#x56FE; 1-9"><br>&#x56FE; 1.9 &#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x989C;&#x8272;&#x7684;&#x76D2;&#x5B50;,&#x6BCF;&#x4E2A;&#x76D2;&#x5B50;&#x4E2D;&#x90FD;&#x6709;&#x6C34; &#x679C;,&#x82F9;&#x679C;&#x7528;&#x7EFF;&#x8272;&#x8868;&#x793A;,&#x6A58;&#x5B50;&#x7528;&#x6A59;&#x8272;&#x8868;&#x793A;&#x3002;    </p>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x968F;&#x673A;&#x7684;&#x6311;&#x9009;&#x4E00;&#x4E2A;&#x76D2;&#x5B50;&#xFF0C;&#x5E76;&#x4ECE;&#x4E2D;&#x968F;&#x673A;&#x7684;&#x6311;&#x9009;&#x4E00;&#x4E2A;&#x6C34;&#x679C;&#xFF0C;&#x89C2;&#x5BDF;&#x4E00;&#x4E0B;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x7684;&#x6C34;&#x679C;&#x79CD;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x5B83;&#x653E;&#x56DE;&#x5230;&#x539F;&#x6765;&#x7684;&#x76D2;&#x5B50;&#x4E2D;&#x3002;&#x5047;&#x8BBE;&#x91CD;&#x590D;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x5F88;&#x591A;&#x6B21;&#x3002;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x5728;40%&#x7684;&#x60C5;&#x51B5;&#x4E2D;&#x9009;&#x62E9;&#x4E86;&#x7EA2;&#x76D2;&#x5B50;&#xFF0C;&#x5728;60%&#x7684;&#x60C5;&#x51B5;&#x4E2D;&#x9009;&#x62E9;&#x4E86;&#x84DD;&#x76D2;&#x5B50;&#x3002;&#x5E76;&#x4E14;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x76D2;&#x5B50;&#x4E2D;&#x7684;&#x6C34;&#x679C;&#x65F6;&#x662F;&#x7B49;&#x53EF;&#x80FD;&#x7684;&#x3002;    </p>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;,&#x6211;&#x8981;&#x9009;&#x62E9;&#x7684;&#x76D2;&#x5B50;&#x7684;&#x989C;&#x8272;&#x662F;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x53D8;&#x91CF;,&#x8BB0;&#x4F5C;<script type="math/tex; "> B </script>&#x3002;&#x8FD9;&#x4E2A;&#x968F;&#x673A;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x53D6;&#x4E24;&#x4E2A;&#x503C;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;,&#x5373;<script type="math/tex; "> r </script>(&#x5BF9;&#x5E94;&#x7EA2;&#x76D2;&#x5B50;)&#x6216;<script type="math/tex; "> b </script>(&#x5BF9;&#x5E94;&#x84DD;&#x76D2;&#x5B50;)&#x3002;&#x540C;&#x6837;&#x7684;&#x6C34;&#x679C;&#x7684;&#x9009;&#x62E9;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x53D8;&#x91CF;&#xFF0C;&#x8BB0;&#x4F5C;<script type="math/tex; "> F </script>&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x53D6;<script type="math/tex; "> a </script>(&#x82F9;&#x679C;)&#x6216;&#x8005;<script type="math/tex; "> o </script>(&#x6A58;&#x5B50;)&#x3002;     </p>
+<p>&#x5F00;&#x59CB;&#x9636;&#x6BB5;,&#x6211;&#x4EEC;&#x628A;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x7684;&#x6982;&#x7387;&#x5B9A;&#x4E49;&#x4E3A;&#x5728;&#x603B;&#x8BD5;&#x9A8C;&#x6B21;&#x6570;&#x8D8B;&#x4E8E;&#x65E0;&#x7A77;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x7684;&#x6B21;&#x6570;&#x4E0E;&#x8BD5;&#x9A8C;&#x603B;&#x6570;&#x7684;&#x6BD4;&#x503C;&#x3002;&#x56E0;&#x6B64;&#x9009;&#x62E9;&#x7EA2;&#x76D2;&#x5B50;&#x7684;&#x6982;&#x7387;&#x4E3A;<script type="math/tex; "> \frac{4}{10} </script>&#xFF0C;&#x9009;&#x62E9;&#x84DD;&#x8272;&#x76D2;&#x5B50;&#x7684;&#x6982;&#x7387;&#x662F;<script type="math/tex; "> \frac{6}{10} </script>&#x3002;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x4E2A;&#x6982;&#x7387;&#x8BB0;&#x4F5C; <script type="math/tex; "> p(B = r) = \frac{4}{10} , p(B = b) = \frac{6}{10} </script>&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x6839;&#x636E;&#x5B9A;&#x4E49;&#x6982;&#x7387;&#x4E00;&#x5B9A;&#x4F4D;&#x4E8E;&#x533A;&#x95F4;[0,
+1]&#x5185;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5305;&#x542B;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x662F;&#x4E92;&#x65A5;&#x7684;&#xFF08;&#x5982;&#x5728;&#x524D;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x9009;&#x62E9;&#x7EA2;&#x8272;&#x6216;&#x84DD;&#x8272;&#x76D2;&#x5B50;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x4ED6;&#x4EEC;&#x7684;&#x6982;&#x7387;&#x7684;&#x548C;&#x5C31;&#x7B49;&#x4E8E;1&#x3002;    </p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x95EE;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;:&#x9009;&#x62E9;&#x5230;&#x82F9;&#x679C;&#x7684;&#x6574;&#x4F53;&#x6982;&#x7387;&#x662F;&#x591A;&#x5C11;?&#x6216;&#x8005;,&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x4E86;&#x6A58;&#x5B50;, &#x90A3;&#x4E48;&#x9009;&#x62E9;&#x7684;&#x76D2;&#x5B50;&#x662F;&#x84DD;&#x8272;&#x7684;&#x6982;&#x7387;&#x662F;&#x591A;&#x5C11;&#xFF1F;&#x4E00;&#x65E6;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x638C;&#x63E1;&#x6982;&#x7387;&#x8BBA;&#x7684;&#x4E24;&#x4E2A;&#x57FA;&#x672C;&#x89C4;&#x5219;&#xFF1A;&#x52A0;&#x6CD5;&#x89C4;&#x5219;&#xFF08;sum rule&#xFF09;&#x548C;&#x4E58;&#x79EF;&#x89C4;&#x5219;&#xFF08;product rule&#xFF09;&#xFF0C;&#x6765;&#x56DE;&#x7B54;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4E8B;&#x5B9E;&#x4E0A;&#x6211;&#x4EEC;&#x4E5F;&#x5C31;&#x53EF;&#x4EE5;&#x56DE;&#x7B54;&#x4E0E;&#x6A21;&#x5F0F;&#x8BC6; &#x522B;&#x76F8;&#x5173;&#x7684;&#x6BD4;&#x8FD9;&#x4E9B;&#x590D;&#x6742;&#x5F97;&#x591A;&#x7684;&#x95EE;&#x9898;&#x3002;&#x638C;&#x63E1;&#x8FD9;&#x4E9B;&#x89C4;&#x5219;&#x4E4B;&#x540E;,&#x6211;&#x4EEC;&#x5C06;&#x91CD;&#x65B0;&#x56DE;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x6C34;&#x679C;&#x76D2;&#x5B50;&#x7684;&#x4F8B;&#x5B50;&#x3002;    </p>
+<p>&#x4E3A;&#x4E86;&#x63A8;&#x5BFC;&#x6982;&#x7387;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x8003;&#x8651;&#x56FE;1.10&#x6240;&#x793A;&#x7684;&#x66F4;&#x4E00;&#x822C;&#x7684;&#x60C5;&#x5F62;&#x3002;&#x5982;&#x56FE;1.10&#x6240;&#x793A;&#xFF0C;&#x5B83;&#x6D89;&#x53CA;&#x5230;&#x4E24;&#x4E2A;&#x968F;&#x673A;&#x53D8;&#x91CF;<script type="math/tex; "> X, Y </script>&#xFF08;&#x4F8B;&#x5982;&#x53EF;&#x4EE5;&#x662F;&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x4E2D;&#x201C;&#x76D2;&#x5B50;&#x201D;&#x548C;&#x201C;&#x6C34;&#x679C;&#x201D;&#x7684;&#x968F;&#x673A;&#x53D8;&#x91CF;&#xFF09;&#x3002;</p>
+<p><img src="images/two_random_variables.png" alt="&#x56FE; 1-10"><br>&#x56FE; 1.10:&#x4E24;&#x4E2A;&#x968F;&#x673A;&#x53D8;&#x91CF;     </p>
+<p>&#x5047;&#x8BBE;<script type="math/tex; "> X </script>&#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#x7684;&#x53D6;<script type="math/tex; "> x_i </script>&#xFF0C;&#x5176;&#x4E2D;<script type="math/tex; "> i = 1,...,m </script>&#x3002;&#x8BBE;<script type="math/tex; "> Y </script>&#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#x7684;&#x53D6;<script type="math/tex; "> y_j </script>&#xFF0C;&#x5176;&#x4E2D;<script type="math/tex; "> j = 1,...,l </script>&#x3002;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x505A;<script type="math/tex; "> N </script>&#x6B21;&#x540C;&#x65F6;&#x5BF9;<script type="math/tex; "> X </script>&#x548C;<script type="math/tex; "> Y </script>&#x8FDB;&#x884C;&#x53D6;&#x6837;&#x7684;&#x5B9E;&#x9A8C;&#xFF0C;&#x628A;&#x7ED3;&#x679C;&#x4E3A;<script type="math/tex; "> X = x_i, Y = y_j </script>&#x7684;&#x8BD5;&#x9A8C;&#x7684;&#x6570;&#x91CF;&#x8BB0;&#x4F5C;<script type="math/tex; "> n_{ij} </script>&#x3002;&#x5E76;&#x4E14;,&#x628A;<script type="math/tex; "> X </script>&#x7684;&#x7ED3;&#x679C;&#x662F;<script type="math/tex; "> x_i </script>(&#x4E0E;<script type="math/tex; "> Y </script>&#x7684;&#x53D6;&#x503C;&#x65E0;&#x5173;)&#x7684;&#x8BD5;&#x9A8C;&#x7684;&#x6570;&#x91CF;&#x8BB0;&#x4F5C;<script type="math/tex; "> c_i </script>,&#x7C7B;&#x4F3C;&#x7684;,&#x628A;<script type="math/tex; "> Y </script>&#x7684;&#x7ED3;&#x679C;&#x662F;<script type="math/tex; "> x_i </script>(&#x4E0E;<script type="math/tex; "> Y </script>&#x7684;&#x53D6;&#x503C;&#x65E0;&#x5173;)&#x7684;&#x8BD5;&#x9A8C;&#x7684;&#x6570;&#x91CF;&#x8BB0;&#x4F5C;<script type="math/tex; "> r_j </script> &#x3002;     </p>
+<p><script type="math/tex; "> X </script>&#x53D6;<script type="math/tex; "> x_i </script>&#x4E14;<script type="math/tex; "> Y </script>&#x53D6;<script type="math/tex; "> y_j </script>&#x7684;&#x6982;&#x7387;&#x88AB;&#x8BB0;&#x4F5C;<script type="math/tex; "> p(X = x_i,Y = y_j) </script>,&#x88AB;&#x79F0;&#x4E3A;<script type="math/tex; "> X = x_i </script>&#x548C;<script type="math/tex; "> Y = y_j </script>&#x7684;&#x8054;&#x5408;&#x6982;&#x7387;(joint probability)&#x3002;&#x5B83;&#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;&#x662F;&#x5355;&#x5143;&#x683C;<script type="math/tex; "> i, j </script>&#x4E2D;&#x7684;&#x6570;&#x91CF;&#x4E0E;&#x603B;&#x6570;&#x7684;&#x6BD4;&#x503C;&#xFF0C;&#x5373;&#xFF1A;<br><script type="math/tex; mode=display">
+\begin{equation}
+p(X = x_i,Y = y_i) = \frac{n_{ij}}{N} \tag{1.5}
+\end{equation}
+</script><br>&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x9690;&#x5F0F;&#x7684;&#x89C4;&#x5219;&#xFF1A;<script type="math/tex; "> N \to \infty </script>&#x3002;&#x7C7B;&#x4F3C;&#x5730;,<script type="math/tex; "> X </script>&#x53D6;<script type="math/tex; "> x_i </script>&#xFF08;&#x4E0E;<script type="math/tex; "> Y </script>&#x53D6;&#x503C;&#x65E0;&#x5173;&#xFF09;&#x7684;&#x6982;&#x7387;&#x88AB;&#x8BB0;&#x4F5C;<script type="math/tex; "> p(X = x_i) </script>,&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;&#x662F;&#x5217;<script type="math/tex; "> i </script>&#x7684;&#x6570;&#x91CF;&#x4E0E;&#x603B;&#x6570;&#x7684;&#x6BD4;&#x503C;,&#x5373;:<br><script type="math/tex; mode=display">
+\begin{equation}
+p(X = x_i) = \frac{c_{i}}{N} \tag{1.6}
+\end{equation}
+</script><br>&#x7531;&#x4E8E;&#x5728;&#x56FE;1.10&#x4E2D;&#x5217;<script type="math/tex; "> i </script>&#x7684;&#x6570;&#x91CF;&#x662F;&#x5217;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x683C;&#x7684;&#x6570;&#x91CF;&#x7684;&#x548C;&#xFF08;<script type="math/tex; "> c_i = \sum_jn_{ij} </script>&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x6839;&#x636E;&#x516C;&#x5F0F;(1.5)&#x548C;(1.6)&#x6211;&#x4EEC;&#x5C31;&#x5F97;&#x5230;&#xFF1A;     </p>
+<p><script type="math/tex; mode=display">
+\begin{equation}
+p(X = x_i) = \sum\limits_{j=1}^lp(X = x_i, Y = y_j) \tag{1.7}
+\end{equation}
+</script>    </p>
+<p>&#x8FD9;&#x5C31;&#x662F;&#x52A0;&#x6CD5;&#x89C4;&#x5219;&#x3002;&#x6CE8;&#x610F;,<script type="math/tex; "> p(X = xi) </script>&#x6709;&#x65F6;&#x88AB;&#x79F0;&#x4E3A;&#x8FB9;&#x7F18;&#x6982;&#x7387;(marginal probability),&#x56E0;&#x4E3A;&#x5B83;&#x662F;&#x901A;&#x8FC7;&#x8FB9;&#x7F18;&#x5316;&#x6216;&#x52A0;&#x548C;&#x5176;&#x4ED6;&#x53D8;&#x91CF;&#x6765;&#x5F97;&#x5230;&#x7684;&#xFF08;&#x672C;&#x4F8B;&#x4E2D;&#x4E3A;<script type="math/tex; "> Y </script>&#xFF09;&#x3002;     </p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x53EA;&#x8003;&#x8651;&#x90A3;&#x4E9B;<script type="math/tex; "> X = x_i </script>&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x90A3;&#x4E48;&#x5176;&#x4E2D;<script type="math/tex; "> Y = y_j </script>&#x6240;&#x5360;&#x7684;&#x6BD4;&#x4F8B;&#x88AB;&#x8BB0;&#x4F5C;<script type="math/tex; "> p(Y = y_j | X = x_i) </script>&#xFF0C;&#x88AB;&#x79F0;&#x4E3A;&#x7ED9;&#x5B9A;<script type="math/tex; "> X = x_i </script>&#x7684;<script type="math/tex; "> Y = y_j </script>&#x7684;&#x6761;&#x4EF6;&#x6982;&#x7387;(conditional probability)&#x3002;&#x5B83;&#x662F;&#x7531;&#x5355;&#x5143;&#x683C;<script type="math/tex; "> i, j </script>&#x4E2D;&#x7684;&#x6570;&#x91CF;&#x4E0E;&#x5217;<script type="math/tex; "> i </script>&#x7684;&#x603B;&#x6570;&#x7684;&#x6BD4;&#x503C;&#xFF0C;&#x5373;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+\begin{equation}
+p(Y = y_j | X = x_i) = \frac{n_{ij}}{c_i} \tag{1.8}
+\end{equation}
+</script>    </p>
+<p>&#x7531;&#x516C;&#x5F0F;(1.5),(1.6)&#x548C;(1.8)&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\begin{equation}
+p(X = x_i, Y = y_j) = \frac{n_{ij}}{N} = \frac{n_{ij}}{ci} \cdot \frac{c_i}{N} = p(Y = y_j|X = x_i)p(X = x_i) \tag{1.9}
+\end{equation}
+</script><br>&#x8FD9;&#x5C31;&#x662F;&#x6982;&#x7387;&#x7684;&#x4E58;&#x6CD5;&#x89C4;&#x5219;&#x3002;     </p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F88;&#x6E05;&#x695A;&#x7684;&#x533A;&#x5206;&#x968F;&#x673A;&#x53D8;&#x91CF;&#xFF08;&#x6C34;&#x679C;&#x4F8B;&#x5B50;&#x4E2D;&#x7684;&#x76D2;&#x5B50;&#x53D8;&#x91CF;<script type="math/tex; "> B </script>&#xFF09;&#x548C;&#x968F;&#x673A;&#x53D8;&#x91CF;&#x7684;&#x53D6;&#x503C;&#xFF08;&#x76D2;&#x5B50;&#x662F;&#x7EA2;&#x8272;&#x65F6;&#x53D6;&#x503C;<script type="math/tex; "> r </script>&#xFF09;&#x3002;&#x5F53;<script type="math/tex; "> B </script>&#x53D6;&#x503C;&#x4E3A;<script type="math/tex; "> r </script>&#x65F6;&#x7684;&#x6982;&#x7387;&#x6211;&#x4EEC;&#x8BB0;&#x4F5C;<script type="math/tex; "> p(B = r) </script>&#x3002;&#x867D;&#x7136;&#x8FD9;&#x79CD;&#x8BB0;&#x6CD5;&#x6D88;&#x9664;&#x4E86;&#x6B67;&#x4E49;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x76F8;&#x5F53;&#x7B28;&#x62D9;&#xFF0C;&#x5728;&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#x4E5F;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5728;&#x4E0A;&#x4E0B;&#x6587;&#x6CA1;&#x6709;&#x5947;&#x5F02;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x7B80;&#x5355;&#x5730;&#x7528;<script type="math/tex; "> p(B) </script>&#x8868;&#x793A;&#x968F;&#x673A;&#x53D8;&#x91CF;<script type="math/tex; "> B </script>&#x7684;&#x5206;&#x5E03;&#xFF0C;&#x7528;<script type="math/tex; "> p(r) </script>&#x8868;&#x793A;&#x5BF9;&#x4E8E;&#x7279;&#x5B9A;&#x7684;&#x503C;<script type="math/tex; "> r </script>&#x7684;&#x5206;&#x5E03;&#x4F30;&#x8BA1;&#x3002;     </p>
+<p>&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x7B80;&#x6D01;&#x7684;&#x8BB0;&#x6CD5;,&#x53EF;&#x4EE5;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x5F62;&#x5F0F;&#x8868;&#x793A;&#x6982;&#x7387;&#x8BBA;&#x7684;&#x4E24;&#x6761;&#x57FA;&#x672C;&#x89C4;&#x5219;:  </p>
+<h5 id="%E5%8A%A0%E6%B3%95%E8%A7%84%E5%88%99">&#x52A0;&#x6CD5;&#x89C4;&#x5219;</h5>
+<p><script type="math/tex; mode=display">
+p(X) = \sum\limits_Y p(X, Y ) \tag{1.10}
+</script></p>
+<h5 id="%E4%B9%98%E6%B3%95%E8%A7%84%E5%88%99">&#x4E58;&#x6CD5;&#x89C4;&#x5219;</h5>
+<p><script type="math/tex; mode=display">
+p(X, Y) = p(Y|X)p(X) \tag{1.11} 
+</script><br>&#x8FD9;&#x91CC;<script type="math/tex; "> p(X, Y) </script>&#x662F;&#x8054;&#x5408;&#x6982;&#x7387;,&#x53EF;&#x4EE5;&#x8868;&#x8FF0;&#x4E3A;&#x201C;X&#x4E14;Y&#x7684;&#x6982;&#x7387;&#x201D;&#x3002;&#x540C;&#x6837;&#x7684;&#xFF0C;<script type="math/tex; "> p(Y |X) </script>&#x662F;&#x6761;&#x4EF6;&#x6982;&#x7387;,&#x53EF;&#x4EE5;&#x8868; &#x8FF0;&#x4E3A;&#x201C;&#x7ED9;&#x5B9A;<script type="math/tex; "> X </script>&#x7684;&#x6761;&#x4EF6;&#x4E0B;<script type="math/tex; "> Y </script>&#x7684;&#x6982;&#x7387;&#x201D;&#xFF0C;<script type="math/tex; "> p(X) </script>&#x662F;&#x8FB9;&#x7F18;&#x6982;&#x7387;,&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5730;&#x8868;&#x8FF0;&#x4E3A;&#x201C;<script type="math/tex; "> X </script>&#x7684;&#x6982;&#x7387;&#x201D;&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x7B80;&#x5355; &#x7684;&#x89C4;&#x5219;&#x662F;&#x6211;&#x4EEC;&#x5168;&#x4E66;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5168;&#x90E8;&#x6982;&#x7387;&#x63A8;&#x5BFC;&#x7684;&#x57FA;&#x7840;&#x3002;    </p>
+<p>&#x6839;&#x636E;&#x4E58;&#x6CD5;&#x89C4;&#x5219;&#x4EE5;&#x53CA;&#x5BF9;&#x79F0;&#x6027;<script type="math/tex; ">  p(X, Y ) = p(Y, X) </script>&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E24;&#x4E2A;&#x6761;&#x4EF6;&#x6982;&#x7387;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+p(Y|X) = \frac{p(X|Y)p(Y)}{p(X)} \tag{1.12} 
+</script>    </p>
+<p>&#x8FD9;&#x5C31;&#x662F;&#x8D1D;&#x53F6;&#x65AF;&#x5B9A;&#x7406;,&#x5728;&#x6A21;&#x5F0F;&#x8BC6;&#x522B;&#x548C;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x9886;&#x57DF;&#x626E;&#x6F14;&#x7740;&#x6838;&#x5FC3;&#x89D2;&#x8272;&#x3002;</p>
+
                     
                     </section>
                 
@@ -397,7 +471,7 @@
         <a href="../Chapter1/polynomial_curve_fitting.html" class="navigation navigation-prev " aria-label="Previous page: 例子：多项式曲线拟合"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../Chapter1/model_selection.html" class="navigation navigation-next " aria-label="Next page: 模型选择"><i class="fa fa-angle-right"></i></a>
+        <a href="../Chapter1/probability/probability_densities.html" class="navigation navigation-next " aria-label="Next page: 概率密度"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
