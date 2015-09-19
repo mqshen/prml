@@ -91,38 +91,40 @@ $$ p(X) = \sum\limits_Yp(X|Y)p(Y) \tag{1.13} $$
 
 现在，让我们回到那个水果的例子中。再一次强调随机变量和它的实例之间的区别。选择红盒子或者蓝盒子的概率分别由下式给出:    
 $$
-\begin{array}
+\begin{eqnarray}
 p(B = r) = \frac{4}{10} \tag{1.14} \\
 p(B = b) = \frac{6}{10} \tag{1.15}
-\end{array}
+\end{eqnarray}
 $$  
 注意：$$ p(B = r) + p(B = b) = 1 $$。     
 
 现在，假设我们随机的挑选一个盒子，并选到了蓝色。那么选到苹果的概率就是蓝盒子中苹果的比例：$$ \frac{3}{4} $$，所以$$ p(F = a|B = b) = \frac{3}{4} $$。实际上,我们可以写出给定盒子的条件下水果种类的全部四个概率： 
 
 $$
-\begin{array}
+\begin{eqnarray}
 p(F = a | B = r) = \frac{1}{4} \tag{1.16} \\
 p(F = o | B = r) = \frac{3}{4} \tag{1.17} \\
 p(F = a | B = b) = \frac{3}{4} \tag{1.18} \\
 p(F = o | B = b) = \frac{1}{4} \tag{1.19}
-\end{array}
+\end{eqnarray}
 $$  
 
 注意：这些概率是标准化的，所以：
 
 $$
-\begin{array}
+\begin{eqnarray}
 p(F = a | B = r) + p(F = o | B = r) = 1  \tag{1.20} \\
 p(F = a | B = b) + p(F = o | B = b) = 1  \tag{1.21}
-\end{array}
+\end{eqnarray}
 $$  
 
 现在我们可以用加法和乘法规则来计算选到苹果的总的概率。
 
 $$ 
-p(F =a) = p(F =a|B=r)p(B=r)+p(F =a|B=b)p(B=b)
-= \frac{1}{4} \wedge \frac{4}{10} + \frac{3}{4} \wedge \frac{6}{10} = \frac{11}{20} \tag{1.22}
+\begin{equation}
+p(F =a) = p(F =a|B=r)p(B=r)+p(F =a|B=b)p(B=b) \\
+= \frac{1}{4} × \frac{4}{10} + \frac{3}{4} × \frac{6}{10} = \frac{11}{20} \tag{1.22}
+\end{equation}
 $$
 
 然后我们根据加法规则就可以得到：$$ p(F = o) = 1 − \frac{11}{20} = \frac{9}{20} $$。
@@ -130,7 +132,7 @@ $$
 反过来，假设我们知道选到是说过是橘子，我们想知道它是从那个盒子中来的。这需要我们在 给定水果种类的条件下估计盒子的概率分布,而公式(1.16)至(1.19)给出的是在已知盒子颜色的情形下水果的概率分布。我们可以通过贝叶斯定理来解决这样的反转的条件概率：    
 
 $$
-p(B=r|F=o)= \frac{p(F=o|B=r)p(B=r)}{p(F = o)} = \frac{3}{4} \wedge \frac{4}{10} \wedge \frac{20}{9} = \frac{2}{3}
+p(B=r|F=o)= \frac{p(F=o|B=r)p(B=r)}{p(F = o)} = \frac{3}{4} × \frac{4}{10} × \frac{20}{9} = \frac{2}{3} \tag{1.23}
 $$
 
 根据加法规则我们得到：$$ p(B=b|F =o)=1−\frac{2}{3} = \frac{1}{3} $$。
