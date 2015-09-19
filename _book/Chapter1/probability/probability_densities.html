@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="1.2.1" data-basepath="../.." data-revision="Sat Sep 19 2015 18:46:16 GMT+0800 (CST)">
+    <div class="book" data-level="1.2.1" data-basepath="../.." data-revision="Sat Sep 19 2015 23:03:55 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -129,6 +129,13 @@
                         
                         概率密度
                     </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Chapter1/probability/expectations_covariances.html">
+            
+            <span><b>1.2.2.</b> 期望与协方差</span>
             
             
         </li>
@@ -405,7 +412,47 @@
                 
                     <section class="normal" id="section-">
                     
-                        
+                        <p>&#x9664;&#x4E86;&#x8003;&#x8651;&#x79BB;&#x6563;&#x4E8B;&#x4EF6;&#x7684;&#x6982;&#x7387;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x5E0C;&#x671B;&#x8003;&#x8651;&#x8FDE;&#x7EED;&#x53D8;&#x91CF;&#x7684;&#x6982;&#x7387;&#x3002;&#x6211;&#x4EEC;&#x4F1A;&#x628A;&#x7684;&#x8BA8;&#x8BBA;&#x9650;&#x5236;&#x5728;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x975E;&#x6B63;&#x5F0F;&#x7684;&#x5F62;&#x5F0F;&#x4E0A;&#x3002;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x5B9E;&#x503C;&#x53D8;&#x91CF;<script type="math/tex; "> x </script>&#x843D;&#x5728;&#x533A;&#x95F4;<script type="math/tex; "> (x, x + \delta x) </script>&#x7684;&#x6982;&#x7387;&#x7531;<script type="math/tex; "> p(x)\delta x</script>&#x7ED9;&#x51FA;&#xFF0C;&#x5176;&#x4E2D;<script type="math/tex; "> \delta x \to 0 </script>&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C31;&#x628A;<script type="math/tex; "> p(x) </script>&#x79F0;&#x4F5C;<script type="math/tex; "> x </script>&#x7684;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#xFF08;probability density&#xFF09;&#x3002;&#x56FE;1.12&#x9610;&#x91CA;&#x4E86;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x3002;<script type="math/tex; "> x </script>&#x4F4D;&#x4E8E;&#x533A;&#x95F4;<script type="math/tex; "> (a, b) </script>&#x7684;&#x6982;&#x7387;&#x7531;&#x4E0B;&#x5F0F;&#x7ED9;&#x51FA;:    </p>
+<p><script type="math/tex; mode=display">
+p(x \in (a, b)) = \int_a^b p(x) dx \tag{1.24}
+</script></p>
+<p><img src="images/integration.png" alt="&#x56FE; 1-12"><br>&#x56FE; 1.12: &#x8FDE;&#x7EED;&#x53D8;&#x91CF;&#x7684;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;</p>
+<p>&#x56E0;&#x4E3A;&#x6982;&#x7387;&#x662F;&#x975E;&#x8D1F;&#x7684;&#xFF0C;&#x5E76;&#x4E14;<script type="math/tex; "> x </script>&#x7684;&#x503C;&#x5FC5;&#x987B;&#x5728;&#x5B9E;&#x8F74;&#x4E0A;&#xFF0C;&#x6240;&#x4EE5;&#x6982;&#x7387;&#x5BC6;&#x5EA6;<script type="math/tex; "> p(x) </script>&#x5FC5;&#x987B;&#x6EE1;&#x8DB3;&#x8FD9;&#x4E24;&#x4E2A;&#x6761;&#x4EF6;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\begin{eqnarray}
+p(x) \leq 0 \tag{1.25} \\
+\int_{-\infty}^{\infty} p(x) dx = 1 \tag{1.26}
+\end{eqnarray}
+</script>  </p>
+<p>&#x5728;&#x53D8;&#x91CF;&#x7684;&#x975E;&#x7EBF;&#x6027;&#x53D8;&#x5316;&#x4E0B;&#xFF0C;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x7531;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x51FD;&#x6570;&#x901A;&#x8FC7;Jacobian&#x56E0;&#x5B50;&#x53D8;&#x6362;&#x5F97;&#x5230;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&#x4E00;&#x4E2A;&#x53D8;&#x91CF; <script type="math/tex; "> x = g(y) </script>&#xFF0C;&#x90A3;&#x4E48;&#x51FD;&#x6570;<script type="math/tex; "> f(x) </script> &#x5C31;&#x53D8;&#x6210; <script type="math/tex; "> \uwave{f}(y) = f(g(y)) </script>&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x8003;&#x8651;&#x6982;&#x7387;&#x5BC6;&#x5EA6;<script type="math/tex; "> p_x(x) </script>&#xFF0C;&#x4E0E;&#x5B83;&#x5BF9;&#x5E94;&#x7684;&#x5173;&#x4E8E;&#x65B0;&#x53D8;&#x91CF;<script type="math/tex; "> y </script>&#x7684;&#x5BC6;&#x5EA6;<script type="math/tex; "> p_y(y) </script>&#xFF0C;&#x5176;&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x4E0B;&#x6807;&#x8868;&#x793A;<script type="math/tex; "> p_x(x), p_y(y) </script> &#x662F;&#x4E0D;&#x540C;&#x7684;&#x4E24;&#x4E2A;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#x3002;&#x89C2;&#x6D4B;&#x533A;&#x95F4;<script type="math/tex; "> (x, x + \delta x) </script>&#x53D8;&#x6362;&#x4E3A;&#x533A;&#x95F4;<script type="math/tex; "> (y, y + \delta y) </script>&#xFF0C;&#x5F53;<script type="math/tex; "> \delta x </script>&#x5F88;&#x5C0F;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x6709;<script type="math/tex; "> p_x(x)\delta x \approx p_y(y)\delta y </script> &#x5373;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+p_y(y) = p_x(x)|\frac{dx}{dy}| = p_x(g(y))|g^\prime(y)| \tag{1.27}
+</script>  </p>
+<p>&#x8FD9;&#x4E2A;&#x6027;&#x8D28;&#x7684;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#xFF1A;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x7684;&#x6700;&#x5927;&#x503C;&#x53D6;&#x51B3;&#x4E8E;&#x53D8;&#x91CF;&#x7684;&#x9009;&#x62E9;&#x3002;    </p>
+<p><script type="math/tex; "> x </script>&#x4F4D;&#x4E8E;&#x533A;&#x95F4;<script type="math/tex; "> (-\infty, z) </script>&#x7684;&#x6982;&#x7387;&#x662F;&#x7531;&#x7D2F;&#x8BA1;&#x5206;&#x5E03;&#x51FD;&#x6570;&#xFF08;cumulative distribution function&#xFF09;&#x7ED9;&#x51FA;&#x7684;&#xFF1A;<br><script type="math/tex; mode=display">
+P(z) = \int_{-infty}^z p(x)dx \tag{1.28}
+</script></p>
+<p>&#x5B83;&#x5C31;&#x50CF;&#x56FE;1.12&#x90A3;&#x6837;&#x6EE1;&#x8DB3;<script type="math/tex; "> P^\prime(x) = p(x) </script>&#x3002;     </p>
+<p>&#x679C;&#x6211;&#x4EEC;&#x6709;&#x51E0;&#x4E2A;&#x8FDE;&#x7EED;&#x53D8;&#x91CF;<script type="math/tex; "> x_1,...,x_D </script>&#xFF0C;&#x4E00;&#x8D77;&#x88AB;&#x8BB0;&#x4F5C;&#x5411;&#x91CF;<script type="math/tex; "> x </script>&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C31;&#x5B9A;&#x4E49;&#xFF1A;&#x8054;&#x5408;&#x6982;&#x7387;&#x5BC6;
+&#x5EA6;<script type="math/tex; "> p(x) = p(x_1,...,x_D) </script>&#x662F;&#x4F7F;&#x5F97;&#x843D;&#x5728;&#x5305;&#x542B;&#x70B9;<script type="math/tex; "> x </script>&#x7684;&#x65E0;&#x7A77;&#x5C0F;&#x4F53;&#x79EF;<script type="math/tex; "> \detla x </script>&#x7684;&#x70B9;&#x7684;&#x6982;&#x7387;&#x7B49;&#x4E8E;<script type="math/tex; "> p(x)\delta x </script>&#x3002;&#x591A;&#x53D8;&#x91CF;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x5FC5;&#x987B;&#x6EE1;&#x8DB3;    </p>
+<p><script type="math/tex; mode=display">
+\begin{eqnarray}
+p(x) \leq 0 \tag{1.29} \\
+\int p(x) dx = 1\tag{1.30}
+\end{eqnarray}
+</script>  </p>
+<p>&#x5176;&#x4E2D;&#x79EF;&#x5206;&#x5FC5;&#x987B;&#x5305;&#x542B;&#x6574;&#x4E2A;<script type="math/tex; "> x </script>&#x7A7A;&#x95F4;&#x3002;&#x8FD9;&#x4E5F;&#x9002;&#x7528;&#x4E8E;&#x79BB;&#x6563;&#x53D8;&#x91CF;&#x548C;&#x8FDE;&#x7EED;&#x53D8;&#x91CF;&#x76F8;&#x7ED3;&#x5408;&#x7684;&#x8054;&#x5408;&#x6982;&#x7387;&#x5206;&#x5E03;&#x3002;     </p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;<script type="math/tex; "> x </script>&#x662F;&#x79BB;&#x6563;&#x53D8;&#x91CF;&#xFF0C;&#x90A3;&#x4E48;<script type="math/tex; "> p(x)就叫做概率质量函数（probability mass function），因为它可以被看做在合法的</script> x <script type="math/tex; ">值上的“概率质量”的集合。
+
+概率的加法，乘法规则以及贝叶斯定理，都适用于概率密度或离散变量与连续变量相结合的情形下。例如：</script> x,y <script type="math/tex; ">是两个实值变量，它们的加法，乘法规则可以表示为如下形式：    
+</script>
+\begin{eqnarray}
+p(x) = \int p(x, y) dy \tag{1.31} \ 
+p(x, y) = p(y|x)p(x) \tag{1.32}
+\end{eqnarray}
+<script type="math/tex; ">      
+形式化地证明连续变量的加法，乘法规则（Feller, 1966）需要一个被叫做测度论（measure theory ）的数学分支，这超出的本书的范围。不过，它的正确性在直觉下是显然的。我们把实值变量分割为宽度为</script> \Delta <script type="math/tex; ">，然后考虑这些离散的区间上的概率分布。当</script> \Delta \to 0 $$&#x65F6;&#xFF0C;&#x628A;&#x6C42;&#x548C;&#x8F6C;&#x6362;&#x4E3A;&#x79EF;&#x5206;&#x5C31;&#x5F97;&#x5230;&#x5E0C;&#x671B;&#x7684;&#x7ED3;&#x679C;&#x4E86;&#x3002;</p>
+
                     
                     </section>
                 
