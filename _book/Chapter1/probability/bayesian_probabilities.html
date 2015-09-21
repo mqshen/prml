@@ -1,0 +1,522 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>贝叶斯概率 | 前言</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.4.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../Chapter1/probability/gaussian_distribution.html" />
+    
+    
+    <link rel="prev" href="../../Chapter1/probability/expectations_covariances.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="1.2.3" data-basepath="../.." data-revision="Mon Sep 21 2015 15:42:20 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        前言
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="Chapter1/index.html">
+            
+                
+                    <a href="../../Chapter1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        介绍
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="Chapter1/polynomial_curve_fitting.html">
+            
+                
+                    <a href="../../Chapter1/polynomial_curve_fitting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        例子：多项式曲线拟合
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Chapter1/probability_theory.html">
+            
+                
+                    <a href="../../Chapter1/probability_theory.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        概率论
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Chapter1/probability/probability_densities.html">
+            
+                
+                    <a href="../../Chapter1/probability/probability_densities.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.1.</b>
+                        
+                        概率密度
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Chapter1/probability/expectations_covariances.html">
+            
+                
+                    <a href="../../Chapter1/probability/expectations_covariances.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.2.</b>
+                        
+                        期望与协方差
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="Chapter1/probability/bayesian_probabilities.html">
+            
+                
+                    <a href="../../Chapter1/probability/bayesian_probabilities.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.3.</b>
+                        
+                        贝叶斯概率
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="Chapter1/probability/gaussian_distribution.html">
+            
+                
+                    <a href="../../Chapter1/probability/gaussian_distribution.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.4.</b>
+                        
+                        高斯分布
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Chapter1/model_selection.html">
+            
+                
+                    <a href="../../Chapter1/model_selection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        模型选择
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Chapter1/the_curse_of_dimensionality.html">
+            
+                
+                    <a href="../../Chapter1/the_curse_of_dimensionality.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        维度灾难
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Chapter1/decision_theory.html">
+            
+                
+                    <a href="../../Chapter1/decision_theory.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        决策论
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Chapter1/information_theory.html">
+            
+                
+                    <a href="../../Chapter1/information_theory.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        信息论
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="Chapter2/index.html">
+            
+                
+                    <a href="../../Chapter2/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        概率分布
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="Chapter2/binary_variables.html">
+            
+                
+                    <a href="../../Chapter2/binary_variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        二元变量
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Chapter2/multinomial_variables.html">
+            
+                
+                    <a href="../../Chapter2/multinomial_variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        多项式变量
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Chapter2/the_gaussian_distribution.html">
+            
+                
+                    <a href="../../Chapter2/the_gaussian_distribution.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        高斯分布
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="Chapter2/the_exponential_family.html">
+            
+                
+                    <a href="../../Chapter2/the_exponential_family.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        指数族
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="Chapter2/nonparametric_method.html">
+            
+                
+                    <a href="../../Chapter2/nonparametric_method.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        非参数方法
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >前言</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <p>&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x91CD;&#x590D;&#x968F;&#x673A;&#x4E8B;&#x4EF6;&#x7684;&#x53D1;&#x751F;&#x7684;&#x9891;&#x7387;&#x6765;&#x8003;&#x5BDF;&#x6982;&#x7387;&#x3002;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x53EB;&#x505A;&#x7ECF;&#x5178;&#xFF08;classical&#xFF09;&#x6216;&#x9891;&#x7387;&#x8BBA;&#xFF08;frequentist&#xFF09;&#x7684;&#x6982;&#x7387;&#x89E3;&#x91CA;&#x3002;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x8F6C;&#x5411;&#x66F4;&#x52A0;&#x901A;&#x7528;&#x7684;&#x8D1D;&#x53F6;&#x65AF;&#xFF08;Bayesian&#xFF09;&#x89C2;&#x70B9;&#xFF0C;&#x5B83;&#x4F7F;&#x9891;&#x7387;&#x63D0;&#x4F9B;&#x4E86;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x7684;&#x91CF;&#x5316;&#x63CF;&#x8FF0;&#x3002;    </p>
+<p>&#x8003;&#x8651;&#x4E00;&#x4E2A;&#x4E0D;&#x786E;&#x5B9A;&#x4E8B;&#x4EF6;&#xFF0C;&#x5982;&#xFF1A;&#x6708;&#x7403;&#x662F;&#x5426;&#x66FE;&#x7ECF;&#x81EA;&#x5DF1;&#x7684;&#x8F68;&#x9053;&#x4E0A;&#x56F4;&#x7ED5;&#x592A;&#x9633;&#x65CB;&#x8F6C;&#xFF0C;&#x6216;&#x8005;&#x672C;&#x4E16;&#x7EAA;&#x672B;&#x5317;&#x6781;&#x51B0;&#x76D6;&#x662F;&#x5426;&#x4F1A;&#x6D88;&#x5931;&#x3002;&#x8FD9;&#x79CD;&#x4E8B;&#x4EF6;&#x4E0D;&#x80FD;&#x50CF;&#x76D2;&#x5B50;&#x4E2D;&#x7684;&#x6C34;&#x679C;&#x4E00;&#x6837;&#x91CD;&#x590D;&#x505A;&#x5F88;&#x591A;&#x6B21;&#x6765;&#x5B9A;&#x4E49;&#x5B83;&#x4EEC;&#x7684;&#x6982;&#x7387;&#x3002;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x4F1A;&#x60F3;&#x4E00;&#x4E9B;&#x529E;&#x6CD5;&#xFF0C;&#x5982;&#xFF1A;&#x6781;&#x5730;&#x51B0;&#x5757;&#x878D;&#x5316;&#x7684;&#x901F;&#x5EA6;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5F97;&#x5230;&#x4E86;&#x65B0;&#x7684;&#x8BC1;&#x636E;&#xFF0C;&#x5982;&#xFF1A;&#x4ECE;&#x4EBA;&#x9020;&#x536B;&#x661F;&#x83B7;&#x5F97;&#x7684;&#x65B0;&#x7684;&#x8BCA;&#x65AD;&#x4FE1;&#x606F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x4F1A;&#x4FEE;&#x6B63;&#x5173;&#x4E8E;&#x51B0;&#x5DDD;&#x878D;&#x5316;&#x901F;&#x5EA6;&#x7684;&#x89C2;&#x70B9;&#x3002;&#x6211;&#x4EEC;&#x5BF9;&#x51B0;&#x5DDD;&#x878D;&#x5316;&#x901F;&#x5EA6;&#x7684;&#x8BC4;&#x4F30;&#x4F1A;&#x5F71;&#x54CD;&#x6211;&#x4EEC;&#x91C7;&#x53D6;&#x7684;&#x884C;&#x52A8;&#xFF0C;&#x4F8B;&#x5982;&#x5728;&#x4F55;&#x79CD;&#x7A0B;&#x5EA6;&#x4E0A;&#x7684;&#x51CF;&#x5C11;&#x6E29;&#x5BA4;&#x6C14;&#x4F53;&#x7684;&#x6392;&#x653E;&#x3002;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x91CF;&#x7684;&#x63CF;&#x8FF0;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#xFF0C;&#x5F53;&#x6709;&#x5C11;&#x91CF;&#x65B0;&#x7684;&#x8BC1;&#x636E;&#x662F;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x7CBE;&#x786E;&#x7684;&#x4FEE;&#x6B63;&#xFF0C;&#x4ECE;&#x800C;&#x4FEE;&#x6B63;&#x63A5;&#x4E0B;&#x6765;&#x6240;&#x8981;&#x91C7;&#x53D6;&#x7684;&#x6700;&#x4F18;&#x884C;&#x52A8;&#x6216;&#x51B3;&#x7B56;&#x3002;&#x8FD9;&#x4E9B;&#x90FD;&#x53EF;&#x4EE5;&#x901A; &#x8FC7;&#x4F18;&#x96C5;&#x7684;&#x901A;&#x7528;&#x7684;&#x8D1D;&#x53F6;&#x65AF;&#x6982;&#x7387;&#x89C2;&#x70B9;&#x6765;&#x5B9E;&#x73B0;&#x3002;    </p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5C0A;&#x91CD;&#x5E38;&#x8BC6;,&#x6765;&#x505A;&#x51FA;&#x5408;&#x7406;&#x7684;&#x63A8;&#x65AD;&#xFF0C;&#x7528;&#x6982;&#x7387;&#x6765;&#x8868;&#x8FBE;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x4E0D;&#x662F;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x4E0D;&#x53EF;&#x907F;&#x514D;&#x7684;&#x3002;&#x5982;&#xFF1A;Cox (1946)&#x8BC1;&#x660E;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x7528;&#x6570;&#x503C;&#x6765;&#x8868;&#x793A;&#x7F6E;&#x4FE1;&#x7684;&#x7A0B;&#x5EA6;&#xFF0C;&#x90A3;&#x4E48;&#x7528;&#x8FD9;&#x79CD;&#x7F6E;&#x4FE1;&#x5EA6;&#x7684;&#x5E38;&#x8BC6;&#x5C5E;&#x6027;&#x7684;&#x516C;&#x7406;&#x96C6;&#x5408;&#x63A8;&#x5BFC;&#x51FA;&#x7684;&#x4E00;&#x7EC4;&#x7528;&#x6765;&#x6765;&#x5904;&#x7406;&#x7F6E;&#x4FE1;&#x7684;&#x7A0B;&#x5EA6;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;&#x6982;&#x7387;&#x7684;&#x52A0;&#x6CD5;&#x89C4;&#x5219;&#x548C;&#x4E58;&#x79EF;&#x89C4;&#x5219;&#x3002;&#x8FD9;&#x9996;&#x6B21;&#x7C97;&#x7565;&#x7684;&#x8BC1;&#x660E;&#x4E86;&#x6982;&#x7387;&#x8BBA;&#x53EF;&#x4EE5;&#x88AB;&#x5F53;&#x4F5C;&#x5E03;&#x5C14;&#x903B;&#x8F91;&#x7684;&#x6269;&#x5C55;&#x6765;&#x5904;&#x7406;&#x4E0D;&#x786E;&#x5B9A;&#x6027;(Jaynes, 2003)&#x3002;&#x5927;&#x91CF;&#x5176;&#x4ED6;&#x7684;&#x5B66;&#x7740;&#x4E5F;&#x53D1;&#x8868;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x6EE1;&#x8DB3;&#x8FD9;&#x6837;&#x7684;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x5EA6;&#x91CF;&#x7684;&#x5C5E;&#x6027;&#x7684;&#x6027;&#x8D28;&#x96C6;&#x5408;&#x6216;&#x8005;&#x516C;&#x7406;&#x96C6;&#x5408;&#xFF08;Ramsey, 1931; Good, 1950; Savage, 1961; deFinetti, 1970; Lindley,
+1982&#xFF09;&#x3002;&#x5728;&#x8FD9;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7ED3;&#x679C;&#x7684;&#x6570;&#x503C;&#x5B8C;&#x5168;&#x7B26;&#x5408;&#x6982;&#x7387;&#x7684;&#x89C4;&#x5219;&#x3002;&#x56E0;&#x6B64;&#x628A;&#x8FD9;&#x4E9B;&#x770B;&#x6210;&#xFF08;&#x8D1D;&#x53F6;&#x65AF;&#x89C2;&#x70B9;&#xFF09;&#x6982;&#x7387;&#x5C31;&#x5F88;&#x81EA;&#x7136;&#x4E86;&#x3002;    </p>
+<p>&#x5728;&#x6A21;&#x5F0F;&#x8BC6;&#x522B;&#x9886;&#x57DF;,&#x5BF9;&#x6982;&#x7387;&#x6709;&#x4E00;&#x4E2A;&#x66F4;&#x52A0;&#x901A;&#x7528;&#x7684;&#x89C2;&#x70B9;&#x540C;&#x6837;&#x662F;&#x5F88;&#x6709;&#x5E2E;&#x52A9;&#x7684;&#x3002;&#x8003;&#x8651;1.1&#x8282;&#x4E2D;&#x8BA8;&#x8BBA;&#x7684;&#x591A;&#x9879;&#x5F0F;&#x66F2;&#x7EBF;&#x62DF;&#x5408;&#xFF0C;&#x4EE5;&#x9891;&#x7387;&#x8BBA;&#x7684;&#x89C2;&#x70B9;&#x53BB;&#x8003;&#x5BDF;&#x89C2;&#x5BDF;&#x5230;&#x7684;&#x968F;&#x673A;&#x53D8;&#x91CF;<script type="math/tex; "> t_n </script>&#x4F3C;&#x4E4E;&#x662F;&#x5408;&#x7406;&#x7684;&#x3002;&#x7136;&#x800C;&#x6211;&#x4EEC;&#x60F3;&#x5F3A;&#x8C03;&#x5E76;&#x91CF;&#x5316;&#x6A21;&#x578B;&#x53C2;&#x6570;<script type="math/tex; "> w </script>&#x7684;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x4F1A;&#x770B;&#x5230;&#xFF0C;&#x4ECE;&#x8D1D;&#x53F6;&#x65AF;&#x7684;&#x89C2;&#x70B9;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x6982;&#x7387;&#x8BBA;&#x7684;&#x673A;&#x5236;&#x6765;&#x63CF;&#x8FF0;&#x6A21;&#x578B;&#x53C2;&#x6570;<script type="math/tex; "> w </script>&#x6216;&#x6A21;&#x578B;&#x9009;&#x62E9;&#x7684;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x3002;     </p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x8D1D;&#x53F6;&#x65AF;&#x5B9A;&#x7406;&#x6709;&#x4E86;&#x65B0;&#x7684;&#x610F;&#x4E49;&#x3002;&#x56DE;&#x5FC6;&#x90A3;&#x4E2A;&#x76D2;&#x5B50;&#x4E2D;&#x7684;&#x6C34;&#x679C;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x6C34;&#x679C;&#x79CD;&#x7C7B;&#x7684;&#x786E;&#x5B9A;&#xFF0C;&#x4E3A;&#x9009;&#x62E9;&#x7EA2;&#x76D2;&#x7684;&#x6982;&#x7387;&#x63D0;&#x4F9B;&#x4E86;&#x76F8;&#x5173;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x8D1D;&#x53F6;&#x65AF;&#x5B9A;&#x7406;&#x901A;&#x8FC7;&#x89C2;&#x6D4B;&#x5230;&#x7684;&#x6570;&#x636E;&#x63D0;&#x4F9B;&#x7684;&#x8BC1;&#x636E;&#xFF0C;&#x628A;&#x5148;&#x9A8C;&#x6982;&#x7387;&#x8F6C;&#x5316;&#x4E3A;&#x4E86;&#x540E;&#x9A8C;&#x6982;&#x7387;&#x3002;&#x548C;&#x5C06;&#x8981;&#x770B;&#x5230;&#x7684;&#x7EC6;&#x8282;&#x4E00;&#x6837;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x8FDB;&#x884C;&#x6570;&#x91CF;&#x7684;&#x63A8;&#x65AD;&#xFF08;&#x5982;&#xFF1A;&#x591A;&#x9879;&#x5F0F;&#x66F2;&#x7EBF;&#x62DF;&#x5408;&#x4E2D;&#x7684;&#x53C2;&#x6570;<script type="math/tex; "> w </script>&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x540C;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5728;&#x89C2;&#x6D4B;&#x6570;&#x636E;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x4EE5;&#x5148;&#x9A8C;&#x6982;&#x7387;<script type="math/tex; "> p(w) </script>&#x7684;&#x5F62;&#x5F0F;&#x7ED9;&#x51FA;&#x4E86;&#xFF0C;&#x4E00;&#x4E9B;&#x5173;&#x4E8E;&#x53C2;&#x6570;<script type="math/tex; "> w </script>&#x7684;&#x5047;&#x8BBE;&#x3002;&#x89C2;&#x6D4B;&#x5230;&#x7684;&#x6570;&#x636E;<script type="math/tex; "> D = {t_1,...,t_n}
+</script>&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x662F;&#x901A;&#x8FC7;&#x6761;&#x4EF6;&#x6982;&#x7387;<script type="math/tex; "> p(D|w) </script>&#x6765;&#x8868;&#x8FBE;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x5728;1.2.5&#x8282;&#x4E2D;&#x663E;&#x793A;&#x7684;&#x8868;&#x8FBE;&#x51FA;&#x6765;&#x3002;&#x8D1D;&#x53F6;&#x65AF;&#x5B9A;&#x7406;&#x7684;&#x516C;&#x5F0F;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+p(w| D) = \frac{p(D|w)p(w)}{p(D)} 
+</script>    </p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x89C2;&#x6D4B;&#x5230;<script type="math/tex; "> D </script>&#x540E;&#x7684;&#x540E;&#x9A8C;&#x6982;&#x7387;<script type="math/tex; "> p(w|D) </script>&#x6765;&#x4F30;&#x8BA1;<script type="math/tex; "> w </script>&#x7684;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x3002;    </p>
+<p>&#x8D1D;&#x53F6;&#x65AF;&#x5B9A;&#x7406;&#x53F3;&#x4FA7;&#x7684;&#x91CF;<script type="math/tex; "> p(D|w) </script>&#x7531;&#x89C2;&#x6D4B;&#x5230;&#x7684;&#x6570;&#x636E;&#x96C6;<script type="math/tex; "> D </script>&#x6765;&#x4F30;&#x8BA1;&#xFF0C;&#x53EF;&#x4EE5;&#x88AB;&#x770B;&#x6210;&#x53C2;&#x6570;&#x5411;&#x91CF;<script type="math/tex; "> w </script>&#x7684;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#xFF08;likelihood function&#xFF09;&#x3002;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x5411;&#x91CF;<script type="math/tex; "> w </script>&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x89C2;&#x6D4B;&#x5230;&#x7684;&#x6570;&#x636E;&#x96C6;&#x7684;&#x53EF;&#x80FD;&#x6027;&#x3002;&#x6CE8;&#x610F;&#x4F3C;&#x7136;&#x4E0D;&#x8868;&#x793A;&#x5B83;&#x662F;<script type="math/tex; "> w </script>&#x7684;&#x6982;&#x7387;&#x5206;&#x5E03;&#xFF0C;&#x5B83;&#x5173;&#x4E8E;<script type="math/tex; "> w </script>&#x7684;&#x79EF;&#x5206;&#x4E5F;&#x4E0D;&#xFF08;&#x4E00;&#x5B9A;&#xFF09;&#x7B49;&#x4E8E;1&#x3002;     </p>
+<p>&#x7ED9;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x8FD9;&#x4E2A;&#x5B9A;&#x4E49;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x6765;&#x63CF;&#x8FF0;&#x8D1D;&#x53F6;&#x65AF;&#x5B9A;&#x7406;&#xFF1A;<br><script type="math/tex; mode=display">
+\text{posterior} \propto \text{likelihood} × \text{prior} \tag{1.44}
+</script></p>
+<p>&#x5176;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x91CF;&#x90FD;&#x662F;&#x5173;&#x4E8E;<script type="math/tex; "> w </script>&#x7684;&#x51FD;&#x6570;&#x3002;&#x516C;&#x5F0F;&#xFF08;1.43&#xFF09;&#x4E2D;&#x7684;&#x5206;&#x6BCD;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x5316;&#x7684;&#x5E38;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x4FDD;&#x8BC1;&#x5DE6;&#x8FB9;&#x7684;&#x540E;&#x9A8C;&#x5206;&#x5E03;&#x662F;&#x4E00;&#x4E2A;&#x5408;&#x6CD5;&#x7684;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x4E14;&#x79EF;&#x5206;&#x4E3A;1&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5BF9;&#x516C;&#x5F0F;&#xFF08;1.43&#xFF09;&#x4E24;&#x8FB9;&#x540C;&#x65F6;&#x5BF9;<script type="math/tex; "> w </script>&#x8FDB;&#x884C;&#x79EF;&#x5206;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x5148;&#x9A8C;&#x5206;&#x5E03;&#x548C;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x6765;&#x8868;&#x793A;&#x8D1D;&#x53F6;&#x65AF;&#x5B9A;&#x7406;&#x4E2D;&#x7684;&#x5206;&#x6BCD;&#xFF1A;    </p>
+<p><script type="math/tex; "> p(D) = \int p(D|w)P(w)dw \tag{1.45} </script></p>
+<p>&#x5728;&#x8D1D;&#x53F6;&#x65AF;&#x548C;&#x9891;&#x7387;&#x8BBA;&#x89C2;&#x70B9;&#x4E2D;&#xFF0C;&#x4F3C;&#x7136;&#x51FD;&#x6570;<script type="math/tex; "> p(D|w) </script>&#x90FD;&#x8D77;&#x7740;&#x91CD;&#x8981;&#x4F5C;&#x7528;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5728;&#x8FD9;&#x4E24;&#x79CD;&#x89C2;&#x70B9;&#x4E2D;&#x5B83;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x6709;&#x7740;&#x672C;&#x8D28;&#x7684;&#x4E0D;&#x540C;&#x3002;&#x5728;&#x9891;&#x7387;&#x8BBA;&#x7684;&#x89C2;&#x70B9;&#x4E2D;&#xFF0C;<script type="math/tex; "> w </script>&#x88AB;&#x5F53;&#x4F5C;&#x56FA;&#x5B9A;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5B83;&#x7684;&#x503C;&#x662F;&#x7531;&#x67D0;&#x79CD;&#x5F62;&#x5F0F;&#x7684;&#x4F30;&#x8BA1;&#x6765;&#x786E;&#x5B9A;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x4F30;&#x8BA1;&#x8BEF;&#x5DEE;&#x662F;&#x7531;&#x53EF;&#x80FD;&#x7684;&#x6570;&#x636E;&#x96C6;<script type="math/tex; "> D </script>&#x5206;&#x5E03;&#x6765;&#x786E;&#x5B9A;&#x7684;&#x3002;&#x4E0E;&#x4E4B;&#x76F8;&#x6BD4;&#xFF0C;&#x5728;&#x8D1D;&#x53F6;&#x65AF;&#x89C2;&#x70B9;&#x4E0B;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x96C6;<script type="math/tex; "> D </script>(&#x5373;&#x5B9E;&#x9645;&#x89C2;&#x6D4B;&#x5230;&#x7684;&#x6570;&#x636E;&#x96C6;) &#xFF0C;&#x53C2;&#x6570;&#x7684;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x662F;&#x901A;&#x8FC7;<script type="math/tex; "> w </script>&#x7684;&#x6982;&#x7387;&#x5206;&#x5E03;&#x6765;&#x8868;&#x793A;&#x7684;&#x3002;    </p>
+<p>&#x6700;&#x5927;&#x4F3C;&#x7136;&#xFF08;maximum likelihood&#xFF09;&#x662F;&#x9891;&#x7387;&#x8BBA;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x4F30;&#x8BA1;&#xFF0C;&#x5176;&#x4E2D;<script type="math/tex; "> w </script>&#x53D6;&#x4F7F;&#x4F3C;&#x7136;&#x51FD;&#x6570;<script type="math/tex; "> p(D|w) </script>&#x8FBE;&#x5230;&#x6700;&#x5927;&#x503C;&#x7684;&#x503C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4F7F;<script type="math/tex; "> w </script>&#x7684;&#x503C;&#x7B49;&#x4E8E;&#x4F7F;&#x89C2;&#x5BDF;&#x5230;&#x7684;&#x6570;&#x636E;&#x96C6;&#x51FA;&#x73B0;&#x7684;&#x6982;&#x7387;&#x6700;&#x5927;&#x7684;&#x503C;&#x3002;&#x5728;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7684;&#x6587;&#x732E;&#x4E2D;&#xFF0C;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x7684;&#x8D1F;&#x5BF9;&#x6570;&#x522B;&#x79F0;&#x4E3A;&#x8BEF;&#x5DEE;&#x51FD;&#x6570;&#xFF08;error function&#xFF09;&#x3002;&#x56E0;&#x4E3A;&#x8D1F;&#x5BF9;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x8C03;&#x9012;&#x51CF;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x6700;&#x5927;&#x5316;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x4E5F;&#x5C31;&#x662F;&#x6700;&#x5C0F;&#x5316;&#x8BEF;&#x5DEE;&#x3002;    </p>
+<p>&#x81EA;&#x52A9;&#x6CD5;&#xFF08;bootstrap&#xFF09;&#x662F;&#x9891;&#x7387;&#x8BBA;&#x4E2D;&#x4E00;&#x79CD;&#x51B3;&#x5B9A;&#x8BEF;&#x5DEE;&#x7684;&#x65B9;&#x6CD5;(Efron, 1979; Hastie et al., 2001)&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x4E2D;,&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x5F0F;&#x521B;&#x9020;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#xFF1A;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x7684;&#x539F;&#x59CB;&#x6570;&#x636E;&#x96C6;&#x5305;&#x542B;<script type="math/tex; "> N </script>&#x4E2A;&#x6570;&#x636E;&#x70B9;<script type="math/tex; "> X = {x_1,...,x_N} </script>&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x968F;&#x673A;&#x7684;&#x4ECE;<script type="math/tex; "> X </script>&#x4E2D;&#x53D6;<script type="math/tex; "> N </script>&#x4E2A;&#x6570;&#x636E;&#x6765;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x96C6;<script type="math/tex; "> X_B </script>&#x3002;&#x9009;&#x53D6;&#x662F;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x4E9B;<script type="math/tex; "> X </script>&#x4E2D;&#x7684;&#x70B9;&#x53EF;&#x80FD;&#x5728;<script type="math/tex; "> X_B </script>&#x4E2D;&#x51FA;&#x73B0;&#x591A;&#x6B21;&#xFF0C;&#x800C;&#x6709;&#x4E9B;&#x53EF;&#x80FD;&#x4E0D;&#x51FA;&#x73B0;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x8FC7;&#x7A0B;&#x53EF;&#x4EE5;&#x91CD;&#x590D;<script type="math/tex; "> L </script>&#x6B21;&#xFF0C;&#x5F97;&#x5230;<script type="math/tex; "> L </script>&#x4E2A;&#x5927;&#x5C0F;&#x4E3A;<script type="math/tex; "> N </script>&#x7684;&#x901A;&#x8FC7;&#x5BF9;&#x539F;&#x6570;&#x636E;&#x96C6;<script type="math/tex; "> X
+</script>&#x91C7;&#x6837;&#x5F97;&#x5230;&#x7684;&#x6570;&#x636E;&#x96C6;&#x3002;&#x53C2;&#x6570;&#x4F30;&#x8BA1;&#x7684;&#x7EDF;&#x8BA1;&#x7CBE;&#x786E;&#x5EA6;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8003;&#x5BDF;&#x4E0D;&#x540C;&#x7684;&#x81EA;&#x52A9;&#x6570;&#x636E;&#x96C6;&#x4E4B;&#x95F4;&#x7684;&#x9884;&#x6D4B;&#x53D8;&#x5F02;&#x6027;&#x6765;&#x8FDB;&#x884C;&#x8BC4;&#x4F30;&#x3002;    </p>
+<p>&#x8D1D;&#x53F6;&#x65AF;&#x89C2;&#x70B9;&#x7684;&#x4E00;&#x4E2A;&#x4F18;&#x70B9;&#x662F;&#xFF1A;&#x5F88;&#x81EA;&#x7136;&#x7684;&#x5305;&#x542B;&#x4E86;&#x5148;&#x9A8C;&#x77E5;&#x8BC6;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&#x5047;&#x8BBE;&#xFF0C;&#x63B7;&#x4E00;&#x679A;&#x666E;&#x901A;&#x7684;&#x786C;&#x5E01;3&#x6B21;,&#x6BCF;&#x6B21;&#x90FD;&#x662F;&#x6B63;&#x9762;&#x671D;&#x4E0A;&#x3002;&#x7ECF;&#x5178;&#x7684;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x786C;&#x5E01;&#x6B63;&#x9762;&#x671D;&#x4E0A;&#x7684;&#x6982;&#x7387;&#x65F6;&#xFF0C;&#x7ED3;&#x679C;&#x4F1A;&#x662F;1&#xFF0C;&#x8868;&#x793A;&#x5C06;&#x6765;&#x6240;&#x6709;&#x7684;&#x6295;&#x63B7;&#x90FD;&#x4F1A;&#x662F;&#x6B63;&#x9762;&#x671D;&#x4E0A;&#xFF0C;&#x4E0E;&#x4E4B;&#x76F8;&#x5BF9;&#x7684;&#xFF0C;&#x5E26;&#x6709;&#x4EFB;&#x610F;&#x5408;&#x7406;&#x7684;&#x5148;&#x9A8C;&#x6761;&#x4EF6;&#x7684;&#x8D1D;&#x53F6;&#x65AF;&#x65B9;&#x6CD5;&#x90FD;&#x4E0D;&#x4F1A;&#x5F97;&#x51FA;&#x8FD9;&#x4E48;&#x6781;&#x7AEF;&#x7684;&#x7ED3;&#x8BBA;&#x3002;     </p>
+<p>&#x5173;&#x4E8E;&#x9891;&#x7387;&#x8BBA;&#x548C;&#x8D1D;&#x53F6;&#x65AF;&#x7684;&#x89C2;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x4F18;&#x7F3A;&#x70B9;&#x5DF2;&#x7ECF;&#x6709;&#x5F88;&#x591A;&#x4E89;&#x8BBA;&#xFF0C;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x7EAF;&#x7CB9;&#x7684;&#x9891;&#x7387;&#x8BBA;&#x6216;&#x8D1D;&#x53F6;&#x65AF;&#x89C2;&#x70B9;&#x3002;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x9488;&#x5BF9;&#x8D1D;&#x53F6;&#x65AF;&#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x79CD;&#x5E7F;&#x6CDB;&#x7684;&#x6279;&#x8BC4;&#x5C31;&#x662F;&#x5148;&#x9A8C;&#x6982;&#x7387;&#x7684;&#x9009;&#x62E9;&#x901A;&#x5E38;&#x662F;&#x4E3A;&#x4E86;&#x8BA1;&#x7B97;&#x7684;&#x65B9;&#x4FBF;&#x800C;&#x4E0D;&#x662F;&#x4E3A;&#x4E86;&#x53CD;&#x6620;&#x51FA;&#x4EFB;&#x4F55;&#x5148;&#x9A8C;&#x7684;&#x77E5;&#x8BC6;&#x3002;&#x4E00;&#x4E9B;&#x89C2;&#x70B9;&#x751A;&#x81F3;&#x8BA4;&#x4E3A;&#xFF0C;&#x8D1D;&#x53F6;&#x65AF;&#x89C2;&#x70B9;&#x4E2D;&#x7684;&#x7ED3;&#x8BBA;&#x5BF9;&#x5148;&#x9A8C;&#x9009;&#x62E9;&#x7684;&#x4F9D;&#x8D56;&#x6027;&#x662F;&#x56F0;&#x96BE;&#x7684;&#x6765;&#x6E90;&#x3002;&#x51CF;&#x5C11;&#x5BF9;&#x4E8E;&#x5148;&#x9A8C;&#x7684;&#x4F9D;&#x8D56;&#x6027;&#x662F;&#x6240;&#x8C13;&#x65E0;&#x4FE1;&#x606F;&#xFF08;noninformative&#xFF09;&#x5148;&#x9A8C;&#x7684;&#x4E00;&#x4E2A;&#x7814;&#x7A76;&#x52A8;&#x673A;&#x3002;&#x4F46;&#x662F;&#x8FD9;&#x5BFC;&#x81F4;&#x4E86;&#x5BF9;&#x6BD4;&#x4E0D;&#x540C;&#x6A21;&#x578B;&#x95F4;&#x7684;&#x56F0;&#x96BE;&#xFF0C;&#x5E76;&#x4E14;&#x5F53;&#x6A21;&#x578B;&#x9009;&#x62E9;&#x4E0D;&#x597D;&#x7684;&#x65F6;&#x5019;&#x6781;&#x6709;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x4E0D;&#x597D;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x9891;&#x7387;&#x8BBA;&#x7684;&#x4F30;&#x8BA1;&#x65B9;&#x6CD5;&#x5728;&#x4E00;&#x5B9A;&#x7684;&#x7A0B;&#x5EA6;&#x4E0A;&#x907F;&#x514D;&#x4E86;&#x8FD9;&#x4E00;&#x95EE;&#x9898;&#xFF0C;&#x5E76;&#x4E14;&#x4EA4;&#x53C9;&#x9A8C;&#x8BC1;&#x7684;&#x6280;&#x672F;&#x5728;&#x6A21;&#x578B;&#x6BD4;&#x8F83;&#x7B49;&#x65B9;&#x9762;&#x4E5F;&#x5F88;&#x6709;&#x7528;&#x3002;    </p>
+<p>&#x8FC7;&#x53BB;&#x51E0;&#x5E74;&#x8D1D;&#x53F6;&#x65AF;&#x65B9;&#x6CD5;&#x5728;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x91CD;&#x8981;&#x6027;&#x7684;&#x9010;&#x6E10;&#x589E;&#x957F;&#xFF0C;&#x6240;&#x4EE5;&#x672C;&#x4E66;&#x91CD;&#x70B9;&#x5F3A;&#x8C03;&#x8D1D;&#x53F6;&#x65AF;&#x89C2;&#x70B9;&#xFF0C;&#x5728;&#x5FC5;&#x8981;&#x7684;&#x65F6;&#x5019;&#x8BA8;&#x8BBA;&#x4E00;&#x4E9B;&#x6709;&#x7528;&#x9891;&#x7387;&#x5B66;&#x6982;&#x5FF5;&#x3002;&#x867D;&#x7136;&#x8D1D;&#x53F6;&#x65AF;&#x7684;&#x6846;&#x67B6;&#x8D77;&#x6E90;&#x4E8E;18&#x4E16;&#x7EAA;&#xFF0C;&#x4F46;&#x5B83;&#x7684;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x5728;&#x5F88;&#x957F;&#x65F6;&#x95F4;&#x5185;&#x90FD;&#x88AB;&#x6267;&#x884C;&#x5B8C;&#x6574;&#x7684;&#x8D1D;&#x53F6;&#x65AF;&#x6B65;&#x9AA4;&#x7684;&#x56F0;&#x96BE;&#x6027;&#x6240;&#x9650;&#x5236;&#xFF0C;&#x5C24;&#x5176;&#x5728;&#x505A;&#x9884;&#x6D4B;&#x6216;&#x6BD4;&#x8F83;&#x4E0D;&#x540C;&#x7684;&#x6A21;&#x578B;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x8FB9;&#x7F18;&#x5316;&#xFF08;&#x6C42;&#x548C;&#x6216;&#x79EF;&#x5206;&#xFF09;&#x6574;&#x4E2A;&#x53C2;&#x6570;&#x7A7A;&#x95F4;&#x3002;&#x53D6;&#x6837;&#x65B9;&#x6CD5;&#x7684;&#x53D1;&#x5C55;,&#x5982;&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x94FE;&#xFF08;Markov chain&#xFF09;&#x8499;&#x7279;&#x5361;&#x7F57;&#xFF08;Monte
+Carlo&#xFF09;&#xFF08;&#x5C06;&#x5728;11&#x7AE0;&#x4E2D;&#x8BA8;&#x8BBA;&#xFF09;&#x4EE5;&#x53CA;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x901F;&#x5EA6;&#x548C;&#x5185;&#x5B58;&#x5BB9;&#x91CF;&#x7684;&#x6781;&#x5927;&#x63D0;&#x9AD8;&#xFF0C;&#x6253;&#x5F00;&#x4E86;&#x5728;&#x4E00;&#x7CFB;&#x5217;&#x4EE4;&#x4EBA;&#x6620;&#x50CF;&#x6DF1;&#x523B;&#x7684;&#x95EE;&#x9898;&#x9886;&#x57DF;&#x4E2D;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x8D1D;&#x53F6;&#x65AF;&#x65B9;&#x6CD5;&#x7684;&#x5927;&#x95E8;&#x3002;&#x5176;&#x4E2D;&#x8499;&#x7279;&#x5361;&#x7F57;&#x65B9;&#x6CD5;&#x975E;&#x5E38;&#x7075;&#x6D3B;&#xFF0C;&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x4E8E;&#x8BB8;&#x591A;&#x79CD;&#x6A21;&#x578B;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5B83;&#x5728;&#x8BA1;&#x7B97;&#x4E0A;&#x7684;&#x590D;&#x4F7F;&#x5F97;&#x5B83;&#x4E3B;&#x8981;&#x5E94;&#x7528;&#x4E8E;&#x5C0F; &#x89C4;&#x6A21;&#x95EE;&#x9898;&#x3002;    </p>
+<p>&#x6700;&#x8FD1;&#xFF0C;&#x8BB8;&#x591A;&#x9AD8;&#x6548;&#x7684;&#x5224;&#x522B;&#x5F0F;&#x65B9;&#x6CD5;&#x88AB;&#x63D0;&#x51FA;&#x6765;&#xFF0C;&#x4F8B;&#x5982;&#x53D8;&#x79CD;&#x8D1D;&#x53F6;&#x65AF;&#xFF08;variational Bayes&#xFF09;&#xFF0C;&#x671F;&#x671B;&#x4F20;&#x64AD;&#xFF08;expectation propagation &#xFF09;&#xFF08;&#x5728;&#x7B2C;10&#x7AE0;&#x4E2D;&#x8BA8;&#x8BBA;&#xFF09;&#x3002;&#x5B83;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x62BD;&#x6837;&#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x79CD;&#x8865;&#x5145;&#x66FF;&#x4EE3;&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x5F97;&#x8D1D;&#x53F6;&#x65AF;&#x6280;&#x672F;&#x80FD;&#x5E94;&#x7528;&#x5728;&#x5927;&#x89C4;&#x6A21;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#xFF08;Blei et al., 2003&#xFF09;&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../Chapter1/probability/expectations_covariances.html" class="navigation navigation-prev " aria-label="Previous page: 期望与协方差"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../Chapter1/probability/gaussian_distribution.html" class="navigation navigation-next " aria-label="Next page: 高斯分布"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"mathjax":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

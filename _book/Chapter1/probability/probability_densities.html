@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="1.2.1" data-basepath="../.." data-revision="Sat Sep 19 2015 23:22:36 GMT+0800 (CST)">
+    <div class="book" data-level="1.2.1" data-basepath="../.." data-revision="Mon Sep 21 2015 15:42:20 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -143,6 +143,36 @@
                             <b>1.2.2.</b>
                         
                         期望与协方差
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Chapter1/probability/bayesian_probabilities.html">
+            
+                
+                    <a href="../../Chapter1/probability/bayesian_probabilities.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.3.</b>
+                        
+                        贝叶斯概率
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="Chapter1/probability/gaussian_distribution.html">
+            
+                
+                    <a href="../../Chapter1/probability/gaussian_distribution.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.4.</b>
+                        
+                        高斯分布
                     </a>
             
             
@@ -432,7 +462,7 @@ p(x) \leq 0 \tag{1.25} \\
 \int_{-\infty}^{\infty} p(x) dx = 1 \tag{1.26}
 \end{eqnarray}
 </script>  </p>
-<p>&#x5728;&#x53D8;&#x91CF;&#x7684;&#x975E;&#x7EBF;&#x6027;&#x53D8;&#x5316;&#x4E0B;&#xFF0C;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x7531;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x51FD;&#x6570;&#x901A;&#x8FC7;Jacobian&#x56E0;&#x5B50;&#x53D8;&#x6362;&#x5F97;&#x5230;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&#x4E00;&#x4E2A;&#x53D8;&#x91CF; <script type="math/tex; "> x = g(y) </script>&#xFF0C;&#x90A3;&#x4E48;&#x51FD;&#x6570;<script type="math/tex; "> f(x) </script> &#x5C31;&#x53D8;&#x6210; <script type="math/tex; "> \widetilde{f}(y) = f(g(y)) </script>&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x8003;&#x8651;&#x6982;&#x7387;&#x5BC6;&#x5EA6;<script type="math/tex; "> p_x(x) </script>&#xFF0C;&#x4E0E;&#x5B83;&#x5BF9;&#x5E94;&#x7684;&#x5173;&#x4E8E;&#x65B0;&#x53D8;&#x91CF;<script type="math/tex; "> y </script>&#x7684;&#x5BC6;&#x5EA6;<script type="math/tex; "> p_y(y) </script>&#xFF0C;&#x5176;&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x4E0B;&#x6807;&#x8868;&#x793A;<script type="math/tex; "> p_x(x), p_y(y) </script> &#x662F;&#x4E0D;&#x540C;&#x7684;&#x4E24;&#x4E2A;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#x3002;&#x89C2;&#x6D4B;&#x533A;&#x95F4;<script type="math/tex; "> (x, x + \delta x) </script>&#x53D8;&#x6362;&#x4E3A;&#x533A;&#x95F4;<script type="math/tex; "> (y, y + \delta y) </script>&#xFF0C;&#x5F53;<script type="math/tex; "> \delta x </script>&#x5F88;&#x5C0F;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x6709;<script type="math/tex; "> p_x(x)\delta x \approx p_y(y)\delta y </script> &#x5373;&#xFF1A;    </p>
+<p>&#x5728;&#x53D8;&#x91CF;&#x7684;&#x975E;&#x7EBF;&#x6027;&#x53D8;&#x5316;&#x4E0B;&#xFF0C;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x7531;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x51FD;&#x6570;&#x901A;&#x8FC7;Jacobian&#x56E0;&#x5B50;&#x53D8;&#x6362;&#x5F97;&#x5230;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&#x4E00;&#x4E2A;&#x53D8;&#x91CF; <script type="math/tex; "> x = g(y) </script>&#xFF0C;&#x90A3;&#x4E48;&#x51FD;&#x6570;<script type="math/tex; "> f(x) </script> &#x5C31;&#x53D8;&#x6210; <script type="math/tex; "> \widetilde{f}(y) = f(g(y)) </script>&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x8003;&#x8651;&#x6982;&#x7387;&#x5BC6;&#x5EA6;<script type="math/tex; "> p_x(x) </script>&#xFF0C;&#x4E0E;&#x5B83;&#x5BF9;&#x5E94;&#x7684;&#x5173;&#x4E8E;&#x65B0;&#x53D8;&#x91CF;<script type="math/tex; "> y </script>&#x7684;&#x5BC6;&#x5EA6;<script type="math/tex; "> p_y(y) </script>&#xFF0C;&#x5176;&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x4E0B;&#x6807;&#x8868;&#x793A;<script type="math/tex; "> p_x(x), p_y(y) </script> &#x662F;&#x4E0D;&#x540C;&#x7684;&#x4E24;&#x4E2A;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#x3002;&#x89C2;&#x6D4B;&#x533A;&#x95F4;<script type="math/tex; "> (x, x + \delta x) </script>&#x53D8;&#x6362;&#x4E3A;&#x533A;&#x95F4;<script type="math/tex; "> (y, y + \delta y) </script>&#xFF0C;&#x5F53;<script type="math/tex; "> \delta x </script>&#x5F88;&#x5C0F;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x6709;<script type="math/tex; "> p_x(x)\delta x \simeq p_y(y)\delta y </script> &#x5373;&#xFF1A;    </p>
 <p><script type="math/tex; mode=display">
 p_y(y) = p_x(x)|\frac{dx}{dy}| = p_x(g(y))|g^\prime(y)| \tag{1.27}
 </script>  </p>

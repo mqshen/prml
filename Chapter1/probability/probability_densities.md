@@ -16,7 +16,7 @@ p(x) \leq 0 \tag{1.25} \\
 \end{eqnarray}
 $$  
 
-在变量的非线性变化下，概率密度由一个简单的函数通过Jacobian因子变换得到。例如：一个变量 $$ x = g(y) $$，那么函数$$ f(x) $$ 就变成 $$ \widetilde{f}(y) = f(g(y)) $$。现在，考虑概率密度$$ p_x(x) $$，与它对应的关于新变量$$ y $$的密度$$ p_y(y) $$，其中不同的下标表示$$ p_x(x), p_y(y) $$ 是不同的两个密度函数。观测区间$$ (x, x + \delta x) $$变换为区间$$ (y, y + \delta y) $$，当$$ \delta x $$很小时，我们有$$ p_x(x)\delta x \approx p_y(y)\delta y $$ 即：    
+在变量的非线性变化下，概率密度由一个简单的函数通过Jacobian因子变换得到。例如：一个变量 $$ x = g(y) $$，那么函数$$ f(x) $$ 就变成 $$ \widetilde{f}(y) = f(g(y)) $$。现在，考虑概率密度$$ p_x(x) $$，与它对应的关于新变量$$ y $$的密度$$ p_y(y) $$，其中不同的下标表示$$ p_x(x), p_y(y) $$ 是不同的两个密度函数。观测区间$$ (x, x + \delta x) $$变换为区间$$ (y, y + \delta y) $$，当$$ \delta x $$很小时，我们有$$ p_x(x)\delta x \simeq p_y(y)\delta y $$ 即：    
 
 $$
 p_y(y) = p_x(x)|\frac{dx}{dy}| = p_x(g(y))|g^\prime(y)| \tag{1.27}
