@@ -29,7 +29,7 @@
         
     
     
-    <link rel="next" href="../../Chapter1/model_selection.html" />
+    <link rel="next" href="../../Chapter1/probability/curve_fitting_revisited.html" />
     
     
     <link rel="prev" href="../../Chapter1/probability/bayesian_probabilities.html" />
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="1.2.4" data-basepath="../.." data-revision="Mon Sep 21 2015 15:42:20 GMT+0800 (CST)">
+    <div class="book" data-level="1.2.4" data-basepath="../.." data-revision="Tue Sep 22 2015 23:12:06 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -173,6 +173,21 @@
                             <b>1.2.4.</b>
                         
                         高斯分布
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="Chapter1/probability/curve_fitting_revisited.html">
+            
+                
+                    <a href="../../Chapter1/probability/curve_fitting_revisited.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.5.</b>
+                        
+                        曲线拟合再访
                     </a>
             
             
@@ -481,8 +496,37 @@ N(x|\mu, \Sigma) = \frac{1}{2\pi}^{D/2} \frac{1}{|\Sigma|^{1/2}} exp\{-\frac{1}{
 <p>&#x73B0;&#x5728;&#xFF0C;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6709;&#x89C2;&#x6D4B;&#x503C;<script type="math/tex; "> X = (x_1,...,x_n)^T </script>&#x7684;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x7528;&#x6765;&#x8868;&#x793A;<script type="math/tex; "> N </script>&#x4E2A;&#x6807;&#x91CF;<script type="math/tex; "> x </script>&#x7684;&#x89C2;&#x6D4B;&#x503C;&#x3002;&#x6CE8;&#x610F;, &#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E2A;&#x5927;&#x5199;&#x7684;<script type="math/tex; "> X </script>&#x7684;&#x6765;&#x548C;&#x4F7F;&#x7528;<script type="math/tex; "> x </script>&#x6807;&#x8BB0;&#x7684;&#x5411;&#x91CF;&#x53D8;&#x91CF;<script type="math/tex; "> (x_1,...,x_D)^T </script>&#x4F5C;&#x533A;&#x5206;&#x3002;&#x5047;&#x5B9A;&#xFF0C;&#x72EC;&#x7ACB;&#x5730;&#x4ECE;&#x5747;&#x503C;<script type="math/tex; "> \mu </script>&#x548C;&#x65B9;&#x5DEE;<script type="math/tex; "> \sigma^2 </script>&#x672A;&#x77E5;&#x7684;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x4E2D;&#x83B7;&#x53D6;&#x89C2;&#x6D4B;&#x6570;&#x636E;&#x96C6;&#x5408;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x4ECE;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x83B7;&#x53D6;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x3002;&#x72EC;&#x7ACB;&#x5730;&#x4ECE;&#x76F8;&#x540C;&#x7684;&#x5206;&#x5E03;&#x4E2D;&#x62BD;&#x53D6;&#x7684;&#x6570;&#x636E;&#x70B9;&#x88AB;&#x79F0;&#x4E3A;&#x72EC;&#x7ACB;&#x540C;&#x5206;&#x5E03;&#xFF08;independent and identically
 distributed&#xFF09;&#xFF0C;&#x901A;&#x5E38;&#x7F29;&#x5199;&#x6210;i.i.d&#x3002;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x4E24;&#x4E2A;&#x72EC;&#x7ACB;&#x4E8B;&#x4EF6;&#x7684;&#x8054;&#x5408;&#x6982;&#x7387;&#x53EF;&#x4EE5;&#x7531;&#x5404;&#x4E2A;&#x4E8B;&#x4EF6;&#x7684;&#x8FB9;&#x7F18;&#x6982;&#x7387;&#x7684;&#x4E58;&#x79EF;&#x5F97;&#x5230;&#x3002;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x7684;&#x6570;&#x636E;&#x96C6;<script type="math/tex; "> X </script>&#x662F;&#x72EC;&#x7ACB;&#x540C;&#x5206;&#x5E03;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;<script type="math/tex; "> \mu, \sigma^2 </script>&#x7ED9;&#x51FA;&#x6570;&#x636E;&#x96C6;&#x7684;&#x6982;&#x7387;&#xFF1A;    </p>
 <p><script type="math/tex; mode=display">
-p(X|\mu, \sigma^2) = \prod\limits_{n=1}^{N}N(x_n|\mu, \sigma^2)
+p(X|\mu, \sigma^2) = \prod\limits_{n=1}^{N}N(x_n|\mu, \sigma^2) \tag{1.53}
 </script></p>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x628A;&#x5B83;&#x770B;&#x6210;<script type="math/tex; "> \mu, \sigma^2 </script>&#x7684;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x3002;&#x5C31;&#x50CF;&#x56FE;1.14&#x5C55;&#x793A;&#x7684;&#x90A3;&#x6837;&#x3002;     </p>
+<p><img src="images/gaussian_likehood.png" alt="&#x56FE; 1-14"><br>&#x56FE; 1.14: &#x9AD8;&#x65AF;&#x6982;&#x7387;&#x5206;&#x5E03;&#x7684;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#xFF0C;&#x9ED1;&#x70B9;&#x8868;&#x793A;&#x6570;&#x636E;&#x96C6;<script type="math/tex; "> \{x_n\} </script>&#x7684;&#x503C;&#xFF0C;&#x516C;&#x5F0F;(1.53)&#x7ED9; &#x51FA;&#x7684;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x5BF9;&#x5E94;&#x4E8E;&#x84DD;&#x8272;&#x503C;&#x7684;&#x4E58;&#x79EF;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x89C2;&#x6D4B;&#x6570;&#x636E;&#x96C6;&#x6765;&#x51B3;&#x5B9A;&#x6982;&#x7387;&#x5206;&#x5E03;&#x7684;&#x53C2;&#x6570;&#x7684;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x6807;&#x51C6;&#x662F;&#x5BFB;&#x627E;&#x4F7F;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x53D6;&#x5F97;&#x6700;&#x5927;&#x503C;&#x7684;&#x53C2;&#x6570;&#x503C;&#x3002;&#x8FD9;&#x4E2A;&#x89C2;&#x70B9;&#x770B;&#x8D77;&#x6765;&#x6709;&#x70B9;&#x5947;&#x602A;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x4E4B;&#x524D;&#x7684;&#x6982;&#x7387;&#x8BBA;&#x8BA8;&#x8BBA;&#x4E2D;&#xFF0C;&#x4F3C;&#x4E4E;&#x5728;&#x7ED9;&#x5B9A;&#x6570;&#x636E;&#x96C6;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x6C42;&#x6700;&#x5927;&#x5316;&#x6982;&#x7387;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7ED9;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x6700;&#x5927;&#x5316;&#x6570;&#x636E;ji&#x51FA;&#x73B0;&#x7684;&#x6982;&#x7387;&#x4F1A;&#x66F4;&#x52A0;&#x81EA;&#x7136;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;,&#x8FD9;&#x4E24;&#x4E2A;&#x6807;&#x51C6;&#x662F;&#x76F8;&#x5173;&#x7684;&#x3002;&#x540E;&#x9762;&#x5C06;&#x4F7F;&#x7528;&#x66F2;&#x7EBF;&#x62DF;&#x5408;&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#x660E;&#x8FD9;&#x4E00;&#x70B9;&#x3002;    </p>
+<p>&#x4F46;&#x662F;&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x6700;&#x5927;&#x5316;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#xFF08;1.53&#xFF09;&#x6765;&#x786E;&#x5B9A;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x4E2D;&#x7684;<script type="math/tex; "> \mu, \sigma^2 </script>&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x6700;&#x5927;&#x5316;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x7684;&#x5BF9;&#x6570;&#x4F1A;&#x66F4;&#x52A0;&#x65B9;&#x4FBF;&#x3002;&#x56E0;&#x4E3A;&#x5BF9;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x8C03;&#x9012;&#x589E;&#x51FD;&#x6570;&#xFF0C;&#x6700;&#x5927;&#x5316;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x5BF9;&#x6570;&#x7B49;&#x4EF7;&#x4E8E;&#x6700;&#x5927;&#x5316;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x53D6;&#x5BF9;&#x6570;&#x540E;&#x4E0D;&#x4EC5;&#x7B80;&#x5316;&#x4E86;&#x540E;&#x7EED;&#x7684;&#x6570;&#x5B66;&#x5206;&#x6790;&#xFF0C;&#x540C;&#x6837;&#x6709;&#x52A9;&#x4E8E;&#x6570;&#x5B66;&#x8BA1;&#x7B97;&#x3002;&#x56E0;&#x4E3A;&#x5927;&#x91CF;&#x5C0F;&#x6982;&#x7387;&#x7684;&#x4E58;&#x79EF;&#x5F88;&#x5BB9;&#x6613;&#x4E0B;&#x6EA2;&#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53BB;&#x5BF9;&#x6570;&#x540E;&#x7684;&#x52A0;&#x6CD5;&#x6765;&#x89E3;&#x51B3;&#x3002;&#x901A;&#x8FC7;&#x516C;&#x5F0F;&#xFF08;1.46&#xFF09;&#x548C;&#xFF08;1.53&#xFF09;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#xFF1A;<br><script type="math/tex; mode=display">
+\ln p(x|\mu, \sigma^2) = -\frac{1}{2\sigma^2}\sum\limits_{n=1}{N}(x_n - \mu)^2 - \frac{N}{2}\ln \sigma^2 - \frac{N}{2}\ln(2\pi)  \tag{1.54}
+</script></p>
+<p>&#x5173;&#x4E8E;<script type="math/tex; "> \mu </script>&#xFF0C;&#x6700;&#x5927;&#x5316;&#x51FD;&#x6570;&#xFF08;1.54&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x89E3;&#xFF1A;<br><script type="math/tex; mode=display">
+\mu_ML = \frac{1}{N}\sum\limits_{n=1}{N}x_n \tag{1.55}
+</script>
+&#x8FD9;&#x662F;&#x6837;&#x672C;&#x5747;&#x503C;&#xFF08;sample mean&#xFF09;&#xFF0C;&#x5373;&#x89C2;&#x6D4B;&#x5230;&#x6837;&#x672C;&#x7684;&#x5747;&#x503C;&#x3002;&#x7C7B;&#x4F3C;&#x5730;&#xFF0C;&#x5173;&#x4E8E;<script type="math/tex; "> \sigma^2 </script>&#x7684;&#x6700;&#x5927;&#x5316;&#x51FD;&#x6570;&#xFF08;1.54&#xFF09;&#x5F97;&#x5230;&#x4E86;&#x65B9;&#x5DEE;&#x7684;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x89E3;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+\sigma_ML^2 = \frac{1}{N}\sum\limits_{n=1}{N}(x_n - \mu_ML)^2 \tag{1.56}
+</script></p>
+<p>&#x8FD9;&#x662F;&#x5173;&#x4E8E;&#x6837;&#x672C;&#x5747;&#x503C;<script type="math/tex; "> \mu_ML </script>&#x7684;&#x6837;&#x672C;&#x65B9;&#x5DEE;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x6C42;&#x5173;&#x4E8E;<script type="math/tex; "> \mu, \sigma^2 </script>&#x7684;&#x8054;&#x5408;&#x6700;&#x5927;&#x5316;&#x51FD;&#x6570;&#xFF08;1.54&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x4E2D;<script type="math/tex; "> \mu </script>&#x4E0E;<script type="math/tex; "> \sigma^2 </script>&#x662F;&#x65E0;&#x5173;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5148;&#x6C42;&#x51FA;&#xFF08;1.55&#xFF09;&#x7136;&#x540E;&#x7528;&#x8FD9;&#x4E2A;&#x7ED3;&#x679C;&#x6765;&#x6C42;&#xFF08;1.56&#xFF09;&#x3002;    </p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5F3A;&#x8C03;&#x6700;&#x5927;&#x5316;&#x4F3C;&#x7136;&#x7684;&#x4E00;&#x4E9B;&#x9650;&#x5236;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4EE5;&#x4F7F;&#x7528;&#x6700;&#x5927;&#x5316;&#x4F3C;&#x7136;&#x6C42;&#x89E3;&#x4E00;&#x5143;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x53C2;&#x6570;&#x4E3A;&#x4F8B;&#x3002;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x65B9;&#x6CD5;&#x4F1A;&#x7CFB;&#x7EDF;&#x6027;&#x7684;&#x4F4E;&#x4F30;&#x5206;&#x5E03;&#x7684;&#x65B9;&#x5DEE;&#x3002;&#x8FD9;&#x4E00;&#x79CD;&#x88AB;&#x79F0;&#x4E3A;&#x504F;&#x7F6E;&#xFF08;bias&#xFF09;&#x7684;&#x73B0;&#x8C61;&#x3002;&#x5B83;&#x4E0E;&#x591A;&#x9879;&#x5F0F;&#x66F2;&#x7EBF;&#x62DF;&#x5408;&#x4E2D;&#x7684;&#x8FC7;&#x62DF;&#x95EE;&#x9898;&#x6709;&#x5173;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x7684;&#x89E3;&#xFF1A;<script type="math/tex; "> \mu_ML ,\sigma_{ML}^2 </script>&#x662F;&#x5173;&#x4E8E;&#x6570;&#x636E;&#x96C6;&#x7684;&#x503C;<script type="math/tex; "> x_1,...,x_n </script>&#x7684;&#x51FD;&#x6570;&#x3002;&#x8003;&#x8651;&#x8FD9;&#x4E9B;&#x91CF;&#x5173;&#x4E8E;&#x5177;&#x6709;&#x53C2;&#x6570;<script type="math/tex; "> \mu, \sigma^2 </script>&#x7684;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x6570;&#x636E;&#x96C6;&#x7684;&#x671F;&#x671B;&#x3002;&#x5F88;&#x5BB9;&#x6613;&#x5C31;&#x80FD;&#x8BC1;&#x660E;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+\begin{eqnarray}
+\mathbb{E}[\mu_{ML}] = \mu \tag{1.57} \\
+\mathbb{E}[\sigma_{ML}^2] = (\frac{N - 1}{N})^2 \tag{1.58}
+\end{eqnarray}
+</script></p>
+<p>&#x6240;&#x4EE5;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x80FD;&#x5BF9;&#x5747;&#x503C;&#x505A;&#x51FA;&#x6B63;&#x786E;&#x7684;&#x4F30;&#x8BA1;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x65B9;&#x5DEE;&#x4F4E;&#x4F30;&#x4E86;&#x56E0;&#x5B50;(N - 1) / N&#x3002;&#x80CC;&#x540E;&#x7684;&#x539F;&#x56E0;&#x5728;&#x56FE;1.15&#x4E2D;&#x8BF4;&#x660E;&#x3002;     </p>
+<p><img src="images/likehood.png" alt="&#x56FE; 1-15"><br>&#x56FE; 1.15: &#x6700;&#x5927;&#x4F3C;&#x7136;&#x65B9;&#x6CD5;&#x786E;&#x5B9A;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x65B9;&#x5DEE;&#x65F6;,&#x504F;&#x79FB;&#x662F;&#x5982;&#x4F55;&#x4EA7;&#x751F;&#x7684;</p>
+<p>&#x6839;&#x636E;&#x516C;&#x5F0F;&#xFF08;1.58&#xFF09;&#x4E0B;&#x9762;&#x516C;&#x5F0F;&#x662F;&#x65E0;&#x504F;&#x7684;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+\widetilde\sigma^2 = \frac{N}{N - 1}\sigma_{ML}^2 = \frac{1}{N - 1}\sum\limits{n=1}{N}(x_n - \mu_{ML})^2 \tag{1.59}
+</script></p>
+<p>&#x5728;10.1.3&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F1A;&#x770B;&#x5230;&#x5F53;&#x6211;&#x4EEC;&#x91C7;&#x7528;&#x8D1D;&#x53F6;&#x65AF;&#x65B9;&#x6CD5;&#x662F;&#x8FD9;&#x4E2A;&#x7ED3;&#x679C;&#x662F;&#x5982;&#x4F55;&#x81EA;&#x52A8;&#x51FA;&#x73B0;&#x7684;&#x3002;    </p>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x5F53;&#x6570;&#x636E;&#x70B9;&#x7684;&#x6570;&#x91CF;<script type="math/tex; "> N </script>&#x589E;&#x52A0;&#x65F6;&#xFF0C;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x7684;&#x504F;&#x7F6E;&#x53D8;&#x5F97;&#x8D8A;&#x6765;&#x8D8A;&#x4E0D;&#x91CD;&#x8981;&#xFF0C;&#x5F53;<script type="math/tex; "> N \to \infty </script>&#x65F6;&#xFF0C;&#x65B9;&#x5DEE;&#x7684;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x7684;&#x89E3;&#x7B49;&#x4E8E;&#x751F;&#x6210;&#x6570;&#x636E;&#x7684;&#x5206;&#x5E03;&#x7684;&#x65B9;&#x5DEE;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;<script type="math/tex; "> N </script>&#x7684;&#x503C;&#x53EA;&#x8981;&#x4E0D;&#x662F;&#x592A;&#x5C0F;&#xFF0C;&#x504F;&#x7F6E;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x5927;&#x95EE;&#x9898;&#x3002;&#x7136;&#x800C;,&#x5728;&#x672C;&#x4E66;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x662F;&#x5E26;&#x6709;&#x5F88;&#x591A;&#x53C2;&#x6570;&#x7684;&#x590D;&#x6742;&#x6A21;&#x578B;&#xFF0C;&#x8FD9;&#x65F6;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x5E26;&#x6765;&#x7684;&#x504F;&#x7F6E;&#x95EE;&#x9898;&#x4F1A;&#x4E25;&#x91CD;&#x7684;&#x591A;&#x3002;&#x5B9E;&#x9645;&#x4E0A;,&#x6211;&#x4EEC;&#x4F1A;&#x770B;&#x5230;,&#x6700;&#x5927;&#x4F3C;&#x7136;&#x7684;&#x504F;&#x7F6E;&#x95EE;&#x9898;&#x662F;&#x6211;&#x4EEC;&#x5728;&#x4E4B;&#x524D;&#x7684;&#x591A;&#x9879;&#x5F0F;&#x66F2;&#x7EBF;&#x62DF;&#x5408;&#x95EE;&#x9898;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x8FC7;&#x62DF;&#x95EE;&#x9898;&#x7684;&#x6838;&#x5FC3;&#x3002;    </p>
 
                     
                     </section>
@@ -496,7 +540,7 @@ p(X|\mu, \sigma^2) = \prod\limits_{n=1}^{N}N(x_n|\mu, \sigma^2)
         <a href="../../Chapter1/probability/bayesian_probabilities.html" class="navigation navigation-prev " aria-label="Previous page: 贝叶斯概率"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../Chapter1/model_selection.html" class="navigation navigation-next " aria-label="Next page: 模型选择"><i class="fa fa-angle-right"></i></a>
+        <a href="../../Chapter1/probability/curve_fitting_revisited.html" class="navigation navigation-next " aria-label="Next page: 曲线拟合再访"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

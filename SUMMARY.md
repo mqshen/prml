@@ -7,6 +7,7 @@
         * [期望与协方差](Chapter1/probability/expectations_covariances.md)
         * [贝叶斯概率](Chapter1/probability/bayesian_probabilities.md)
         * [高斯分布](Chapter1/probability/gaussian_distribution.md)
+        * [曲线拟合再访](Chapter1/probability/curve_fitting_revisited.md)
     * [模型选择](Chapter1/model_selection.md)
     * [维度灾难](Chapter1/the_curse_of_dimensionality.md)
     * [决策论](Chapter1/decision_theory.md)
