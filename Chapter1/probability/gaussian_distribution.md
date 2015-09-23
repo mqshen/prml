@@ -3,7 +3,7 @@
 对于一元实值变量x,高斯分布被定义为：    
 
 $$
-N(x|\mu ,\sigma) = \frac{1}{(2\pi \sigma^2)^{\frac{1}{2}}}exp\{-\frac{1}{2\sigma^2}(x - \mu)^2\} \tag{1.46}
+\mathcal{N}(x|\mu ,\sigma) = \frac{1}{(2\pi \sigma^2)^{\frac{1}{2}}}exp\{-\frac{1}{2\sigma^2}(x - \mu)^2\} \tag{1.46}
 $$
 它是由均值（mean）$$ \mu $$和方差（variance）$$ \sigma^2 $$控制的。方差的平方根，也就是$$ \sigma $$被称为标准差（standard deviation）。方差的导数写作：$$ \beta = 1/\sigma^2 $$被称为精度（precision）。我们很快就能看到使用这些项的动机。图1.13展示了高斯分布的图像：
 
@@ -12,23 +12,23 @@ $$
 
 从公式（1.46）可以得到高斯分布满足： 
 $$
-N(x|\mu, \sigma^2) > 0 \tag{1.47}
+\mathcal{N}(x|\mu, \sigma^2) > 0 \tag{1.47}
 $$
 
 再者，很容易就证明高斯是标准化的：    
 $$
-\int_{-\infty}^{\infty} N(x|\mu, \sigma^2)dx = 1 \tag{1.48}
+\int_{-\infty}^{\infty} \mathcal{N}(x|\mu, \sigma^2)dx = 1 \tag{1.48}
 $$
 
 因此公式(1.46)满足有效的概率密度的两个条件。     
 我们已经能够找到关于$$ x $$的函数在高斯分布下的期望，特别的$$ x $$的均值：    
 $$
-\mathbb{E}[x] = \int_{-\infty}^{\infty} N(x|\mu, \sigma^2)xdx = \mu \tag{1.49}
+\mathbb{E}[x] = \int_{-\infty}^{\infty} \mathcal{N}(x|\mu, \sigma^2)xdx = \mu \tag{1.49}
 $$
 
 由于参数$$ \mu $$表示在分布下的$$ x $$的平均值，它通常被叫做均值。类似地,二阶矩为：    
 $$
-\mathbb{E}[x^2] = \int_{-\infty}^{\infty} N(x|\mu, \sigma^2)x^2dx = \mu^2 + \sigma^2 \tag{1.50}
+\mathbb{E}[x^2] = \int_{-\infty}^{\infty} \mathcal{N}(x|\mu, \sigma^2)x^2dx = \mu^2 + \sigma^2 \tag{1.50}
 $$    
 
 从公式（1.49）和（1.50），可以得出$$ x $$的方差是：    
@@ -40,7 +40,7 @@ $$
 
 我们也对$$ D $$维连续变量的向量$$ x $$的高斯分布也感兴趣。定义为：    
 $$
-N(x|\mu, \Sigma) = \frac{1}{2\pi}^{D/2} \frac{1}{|\Sigma|^{1/2}} exp\{-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x - \mu)\} \tag{1.52}
+\mathcal{N}(x|\mu, \Sigma) = \frac{1}{2\pi}^{D/2} \frac{1}{|\Sigma|^{1/2}} exp\{-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x - \mu)\} \tag{1.52}
 $$
 
 其中$$ D $$为向量$$ \mu $$被称为均值，$$ D × D $$矩阵$$ \Sigma $$被称为协方差，$$ |\Sigma| $$表示$$ \Sigma $$的行列式。本章中我们很少用到多变量高斯分布，详细的性质将在2.3节讨论。    
@@ -66,12 +66,12 @@ $$
 
 关于$$ \mu $$，最大化函数（1.54），我们可以得到最大似然解：    
 $$
-\mu_ML = \frac{1}{N}\sum\limits_{n=1}{N}x_n \tag{1.55}
+\mu_ML = \frac{1}{N}\sum\limits_{n=1}^{N}x_n \tag{1.55}
 $$
 这是样本均值（sample mean），即观测到样本的均值。类似地，关于$$ \sigma^2 $$的最大化函数（1.54）得到了方差的最大似然解：    
 
 $$
-\sigma_ML^2 = \frac{1}{N}\sum\limits_{n=1}{N}(x_n - \mu_ML)^2 \tag{1.56}
+\sigma_{ML}^2 = \frac{1}{N}\sum\limits_{n=1}^{N}(x_n - \mu_{ML})^2 \tag{1.56}
 $$
 
 这是关于样本均值$$ \mu_ML $$的样本方差，注意，我们要求关于$$ \mu, \sigma^2 $$的联合最大化函数（1.54），但是在高斯分布中$$ \mu $$与$$ \sigma^2 $$是无关的，所以我们先求出（1.55）然后用这个结果来求（1.56）。    
@@ -81,7 +81,7 @@ $$
 $$
 \begin{eqnarray}
 \mathbb{E}[\mu_{ML}] = \mu \tag{1.57} \\
-\mathbb{E}[\sigma_{ML}^2] = (\frac{N - 1}{N})^2 \tag{1.58}
+\mathbb{E}[\sigma_{ML}^2] = (\frac{N - 1}{N})\sigma^2 \tag{1.58}
 \end{eqnarray}
 $$
 
@@ -93,7 +93,7 @@ $$
 根据公式（1.58）下面公式是无偏的：    
 
 $$
-\widetilde\sigma^2 = \frac{N}{N - 1}\sigma_{ML}^2 = \frac{1}{N - 1}\sum\limits{n=1}{N}(x_n - \mu_{ML})^2 \tag{1.59}
+\widetilde\sigma^2 = \frac{N}{N - 1}\sigma_{ML}^2 = \frac{1}{N - 1}\sum\limits_{n=1}^{N}(x_n - \mu_{ML})^2 \tag{1.59}
 $$
 
 在10.1.3节中，我们将会看到当我们采用贝叶斯方法是这个结果是如何自动出现的。    
