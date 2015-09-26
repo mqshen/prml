@@ -32,7 +32,7 @@
     <link rel="next" href="../Chapter2/index.html" />
     
     
-    <link rel="prev" href="../Chapter1/decision_theory.html" />
+    <link rel="prev" href="../Chapter1/decision/loss_function_regression.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="1.6" data-basepath=".." data-revision="Wed Sep 23 2015 22:10:47 GMT+0800 (CST)">
+    <div class="book" data-level="1.6" data-basepath=".." data-revision="Sat Sep 26 2015 20:08:37 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -256,6 +256,87 @@
                     </a>
             
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Chapter1/decision/minimizing_misclassification_rate.html">
+            
+                
+                    <a href="../Chapter1/decision/minimizing_misclassification_rate.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.1.</b>
+                        
+                        最小化误分率
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Chapter1/decision/minimizing_expected_loss.html">
+            
+                
+                    <a href="../Chapter1/decision/minimizing_expected_loss.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.2.</b>
+                        
+                        最小化损失期望
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Chapter1/decision/reject_option.html">
+            
+                
+                    <a href="../Chapter1/decision/reject_option.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.3.</b>
+                        
+                        拒绝选项
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="Chapter1/decision/inference_decision.html">
+            
+                
+                    <a href="../Chapter1/decision/inference_decision.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.4.</b>
+                        
+                        推断与决策
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="Chapter1/decision/loss_function_regression.html">
+            
+                
+                    <a href="../Chapter1/decision/loss_function_regression.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.5.</b>
+                        
+                        回归损失函数
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter active" data-level="1.6" data-path="Chapter1/information_theory.html">
@@ -270,6 +351,19 @@
                         信息论
                     </a>
             
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="Chapter1/information/relative_entropy.html">
+            
+            <span><b>1.6.1.</b> 相对熵和互信息</span>
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -480,7 +574,150 @@
                 
                     <section class="normal" id="section-">
                     
-                        
+                        <p>&#x5728;&#x672C;&#x7AE0;&#x4E2D;&#x6211;&#x4EEC;&#x5927;&#x91CF;&#x7684;&#x8BA8;&#x8BBA;&#x7684;&#x6982;&#x7387;&#x8BBA;&#x548C;&#x51B3;&#x7B56;&#x8BBA;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x8FD9;&#x4E9B;&#x6982;&#x5FF5;&#x7EC4;&#x6210;&#x4E86;&#x672C;&#x4E66;&#x540E;&#x7EED;&#x8BA8;&#x8BBA;&#x7684;&#x57FA;&#x7840;&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x4ECB;&#x7ECD;&#x4E00;&#x4E9B;&#x5728;&#x6A21;&#x5F0F;&#x8BC6;&#x522B;&#x548C;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x4E2D;&#x90FD;&#x5F88;&#x6709;&#x7528;&#x7684;&#x4FE1;&#x606F;&#x8BBA;&#x6982;&#x5FF5;&#x6765;&#x7ED3;&#x675F;&#x672C;&#x7AE0;&#x3002;&#x518D;&#x5F3A;&#x8C03;&#x4E00;&#x6B21;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x8BA8;&#x8BBA;&#x6838;&#x5FC3;&#x6982;&#x5FF5;&#xFF0C;&#x5173;&#x4E8E;&#x66F4;&#x52A0;&#x8BE6;&#x7EC6;&#x7684;&#x8BA8;&#x8BBA;&#xFF0C;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#xFF08;Viterbi and Omura, 1979; Cover and Thomas, 1991; MacKay, 2003&#xFF09;&#x3002;    </p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x8003;&#x8651;&#x4E00;&#x4E2A;&#x79BB;&#x6563;&#x7684;&#x968F;&#x673A;&#x53D8;&#x91CF;<script type="math/tex; "> x </script>&#xFF0C;&#x5F53;&#x89C2;&#x5BDF;&#x5230;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x63A5;&#x6536;&#x5230;&#x4E86;&#x591A;&#x5C11;&#x4FE1;&#x606F;&#x5462;&#xFF1F;&#x4FE1;&#x606F;&#x91CF;&#x53EF;&#x4EE5;&#x88AB;&#x770B;&#x6210;&#x5728;&#x5B66;&#x4E60;<script type="math/tex; "> x </script>&#x503C;&#x7684;&#x65F6;&#x5019;&#x7684;&#x201C;&#x60CA;&#x8BB6;&#x5EA6;&#xFF08;degree of surprise&#xFF09;&#x201D;&#x3002;&#x5F53;&#x6709;&#x4EBA;&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#x4E00;&#x4E2A;&#x76F8;&#x5F53;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x540E;&#xFF0C;&#x6536;&#x5230;&#x7684;&#x4FE1;&#x606F;&#x8981;&#x591A;&#x4E8E;&#x6211;&#x4EEC;&#x88AB;&#x544A;&#x77E5;&#x67D0;&#x4E2A;&#x5F88;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x7684;&#x4E8B;&#x4EF6;
+&#x53D1;&#x751F;&#x65F6;&#x6536;&#x5230;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x4E14;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x4E8B;&#x4EF6;&#x5FC5;&#x7136;&#x53D1;&#x751F;&#x90A3;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x63A5;&#x6536;&#x5230;&#x4EFB;&#x4F55;&#x4FE1;&#x606F;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5BF9;&#x4E8E;&#x4FE1;&#x606F;&#x5185;&#x5BB9;&#x7684;&#x5EA6;&#x91CF;&#x4F9D;&#x8D56;&#x4E8E;&#x6982;&#x7387;&#x5206;&#x5E03; <script type="math/tex; "> p(x) </script>&#xFF0C;&#x4E8E;&#x662F;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x51FD;&#x6570;<script type="math/tex; "> h(x) </script>&#xFF0C;&#x5B83;&#x662F;&#x6982;&#x7387;<script type="math/tex; "> p(x) </script>&#x7684;&#x5355;&#x8C03;&#x9012;&#x589E;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x8868;&#x8FBE;&#x4E86;&#x4FE1;&#x606F;&#x7684;&#x5185;&#x5BB9;&#x3002;<script type="math/tex; "> h(·) </script>&#x7684;&#x516C;&#x5F0F;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5BFB;&#x627E;&#xFF1A;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x4E8B;&#x4EF6;<script type="math/tex; "> x, y </script>&#x662F;&#x4E0D;&#x76F8;&#x5173;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x89C2;&#x5BDF;&#x5230;&#x4E24;&#x4E2A;&#x4E8B;&#x4EF6;&#x540C;&#x65F6;&#x53D1;&#x751F;&#x65F6;&#x83B7;&#x5F97;&#x7684;&#x4FE1;&#x606F;&#x5E94;&#x8BE5;&#x7B49;&#x4E8E;&#x89C2;&#x5BDF;&#x5230;&#x4E8B;&#x4EF6;&#x5404;&#x81EA;&#x53D1;&#x751F;&#x65F6;&#x83B7;&#x5F97;&#x7684;&#x4FE1;&#x606F;&#x4E4B;&#x548C;&#xFF0C;&#x5373;<script type="math/tex; "> h(x, y) = h(x) + h(y) </script>&#x3002;&#x4E24;&#x4E2A;&#x4E0D;&#x76F8;&#x5173;&#x4E8B;&#x4EF6;&#x662F;&#x7EDF;&#x8BA1;&#x72EC;&#x7ACB;&#x7684;&#xFF0C;&#x6240;&#x4EE5;<script type="math/tex; "> p(x, y)
+= p(x)p(y) </script>&#x3002;&#x6839;&#x636E;&#x8FD9;&#x4E24;&#x4E2A;&#x5173;&#x7CFB;&#xFF0C;&#x5F88;&#x5BB9;&#x6613;&#x5F97;&#x51FA;<script type="math/tex; "> h(x) </script>&#x4E00;&#x5B9A;&#x53EF;&#x4EE5;&#x7531;<script type="math/tex; "> p(x) </script>&#x7684;&#x5BF9;&#x6570;&#x7ED9;&#x51FA;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+h(x) = -log_2p(x) \tag{1.92}
+</script></p>
+<p>&#x5176;&#x4E2D;&#x7684;&#x8D1F;&#x53F7;&#x4FDD;&#x8BC1;&#x6211;&#x4EEC;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x975E;&#x8D1F;&#x7684;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x4F4E;&#x6982;&#x7387;&#x4E8B;&#x4EF6;<script type="math/tex; "> x </script>&#x5BF9;&#x5E94;&#x4E8E;&#x5927;&#x4FE1;&#x606F;&#x91CF;&#x3002;&#x5BF9;&#x6570;&#x7684;&#x5E95;&#x662F;&#x4EFB;&#x610F;&#x9009;&#x62E9;&#x7684;&#xFF0C;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x9075;&#x5B88;&#x4FE1;&#x606F;&#x8BBA;&#x7684;&#x666E;&#x904D;&#x4F20;&#x7EDF;&#xFF0C;&#x4F7F;&#x7528;2&#x4F5C;&#x4E3A;&#x5BF9;&#x6570;&#x7684;&#x5E95;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x5F62;&#x4E0B;&#xFF0C;&#x6B63; &#x5982;&#x7A0D;&#x540E;&#x4F1A;&#x770B;&#x5230;&#x7684;&#x90A3;&#x6837;&#xFF0C;<script type="math/tex; "> h(x) </script>&#x7684;&#x5355;&#x4F4D;&#x662F;&#x6BD4;&#x7279;&#xFF08;bit&#xFF0C;binary digit&#xFF09;&#x3002;    </p>
+<p>&#x73B0;&#x5728;&#x5047;&#x8BBE;&#x4E00;&#x4E2A;&#x53D1;&#x9001;&#x8005;&#x60F3;&#x4F20;&#x8F93;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x7ED9;&#x63A5;&#x6536;&#x8005;&#x3002;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x4ED6;&#x4EEC;&#x4F20;&#x8F93;&#x7684;&#x5E73;&#x5747;&#x4FE1;&#x606F;&#x91CF;&#x901A;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6C42;&#x516C;&#x5F0F;&#xFF08;1.92&#xFF09;&#x5173;&#x4E8E;&#x6982;&#x7387;&#x5206;&#x5E03;<script type="math/tex; "> p(x) </script>&#x7684;&#x671F;&#x671B;&#x5F97;&#x5230;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+H[x] = -\sum\limits_xp(x)log_2p(x) \tag{1.93}
+</script></p>
+<p>&#x8FD9;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x91CF;&#x88AB;&#x53EB;&#x505A;&#x968F;&#x673A;&#x53D8;&#x91CF;<script type="math/tex; "> x </script>&#x7684;&#x71B5;&#xFF08;entropy&#xFF09;&#x3002;&#x6CE8;&#x610F;&#xFF0C;<script type="math/tex; "> lim_{p \to 0}plog_2p = 0 </script>&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x8981;&#x9047;&#x5230;&#x4E00;&#x4E2A;<script type="math/tex; "> x </script>&#x4F7F;&#x5F97;<script type="math/tex; "> p(x) = 0 </script>&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C31;&#x5E94;&#x8BE5;&#x4EE4;<script type="math/tex; "> p(x)log_2p(x) = 0 </script>&#x3002;    </p>
+<p>&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x5BF9;&#x4E8E;&#x516C;&#x5F0F;&#xFF08;1.92&#xFF09;&#x4FE1;&#x606F;&#x7684;&#x5B9A;&#x4E49;&#x4EE5;&#x53CA;&#x5BF9;&#x5E94;&#x7684;&#x516C;&#x5F0F;&#xFF08;1.93&#xFF09;&#x71B5;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#x4E00; &#x79CD;&#x542F;&#x53D1;&#x5F0F;&#x7684;&#x52A8;&#x673A;&#x3002;&#x73B0;&#x5728;&#x5C55;&#x793A;&#x8FD9;&#x4E9B;&#x5B9A;&#x4E49;&#x7684;&#x91CD;&#x8981;&#x4F5C;&#x7528;&#xFF1A;&#x5047;&#x8BBE;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x53D8;&#x91CF;<script type="math/tex; "> x </script>&#x6709;8&#x79CD;&#x53EF;&#x80FD;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x6BCF;&#x79CD;&#x72B6;&#x6001;&#x90FD;&#x662F;&#x7B49;&#x53EF;&#x80FD;&#x7684;&#x3002;&#x4E3A;&#x4E86;&#x628A;<script type="math/tex; "> x </script>&#x7684;&#x503C;&#x4F20;&#x7ED9;&#x63A5;&#x6536;&#x8005;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F20;&#x8F93;&#x4E00;&#x4E2A;3&#x6BD4;&#x7279;&#x7684;&#x6D88;&#x606F;&#x3002;&#x6CE8;&#x610F;,&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x71B5;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+H[x] = -8 × \frac{1}{8}log_2\frac{1}{8} = 3 bits
+</script></p>
+<p>&#x73B0;&#x5728;&#x8003;&#x8651;&#x4E00;&#x4E2A;&#x5177;&#x6709;8&#x79CD;&#x53EF;&#x80FD;&#x72B6;&#x6001;<script type="math/tex; "> \{a,b,c,d,e,f,g,h\} </script>&#x7684;&#x968F;&#x673A;&#x53D8;&#x91CF;&#xFF0C;&#x6BCF;&#x4E2A;&#x72B6;&#x6001;&#x5404;&#x81EA;&#x7684;&#x6982;&#x7387;&#x4E3A;<script type="math/tex; "> (\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{16},\frac{1}{64},\frac{1}{64},\frac{1}{64},\frac{1}{64}) </script>(Cover and Thomas, 1991)&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x5F62;&#x4E0B;&#x7684;&#x71B5;&#x4E3A;</p>
+<p><script type="math/tex; mode=display">
+H[x] = -\frac{1}{2}log_2\frac{1}{2} -\frac{1}{4}log_2\frac{1}{4} -\frac{1}{8}log_2\frac{1}{8} -\frac{1}{16}log_2\frac{1}{16} -\frac{1}{64}log_2\frac{1}{64} -\frac{1}{64}log_2\frac{1}{64} -\frac{1}{64}log_2\frac{1}{64} -\frac{1}{64}log_2\frac{1}{64}
+</script></p>
+<p>&#x6211;&#x4EEC;&#x5F97;&#x5230;&#xFF0C;&#x975E;&#x5747;&#x5300;&#x5206;&#x5E03;&#x6BD4;&#x5747;&#x5300;&#x5206;&#x5E03;&#x7684;&#x71B5;&#x8981;&#x5C0F;&#x3002;&#x540E;&#x9762;&#x5F53;&#x6839;&#x636E;&#x65E0;&#x5E8F;&#x7A0B;&#x5EA6;&#x6765;&#x8BA8;&#x8BBA;&#x71B5;&#x7684;&#x6982;&#x5FF5;&#x65F6;&#xFF0C;&#x4F1A;&#x83B7;&#x5F97;&#x4E00;&#x4E9B;&#x66F4;&#x6DF1;&#x523B;&#x7684;&#x8BA4;&#x8BC6;&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x8003;&#x8651;&#x5982;&#x4F55;&#x628A;&#x53D8;&#x91CF;&#x72B6;&#x6001;&#x4F20;&#x9012;&#x7ED9;&#x63A5;&#x6536;&#x8005;&#x3002;&#x53EF;&#x4EE5;&#x548C;&#x4E4B;&#x524D;&#x4E00;&#x6837;&#xFF0C;&#x4F7F;&#x7528;3&#x6BD4;&#x7279;&#x6765;&#x5B8C;&#x6210;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x975E;&#x5747;&#x5300;&#x5206;&#x5E03;&#x8FD9;&#x4E2A;&#x7279;&#x70B9;&#xFF0C;&#x4F7F;&#x7528;&#x66F4;&#x77ED;&#x7684;&#x7F16;&#x7801;&#x6765;&#x63CF;&#x8FF0;&#x66F4;&#x53EF;&#x80FD;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x66F4;&#x957F;&#x7684;&#x7F16;&#x7801;&#x6765;&#x63CF;&#x8FF0;&#x4E0D;&#x592A;&#x53EF;&#x80FD;&#x7684;&#x4E8B;&#x4EF6;&#x3002;&#x5E0C;&#x671B;&#x8FD9;&#x6837;&#x505A;&#x80FD;&#x591F;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x66F4;&#x77ED;&#x7684;&#x5E73;&#x5747;&#x7F16;&#x7801;&#x957F;&#x5EA6;&#x3002;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x7F16;&#x7801;&#x4E32;&#xFF1A;0&#x3001;10&#x3001;110&#x3001;1110&#x3001; 111100&#x3001;111101&#x3001;111110&#x3001;111111&#x6765;&#x8868;&#x793A;&#x72B6;&#x6001;<script type="math/tex; "> \{a, b, c, d, e, f, g, h\} </script>&#x3002;&#x4F20;&#x8F93;&#x7684;&#x7F16;&#x7801;&#x7684;&#x5E73;&#x5747;&#x957F;&#x5EA6;&#x5C31;&#x662F;</p>
+<p><script type="math/tex; mode=display">
+\text{average code length} = \frac{1}{2}×1 + \frac{1}{4}×2+\frac{1}{8}×3+ \frac{1}{16}×4+4×\frac{1}{64}×6 = 2bits
+</script></p>
+<p>&#x8FD9;&#x4E2A;&#x503C;&#x4E0E;&#x968F;&#x673A;&#x53D8;&#x91CF;&#x7684;&#x71B5;&#x76F8;&#x7B49;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x66F4;&#x77ED;&#x7684;&#x7F16;&#x7801;&#x4E32;&#xFF0C;&#x56E0;&#x4E3A;&#x5FC5;&#x987B;&#x80FD;&#x591F;&#x4ECE;&#x591A;&#x4E2A;&#x8FD9;&#x79CD;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x62FC;&#x63A5;&#x4E2D;&#x5206;&#x5272;&#x51FA;&#x5404;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x4F8B;&#x5982;&#xFF0C;11001110&#x552F;&#x4E00;&#x5730;&#x7F16;&#x7801;&#x4E86;&#x72B6;&#x6001;&#x5E8F;&#x5217;c, a, d&#x3002;    </p>
+<p>&#x71B5;&#x548C;&#x6700;&#x77ED;&#x7F16;&#x7801;&#x957F;&#x5EA6;&#x7684;&#x8FD9;&#x79CD;&#x5173;&#x7CFB;&#x662F;&#x4E00;&#x79CD;&#x666E;&#x904D;&#x7684;&#x60C5;&#x5F62;&#x3002;&#x65E0;&#x566A;&#x58F0;&#x7F16;&#x7801;&#x5B9A;&#x7406;&#xFF08;noiseless coding theorem&#xFF09;&#xFF08;Shannon, 1948&#xFF09;&#x8868;&#x660E;&#xFF0C;&#x71B5;&#x662F;&#x4F20;&#x8F93;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x53D8;&#x91CF;&#x72B6;&#x6001;&#x503C;&#x6240;&#x9700;&#x7684;&#x6BD4;&#x7279;&#x4F4D;&#x7684;&#x4E0B;&#x754C;&#x3002;    </p>
+<p>&#x73B0;&#x5728;&#x5F00;&#x59CB;&#xFF0C;&#x4E3A;&#x4E86;&#x4F7F;&#x71B5;&#x7684;&#x6982;&#x5FF5;&#x4E0E;&#x672C;&#x4E66;&#x540E;&#x7EED;&#x7AE0;&#x8282;&#x4E2D;&#x7684;&#x601D;&#x60F3;&#x7ED3;&#x5408;&#x8D77;&#x6765;&#x6BD4;&#x8F83;&#x65B9;&#xFF0C;&#x4FBF;&#x6211;&#x4EEC;&#x4F1A;&#x628A;&#x71B5;&#x7684;&#x5B9A;&#x4E49;&#x4E2D;&#x7684;&#x5BF9;&#x6570;&#x53D8;&#x6210;&#x81EA;&#x7136;&#x5BF9;&#x6570;&#x3002;&#x8FD9;&#x6837;&#x71B5;&#x7684;&#x5EA6;&#x91CF;&#x7684;&#x5355;&#x4F4D;&#x662F;nat&#xFF0C;&#x800C;&#x4E0D;&#x662F;bit&#x3002;&#x4E24;&#x8005;&#x7684;&#x5DEE;&#x522B;&#x662F;&#x4E00;&#x4E2A;<script type="math/tex; "> ln 2 </script>&#x7684;&#x56E0;&#x5B50;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x901A;&#x8FC7;&#x5177;&#x4F53;&#x7684;&#x968F;&#x673A;&#x53D8;&#x91CF;&#x7684;&#x72B6;&#x6001;&#x6240;&#x9700;&#x7684;&#x5E73;&#x5747;&#x4FE1;&#x606F;&#x91CF;&#x4ECB;&#x7ECD;&#x4E86;&#x71B5;&#x7684;&#x6982;&#x5FF5;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x71B5;&#x7684;&#x6982;&#x5FF5;&#x6700;&#x65E9;&#x8D77;&#x6E90;&#x4E8E;&#x7269;&#x7406;&#x5B66;&#x4E2D;&#x7684;&#x70ED;&#x529B;&#x5B66;&#x5E73;&#x8861;&#x3002;&#x540E;&#x6765;&#xFF0C;&#x71B5;&#x6210;&#x4E3A;&#x63CF;&#x8FF0;&#x7EDF;&#x8BA1;&#x529B;&#x5B66;&#x4E2D;&#x7684;&#x65E0;&#x5E8F;&#x7A0B;&#x5EA6;&#x7684;&#x5EA6;&#x91CF;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x7406;&#x89E3;&#x71B5;&#x7684;&#x8FD9;&#x79CD;&#x542B;&#x4E49;&#xFF1A;&#x8003;&#x8651;&#x4E00;&#x4E2A;&#x5305;&#x542B;N&#x4E2A;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x7684;&#x7269;&#x4F53;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x8FD9;&#x4E9B;&#x7269;&#x4F53;&#x8981;&#x88AB;&#x5206;&#x5230;&#x82E5;&#x5E72;&#x4E2A;&#x7BB1;&#x5B50;&#x4E2D;&#xFF0C;&#x4F7F;&#x5F97;&#x7B2C;<script type="math/tex; "> i </script>&#x4E2A;&#x7BB1;&#x5B50;&#x4E2D;&#x6709;<script type="math/tex; "> n_i </script>&#x4E2A;&#x7269;&#x4F53;&#x3002;&#x8003;&#x8651;&#x628A;&#x7269;&#x4F53;&#x5206;&#x914D;&#x5230;&#x7BB1;&#x5B50;&#x4E2D;&#x7684;&#x4E0D;&#x540C;&#x65B9;&#x6848;&#x7684;&#x6570;&#x91CF;&#x3002;&#x6709;N&#x79CD;&#x65B9;&#x5F0F;&#x9009;&#x62E9;&#x7B2C;&#x4E00;&#x4E2A;&#x7269;&#x4F53;&#xFF0C;&#x6709;(N &#x2212; 1)&#x79CD;&#x65B9;&#x5F0F;&#x9009;&#x62E9;&#x7B2C;&#x4E8C;&#x4E2A;&#x7269;&#x4F53;&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#xFF0C;&#x603B;&#x5171;&#x6709;<script type="math/tex; "> N!
+</script>&#x79CD;&#x65B9;&#x5F0F;&#x628A;N&#x4E2A;&#x7269;&#x4F53;&#x5206;&#x914D;&#x5230;&#x7BB1;&#x5B50;&#x4E2D;, &#x5176;&#x4E2D;<script type="math/tex; "> N! </script>&#x8868;&#x793A;&#x4E58;&#x79EF;<script type="math/tex; "> N × (N − 1) × ··· × 2 × 1 </script>&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x60F3;&#x533A;&#x5206;&#x540C;&#x4E00;&#x4E2A;&#x7BB1;&#x5B50;&#x4E2D;&#x540C;&#x6837;&#x5143;&#x7D20;&#x7684;&#x4E0D;&#x540C;&#x6392;&#x5217;&#x3002;&#x5728;&#x7B2C;<script type="math/tex; "> i^th </script>&#x4E2A;&#x7BB1;&#x5B50;&#x6709;<script type="math/tex; "> n_i! </script>&#x79CD;&#x6392;&#x5217;&#x65B9;&#x5F0F;&#x3002;&#x90A3;&#x4E48;&#x628A;N &#x4E2A;&#x7269;&#x4F53;&#x5206;&#x914D;&#x5230;&#x7BB1;&#x5B50;&#x4E2D;&#x7684;&#x603B;&#x65B9;&#x6848;&#x6570;&#x91CF;&#x4E3A;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+W = \frac{N!}{\prod_in_i!} \tag{.194}
+</script></p>
+<p>&#x8FD9;&#x88AB;&#x79F0;&#x4E3A;&#x591A;&#x91CD;&#x6027;&#xFF08;multiplicity&#xFF09;&#x3002;&#x71B5;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x591A;&#x91CD;&#x6027;&#x7684;&#x5BF9;&#x6570;&#x4E58;&#x4EE5;&#x4E00;&#x4E2A;&#x9002;&#x5F53;&#x7684;&#x7F29;&#x653E;&#x5E38;&#x6570;&#xFF0C;&#x5373;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+H = \frac{1}{N}\ln W = \frac{1}{N} \ln N! - \frac{1}{N}\sum\limits_i \ln n_i! \tag{1.95}
+</script></p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x5728;<script type="math/tex; "> n_i / N </script>&#x56FA;&#x5B9A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<script type="math/tex; "> N \to \infty </script>&#x4F7F;&#x7528;Stirling&#x2019;s&#x8FD1;&#x4F3C;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+\ln N! \simeq N\ln N - N \tag{1.96}
+</script></p>
+<p>&#x5F97;&#x51FA;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+H = - \lim\limits_{N \to \infty}\sum\limits_{i}(\frac{n_i}{N})\ln(\frac{n_i}{N}) = -\sum\limits_ip_i\ln p_i \tag{1.97}
+</script></p>
+<p>&#x5176;&#x4E2D;<script type="math/tex; "> \sum_in_i = N </script>&#xFF0C;<script type="math/tex; "> p_i = \lim_{N \to \infty}(\frac{n_i}{N})是一个物体被分配到第i个箱子的概率。使用物理的术语，箱子中物体的具体分配方案被称为微观态（microstate），整体的占有数分布，表示为比值</script> n<em>i / N <script type="math/tex; ">叫做宏观态（macrostate）。多重性W也被称为宏观态的权重。    
+
+我们可以用离散随机变量</script> X <script type="math/tex; ">的状态</script> x_i <script type="math/tex; ">来表示箱子，其中</script> p(X = x_i) = p_i <script type="math/tex; ">。随机变量X的熵为：    
+
+</script>
+H[p] = -\sum\limits_ip(x_i)\ln p(x_i) \tag{1.98}
+<script type="math/tex; mode=display">
+
+如果分布</script> p(x_i) <script type="math/tex; ">有多个尖锐的峰值，那么熵相对较小。相反的，如果分布</script> p(x_i) <script type="math/tex; ">相对比较平缓，那么熵就会相对大，就像图1.30展示的那样。
+
+![图 1-30](images/entropy.png)      
+图 1.30: 两个概率分布在30个箱子上的直方图
+
+应为</script> 0 \leq p_i \leq 1 <script type="math/tex; ">，熵是非负的。当</script> p_i = 1 <script type="math/tex; ">且所有其他的</script> p</em>{j \neq i} = 0 <script type="math/tex; ">时，熵取得最小值0。在概率标准化的限制下，使用拉格朗日乘数法可以找到熵的最大值。即：    
+
+</script>
+\widetilde{H} = -\sum\limits<em>ip(x_i)\ln p(x_i) + \lambda(\sum\limits_i p(x_i) - 1) \tag{1.99}
+<script type="math/tex; mode=display">
+
+可以证明，当所有的</script> p(x_i) <script type="math/tex; ">都相等，且值为</script> p(x_i) = 1 / M <script type="math/tex; ">时，熵取得最大值，其中M是状态</script> x_i <script type="math/tex; ">的总数。此时对应的熵值为</script> H = \ln M <script type="math/tex; ">。这个结果也可以通过Jensen不等式推导出来(稍后会简短的介绍一下)。为了证明驻点确实是最大值，我们可以求熵的二阶导数，即：    
+
+</script>
+\frac{\partial^2\widetilde{H}}{\partial p(x_i)\partial p(x_j)} = -I</em>{ij}\frac{1}{p<em>i} \tag{1.100}
+<script type="math/tex; mode=display">
+
+其中</script> I</em>{ij} <script type="math/tex; ">是单位矩阵的元素。    
+
+我们可以把熵的定义扩展到连续变量</script> x <script type="math/tex; ">的概率分布</script> p(x) <script type="math/tex; ">，方法如下。首先把x切分成宽度为</script> \Delta <script type="math/tex; ">的箱子。然后假设</script> p(x) <script type="math/tex; ">是连续的。使用均值定理（mean value theorem）（Weisstein, 1999）得到对于每个这样的箱子，一定存在一个值</script> x<em>i <script type="math/tex; ">使得    
+
+</script>
+\int</em>{i\Delta}{(i+1)\Delta} p(x)dx = p(x<em>i)\Delta \tag{1.101}
+<script type="math/tex; mode=display">
+
+我们现在可以这样量化连续变量x：只要x落在第i个箱子中，我们就把x赋值为</script> x_i <script type="math/tex; ">。因此观察到值</script> x_i <script type="math/tex; ">的概率为</script> p(x_i )\Delta <script type="math/tex; ">。这就变成了离散的分布，这种情形下熵为：    
+
+</script>
+H</em>\Delta = -\sum\limits<em>ip(x_i)\Delta\ln(p(x_i)\Delta) = -\sum\limits_ip(x_i)\Deltap(x_i) - \ln \Delta \tag{1.102}
+<script type="math/tex; mode=display">
+
+推导时我们使用了</script> \sum_ip(x_i)\Delta = 1 <script type="math/tex; ">，这可以由公式(1.101)得出。我们现在省略公式(1.102)右侧的第二项</script> \ln\Delta <script type="math/tex; ">，然后考虑极限</script> \Delta \to 0 <script type="math/tex; ">。在这种极限下，公式(1.102)右侧的第一项就变成了</script> p(x)\ln p(x) <script type="math/tex; ">的积分，因此
+
+</script>
+\lim\limits</em>{\Delta \to 0}{\sum\limits<em>ip(x_i)\Delta\ln p(x_i)} = -\int p(x)\ln p(x)dx \tag{1.103}
+<script type="math/tex; mode=display">
+
+其中，右侧的量被称为微分熵（differential entropy）。我们看到，熵的离散形式与连续形式的差是</script> \ln\Delta <script type="math/tex; ">,这在极限</script> \Delta \to 0 <script type="math/tex; ">的情形下发散。这反映出一个事实：具体化一个连续变量需要大量的比特位。对于定义在多元连续变量（由向量x共同表示）上的概率密度，微分熵为：
+
+</script>
+H[x] = -\int p(x) \ln p(x)dx \tag{1.104}
+<script type="math/tex; mode=display">
+
+在离散分布中，最大熵对应的是变量的所有可能状态的均匀分布。现在让我们 考虑连续变量的最大熵。为了让这个最大值有一个合理的定义，有必要限制</script> p(x) <script type="math/tex; ">的一阶矩和二阶矩，同时还要保留标准化限制。因此我们最大化微分熵的时候要遵循下面三个限制：
+
+</script>
+\begin{eqnarray}
+\int</em>{-\infty}^{\infty}p(x)dx = 1 \tag{1.105} \
+\int<em>{-\infty}^{\infty}xp(x)dx = \mu \tag{1.106} \
+\int</em>{-\infty}^{\infty}(x - \mu)^2p(x)dx = \delta^2 \tag{1.107}
+\end{eqnarray}
+<script type="math/tex; mode=display">
+
+带有限制条件的最大化问题可以使用拉格朗日乘数法求解,因此我们要最优化下面的关于</script> p(x) <script type="math/tex; ">的函数
+
+</script>
+\begin{eqnarray}
+-\int<em>{-\infty}^{\infty} p(x)\ln p(x)dx + \lambda_1(\int</em>{-\infty}^{\infty}p(x)dx - 1) \</p>
+<ul>
+<li>\lambda<em>2(\int</em>{-\infty}^{\infty} xp(x)dx - \mu) + \lambda<em>3(\int</em>{-\infty}^{\infty} (x - \mu)^2p(x)dx - \delta^2)
+\end{eqnarray}</li>
+</ul>
+<p>&#x4F7F;&#x7528;&#x53D8;&#x5206;&#x6CD5;&#xFF08;calculus of variations&#xFF09;&#xFF0C;&#x4EE4;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x5BFC;&#x6570;&#x7B49;&#x4E8E;&#x96F6;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+p(x) = exp{-1 + \lambda_1 + \lambda_2x + \lambda_3(x - \mu)^2} \tag{1.108}
+</script></p>
+<p>&#x5C06;&#x8FD9;&#x4E2A;&#x7ED3;&#x679C;&#x4EE3;&#x5165;&#x4E09;&#x4E2A;&#x9650;&#x5236;&#x65B9;&#x7A0B;&#x4E2D;&#xFF0C;&#x5373;&#x53EF;&#x6C42;&#x51FA;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x4E58;&#x6570;&#xFF0C;&#x6700;&#x7EC8;&#x7684;&#x7ED3;&#x679C;&#x4E3A;</p>
+<p><script type="math/tex; mode=display">
+p(x) = \frac{1}{(2\pi\delta^2)^{1/2}}exp\{-\frac{(x - \mu)^2}{2\delta^2}\} \tag{1.109}
+</script></p>
+<p>&#x56E0;&#x6B64;&#x6700;&#x5927;&#x5316;&#x5FAE;&#x5206;&#x71B5;&#x7684;&#x5206;&#x5E03;&#x662F;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x5728;&#x6700;&#x5927;&#x5316;&#x71B5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x9650;&#x5236;&#x6982;&#x7387;&#x5206;&#x5E03;&#x975E;&#x8D1F;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x6C42;&#x51FA;&#x7684;&#x5206;&#x5E03;&#x786E;&#x5B9E;&#x662F;&#x975E;&#x8D1F;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5F97;&#x51FA;&#x7ED3;&#x8BBA;&#xFF1A;&#x8FD9;&#x79CD;&#x9650;&#x5236;&#x662F;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6C42;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x5FAE;&#x5206;&#x71B5;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5F97;&#x5230;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+H[x] = \frac{1}{2}\{1 + \ln(2\pi\delta^2)\} \tag{1.110}
+</script></p>
+<p>&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x71B5;&#x968F;&#x7740;&#x5206;&#x5E03;&#x5BBD;&#x5EA6;&#xFF08;&#x5373;<script type="math/tex; "> \delta^2 </script>&#xFF09;&#x7684;&#x589E;&#x52A0;&#x800C;&#x589E;&#x52A0;&#x3002;&#x4E0E;&#x79BB;&#x6563;&#x71B5;&#x4E0D;&#x540C;&#xFF0C;&#x5F53;<script type="math/tex; "> \delta^2 < 1 / (2\pie)是，熵为负。    
+
+假设我们有一个联合概率分布</script> p(x, y) <script type="math/tex; ">。我们从这个概率分布中抽取了一对x和y。如果x的值已知,那么需要确定对应的y值所需的附加的信息就是</script>&#x2212;\ln p(y|x) <script type="math/tex; ">。因此，用来确定y值的平均附加信息可以写成：    
+
+</script>
+H[y|x] = - \int\int p(y,x)\ln p(y|x)dydx \tag{1.111}
+<script type="math/tex; mode=display">
+
+这被称为给定x的情况下，y的条件熵。使用乘积规则，很容易得出条件熵满足下面的关系：    
+
+</script>
+H[x,y] = H[y|x] + H[x] \tag{1.112}
+<script type="math/tex; mode=display">
+
+其中，</script> H[x, y] <script type="math/tex; ">是</script> p(x, y) <script type="math/tex; ">的微分熵，</script> H[x] <script type="math/tex; ">是边缘分布</script> p(x) $$&#x7684;&#x5FAE;&#x5206;&#x71B5;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x63CF;&#x8FF0;x&#x548C;y&#x6240;&#x9700;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x63CF;&#x8FF0;x&#x81EA;&#x5DF1;&#x6240;&#x9700;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x52A0;&#x4E0A;&#x7ED9;&#x5B9A;x&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5177;&#x4F53;&#x5316;y&#x6240;&#x9700;&#x7684;&#x989D;&#x5916;&#x4FE1;&#x606F;&#x3002;    </p>
+
                     
                     </section>
                 
@@ -490,7 +727,7 @@
         </div>
 
         
-        <a href="../Chapter1/decision_theory.html" class="navigation navigation-prev " aria-label="Previous page: 决策论"><i class="fa fa-angle-left"></i></a>
+        <a href="../Chapter1/decision/loss_function_regression.html" class="navigation navigation-prev " aria-label="Previous page: 回归损失函数"><i class="fa fa-angle-left"></i></a>
         
         
         <a href="../Chapter2/index.html" class="navigation navigation-next " aria-label="Next page: 概率分布"><i class="fa fa-angle-right"></i></a>

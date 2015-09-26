@@ -18,6 +18,7 @@
         * [推断与决策](Chapter1/decision/inference_decision.md)
         * [回归损失函数](Chapter1/decision/loss_function_regression.md)
     * [信息论](Chapter1/information_theory.md)
+        * [相对熵和互信息](Chapter1/information/relative_entropy.md)
 * [概率分布](Chapter2/README.md)
     * [二元变量](Chapter2/binary_variables.md)
     * [多项式变量](Chapter2/multinomial_variables.md)
