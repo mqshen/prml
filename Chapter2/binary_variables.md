@@ -31,7 +31,7 @@ $$
 \ln p(D|\mu) = \sum\limits_{n=1}^N\ln p(x_n|\mu) = \sum\limits_{n=1}^N\{x_n\ln \mu + (1 - x_n)\ln(1-\mu)\} \tag{2.6}
 $$
 
-值得一提的是对数似然函数只通过$$ \smu_nx_n $$依赖于$$ N $$次观测值$$ x_n $$。这个和式是这个分布下数据的充分统计量（sufficient statistic），我们后面将详细研究充分统计量的重要作用。对$$ \ln p(D|\mu) $$关于$$ \mu $$微分并使它等于0，我们就得到最大似然估计：
+值得一提的是对数似然函数只通过$$ \sum_nx_n $$依赖于$$ N $$次观测值$$ x_n $$。这个和式是这个分布下数据的充分统计量（sufficient statistic），我们后面将详细研究充分统计量的重要作用。对$$ \ln p(D|\mu) $$关于$$ \mu $$微分并使它等于0，我们就得到最大似然估计：
 
 $$
 \mu_{ML} = \frac{1}{N}\sum\limits_{n=1}^N x_n \tag{2.7}
@@ -67,8 +67,8 @@ $$
 
 $$
 \begin{eqnarray}
-\mathbb{E}[m] = \sum\limits_{m=0}{N} m Bin(m|N, \mu) = N_{\mu} \tag{2.11} \\
-var[m] \equiv \sum\limits_{m=0}{N}(m - \mathbb{E}[m])^2Bin(m|N, \mu) = N_\mu(1-\mu) \tag{2.12}
+\mathbb{E}[m] = \sum\limits_{m=0}^{N} m Bin(m|N, \mu) = N_{\mu} \tag{2.11} \\
+var[m] \equiv \sum\limits_{m=0}^{N}(m - \mathbb{E}[m])^2Bin(m|N, \mu) = N_\mu(1-\mu) \tag{2.12}
 \end{eqnarray}
 $$
 
