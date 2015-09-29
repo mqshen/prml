@@ -19,7 +19,7 @@ $$
 其中均值和方差：
 $$
 \begin{eqnarray}
-\mathbb{E}[\mu] = \frac{a}{a + b} \tag{2.15}
+\mathbb{E}[\mu] = \frac{a}{a + b} \tag{2.15} \\
 var[\mu] = \frac{ab}{(a+b)^2(a+b+1)} \tag{2.16}
 \end{eqnarray}
 $$
@@ -70,13 +70,13 @@ $$的后验均值，通常位于先验均值和公式（2.7）给出的$$ \mu $$
 为了证明这点，可以通过频率学观点来观察贝叶斯学习，得到：一般来说这种性质确实成立。考虑一个观测数据集$$ D $$,参数为$$ \theta $$的贝叶斯推断问题，有联合分布$$ p(\theta, D) $$描述，结果：    
 
 $$
-\mathbb{E}_\theta[\theta] = \mathbb_D[\mathbb{E}_\theta[\theta|D]] \tag{2.21}
+\mathbb{E}_\theta[\theta] = \mathbb{E}_D[\mathbb{E}_\theta[\theta|D]] \tag{2.21}
 $$
 其中
 $$
 \begin{eqnarray}
 \mathbb{E}_\theta[\theta] \equiv \int p(\theta)\theta d\theta \tag{2.22} \\
-\mathbb_D[\mathbb{E}_\theta[\theta|D]] \equiv \int\{\int\theta p(\theta|D)d\theta\}p(D)dD \tag{2.23}
+\mathbb{E}_D[\mathbb{E}_\theta[\theta|D]] \equiv \int\{\int\theta p(\theta|D)d\theta\}p(D)dD \tag{2.23}
 \end{eqnarray}
 $$
 

@@ -24,6 +24,7 @@
     * [二元变量](Chapter2/binary_variables.md)
         * [Beta分布](Chapter2/binary/beta_distribute.md)
     * [多项式变量](Chapter2/multinomial_variables.md)
+        * [狄利克雷分布](Chapter2/multinomial/dirichlet_distribute.md)
     * [高斯分布](Chapter2/the_gaussian_distribution.md)
     * [指数族](Chapter2/the_exponential_family.md)
     * [非参数方法](Chapter2/nonparametric_method.md)

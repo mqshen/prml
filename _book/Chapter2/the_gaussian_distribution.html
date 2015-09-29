@@ -32,7 +32,7 @@
     <link rel="next" href="../Chapter2/the_exponential_family.html" />
     
     
-    <link rel="prev" href="../Chapter2/multinomial_variables.html" />
+    <link rel="prev" href="../Chapter2/multinomial/dirichlet_distribute.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="2.3" data-basepath=".." data-revision="Sun Sep 27 2015 21:42:02 GMT+0800 (CST)">
+    <div class="book" data-level="2.3" data-basepath=".." data-revision="Tue Sep 29 2015 22:59:00 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -460,6 +460,27 @@
                     </a>
             
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="Chapter2/multinomial/dirichlet_distribute.html">
+            
+                
+                    <a href="../Chapter2/multinomial/dirichlet_distribute.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.1.</b>
+                        
+                        狄利克雷分布
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter active" data-level="2.3" data-path="Chapter2/the_gaussian_distribution.html">
@@ -618,7 +639,133 @@
                 
                     <section class="normal" id="section-">
                     
-                        
+                        <p>&#x9AD8;&#x65AF;&#x4E5F;&#x79F0;&#x4E3A;&#x6B63;&#x6001;&#x5206;&#x5E03;&#xFF0C;&#x662F;&#x8FDE;&#x7EED;&#x53D8;&#x91CF;&#x5206;&#x5E03;&#x4E0A;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x6A21;&#x578B;&#x3002;&#x5BF9;&#x4E8E;&#x5355;&#x53D8;&#x91CF;<script type="math/tex; "> x </script>&#xFF0C;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+\mathcal{N}(x|\mu, \delta^2) = \frac{1}{(2\pi\delta^2)^{1/2}}exp\{-frac{1}{2\delta^2}(x-\mu)^2\} \tag{2.42}
+</script></p>
+<p>&#x5176;&#x4E2D;<script type="math/tex; "> \mu, \delta^2 </script>&#x5206;&#x522B;&#x4E3A;&#x5747;&#x503C;&#x548C;&#x65B9;&#x5DEE;&#x3002;&#x5BF9;&#x4E8E;<script type="math/tex; "> D </script>&#x7EF4;&#x5411;&#x91CF;<script type="math/tex; "> x </script>&#xFF0C;&#x591A;&#x53D8;&#x91CF;&#x7684;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x5F62;&#x5F0F;&#x4E3A;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+\mathcal{N}(x|\mu, \Sigma) = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}exp{-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)} \tag{2.43}
+</script></p>
+<p>&#x5176;&#x4E2D;<script type="math/tex; "> \mu </script>&#x4E3A;<script type="math/tex; "> D </script>&#x7EF4;&#x5747;&#x503C;&#x5411;&#x91CF;&#xFF0C;<script type="math/tex; "> \Sigma </script>&#x4E3A;<script type="math/tex; "> D \times D </script>&#x7684;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;&#x3002;<script type="math/tex; "> |\Sigma| </script>&#x662F;<script type="math/tex; "> \Sigma </script>&#x7684;&#x884C;&#x5217;&#x5F0F;&#x3002;</p>
+<p>&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x8BB8;&#x591A;&#x4E0D;&#x540C;&#x7684;&#x95EE;&#x9898;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x7406;&#x89E3;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x8BC1;&#x660E;&#xFF0C;&#x5BF9;&#x4E8E;&#x5355;&#x4E2A;&#x5B9E;&#x503C;&#x53D8;&#x91CF;&#xFF0C;&#x4F7F;&#x71B5;&#x6700;&#x5927;&#x7684;&#x662F;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x3002;&#x8FD9;&#x4E2A;&#x6027;&#x8D28;&#x540C;&#x6837;&#x9002;&#x7528;&#x4E8E;&#x591A;&#x53D8;&#x91CF;&#x9AD8;&#x65AF;&#x3002;    </p>
+<p>&#x53E6;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x662F;&#xFF0C;&#x591A;&#x4E2A;&#x968F;&#x673A;&#x53D8;&#x91CF;&#x4E4B;&#x548C;&#x4E5F;&#x4F1A;&#x4EA7;&#x751F;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x3002;&#x4E2D;&#x5FC3;&#x6781;&#x9650;&#x5B9A;&#x7406;&#xFF08;&#x7531;&#x62C9;&#x666E;&#x62C9;&#x65AF;&#x63D0;&#x51FA;&#xFF09;&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#xFF0C;&#x6E29;&#x548C;&#x7684;&#x4E00;&#x7EC4;&#x968F;&#x673A;&#x53D8;&#x91CF;&#x7684;&#x548C;&#x7684;&#x6982;&#x7387;&#x5206;&#x5E03;&#x968F;&#x7740;&#x9879;&#x7684;&#x589E;&#x52A0;&#xFF0C;&#x8D8B;&#x5411;&#x4E8E;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#xFF08;Walker, 1969&#xFF09;&#x3002;&#x4E3A;&#x4E86;&#x9610;&#x8FF0;&#x8FD9;&#x4E2A;&#xFF0C;&#x8003;&#x8651;<script type="math/tex; "> N </script>&#x4E2A;&#x533A;&#x95F4;[0, 1]&#x4E0A;&#x7684;&#x5747;&#x5300;&#x5206;&#x5E03;&#x7684;&#x968F;&#x673A;&#x53D8;&#x91CF;<script type="math/tex; "> x_1,...,x_N </script>&#xFF0C;&#x786E;&#x5B9A;&#x5B83;&#x4EEC;&#x7684;&#x5747;&#x503C;<script type="math/tex; "> (x_1+...+x_n) / N </script>&#x7684;&#x5206;&#x5E03;&#x3002;&#x5982;&#x56FE;2.6&#x5C55;&#x793A;&#x7684;&#xFF0C;&#x5BF9;&#x4E8E;&#x5927;&#x7684;<script type="math/tex; "> N </script>&#xFF0C;&#x8D8B;&#x5411;&#x4E8E;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x3002;</p>
+<p><img src="images/sum_distribution.png" alt="&#x56FE; 2-6"><br>&#x56FE; 2.6 &#x5747;&#x5300;&#x5206;&#x5E03;&#x7684;&#x548C;&#x7684;&#x5747;&#x503C;&#x7684;&#x76F4;&#x65B9;&#x56FE;</p>
+<p>&#x5728;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x968F;&#x7740;N&#x7684;&#x589E;&#x52A0;&#xFF0C;&#x5206;&#x5E03;&#x4F1A;&#x5F88;&#x5FEB;&#x7684;&#x6536;&#x655B;&#x4E8E;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x3002;&#x6709;&#x8FD9;&#x4E2A;&#x7ED3;&#x8BBA;&#x53EF;&#x5F97;&#xFF1A;&#x516C;&#x5F0F;&#xFF08;2.9&#xFF09;&#x5B9A;&#x4E49;&#x7684;&#x4E8C;&#x5143;&#x968F;&#x673A;&#x53D8; &#x91CF;<script type="math/tex; "> x </script>&#x5728;<script type="math/tex; "> N </script>&#x6B21;&#x89C2;&#x6D4B;&#x4E2D;&#x51FA;&#x73B0;<script type="math/tex; "> m </script>&#x6B21;&#x7684;&#x4E8C;&#x9879;&#x5206;&#x5E03;&#x5C06;&#x4F1A;&#x5728;<script type="math/tex; "> N \to \infty </script>&#x65F6;&#x8D8B;&#x5411;&#x4E8E;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#xFF08;&#x56FE;2.1&#x7ED9;&#x51FA;&#x4E86;<script type="math/tex; "> N = 10 </script>&#x7684;&#x60C5;&#x5F62;)&#x3002;    </p>
+<p>&#x73B0;&#x5728;&#x8BE6;&#x7EC6;&#x8BA8;&#x8BBA;&#x8BA8;&#x8BBA;&#xFF0C;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x5176;&#x4E2D;&#x4E00;&#x4E9B;&#x91CD;&#x8981;&#x7684;&#x5206;&#x6790;&#x6027;&#x8D28;&#x3002;&#x8FD9;&#x5C31;&#x4F7F;&#x5F97;&#x8FD9;&#x8282;&#x5185;&#x5BB9;&#x4F9D;&#x8D56;&#x4E8E;&#x4E4B;&#x524D;&#x6240;&#x4ECB;&#x7ECD;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x5E76;&#x4E14;&#x9700;&#x8981;&#x5BF9;&#x5404;&#x79CD;&#x77E9;&#x9635;&#x6027;&#x8D28;&#x6BD4;&#x8F83;&#x719F;&#x6089;&#x3002;&#x6211;&#x4EEC;&#x5F3A;&#x70C8;&#x9F13;&#x52B1;&#x8BFB;&#x8005;&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x8FD9;&#x91CC;&#x4ECB;&#x7ECD;&#x7684;&#x6280;&#x672F;&#x719F;&#x7EC3;&#x64CD;&#x4F5C;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x5BF9;&#x4E8E;&#x7406;&#x89E3;&#x540E;&#x7EED;&#x7AE0;&#x8282;&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x66F4;&#x52A0;&#x590D;&#x6742;&#x7684;&#x6A21;&#x578B;&#x975E;&#x5E38;&#x6709;&#x5E2E;&#x52A9;&#x3002;    </p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x8003;&#x8651;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x96C6;&#x5408;&#x5F62;&#x5F0F;&#x3002;&#x9AD8;&#x65AF;&#x901A;&#x8FC7;&#x51FA;&#x73B0;&#x5728;&#x6307;&#x6570;&#x4F4D;&#x7F6E;&#x4E0A;&#x7684;</p>
+<p><script type="math/tex; mode=display">
+\Delta^2 = (x-\mu)^T\Sigma^{-1}(x-\mu) \tag{2.44}
+</script></p>
+<p>&#x8FD9;&#x4E2A;&#x4E8C;&#x6B21;&#x578B;&#x4F9D;&#x8D56;&#x4E8E;<script type="math/tex; "> x </script>&#x3002;<script type="math/tex; "> \Delta </script>&#x88AB;&#x79F0;&#x4E3A;<script type="math/tex; "> \mu </script>&#x5230;<script type="math/tex; "> x </script>&#x7684;&#x9A6C;&#x6C0F;&#x8DDD;&#x79BB;&#xFF08; Mahalanobis distance&#xFF09;&#xFF0C;&#x5F53;<script type="math/tex; "> \Sigma </script>&#x662F;&#x5355;&#x4F4D;&#x77E9;&#x9635;&#x65F6;&#xFF0C;&#x9000;&#x5316;&#x6210;&#x6B27;&#x5F0F;&#x8DDD;&#x79BB;&#x3002;&#x5F53;&#x8FD9;&#x4E2A;&#x4E8C;&#x6B21;&#x578B;&#x662F;&#x5E38;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9AD8;&#x65AF;&#x5206;&#x5E03;<script type="math/tex; "> x </script>&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x53BB;&#x9762;&#x4E0A;&#x662F;&#x4E0D;&#x53D8;&#x7684;&#x3002;    </p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x6CE8;&#x610F;&#x5230;&#x77E9;&#x9635;<script type="math/tex; "> \Sigma </script>&#x53EF;&#x4EE5;&#x4E0D;&#x5931;&#x4E00;&#x822C;&#x6027;&#x7684;&#x53D6;&#x4E3A;&#x5BF9;&#x79F0;&#x77E9;&#x9635;&#xFF0C;&#x56E0;&#x4E3A;&#x4EFB;&#x4F55;&#x975E;&#x5BF9;&#x79F0;&#x9879;&#x90FD;&#x4F1A;&#x4ECE;&#x6307;&#x6570;&#x4E2D;&#x6D88;&#x5931;&#x3002;&#x73B0;&#x5728;&#x8003;&#x8651;&#xFF0C;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x65B9;&#x7A0B;&#xFF1A;</p>
+<p><script type="math/tex; "> \Sigma u_i = \lambda_iu_i \tag{2.45} </script></p>
+<p>&#x5176;&#x4E2D;<script type="math/tex; "> i = 1,...,D </script>&#x3002;&#x56E0;&#x4E3A;<script type="math/tex; "> \Sigma </script>&#x662F;&#x5B9E;&#x5BF9;&#x79F0;&#x77E9;&#x9635;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x7684;&#x7279;&#x5F81;&#x503C;&#x4E5F;&#x662F;&#x5B9E;&#x6570;&#xFF0C;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x53EF;&#x4EE5;&#x4ECE;&#x6B63;&#x4EA4;&#x96C6;&#x4E2D;&#x9009;&#x62E9;&#xFF0C;&#x5F97;&#x5230;&#xFF1A;</p>
+<p><script type="math/tex; "> u_i^tu_j = I_{ij} \tag{2.46} </script></p>
+<p>&#x5176;&#x4E2D;<script type="math/tex; "> I_{ij} </script>&#x662F;&#x5355;&#x4F4D;&#x77E9;&#x9635;&#x7684;&#x7B2C;<script type="math/tex; "> i,j </script>&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x6EE1;&#x8DB3;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+I_{ij} = 
+\begin{cases} 
+1, if i=j \\
+0, otherwise
+\end{cases}  \tag{2.47}
+</script></p>
+<p>&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;<script type="math/tex; "> \Sigma </script>&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x6210;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x7684;&#x5C55;&#x5F00;&#x7684;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\Sigma = \sum\limits_{i=1}^D\lambda_iu_iu_i^T \tag{2.48} 
+</script></p>
+<p>&#x540C;&#x6837;&#x7684;&#x534F;&#x65B9;&#x5DEE;&#x7684;&#x9006;&#x77E9;&#x9635;<script type="math/tex; "> \Sigma^{-1} </script>&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x4E3A;</p>
+<p><script type="math/tex; "> 
+\Sigma^{-1} = \sum\limits_{i=1}^D\frac{1}{\lambda_i}u_iu_i^T \tag{2.49}
+</script></p>
+<p>&#x516C;&#x5F0F;&#xFF08;2.49&#xFF09;&#x4EE3;&#x5165;&#xFF08;2.44&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x4E8C;&#x6B21;&#x578B;&#x8868;&#x793A;&#x4E3A;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\Delta^2 = \sum\limits_{i=1}^D \frac{y_i^2}{\lambda_i} \tag{2.50}
+</script></p>
+<p>&#x5176;&#x4E2D;</p>
+<p><script type="math/tex; mode=display">
+y_i = u_i^T(x - \mu) \tag{2.51}
+</script>
+&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;<script type="math/tex; "> \{y_i\} </script>&#x89E3;&#x91CA;&#x4E3A;&#x7531;&#x6B63;&#x4EA4;&#x5411;&#x91CF;<script type="math/tex; "> u_i </script>&#x5173;&#x4E8E;&#x539F;&#x6765;&#x7684;<script type="math/tex; "> x_i </script>&#x5750;&#x6807;&#x7CFB;&#x5E73;&#x79FB;&#x548C;&#x65CB;&#x8F6C;&#x4E4B;&#x540E;&#x5F97;&#x5230;&#x7684;&#x65B0;&#x5750;&#x6807;&#x7CFB;&#x3002;&#x8BB0;<script type="math/tex; "> y = (y_1,...,y_D)^T </script>&#xFF0C;&#x53EF;&#x5F97;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+y = U(x - \mu) \tag{2.52}
+</script></p>
+<p>&#x5176;&#x4E2D;<script type="math/tex; "> U </script>&#x662F;&#x7531;&#x884C;&#x5411;&#x91CF;<script type="math/tex; "> u_i^T </script>&#x7EC4;&#x6210;&#x7684;&#x3002;&#x6839;&#x636E;&#x516C;&#x5F0F;&#xFF08;2.46&#xFF09;&#x53EF;&#x5F97;<script type="math/tex; "> U </script>&#x662F;&#x6B63;&#x4EA4;&#x77E9;&#x9635;&#xFF0C;&#x5373;&#x5B83;&#x6EE1;&#x8DB3;<script type="math/tex; "> UU^T = I, U^TU = I </script>,&#x5176;&#x4E2D;<script type="math/tex; "> I </script>&#x662F;&#x5355;&#x4F4D;&#x77E9;&#x9635;&#x3002;    </p>
+<p>&#x5982;&#x679C;&#x516C;&#x5F0F;&#xFF08;2.51&#xFF09;&#x662F;&#x5E38;&#x6570;&#x65F6;&#xFF0C;&#x90A3;&#x4E48;&#x4E8C;&#x6B21;&#x578B;&#x548C;&#x9AD8;&#x65AF;&#x5BC6;&#x5EA6;&#x5728;&#x66F2;&#x9762;&#x4E0A;&#x4E3A;&#x5E38;&#x6570;&#x3002;&#x5982;&#x679C;&#x6240;&#x6709;&#x7279;&#x5F81;&#x503C;<script type="math/tex; "> \lambda_i </script>&#x90FD;&#x662F;&#x6B63;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E9B;&#x66F2;&#x9762;&#x662F;&#x4E2D;&#x5FC3;&#x4F4D;&#x4E8E;<script type="math/tex; "> \mu </script>&#xFF0C;&#x8F74;&#x65B9;&#x5411;&#x4E3A;<script type="math/tex; "> u_i </script>&#xFF0C;&#x8F74;&#x65B9;&#x5411;&#x7684;&#x7F29;&#x653E;&#x6BD4;&#x4F8B;&#x4E3A;<script type="math/tex; "> \lambda_i^{1/2} </script>&#x7684;&#x692D;&#x7403;&#x9762;&#xFF0C;&#x5982;&#x56FE;2.7&#x6240;&#x793A;&#x3002;</p>
+<p><img src="images/elliptical.png" alt="&#x56FE; 2-7"><br>&#x56FE; 2.7 &#x692D;&#x7403;&#x9762;</p>
+<p>&#x4E3A;&#x4E86;&#x5F88;&#x597D;&#x7684;&#x5B9A;&#x4E49;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#xFF0C;&#x9700;&#x8981;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;&#x7684;&#x7279;&#x5F81;&#x503C;&#x4E25;&#x683C;&#x4E3A;&#x6B63;&#xFF0C;&#x4E0D;&#x7136;&#x5206;&#x5E03;&#x5C31;&#x4E0D;&#x80FD;&#x6807;&#x51C6;&#x5316;&#x3002;&#x4E00;&#x4E2A;&#x7279;&#x5F81;&#x503C;&#x90FD;&#x4E25;&#x683C;&#x4E3A;&#x6B63;&#x7684;&#x77E9;&#x9635;&#x88AB;&#x79F0;&#x4E3A;&#x6B63;&#x5B9A;&#x7684;&#xFF08;positive definite&#xFF09;&#x3002;&#x5728;12&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x9047;&#x5230;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x7279;&#x5F81;&#x503C;&#x4E3A;&#x96F6;&#x7684;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#xFF0C;&#x90A3;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x5206;&#x5E03;&#x662F;&#x5947;&#x5F02;&#x7684;&#xFF0C;&#x88AB;&#x9650;&#x5236;&#x5728;&#x4F4E;&#x7EF4;&#x7684;&#x5B50;&#x7A7A;&#x95F4;&#x4E2D;&#x3002;&#x4E00;&#x4E2A;&#x7279;&#x5F81;&#x503C;&#x90FD;&#x975E;&#x8D1F;&#x7684;&#x77E9;&#x9635;&#x88AB;&#x79F0;&#x4E3A;&#x534A;&#x6B63;&#x5B9A;&#x7684;&#xFF08;positive semidefinite&#xFF09;&#x3002;    </p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x5728;&#x7531;<script type="math/tex; "> y_i </script>&#x5B9A;&#x4E49;&#x7684;&#x65B0;&#x5750;&#x6807;&#x7CFB;&#x4E2D;&#xFF0C;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x5F62;&#x5F0F;&#x3002;&#x4ECE;<script type="math/tex; "> x </script>&#x5750;&#x6807;&#x7CFB;&#x8F6C;&#x6362;&#x5230;<script type="math/tex; "> y </script>&#x5750;&#x6807;&#x7CFB;&#x7684;Jacobian&#x77E9;&#x9635;<script type="math/tex; "> J </script>&#x4E3A;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+J_{ij} = \frac{\partial x_i}{\partial y_j} = U_{ji} \tag{2.53}
+</script></p>
+<p>&#x5176;&#x4E2D;<script type="math/tex; "> U_{ji} </script>&#x662F;&#x77E9;&#x9635;<script type="math/tex; "> U^T </script>&#x7684;&#x5143;&#x7D20;&#x3002;&#x6709;&#x77E9;&#x9635;<script type="math/tex; "> U </script>&#x7684;&#x6B63;&#x4EA4;&#x6027;&#xFF0C;&#x53EF;&#x5F97;Jacobian&#x77E9;&#x9635;&#x7684;&#x884C;&#x5217;&#x5F0F;&#x7684;&#x5E73;&#x65B9;&#x4E3A;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+|J|^2 = |U^T|^2 = |U^T||U| = |U^TU| = |I| = 1 \tag{2.54}
+</script></p>
+<p>&#x7531;&#x6B64;&#x53EF;&#x5F97;<script type="math/tex; "> |J| = 1 </script>&#x3002;&#x4E14;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;&#x7684;&#x884C;&#x5217;&#x5F0F;<script type="math/tex; "> |\Sigma| </script>&#x53EF;&#x4EE5;&#x5199;&#x6210;&#x7279;&#x5F81;&#x503C;&#x7684;&#x4E58;&#x79EF;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+|\Sigma|^{1/2} = \prod\limits_{j=1}^D \lambda_j^{1/2} \tag{2.55}
+</script></p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5728;<script type="math/tex; "> y_j </script>&#x5750;&#x6807;&#x7CFB;&#x4E0B;&#xFF0C;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7531;&#x4EE5;&#x4E0B;&#x5F62;&#x5F0F;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+p(y) = p(x)|J| = \prod\limits_{j=1}^D\frac{1}{(2\pi\lambda_j)^{1/2}}exp\{-\frac{y_j^2}{2\lambda_j}\} \tag{2.56}
+</script></p>
+<p>&#x8FD9;&#x662F;<script type="math/tex; "> D </script>&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x4E00;&#x5143;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x4E58;&#x79EF;&#x3002;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x5E73;&#x79FB;&#xFF0C;&#x65CB;&#x8F6C;&#x53D8;&#x6362;&#xFF0C;&#x4F7F;&#x8054;&#x5408;&#x6982;&#x7387;&#x5206;&#x5E03;&#x8F6C;&#x884C;&#x4E3A;&#x72EC;&#x7ACB;&#x5206;&#x5E03;&#x7684;&#x4E58;&#x79EF;&#x3002;&#x5206;&#x5E03;&#x5173;&#x4E8E;<script type="math/tex; "> y </script>&#x5750;&#x6807;&#x7CFB;&#x7684;&#x79EF;&#x5206;&#x4E3A;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\int p(y)dy = \prod\limits_{j=1}^D\int_{-\infty}^\infty \frac{1}{(2\pi\lambda_j)^{1/2}}exp\{-\frac{y_j^2}{2\lambda_j}\}dy_j = 1 \tag{2.57}
+</script></p>
+<p>&#x5176;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#x516C;&#x5F0F;&#xFF08;1.48&#xFF09;&#x7684;&#x7ED3;&#x679C;&#x6765;&#x6807;&#x51C6;&#x5316;&#x4E00;&#x5143;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x3002;&#x591A;&#x5143;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x516C;&#x5F0F;&#xFF08;2.43&#xFF09;&#x5FC5;&#x7136;&#x662F;&#x6807;&#x51C6;&#x5316;&#x7684;&#x3002;    </p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x8003;&#x5BDF;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x52A8;&#x5DEE;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x53C2;&#x6570;<script type="math/tex; "> \mu, \Sigma </script>&#x7684;&#x89E3;&#x91CA;&#x3002;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;<script type="math/tex; "> x </script>&#x7684;&#x671F;&#x671B;&#x662F;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+\begin{eqnarray}
+\mathbb{E}[X] = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}(X - \mu)^T\Sigma^{-1}(X - \mu)\}XdX \\
+= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}Z^T\Sigma^{-1}Z\}(Z+\mu)dZ  \tag{2.58}
+\end{eqnarray}
+</script></p>
+<p>&#x5176;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;<script type="math/tex; "> Z = X - \mu </script>&#x66FF;&#x6362;&#x4E86;&#x53D8;&#x91CF;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x6307;&#x6570;&#x51FD;&#x6570;&#x662F;&#x5173;&#x4E8E;<script type="math/tex; "> Z </script>&#x7684;&#x5076;&#x51FD;&#x6570;&#xFF0C;&#x4E14;&#x79EF;&#x5206;&#x8303;&#x56F4;&#x662F;<script type="math/tex; "> (-\infty, \infty) </script>&#xFF0C;&#x6839;&#x636E;&#x5BF9;&#x79F0;&#x6027;&#x9879;<script type="math/tex; "> (Z + \mu) </script>&#x4E2D;&#x7684;<script type="math/tex; "> Z </script>&#x53EF;&#x4EE5;&#x6D88;&#x53BB;&#x3002;&#x56E0;&#x6B64;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\mathbb{E}[X] = \mu \tag{2.59}
+</script></p>
+<p>&#x6240;&#x4EE5;<script type="math/tex; "> \mu </script>&#x662F;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x5747;&#x503C;&#x3002;    </p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x8003;&#x8651;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x4E8C;&#x9636;&#x52A8;&#x5DEE;&#x3002;&#x5728;&#x4E00;&#x5143;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E8C;&#x9636;&#x52A8;&#x5DEE;&#x7531;<script type="math/tex; "> \mathbb{E}[x^2] </script>&#x7ED9;&#x51FA;&#x3002;&#x5BF9;&#x4E8E;&#x591A;&#x5143;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#xFF0C;&#x6709;<script type="math/tex; "> D^2 </script>&#x4E2A;&#x4E8C;&#x9636;&#x52A8;&#x5DEE;&#xFF0C;&#x7531;<script type="math/tex; "> \mathbb{E}[x_ix_j] </script>&#x7ED9;&#x51FA;&#xFF0C;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x5F97;&#x5230;&#x77E9;&#x9635;<script type="math/tex; "> \mathbb{E}[XX^T] </script>&#x3002;&#x8FD9;&#x4E2A;&#x77E9;&#x9635;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#xFF1A;    </p>
+<p><script type="math/tex; "> 
+\begin{eqnarray}
+\mathbb{E}[XX^T] = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}(X - \mu)^T\Sigma^{-1}(X - \mu)\}XX^TdX \\
+= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}Z^T\Sigma^{-1}Z\}(Z+\mu)(Z+\mu)^TdZ  \end{eqnarray}
+</script></p>
+<p>&#x5728;&#x4E00;&#x6B21;&#x4F7F;&#x7528;&#x4E86;<script type="math/tex; "> Z = X - \mu </script>&#x66FF;&#x6362;&#x4E86;&#x53D8;&#x91CF;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x4EA4;&#x53C9;&#x9879;<script type="math/tex; "> \mu z^T, \mu^Tz </script>&#x7531;&#x5BF9;&#x79F0;&#x6027;&#x518D;&#x4E00;&#x6B21;&#x6D88;&#x53BB;&#x3002;&#x9879;<script type="math/tex; "> \mu\mu^T </script>&#x662F;&#x4E0D;&#x53D8;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x53D6;&#x51FA;&#x6765;&#x653E;&#x5230;&#x79EF;&#x5206;&#x7684;&#x5916;&#x9762;&#x3002;&#x56E0;&#x4E3A;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x662F;&#x6807;&#x51C6;&#x5316;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x81EA;&#x5DF1;&#x662F;&#x7B49;&#x4E8E;&#x5355;&#x4F4D;&#x77E9;&#x9635;&#x3002;&#x8003;&#x8651;&#x6D89;&#x53CA;<script type="math/tex; "> ZZ^T </script>&#x7684;&#x9879;&#x3002;&#x53EF;&#x4EE5;&#x518D;&#x6B21;&#x4F7F;&#x7528;&#x516C;&#x5F0F;&#xFF08;2.45&#xFF09;&#x7ED9;&#x51FA;&#x7684;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x5C55;&#x5F00;&#xFF0C;&#x548C;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x7684;&#x5B8C;&#x5907;&#x6027;&#xFF0C;&#x5F97;&#x5230;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+Z = \sum\limits_{j=1}^Dy_ju_j  \tag{2.60}
+</script></p>
+<p>&#x5176;&#x4E2D;<script type="math/tex; "> y_j = u_j^TZ </script>&#xFF0C;&#x63A8;&#x51FA;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+\begin{eqnarray}
+\frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}Z^T\Sigma^{-1}Z\}ZZ^TdZ \\
+= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\sum\limits_{i=1}^D\sum\limits_{j=1}^D\int exp\{-\sum\limits_{k=1}^D\frac{y_k^2}{2\lambda_k}\}y_iy_jdy \\
+= \sum\limits_{i=1}^Du_iu_i^T\lambda_i = \Sigma \tag{2.61}
+\end{eqnarray}
+</script></p>
+<p>&#x5176;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x65B9;&#x7A0B;&#xFF08;2.45&#xFF09;&#xFF0C;&#x4EE5;&#x53CA;&#x4E2D;&#x95F4;&#x4E00;&#x884C;&#x53F3;&#x4FA7;&#x7684;&#x79EF;&#x5206;&#x9664;&#x4E86;<script type="math/tex; "> i = j</script>&#x5176;&#x4ED6;&#x53EF;&#x4EE5;&#x7531;&#x5BF9;&#x79F0;&#x6027;&#x6D88;&#x53BB;&#x3002;&#x6700;&#x540E;&#x4E00;&#x884C;&#x4F7F;&#x7528;&#x4E86;&#x516C;&#x5F0F;&#xFF08;1.50&#xFF09;&#xFF0C;&#xFF08;2.55&#xFF09;&#x7684;&#x7ED3;&#x679C;&#x548C;&#x516C;&#x5F0F;&#xFF08;2.48&#xFF09;&#x4E00;&#x8D77;&#xFF0C;&#x5F97;&#x5230;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+\mathbb{E}[XX^T] = \mu\mu^T + \Sigma \tag{2.62}
+</script></p>
+<p>&#x5BF9;&#x4E8E;&#x5355;&#x4E2A;&#x968F;&#x673A;&#x53D8;&#x91CF;&#xFF0C;&#x4E3A;&#x4E86;&#x5B9A;&#x4E49;&#x65B9;&#x5DEE;&#xFF0C;&#x5728;&#x8BA1;&#x7B97;&#x4E8C;&#x9636;&#x52A8;&#x5DEE;&#x65F6;&#xFF0C;&#x8981;&#x5148;&#x51CF;&#x53BB;&#x5747;&#x503C;&#x3002;&#x540C;&#x6837;&#x7684;&#xFF0C;&#x5BF9;&#x4E8E;&#x591A;&#x5143;&#x53D8;&#x91CF;&#xFF0C;&#x51CF;&#x6389;&#x5747;&#x503C;&#x540C;&#x6837;&#x5F88;&#x65B9;&#x4FBF;&#x3002;&#x8FD9;&#x5C31;&#x5F97;&#x5230;&#x4E86;&#x968F;&#x673A;&#x5411;&#x91CF;<script type="math/tex; "> X </script>&#x7684;&#x534F;&#x65B9;&#x5DEE;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+cov[X] = \mathbb{E}[(X - \mathbb{E}[X])(X - \mathbb{E}[X])^T] \tag{2.63}
+</script></p>
+<p>&#x5BF9;&#x4E8E;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;<script type="math/tex; "> \mathbb{E}[X] = \mu </script>&#x548C;&#x516C;&#x5F0F;&#xFF08;2.62&#xFF09;&#x7684;&#x7ED3;&#x679C;&#x4E00;&#x8D77;&#xFF0C;&#x5F97;&#x5230;&#xFF1A;    </p>
+<p><script type="math/tex; mode=display">
+cov[X] = \Sigma
+</script></p>
+<p>&#x7531;&#x4E8E;&#x53C2;&#x6570;&#x77E9;&#x9635;<script type="math/tex; "> \Sigma </script>&#x63A7;&#x5236;&#x4E86;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x4E0B;&#x7684;&#x534F;&#x65B9;&#x5DEE;&#xFF0C;&#x6240;&#x4EE5;&#x628A;&#x5B83;&#x53EB;&#x505A;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;&#x3002;    </p>
+<p>&#x5C3D;&#x7BA1;&#xFF0C;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#xFF08;2.43&#xFF09;&#x88AB;&#x5F53;&#x4F5C;&#x5BC6;&#x5EA6;&#x6A21;&#x578B;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x6709;&#x7740;&#x4E00;&#x4E9B;&#x5DE8;&#x5927;&#x7684;&#x5C40;&#x9650;&#x6027;&#x3002;&#x8003;&#x8651;&#x5206;&#x4E0D;&#x4E2D;&#x81EA;&#x7531;&#x53C2;&#x6570;&#x7684;&#x6570;&#x91CF;&#x3002;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x5BF9;&#x79F0;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;<script type="math/tex; "> \Sigma </script>&#x6709;<script type="math/tex; "> D(D+1) / 2 </script>&#x4E2A;&#x72EC;&#x7ACB;&#x53C2;&#x6570;&#xFF0C;&#x548C;<script type="math/tex; "> \mu </script>&#x4E2D;&#x7684;&#x53E6;&#x5916;<script type="math/tex; "> D </script>&#x4E2A;&#x72EC;&#x7ACB;&#x53C2;&#x6570;&#xFF0C;&#x603B;&#x5171;<script type="math/tex; "> D(D+3) / 2 </script>&#x4E2A;&#x53C2;&#x6570;&#x3002;&#x5BF9;&#x4E8E;&#x5927;&#x7684;<script type="math/tex; "> D </script>&#xFF0C;&#x53C2;&#x6570;&#x7684;&#x603B;&#x6570;&#x4EE5;<script type="math/tex; "> D
+</script>&#x7684;&#x5E73;&#x65B9;&#x7684;&#x65B9;&#x5F0F;&#x589E;&#x957F;&#xFF0C;&#x4E14;&#x5927;&#x77E9;&#x9635;&#x7684;&#x8BA1;&#x7B97;&#x548C;&#x6C42;&#x9006;&#x4F1A;&#x76F8;&#x5F53;&#x56F0;&#x96BE;&#x3002;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528;&#x9650;&#x5236;&#x5F62;&#x5F0F;&#x7684;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;&#x3002;&#x5982;&#x679C;&#x8003;&#x8651;&#x5BF9;&#x89D2;&#x5316;&#x7684;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;&#xFF0C;&#x5373;<script type="math/tex; "> \Sigma = diag(\sigma_i^2) </script>&#xFF0C;&#x90A3;&#x4E48;&#x5BC6;&#x5EA6;&#x6A21;&#x578B;&#x4E2D;&#x603B;&#x5171;&#x6709;<script type="math/tex; "> 2D </script>&#x4E2A;&#x72EC;&#x7ACB;&#x53C2;&#x6570;&#x3002;&#x5BF9;&#x5E94;&#x7684;&#x5E38;&#x6570;&#x5BC6;&#x5EA6;&#x7684;&#x8F6E;&#x5ED3;&#x7EBF;&#x7531;&#x8F74;&#x5BF9;&#x9F50;&#x7684;&#x692D;&#x7403;&#x7ED9;&#x51FA;&#x3002;&#x53EF;&#x4EE5;&#x8FDB;&#x4E00;&#x6B65;&#x5730;&#x9650;&#x5236;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;&#x4E3A;&#x5355;&#x4F4D;&#x77E9;&#x9635;&#x7684;&#x500D;&#x6570;&#xFF0C;&#x5373;<script type="math/tex; "> \Sigma = \sigma^2I </script>&#xFF08;&#x8FD9;&#x88AB;&#x79F0;&#x4E3A;&#x540C;&#x6027;&#x534F;&#x65B9;&#x5DEE;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x6A21;&#x578B;&#x603B;&#x5171;&#x6709;<script type="math/tex; "> D + 1 </script>&#x4E2A;&#x72EC;&#x7ACB;&#x53C2;&#x6570;&#xFF0C;&#x4E14;&#x5F97;&#x5230;&#x6052;&#x5B9A;&#x5BC6;&#x5EA6;&#x7684;&#x7403;&#x9762;&#x3002;&#x56FE;2.8&#x5206;&#x522B;&#x5C55;&#x793A;&#x4E86;&#x901A;&#x7528;&#x7684;&#x3001;&#x5BF9;&#x89D2;&#x7684;&#x4EE5;&#x53CA;&#x540C;&#x6027;&#x7684;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;&#x7684;&#x6982;&#x7387;&#x3002;</p>
+<p><img src="images/cov_ellipse.png" alt="&#x56FE; 2-8"><br>&#x56FE; 2.8: &#x4E8C;&#x7EF4;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x56FA;&#x5B9A;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x8F6E;&#x5ED3;&#x7EBF;</p>
+<p>&#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x5C3D;&#x7BA1;&#x8FD9;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x9650;&#x5236;&#x4E86;&#x6982;&#x7387;&#x5206;&#x5E03;&#x7684;&#x7684;&#x81EA;&#x7531;&#x5EA6;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x4F7F;&#x5F97;&#x6C42;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;&#x7684;&#x9006;&#x53EF;&#x4EE5;&#x5F88;&#x5FEB;&#x5730;&#x5B8C;&#x6210;&#xFF0C;&#x4F46;&#x4E5F;&#x6781;&#x5927;&#x5730;&#x675F;&#x7F1A;&#x4E86;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x4E14;&#x9650;&#x5236;&#x4E86;&#x5B83;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x4E2D;&#x6709;&#x8DA3;&#x7684;&#x76F8;&#x5173;&#x6027;&#x7684;&#x80FD;&#x529B;&#x3002;   </p>
+<p>&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x5C40;&#x9650;&#x662F;&#x5B83;&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x5355;&#x5CF0;&#x7684;&#xFF08;&#x5373;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x503C;&#xFF09;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x80FD;&#x591F;&#x5F88;&#x597D;&#x5730;&#x8FD1;&#x4F3C;&#x591A;&#x5CF0;&#x5206;&#x5E03;&#x3002;&#x56E0;&#x6B64;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x4E00;&#x65B9;&#x9762;&#x76F8;&#x5F53;&#x7075;&#x6D3B;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x6709;&#x5F88;&#x591A;&#x53C2;&#x6570;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x5B83;&#x53C8;&#x6709;&#x5F88;&#x5927;&#x7684;&#x5C40;&#x9650;&#x6027;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4E0D;&#x80FD;&#x591F;&#x63CF;&#x8FF0;&#x5F88;&#x591A;&#x6982;&#x7387;&#x5206;&#x5E03;&#x3002;&#x7A0D;&#x540E;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x7684;&#x6F5C;&#x53D8;&#x91CF;&#xFF08;latent variables&#xFF09;&#xFF0C;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x9690;&#x85CF;&#x53D8;&#x91CF;&#xFF08;hidden variable&#xFF09;&#x6216;&#x8005;&#x672A;&#x89C2;&#x6D4B;&#x53D8;&#x91CF;&#xFF08;unobserved
+variable&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x4E24;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x7279;&#x522B;&#x7684;&#xFF0C;&#x901A;&#x8FC7;&#x5F15;&#x5165;&#x79BB;&#x6563;&#x7684;&#x6F5C;&#x53D8;&#x91CF;&#xFF0C;&#x76F8;&#x5F53;&#x591A;&#x7684;&#x591A;&#x5CF0;&#x5206;&#x5E03;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6DF7;&#x5408;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x6765;&#x63CF;&#x8FF0;&#xFF0C;&#x5C31;&#x50CF;2.3.9&#x8282;&#x63CF;&#x8FF0;&#x7684;&#x90A3;&#x6837;&#x3002;&#x540C;&#x6837;&#x7684;&#xFF0C;12&#x7AE0;&#x4E2D;&#x4ECB;&#x7ECD;&#x7684;&#x8FDE;&#x7EED;&#x6F5C;&#x53D8;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x6A21;&#x578B;&#x7684;&#x81EA;&#x7531;&#x53C2;&#x6570;&#x7684;&#x6570;&#x91CF;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x6210;&#x4E0E;<script type="math/tex; "> D </script>&#x7EF4;&#x6570;&#x636E;&#x7A7A;&#x95F4;&#x65E0;&#x5173;&#x3002;&#x540C;&#x65F6;&#x53C8;&#x80FD;&#x63CF;&#x8FF0;&#x6570; &#x96C6;&#x91CC;&#x4E3B;&#x8981;&#x7684;&#x76F8;&#x5173;&#x6027;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x8FD9;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7ED3;&#x5408;&#x8D77;&#x6765;&#xFF0C;&#x8FDB;&#x4E00;&#x6B65;&#x6269;&#x5C55;&#xFF0C;&#x53EF;&#x4EE5;&#x63A8;&#x5BFC;&#x51FA;&#x4E00;&#x5927;&#x7C7B;&#x9002;&#x7528;&#x4E8E;&#x76F8;&#x5F53;&#x591A;&#x7684;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x5C42;&#x6B21;&#x6A21;&#x578B;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x56FE;&#x50CF;&#x7684;&#x6982;&#x7387;&#x6A21;&#x578B;&#x4E2D;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x7684;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x968F;&#x673A;&#x573A;(Markov random
+field)&#x7684;&#x9AD8;&#x65AF;&#x7248;&#x672C;&#xFF0C;&#x662F;&#x50CF;&#x7D20;&#x7070;&#x5EA6;&#x7684;&#x8054;&#x5408;&#x7A7A;&#x95F4;&#x4E0A;&#x7684;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#xFF0C;&#x4F46;&#x662F;&#x901A;&#x8FC7;&#x5F15;&#x5165;&#x80FD;&#x591F;&#x53CD;&#x6620;&#x7A7A;&#x95F4;&#x4E2D;&#x50CF;&#x7D20;&#x7EC4;&#x7EC7;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x5730;&#x5904;&#x7406;&#x3002;&#x540C;&#x6837;&#x7684;&#xFF0C;&#x5BF9;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x6570;&#x636E;&#x7684;&#x5E94;&#x7528;&#xFF08;&#x4F8B;&#x5982;&#x8DDF;&#x8E2A;&#xFF09;&#x8FDB;&#x884C;&#x5EFA;&#x6A21;&#x7684;&#x7EBF;&#x6027;&#x52A8;&#x6001;&#x7CFB;&#x7EDF;&#xFF08;linear dynamical system&#xFF09;&#xFF0C;&#x662F;&#x6D89;&#x53CA;&#x5230;&#x76F8;&#x5F53;&#x591A;&#x7684;&#x89C2;&#x6D4B;&#x53D8;&#x91CF;&#x548C;&#x6F5C;&#x53D8;&#x91CF;&#x7684;&#x8054;&#x5408;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#xFF0C;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5206;&#x5E03;&#x4E0A;&#x7684;&#x7ED3;&#x6784;&#x4FE1;&#x606F;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x5904;&#x7406;&#x3002;&#x6982;&#x7387;&#x56FE;&#x6A21;&#x578B;&#xFF0C;&#x8868;&#x8FBE;&#x8FD9;&#x79CD;&#x590D;&#x6742;&#x5206;&#x5E03;&#x7684;&#x5F62;&#x5F0F;&#x548C;&#x6027;&#x8D28;&#x7684;&#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x7684;&#x6846;&#x67B6;&#x3002;&#x5C06;&#x662F;&#x7B2C;8&#x7AE0;&#x7684;&#x4E3B;&#x9898;&#x3002;</p>
+
                     
                     </section>
                 
@@ -628,7 +775,7 @@
         </div>
 
         
-        <a href="../Chapter2/multinomial_variables.html" class="navigation navigation-prev " aria-label="Previous page: 多项式变量"><i class="fa fa-angle-left"></i></a>
+        <a href="../Chapter2/multinomial/dirichlet_distribute.html" class="navigation navigation-prev " aria-label="Previous page: 狄利克雷分布"><i class="fa fa-angle-left"></i></a>
         
         
         <a href="../Chapter2/the_exponential_family.html" class="navigation navigation-next " aria-label="Next page: 指数族"><i class="fa fa-angle-right"></i></a>

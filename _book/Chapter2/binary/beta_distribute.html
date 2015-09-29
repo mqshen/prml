@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="2.1.1" data-basepath="../.." data-revision="Sun Sep 27 2015 21:42:02 GMT+0800 (CST)">
+    <div class="book" data-level="2.1.1" data-basepath="../.." data-revision="Tue Sep 29 2015 22:59:00 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -460,6 +460,27 @@
                     </a>
             
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="Chapter2/multinomial/dirichlet_distribute.html">
+            
+                
+                    <a href="../../Chapter2/multinomial/dirichlet_distribute.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.1.</b>
+                        
+                        狄利克雷分布
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="2.3" data-path="Chapter2/the_gaussian_distribution.html">
@@ -634,7 +655,7 @@ Beta(\mu|a, b) = \frac{\Gamma(a + b)}{\Gamma(a)\Gamma(b)}\mu^{a-1}(q-\mu)^{b-1} 
 <p>&#x5176;&#x4E2D;&#x5747;&#x503C;&#x548C;&#x65B9;&#x5DEE;&#xFF1A;
 <script type="math/tex; mode=display">
 \begin{eqnarray}
-\mathbb{E}[\mu] = \frac{a}{a + b} \tag{2.15}
+\mathbb{E}[\mu] = \frac{a}{a + b} \tag{2.15} \\
 var[\mu] = \frac{ab}{(a+b)^2(a+b+1)} \tag{2.16}
 \end{eqnarray}
 </script></p>
@@ -665,13 +686,13 @@ p(x=1|D) = \frac{m+a}{m+a+l+b} \tag{2.20}
 <p>&#x6839;&#x636E;&#x56FE;2.2&#x5F97;&#x5230;&#xFF0C;&#x5F53;&#x89C2;&#x6D4B;&#x6570;&#x91CF;&#x589E;&#x52A0;&#x65F6;&#xFF0C;&#x540E;&#x9A8C;&#x5206;&#x5E03;&#x7684;&#x56FE;&#x50CF;&#x53D8;&#x5F97;&#x66F4;&#x5C16;&#x4E86;&#x3002;&#x8FD9;&#x4E5F;&#x53EF;&#x4EE5;&#x4ECE;&#x516C;&#x5F0F;&#xFF08;2.16&#xFF09;&#x4E2D;beta&#x5206;&#x5E03;&#x7684;&#x65B9;&#x5DEE;&#x5F97;&#x5230;&#xFF0C;&#x5F53;<script type="math/tex; "> a \to \infty </script>&#x6216;<script type="math/tex; "> b \to \infty </script>&#x65F6;&#x65B9;&#x5DEE;&#x8D8B;&#x5411;&#x4E8E;0&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x60F3;&#x77E5;&#x9053;&#xFF1A;&#x968F;&#x7740;&#x6211;&#x4EEC;&#x89C2;&#x6D4B;&#x5230;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x540E;&#x9A8C;&#x6982;&#x7387;&#x8868;&#x793A;&#x7684;&#x4E0D;&#x786E;&#x5B9A;&#x6027;&#x5C06;&#x4F1A;&#x6301;&#x7EED;&#x4E0B;&#x964D;&#x3002;&#x8FD9;&#x4E2A;&#x6027;&#x8D28;&#x662F;&#x4E0D;&#x662F;&#x8D1D;&#x53F6;&#x65AF;&#x5B66;&#x4E60;&#x7684;&#x5171;&#x6709;&#x5C5E;&#x6027;&#x3002;    </p>
 <p>&#x4E3A;&#x4E86;&#x8BC1;&#x660E;&#x8FD9;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9891;&#x7387;&#x5B66;&#x89C2;&#x70B9;&#x6765;&#x89C2;&#x5BDF;&#x8D1D;&#x53F6;&#x65AF;&#x5B66;&#x4E60;&#xFF0C;&#x5F97;&#x5230;&#xFF1A;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x8FD9;&#x79CD;&#x6027;&#x8D28;&#x786E;&#x5B9E;&#x6210;&#x7ACB;&#x3002;&#x8003;&#x8651;&#x4E00;&#x4E2A;&#x89C2;&#x6D4B;&#x6570;&#x636E;&#x96C6;<script type="math/tex; "> D </script>,&#x53C2;&#x6570;&#x4E3A;<script type="math/tex; "> \theta </script>&#x7684;&#x8D1D;&#x53F6;&#x65AF;&#x63A8;&#x65AD;&#x95EE;&#x9898;&#xFF0C;&#x6709;&#x8054;&#x5408;&#x5206;&#x5E03;<script type="math/tex; "> p(\theta, D) </script>&#x63CF;&#x8FF0;&#xFF0C;&#x7ED3;&#x679C;&#xFF1A;    </p>
 <p><script type="math/tex; mode=display">
-\mathbb{E}_\theta[\theta] = \mathbb_D[\mathbb{E}_\theta[\theta|D]] \tag{2.21}
+\mathbb{E}_\theta[\theta] = \mathbb{E}_D[\mathbb{E}_\theta[\theta|D]] \tag{2.21}
 </script>
 &#x5176;&#x4E2D;
 <script type="math/tex; mode=display">
 \begin{eqnarray}
 \mathbb{E}_\theta[\theta] \equiv \int p(\theta)\theta d\theta \tag{2.22} \\
-\mathbb_D[\mathbb{E}_\theta[\theta|D]] \equiv \int\{\int\theta p(\theta|D)d\theta\}p(D)dD \tag{2.23}
+\mathbb{E}_D[\mathbb{E}_\theta[\theta|D]] \equiv \int\{\int\theta p(\theta|D)d\theta\}p(D)dD \tag{2.23}
 \end{eqnarray}
 </script></p>
 <p><script type="math/tex; "> \theta </script>&#x7684;&#x540E;&#x9A8C;&#x5747;&#x503C;&#xFF08;&#x5728;&#x4EA7;&#x751F;&#x6570;&#x636E;&#x96C6;&#x7684;&#x5206;&#x5E03;&#x4E0A;&#x7684;&#x5E73;&#x5747;&#xFF09;&#x7B49;&#x4E8E;<script type="math/tex; "> \theta </script>&#x7684;&#x5148;&#x9A8C;&#x5747;&#x503C;&#x3002;&#x540C;&#x6837;&#x7684;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#xFF1A;    </p>

@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="2.1" data-basepath=".." data-revision="Sun Sep 27 2015 21:42:02 GMT+0800 (CST)">
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="Tue Sep 29 2015 22:59:00 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -460,6 +460,27 @@
                     </a>
             
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="Chapter2/multinomial/dirichlet_distribute.html">
+            
+                
+                    <a href="../Chapter2/multinomial/dirichlet_distribute.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.1.</b>
+                        
+                        狄利克雷分布
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="2.3" data-path="Chapter2/the_gaussian_distribution.html">
@@ -635,13 +656,13 @@ var[x] = \mu(1 - \mu) \tag{2.4}
 </script></p>
 <p>&#x73B0;&#x5728;&#x5047;&#x8BBE;<script type="math/tex; "> x </script>&#x7684;&#x89C2;&#x5BDF;&#x6570;&#x636E;&#x96C6;<script type="math/tex; "> D = \{x_1,...x_n\} </script>&#x3002;&#x5047;&#x8BBE;&#x89C2;&#x6D4B;&#x503C;&#x662F;&#x72EC;&#x7ACB;&#x7684;&#x4ECE;<script type="math/tex; "> p(x|\mu) </script>&#x4E2D;&#x62BD;&#x53D6;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x6784;&#x9020;&#x5173;&#x4E8E;<script type="math/tex; "> \mu </script>&#x7684;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#xFF1A;</p>
 <p><script type="math/tex; mode=display">
-p(D|\mu) = \prod\limits_{n=1}^Np(x_n|\mu) = \prod\limits_{n=1}{N}\mu^{x_n}(1-\mu)^{1-x_n} \tag{2.5}
+p(D|\mu) = \prod\limits_{n=1}^Np(x_n|\mu) = \prod\limits_{n=1}^{N}\mu^{x_n}(1-\mu)^{1-x_n} \tag{2.5}
 </script></p>
 <p>&#x5728;&#x9891;&#x7387;&#x5B66;&#x7684;&#x89C2;&#x70B9;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6700;&#x5927;&#x5316;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x6765;&#x4F30;&#x8BA1;<script type="math/tex; "> \mu </script>&#x7684;&#x503C;&#xFF0C;&#x6216;&#x8005;&#x7B49;&#x4EF7;&#x5730;&#xFF0C;&#x6700;&#x5927;&#x5316;&#x5BF9;&#x6570;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x3002;&#x5728;&#x4F2F;&#x52AA;&#x5229;&#x5206;&#x5E03;&#x7684;&#x60C5;&#x5F62;&#x4E0B;&#xFF0C;&#x5BF9;&#x6570;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x4E3A;&#xFF1A;    </p>
 <p><script type="math/tex; mode=display">
 \ln p(D|\mu) = \sum\limits_{n=1}^N\ln p(x_n|\mu) = \sum\limits_{n=1}^N\{x_n\ln \mu + (1 - x_n)\ln(1-\mu)\} \tag{2.6}
 </script></p>
-<p>&#x503C;&#x5F97;&#x4E00;&#x63D0;&#x7684;&#x662F;&#x5BF9;&#x6570;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x53EA;&#x901A;&#x8FC7;<script type="math/tex; "> \smu_nx_n </script>&#x4F9D;&#x8D56;&#x4E8E;<script type="math/tex; "> N </script>&#x6B21;&#x89C2;&#x6D4B;&#x503C;<script type="math/tex; "> x_n </script>&#x3002;&#x8FD9;&#x4E2A;&#x548C;&#x5F0F;&#x662F;&#x8FD9;&#x4E2A;&#x5206;&#x5E03;&#x4E0B;&#x6570;&#x636E;&#x7684;&#x5145;&#x5206;&#x7EDF;&#x8BA1;&#x91CF;&#xFF08;sufficient statistic&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x540E;&#x9762;&#x5C06;&#x8BE6;&#x7EC6;&#x7814;&#x7A76;&#x5145;&#x5206;&#x7EDF;&#x8BA1;&#x91CF;&#x7684;&#x91CD;&#x8981;&#x4F5C;&#x7528;&#x3002;&#x5BF9;<script type="math/tex; "> \ln p(D|\mu) </script>&#x5173;&#x4E8E;<script type="math/tex; "> \mu </script>&#x5FAE;&#x5206;&#x5E76;&#x4F7F;&#x5B83;&#x7B49;&#x4E8E;0&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5F97;&#x5230;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#xFF1A;</p>
+<p>&#x503C;&#x5F97;&#x4E00;&#x63D0;&#x7684;&#x662F;&#x5BF9;&#x6570;&#x4F3C;&#x7136;&#x51FD;&#x6570;&#x53EA;&#x901A;&#x8FC7;<script type="math/tex; "> \sum_nx_n </script>&#x4F9D;&#x8D56;&#x4E8E;<script type="math/tex; "> N </script>&#x6B21;&#x89C2;&#x6D4B;&#x503C;<script type="math/tex; "> x_n </script>&#x3002;&#x8FD9;&#x4E2A;&#x548C;&#x5F0F;&#x662F;&#x8FD9;&#x4E2A;&#x5206;&#x5E03;&#x4E0B;&#x6570;&#x636E;&#x7684;&#x5145;&#x5206;&#x7EDF;&#x8BA1;&#x91CF;&#xFF08;sufficient statistic&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x540E;&#x9762;&#x5C06;&#x8BE6;&#x7EC6;&#x7814;&#x7A76;&#x5145;&#x5206;&#x7EDF;&#x8BA1;&#x91CF;&#x7684;&#x91CD;&#x8981;&#x4F5C;&#x7528;&#x3002;&#x5BF9;<script type="math/tex; "> \ln p(D|\mu) </script>&#x5173;&#x4E8E;<script type="math/tex; "> \mu </script>&#x5FAE;&#x5206;&#x5E76;&#x4F7F;&#x5B83;&#x7B49;&#x4E8E;0&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5F97;&#x5230;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#xFF1A;</p>
 <p><script type="math/tex; mode=display">
 \mu_{ML} = \frac{1}{N}\sum\limits_{n=1}^N x_n \tag{2.7}
 </script></p>
@@ -657,15 +678,15 @@ Bin(m|N, \mu) = \binom{N}{m}\mu^m(1 - \mu)^{N - m} \tag{2.9}
 </script></p>
 <p>&#x5176;&#x4E2D;
 <script type="math/tex; mode=display">
-\binom{N}{m} = \equiv \frac{N!}{(N - m)!m!} \tag{2.10}
+\binom{N}{m} \equiv \frac{N!}{(N - m)!m!} \tag{2.10}
 </script></p>
 <p>&#x8868;&#x793A;&#x4ECE;<script type="math/tex; "> N </script>&#x4E2A;&#x76F8;&#x540C;&#x7684;&#x7269;&#x4F53;&#x4E2D;&#x9009;&#x51FA;<script type="math/tex; "> m </script>&#x4E2A;&#x7684;&#x65B9;&#x5F0F;&#x7684;&#x6B21;&#x6570;&#x3002;&#x56FE;2.1&#x5C55;&#x793A;&#x4E86;&#x5F53;<script type="math/tex; "> N = 10, \mu = 0.25 </script>&#x65F6;&#x7684;&#x4E8C;&#x9879;&#x5F0F;&#x5206;&#x5E03;&#x3002;</p>
 <p><img src="images/binomal.png" alt="&#x56FE; 2-1"><br>&#x56FE; 2.1 &#x4E8C;&#x9879;&#x5F0F;&#x5206;&#x5E03;    </p>
 <p>&#x4E8C;&#x9879;&#x5F0F;&#x5206;&#x5E03;&#x7684;&#x5747;&#x503C;&#x548C;&#x65B9;&#x5DEE;&#x53EF;&#x4EE5;&#x4ECE;&#x7EC3;&#x4E60;1.10&#x7684;&#x7ED3;&#x679C;&#xFF1A;&#x72EC;&#x7ACB;&#x4E8B;&#x4EF6;&#x7684;&#x5747;&#x503C;&#x7684;&#x548C;&#x7B49;&#x4E8E;&#x548C;&#x7684;&#x5747;&#x503C;&#x3001;&#x65B9;&#x5DEE;&#x7684;&#x548C;&#x7B49;&#x4E8E;&#x548C;&#x7684;&#x65B9;&#x5DEE;&#x6765;&#x83B7;&#x5F97;&#x3002;&#x6839;&#x636E;<script type="math/tex; "> m = x_1 + ... + x_N </script>&#xFF0C;&#x4E14;&#x5BF9;&#x4E8E;&#x7531;&#x516C;&#x5F0F;&#xFF08;2.3&#xFF09;&#xFF08;2.4&#xFF09;&#x7ED9;&#x51FA;&#x7684;&#x6BCF;&#x4E2A;&#x89C2;&#x6D4B;&#x503C;&#x7684;&#x5747;&#x503C;&#x548C;&#x65B9;&#x5DEE;&#xFF0C;&#x6211;&#x4EEC;&#x5F97;&#x5230;&#xFF1A;    </p>
 <p><script type="math/tex; mode=display">
 \begin{eqnarray}
-\mathbb{E}[m] = \sum\limits_{m=0}{N} m Bin(m|N, \mu) = N_{\mu} \tag{2.11} \\
-var[m] \equiv \sum\limits_{m=0}{N}(m - \mathbb{E}[m])^2Bin(m|N, \mu) = N_\mu(1-\mu) \tag{2.12}
+\mathbb{E}[m] = \sum\limits_{m=0}^{N} m Bin(m|N, \mu) = N_{\mu} \tag{2.11} \\
+var[m] \equiv \sum\limits_{m=0}^{N}(m - \mathbb{E}[m])^2Bin(m|N, \mu) = N_\mu(1-\mu) \tag{2.12}
 \end{eqnarray}
 </script></p>
 <p>&#x8FD9;&#x4E9B;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x5FAE;&#x79EF;&#x5206;&#x6765;&#x8BC1;&#x660E;&#x3002;</p>
