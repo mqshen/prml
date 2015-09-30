@@ -26,5 +26,7 @@
     * [多项式变量](Chapter2/multinomial_variables.md)
         * [狄利克雷分布](Chapter2/multinomial/dirichlet_distribute.md)
     * [高斯分布](Chapter2/the_gaussian_distribution.md)
+        * [条件高斯分布](Chapter2/gaussian/conditional_gaussian_distributions.md)
+        * [边缘高斯分布](Chapter2/gaussian/marginal_gaussian_distributions.md)
     * [指数族](Chapter2/the_exponential_family.md)
     * [非参数方法](Chapter2/nonparametric_method.md)
