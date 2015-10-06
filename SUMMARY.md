@@ -30,5 +30,7 @@
         * [边缘高斯分布](Chapter2/gaussian/marginal_gaussian_distributions.md)
         * [高斯变量的贝叶斯定理](Chapter2/gaussian/bayes_gaussian_variables.md)
         * [高斯分布的最大似然](Chapter2/gaussian/maximum_likelihood_gaussian.md)
+        * [顺序估计](Chapter2/gaussian/sequential_estimation.md)
+        * [高斯分布的贝叶斯推断](Chapter2/gaussian/bayesian_inference_gaussian.md)
     * [指数族](Chapter2/the_exponential_family.md)
     * [非参数方法](Chapter2/nonparametric_method.md)
