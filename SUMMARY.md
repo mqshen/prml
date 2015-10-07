@@ -32,5 +32,6 @@
         * [高斯分布的最大似然](Chapter2/gaussian/maximum_likelihood_gaussian.md)
         * [顺序估计](Chapter2/gaussian/sequential_estimation.md)
         * [高斯分布的贝叶斯推断](Chapter2/gaussian/bayesian_inference_gaussian.md)
+        * [学生t分布](Chapter2/gaussian/student_t_distribution.md)
     * [指数族](Chapter2/the_exponential_family.md)
     * [非参数方法](Chapter2/nonparametric_method.md)
