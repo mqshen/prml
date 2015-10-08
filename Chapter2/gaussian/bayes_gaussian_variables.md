@@ -5,8 +5,8 @@
 
 $$
 \begin{eqnarray}
-p(x) = \mathcal{N}(x|\mu,\Lambda^{-1}) \tag{2.99} \\
-p(y|x) = \mathcal{N}(y|Ax+b, L^{-1}) \tag{2.100}
+p(x) &=& \mathcal{N}(x|\mu,\Lambda^{-1}) \tag{2.99} \\
+p(y|x) &=& \mathcal{N}(y|Ax+b, L^{-1}) \tag{2.100}
 \end{eqnarray}
 $$
 
@@ -28,9 +28,9 @@ $$
 
 $$
 \begin{eqnarray}
-\ln p(z) = \ln p(x) + \ln p(y|x) \\
-= -\frac{1}{2}(x - \mu)^T\Lambda(x-\mu) \\
--\frac{1}{2}(y-Ax-b)^TL(y-Ax-b) + const \tag{2.102}
+\ln p(z) &=& \ln p(x) + \ln p(y|x) \\
+&=& -\frac{1}{2}(x - \mu)^T\Lambda(x-\mu) \\
+& & -\frac{1}{2}(y-Ax-b)^TL(y-Ax-b) + const \tag{2.102}
 \end{eqnarray}
 $$
 
@@ -98,22 +98,24 @@ $$
 使用之前在多元高斯分布中，通过配出平方项得到的的二次项的结果（2.71），可以得到$$ z $$的均值：    
 
 $$
-\matchbb{E}[z] = R^{-1}
+\mathbb{E}[z] = R^{-1}
 \left( \begin{array}{c} \Lambda\mu - A^TLb & Lb \end{array} \right) \tag{2.107}
 $$
 
 使用式（2.105）得到：    
 
 $$
-\matchbb{E}[z] = 
+\mathbb{E}[z] = 
 \left( \begin{array}{c} \mu & A\mu + b \end{array} \right) \tag{2.108}
 $$
 
 接下来通过对$$ x $$积分得到边缘分布$$ p(y) $$的表达式。回忆一下，高斯随机向量的分量的边缘分布可以相当简单的使用分区协方差矩阵表示出来。具体来说，它的均值和协方差分别有式（2.92）（2.93）给出。使用式（2.105）和（2.108）可以得到边缘分布$$ p(y) $$的均值和方差：    
 
 $$
-\mathbb{E}[y] = A\mu + b \tag{2.109}
-cov[y] = L^{-1} + A\Lambda^{-1}A^T \tag{2.110}
+\begin{eqnarray}
+\mathbb{E}[y] &=& A\mu + b \tag{2.109} \\
+cov[y] &=& L^{-1} + A\Lambda^{-1}A^T \tag{2.110}
+\end{eqnarray}
 $$    
 
 一种特殊情况是$$ A = I $$的时候，这时退化成两个高斯分布的卷积。其中，卷积的均值是两个高斯分布均值的和，卷积的方差的是它们方差的和。    
@@ -122,8 +124,8 @@ $$
 
 $$
 \begin{eqnarray}
-\matchbb{E}[x|y] = (\Lambda + A^TLA)^{-1}\left{A^TL(y-b) + \Lambda\mu} \tag{2.111}
-cov[x|y] = (\Lambda + A^TLA)^{-1} \tag{2.112}
+\mathbb{E}[x|y] &=& (\Lambda + A^TLA)^{-1}\left\{A^TL(y-b) + \Lambda\mu\right\} \tag{2.111} \\
+cov[x|y] &=& (\Lambda + A^TLA)^{-1} \tag{2.112}
 \end{eqnarray}
 $$    
 
@@ -140,7 +142,7 @@ $$
 > 
 > $$ p(y) = \mathcal{N}(y|A\mu + b,L^{-1} + A\Lambda^{-1}A^T) \tag{2.115} $$
 > 
-> $$ p(x|y) = \mathcal{N}(x|\Sigma\left{A^TL(y-b) + \Lambda\mu \right},\Sigma) \tag{2.116} $$
+> $$ p(x|y) = \mathcal{N}(x|\Sigma\left\{A^TL(y-b) + \Lambda\mu \right\},\Sigma) \tag{2.116} $$
 > 
 > 其中
 > 

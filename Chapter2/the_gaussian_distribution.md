@@ -1,7 +1,7 @@
 高斯也称为正态分布，是连续变量分布上广泛使用的一种模型。对于单变量$$ x $$，高斯分布可以写成：    
 
 $$
-\mathcal{N}(x|\mu, \delta^2) = \frac{1}{(2\pi\delta^2)^{1/2}}exp\{-frac{1}{2\delta^2}(x-\mu)^2\} \tag{2.42}
+\mathcal{N}(x|\mu, \delta^2) = \frac{1}{(2\pi\delta^2)^{1/2}}exp\left\{-frac{1}{2\delta^2}(x-\mu)^2\right\} \tag{2.42}
 $$
 
 其中$$ \mu, \delta^2 $$分别为均值和方差。对于$$ D $$维向量$$ x $$，多变量的高斯分布形式为：    
@@ -108,7 +108,7 @@ $$
 因此，在$$ y_j $$坐标系下，高斯分布由以下形式：    
 
 $$
-p(y) = p(x)|J| = \prod\limits_{j=1}^D\frac{1}{(2\pi\lambda_j)^{1/2}}exp\{-\frac{y_j^2}{2\lambda_j}\} \tag{2.56}
+p(y) = p(x)|J| = \prod\limits_{j=1}^D\frac{1}{(2\pi\lambda_j)^{1/2}}exp\left\{-\frac{y_j^2}{2\lambda_j}\right\} \tag{2.56}
 $$
 
 这是$$ D $$个独立的一元高斯分布的乘积。特征向量定义了一系列平移，旋转变换，使联合概率分布转行为独立分布的乘积。分布关于$$ y $$坐标系的积分为：
@@ -123,8 +123,8 @@ $$
 
 $$
 \begin{eqnarray}
-\mathbb{E}[X] = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}(X - \mu)^T\Sigma^{-1}(X - \mu)\}XdX \\
-= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}Z^T\Sigma^{-1}Z\}(Z+\mu)dZ  \tag{2.58}
+\mathbb{E}[X] = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}(X - \mu)^T\Sigma^{-1}(X - \mu)\right\}XdX \\
+= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}Z^T\Sigma^{-1}Z\right\}(Z+\mu)dZ  \tag{2.58}
 \end{eqnarray}
 $$
 
@@ -140,8 +140,9 @@ $$
 
 $$ 
 \begin{eqnarray}
-\mathbb{E}[XX^T] = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}(X - \mu)^T\Sigma^{-1}(X - \mu)\}XX^TdX \\
-= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}Z^T\Sigma^{-1}Z\}(Z+\mu)(Z+\mu)^TdZ  \end{eqnarray}
+\mathbb{E}[XX^T] = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}(X - \mu)^T\Sigma^{-1}(X - \mu)\right\}XX^TdX \\
+= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}Z^T\Sigma^{-1}Z\right\}(Z+\mu)(Z+\mu)^TdZ
+\end{eqnarray}
 $$
 
 在一次使用了$$ Z = X - \mu $$替换了变量。注意，交叉项$$ \mu z^T, \mu^Tz $$由对称性再一次消去。项$$ \mu\mu^T $$是不变的，可以提取出来放到积分的外面。因为高斯分布是标准化的，所以它自己是等于单位矩阵。考虑涉及$$ ZZ^T $$的项。可以再次使用公式（2.45）给出的协方差矩阵的特征向量展开，和特征向量的完备性，得到：
@@ -154,9 +155,9 @@ $$
 
 $$
 \begin{eqnarray}
-\frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}Z^T\Sigma^{-1}Z\}ZZ^TdZ \\
-= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\sum\limits_{i=1}^D\sum\limits_{j=1}^D\int exp\{-\sum\limits_{k=1}^D\frac{y_k^2}{2\lambda_k}\}y_iy_jdy \\
-= \sum\limits_{i=1}^Du_iu_i^T\lambda_i = \Sigma \tag{2.61}
+& & \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}Z^T\Sigma^{-1}Z\right\}ZZ^TdZ \\
+&=& \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\sum\limits_{i=1}^D\sum\limits_{j=1}^D\int exp\left\{-\sum\limits_{k=1}^D\frac{y_k^2}{2\lambda_k}\right\}y_iy_jdy \\
+&=& \sum\limits_{i=1}^Du_iu_i^T\lambda_i = \Sigma \tag{2.61}
 \end{eqnarray}
 $$
 

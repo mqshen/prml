@@ -21,17 +21,17 @@ $$
 这样我们就把依赖于$$ x_b $$的项转化为高斯分布的标准二次型（对应式（2.84）右手边第一项）和一个不依赖于$$ x_b $$的项（但是依赖于$$ x_a $$）。取这个二次型为指数项代入式（2.83）得到：
 
 $$
-\int exp \left{-\frac{1}{2}(x_b - \Lambda_{bb}^{-1}m)^T\Lambda_{bb}(x_b - \Lambda{bb}^{-1}m)\right}dx_b \tag{2.86}
+\int exp \left\{-\frac{1}{2}(x_b - \Lambda_{bb}^{-1}m)^T\Lambda_{bb}(x_b - \Lambda{bb}^{-1}m)\right\}dx_b \tag{2.86}
 $$
 
 注意，这是对一个非标准化的高斯分布表达式的积分，所以可以很容易的得到这个积分结果为标准化系数的倒数。从标准高斯分布公式（2.43）可以知道这个系数是不依赖于均值，而只依赖于协方差矩阵的行列式。通过配出$$ x_b $$的平方项，可以积分掉$$ x_b $$，那么式（2.84）左手边对结果有影响的依赖于$$ x_a $$的项只剩下式（2.84）中右手边的最后一项，其中$$ m $$由式（2.85）给出。这项与式（2.70）关于$$ x_a $$的剩余项相结合得到：    
 
 $$
 \begin{eqnarray}
-\frac{1}{2}\left[\Lambda_{bb}\mu_b - \Lambda_{ba}(x_a - \mu_a)\right]^T\Lambda_{bb}^{-1}\left[\Lambda_{bb}\mu_b - \Lambda_{ba}(x_a - \mu_a)\right] \\
--\frac{1}{2}x_a^T\Lambda_{aa}x_a + x_a^T(\Lambda_{aa}\mu_a + \Lambda_{ab}\mu_b) + const \\
-= -\frac{1}{2}x_a^T(\Lambda_{aa} - \Lambda_{ab}\Lambda_{bb}^{-1}\Lambda_{ba})x_a \\
-+ x_a^T(\Lambda_{aa} - \Lambda_{ab}\Lambda_{bb}^{-1}\Lambda_{ba})^{-1}\mu_a + const \tag{2.87}
+&\frac{1}{2}&\left[\Lambda_{bb}\mu_b - \Lambda_{ba}(x_a - \mu_a)\right]^T\Lambda_{bb}^{-1}\left[\Lambda_{bb}\mu_b - \Lambda_{ba}(x_a - \mu_a)\right] \\
+& & -\frac{1}{2}x_a^T\Lambda_{aa}x_a + x_a^T(\Lambda_{aa}\mu_a + \Lambda_{ab}\mu_b) + const \\
+&=& -\frac{1}{2}x_a^T(\Lambda_{aa} - \Lambda_{ab}\Lambda_{bb}^{-1}\Lambda_{ba})x_a \\
+& & + x_a^T(\Lambda_{aa} - \Lambda_{ab}\Lambda_{bb}^{-1}\Lambda_{ba})^{-1}\mu_a + const \tag{2.87}
 \end{eqnarray}
 $$
 

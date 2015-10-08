@@ -14,8 +14,8 @@ $$
 
 $$
 \begin{eqnarray}
-\mathbb{E}[x] = \mu \tag{2.3} \\
-var[x] = \mu(1 - \mu) \tag{2.4}
+\mathbb{E}[x] &=& \mu \tag{2.3} \\
+var[x] &=& \mu(1 - \mu) \tag{2.4}
 \end{eqnarray}
 $$
 
@@ -67,8 +67,8 @@ $$
 
 $$
 \begin{eqnarray}
-\mathbb{E}[m] = \sum\limits_{m=0}^{N} m Bin(m|N, \mu) = N_{\mu} \tag{2.11} \\
-var[m] \equiv \sum\limits_{m=0}^{N}(m - \mathbb{E}[m])^2Bin(m|N, \mu) = N_\mu(1-\mu) \tag{2.12}
+\mathbb{E}[m] &=& \sum\limits_{m=0}^{N} m Bin(m|N, \mu) = N_{\mu} \tag{2.11} \\
+var[m] &\equiv& \sum\limits_{m=0}^{N}(m - \mathbb{E}[m])^2Bin(m|N, \mu) = N_\mu(1-\mu) \tag{2.12}
 \end{eqnarray}
 $$
 

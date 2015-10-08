@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="2.3.2" data-basepath="../.." data-revision="Mon Oct 05 2015 00:23:38 GMT+0800 (CST)">
+    <div class="book" data-level="2.3.2" data-basepath="../.." data-revision="Thu Oct 08 2015 16:40:37 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -559,6 +559,81 @@
             
         </li>
     
+        <li class="chapter " data-level="2.3.5" data-path="Chapter2/gaussian/sequential_estimation.html">
+            
+                
+                    <a href="../../Chapter2/gaussian/sequential_estimation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.5.</b>
+                        
+                        顺序估计
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="Chapter2/gaussian/bayesian_inference_gaussian.html">
+            
+                
+                    <a href="../../Chapter2/gaussian/bayesian_inference_gaussian.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.6.</b>
+                        
+                        高斯分布的贝叶斯推断
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="Chapter2/gaussian/student_t_distribution.html">
+            
+                
+                    <a href="../../Chapter2/gaussian/student_t_distribution.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.7.</b>
+                        
+                        学生t分布
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="Chapter2/gaussian/periodic_variables.html">
+            
+                
+                    <a href="../../Chapter2/gaussian/periodic_variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.8.</b>
+                        
+                        周期变量
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="Chapter2/gaussian/mixtures_gaussian.html">
+            
+                
+                    <a href="../../Chapter2/gaussian/mixtures_gaussian.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.9.</b>
+                        
+                        混合高斯模型
+                    </a>
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -720,15 +795,15 @@ m = \Lambda_{bb}\mu_b - \Lambda_{ba}(x_a - \mu_a) \tag{2.85}
 </script></p>
 <p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x628A;&#x4F9D;&#x8D56;&#x4E8E;<script type="math/tex; "> x_b </script>&#x7684;&#x9879;&#x8F6C;&#x5316;&#x4E3A;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x6807;&#x51C6;&#x4E8C;&#x6B21;&#x578B;&#xFF08;&#x5BF9;&#x5E94;&#x5F0F;&#xFF08;2.84&#xFF09;&#x53F3;&#x624B;&#x8FB9;&#x7B2C;&#x4E00;&#x9879;&#xFF09;&#x548C;&#x4E00;&#x4E2A;&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E;<script type="math/tex; "> x_b </script>&#x7684;&#x9879;&#xFF08;&#x4F46;&#x662F;&#x4F9D;&#x8D56;&#x4E8E;<script type="math/tex; "> x_a </script>&#xFF09;&#x3002;&#x53D6;&#x8FD9;&#x4E2A;&#x4E8C;&#x6B21;&#x578B;&#x4E3A;&#x6307;&#x6570;&#x9879;&#x4EE3;&#x5165;&#x5F0F;&#xFF08;2.83&#xFF09;&#x5F97;&#x5230;&#xFF1A;</p>
 <p><script type="math/tex; mode=display">
-\int exp \left{-\frac{1}{2}(x_b - \Lambda_{bb}^{-1}m)^T\Lambda_{bb}(x_b - \Lambda{bb}^{-1}m)\right}dx_b \tag{2.86}
+\int exp \left\{-\frac{1}{2}(x_b - \Lambda_{bb}^{-1}m)^T\Lambda_{bb}(x_b - \Lambda{bb}^{-1}m)\right\}dx_b \tag{2.86}
 </script></p>
 <p>&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x662F;&#x5BF9;&#x4E00;&#x4E2A;&#x975E;&#x6807;&#x51C6;&#x5316;&#x7684;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x79EF;&#x5206;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x7684;&#x5F97;&#x5230;&#x8FD9;&#x4E2A;&#x79EF;&#x5206;&#x7ED3;&#x679C;&#x4E3A;&#x6807;&#x51C6;&#x5316;&#x7CFB;&#x6570;&#x7684;&#x5012;&#x6570;&#x3002;&#x4ECE;&#x6807;&#x51C6;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x516C;&#x5F0F;&#xFF08;2.43&#xFF09;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x7CFB;&#x6570;&#x662F;&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E;&#x5747;&#x503C;&#xFF0C;&#x800C;&#x53EA;&#x4F9D;&#x8D56;&#x4E8E;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;&#x7684;&#x884C;&#x5217;&#x5F0F;&#x3002;&#x901A;&#x8FC7;&#x914D;&#x51FA;<script type="math/tex; "> x_b </script>&#x7684;&#x5E73;&#x65B9;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x79EF;&#x5206;&#x6389;<script type="math/tex; "> x_b </script>&#xFF0C;&#x90A3;&#x4E48;&#x5F0F;&#xFF08;2.84&#xFF09;&#x5DE6;&#x624B;&#x8FB9;&#x5BF9;&#x7ED3;&#x679C;&#x6709;&#x5F71;&#x54CD;&#x7684;&#x4F9D;&#x8D56;&#x4E8E;<script type="math/tex; "> x_a </script>&#x7684;&#x9879;&#x53EA;&#x5269;&#x4E0B;&#x5F0F;&#xFF08;2.84&#xFF09;&#x4E2D;&#x53F3;&#x624B;&#x8FB9;&#x7684;&#x6700;&#x540E;&#x4E00;&#x9879;&#xFF0C;&#x5176;&#x4E2D;<script type="math/tex; "> m </script>&#x7531;&#x5F0F;&#xFF08;2.85&#xFF09;&#x7ED9;&#x51FA;&#x3002;&#x8FD9;&#x9879;&#x4E0E;&#x5F0F;&#xFF08;2.70&#xFF09;&#x5173;&#x4E8E;<script type="math/tex; "> x_a </script>&#x7684;&#x5269;&#x4F59;&#x9879;&#x76F8;&#x7ED3;&#x5408;&#x5F97;&#x5230;&#xFF1A;    </p>
 <p><script type="math/tex; mode=display">
 \begin{eqnarray}
-\frac{1}{2}\left[\Lambda_{bb}\mu_b - \Lambda_{ba}(x_a - \mu_a)\right]^T\Lambda_{bb}^{-1}\left[\Lambda_{bb}\mu_b - \Lambda_{ba}(x_a - \mu_a)\right] \\
--\frac{1}{2}x_a^T\Lambda_{aa}x_a + x_a^T(\Lambda_{aa}\mu_a + \Lambda_{ab}\mu_b) + const \\
-= -\frac{1}{2}x_a^T(\Lambda_{aa} - \Lambda_{ab}\Lambda_{bb}^{-1}\Lambda_{ba})x_a \\
-+ x_a^T(\Lambda_{aa} - \Lambda_{ab}\Lambda_{bb}^{-1}\Lambda_{ba})^{-1}\mu_a + const \tag{2.87}
+&\frac{1}{2}&\left[\Lambda_{bb}\mu_b - \Lambda_{ba}(x_a - \mu_a)\right]^T\Lambda_{bb}^{-1}\left[\Lambda_{bb}\mu_b - \Lambda_{ba}(x_a - \mu_a)\right] \\
+& & -\frac{1}{2}x_a^T\Lambda_{aa}x_a + x_a^T(\Lambda_{aa}\mu_a + \Lambda_{ab}\mu_b) + const \\
+&=& -\frac{1}{2}x_a^T(\Lambda_{aa} - \Lambda_{ab}\Lambda_{bb}^{-1}\Lambda_{ba})x_a \\
+& & + x_a^T(\Lambda_{aa} - \Lambda_{ab}\Lambda_{bb}^{-1}\Lambda_{ba})^{-1}\mu_a + const \tag{2.87}
 \end{eqnarray}
 </script></p>
 <p>&#x5176;&#x4E2D;&#x2018;const&#x2019;&#x662F;&#x4E0E;<script type="math/tex; "> x_a </script>&#x65E0;&#x5173;&#x7684;&#x91CF;&#x3002;&#x518D;&#x6B21;&#x4E0E;&#x5F0F;&#xFF08;2.71&#xFF09;&#x6BD4;&#x8F83;&#x3002;&#x5F97;&#x5230;&#x8FB9;&#x7F18;&#x5206;&#x5E03;<script type="math/tex; "> p(x_a) </script>&#x7684;&#x534F;&#x65B9;&#x5DEE;&#xFF1A;    </p>

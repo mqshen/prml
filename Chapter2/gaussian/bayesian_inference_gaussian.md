@@ -1,7 +1,7 @@
 最大似然估计提供了一个估计参数$$ \mu, \Sigma $$的框架。现在我们通过引入这些参数的先验分布，来介绍贝叶斯方法。让我们以单元随机高斯变量$$ x $$这个简单的例子作为开始。假设方差$$ \delta^2 $$已知，考虑从$$ N $$个观测量$$ X = \{x_1,...,x_n\} $$中推断出均值$$ \mu $$的任务。对于给定$$ \mu $$的观测到数据的概率的似然函数是关于$$ \mu $$的函数，为：    
 
 $$
-p(x|\mu) = \prod\limits_{n=1}^Np(x_n|\mu) = \frac{1}{(2\pi\delta^2)^{N/2}}exp\left{-\frac{1}{2\delta^2}\sum\limits_{n=1}^N(x_n-\mu)^2\right} \tag{2.137}
+p(x|\mu) = \prod\limits_{n=1}^Np(x_n|\mu) = \frac{1}{(2\pi\delta^2)^{N/2}}exp\left\{-\frac{1}{2\delta^2}\sum\limits_{n=1}^N(x_n-\mu)^2\right\} \tag{2.137}
 $$
 
 再一次强调似然函数$$ p(x|\mu) $$不是关于$$ \mu $$的概率分布，也不是标准化的。    
@@ -15,7 +15,7 @@ $$
 且后验分布由：    
 
 $$
-p(\mu|X) \proto p(X|\mu)p(\mu) \tag{2.139}
+p(\mu|X) \propto p(X|\mu)p(\mu) \tag{2.139}
 $$
 
 给出。
@@ -29,8 +29,8 @@ $$
 
 $$
 \begin{eqnarray}
-\mu_N = \frac{\delta^2}{N\delta_0^2+\delta^2}\mu_0 + \frac{N\delta_0^2}{N\delta_0^2+\delta^2}\mu_{ML} \tag{2.141} \\ 
-\frac{1}{\delta_N^2} = \frac{1}{\delta_0^2} + \frac{N}{\delta^2} \tag{2.142} 
+\mu_N &=& \frac{\delta^2}{N\delta_0^2+\delta^2}\mu_0 + \frac{N\delta_0^2}{N\delta_0^2+\delta^2}\mu_{ML} \tag{2.141} \\ 
+\frac{1}{\delta_N^2} &=& \frac{1}{\delta_0^2} + \frac{N}{\delta^2} \tag{2.142} 
 \end{eqnarray}
 $$
 
@@ -52,7 +52,7 @@ $$趋向与0，同时后验分布在最大似然解附近变成无限高的尖�
 我们已经看到最大似然如何构造在观测到第$$ N $$个数据之后，更新之前$$ N - 1 $$个数据点得到的均值表达式的顺序方法。实际上，对于推断问题来说，贝叶斯范式很自然的引出顺序观点。为了证明这点，让我们来讨论一下高斯分布下的均值推断，把后验分布中最后一个数据点$$ x_N $$的贡献单独写出来：    
 
 $$
-p(\mu|D) \proto \left[p(\mu)\prod\limits_{n=1}^{N-1}p(x_n|\mu)\right]p(x_N|\mu) \tag{2.144}
+p(\mu|D) \propto \left[p(\mu)\prod\limits_{n=1}^{N-1}p(x_n|\mu)\right]p(x_N|\mu) \tag{2.144}
 $$
 
 方括号中的项（忽略标准化系数）是观测到$$ N − 1 $$个数据点之后的后验概率分布。把它看成一个先验分布,然后使用贝叶斯定理与和$$ x_N $$相关的似然函数结合到了一起，得到了观测到$$ N $$个数据点之后的后验概率。这种贝叶斯推断的顺序观点是非常通用的，可以应用于任何独立同分布的观测数据问题中。    
@@ -60,7 +60,7 @@ $$
 目前为止，我们假设高斯分布的数据的方差是已知的，目标是推断出均值。现在假设均值是已知的，希望推断出方差。同样的，如果选择先验分布的共轭形式，我们的计算会得到大量简化。使用精度$$ \lambda \equiv 1 $$进行计算是最方便的。关于$$ \lambda $$的似然函数为：     
 
 $$
-p(X|\lambda) = \prod\limits_{n=1}^N\mathcal{N}(x_n|\mu, \lambda^{-1} \proto \lambda^{N/2}exp\left{-\frac{\lambda}{2}\sum\limits_{n=1}^N(x_n - \mu)^2\right} \tag{2.145}
+p(X|\lambda) = \prod\limits_{n=1}^N\mathcal{N}(x_n|\mu, \lambda^{-1} \propto \lambda^{N/2}exp\left\{-\frac{\lambda}{2}\sum\limits_{n=1}^N(x_n - \mu)^2\right\} \tag{2.145}
 $$
 
 因此，对应的共轭先验正比于$$ \lambda $$的幂次数和$$ \lambda $$的线性函数的指数。这就是Gamma分布，定义为：    
@@ -78,23 +78,23 @@ Gamma分布的均值和方差为：
 
 $$
 \begin{eqnarray}
-\mathbb{E}[\lambda] = \frac{a}{b} \tag{2.147} \\
-var[\lambda] = \frac{a}{b^2} \tag{2.148}
+\mathbb{E}[\lambda] &=& \frac{a}{b} \tag{2.147} \\
+var[\lambda] &=& \frac{a}{b^2} \tag{2.148}
 \end{eqnarray}
 $$
 
 考虑先验分布$$ Gam(\lambda|a_0,b_0) $$。如果乘以似然函数（2.145），那么就得到后验分布：    
 
 $$
-p(\lambda|X) \proto \lambda^{a_0-1}\lambda^{N/2}exp\left{-b_0\lambda - \frac{\lambda}{2}\sum\limits_{n=1}^N(x_n - \mu)^2\right} \tag{2.149}
+p(\lambda|X) \propto \lambda^{a_0-1}\lambda^{N/2}exp\left\{-b_0\lambda - \frac{\lambda}{2}\sum\limits_{n=1}^N(x_n - \mu)^2\right\} \tag{2.149}
 $$
 
 我们可以把它当作形式为$$ Gam(\lambda|a_N, b_N) $$的gamma分布，其中：    
 
 $$
 \begin{eqnarray}
-a_N = a_0 + \frac{N}{2} \tag{2.150} \\ 
-b_N = b_0 + \frac{1}{2}\sum\limits_{n=1}^N(x_n - \mu)^2 = b_0 + \frac{N}{2}\sigma_{ML}^2 \tag{2.151}
+a_N &=& a_0 + \frac{N}{2} \tag{2.150} \\ 
+b_N &=& b_0 + \frac{1}{2}\sum\limits_{n=1}^N(x_n - \mu)^2 = b_0 + \frac{N}{2}\sigma_{ML}^2 \tag{2.151}
 \end{eqnarray}
 $$
 
@@ -109,8 +109,8 @@ $$。回忆一下，我们在Dirichlet先验中做过类似的解释。这些分
 
 $$
 \begin{eqnarray}
-p(X|\mu,\lambda) = \prod\limits_{n=1}^N\left(\frac{\lambda}{2\pi}\right)^{\frace{1}{2}}exp\left{-\frac{\lambda}{2}(x_n - \mu)^2\right}  \\
-\proto \left[\lambda^{1/2}exp\left(-\frac{\lambda\mu^2}{2}\right)\right]^Nexp\left{\lambda\mu\sum\limits_{n=1}^Nx_n-\frac{\lambda}{2}\sum\limits_{n=1}^Nx_n^2\right} \tag{2.152}
+p(X|\mu,\lambda) &=& \prod\limits_{n=1}^N\left(\frac{\lambda}{2\pi}\right)^{\frac{1}{2}}exp\left\{-\frac{\lambda}{2}(x_n - \mu)^2\right\}  \\
+&\propto& \left[\lambda^{1/2}exp\left(-\frac{\lambda\mu^2}{2}\right)\right]^Nexp\left\{\lambda\mu\sum\limits_{n=1}^Nx_n-\frac{\lambda}{2}\sum\limits_{n=1}^Nx_n^2\right\} \tag{2.152}
 \end{eqnarray}
 $$
 
@@ -118,8 +118,8 @@ $$
 
 $$
 \begin{eqnarray}
-p(\mu,\lambda) \proto \left[\lambda^{1/2}exp\left(-\frac{\lambda\mu^2}{2}\right)\right]^\beta exp{c\lambda\mu - d\lambda} \\
-= exp\left{-\frac{\beta\lambda}{2}(\mu-c/\beta)^2\right}\lambda^{\beta/2}exp\left{-\left(d-\frac{c^2}{2\beta}\right)\lambda\right} \tag{2.153}
+p(\mu,\lambda) &\propto& \left[\lambda^{1/2}exp\left(-\frac{\lambda\mu^2}{2}\right)\right]^\beta exp{c\lambda\mu - d\lambda} \\
+&=& exp\left\{-\frac{\beta\lambda}{2}(\mu-c/\beta)^2\right\}\lambda^{\beta/2}exp\left\{-\left(d-\frac{c^2}{2\beta}\right)\lambda\right\} \tag{2.153}
 \end{eqnarray}
 $$
 

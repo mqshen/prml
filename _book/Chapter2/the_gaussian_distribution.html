@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="2.3" data-basepath=".." data-revision="Mon Oct 05 2015 00:23:38 GMT+0800 (CST)">
+    <div class="book" data-level="2.3" data-basepath=".." data-revision="Thu Oct 08 2015 16:40:37 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -559,6 +559,81 @@
             
         </li>
     
+        <li class="chapter " data-level="2.3.5" data-path="Chapter2/gaussian/sequential_estimation.html">
+            
+                
+                    <a href="../Chapter2/gaussian/sequential_estimation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.5.</b>
+                        
+                        顺序估计
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="Chapter2/gaussian/bayesian_inference_gaussian.html">
+            
+                
+                    <a href="../Chapter2/gaussian/bayesian_inference_gaussian.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.6.</b>
+                        
+                        高斯分布的贝叶斯推断
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="Chapter2/gaussian/student_t_distribution.html">
+            
+                
+                    <a href="../Chapter2/gaussian/student_t_distribution.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.7.</b>
+                        
+                        学生t分布
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="Chapter2/gaussian/periodic_variables.html">
+            
+                
+                    <a href="../Chapter2/gaussian/periodic_variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.8.</b>
+                        
+                        周期变量
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="Chapter2/gaussian/mixtures_gaussian.html">
+            
+                
+                    <a href="../Chapter2/gaussian/mixtures_gaussian.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.9.</b>
+                        
+                        混合高斯模型
+                    </a>
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -707,7 +782,7 @@
                     
                         <p>&#x9AD8;&#x65AF;&#x4E5F;&#x79F0;&#x4E3A;&#x6B63;&#x6001;&#x5206;&#x5E03;&#xFF0C;&#x662F;&#x8FDE;&#x7EED;&#x53D8;&#x91CF;&#x5206;&#x5E03;&#x4E0A;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x6A21;&#x578B;&#x3002;&#x5BF9;&#x4E8E;&#x5355;&#x53D8;&#x91CF;<script type="math/tex; "> x </script>&#xFF0C;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#xFF1A;    </p>
 <p><script type="math/tex; mode=display">
-\mathcal{N}(x|\mu, \delta^2) = \frac{1}{(2\pi\delta^2)^{1/2}}exp\{-frac{1}{2\delta^2}(x-\mu)^2\} \tag{2.42}
+\mathcal{N}(x|\mu, \delta^2) = \frac{1}{(2\pi\delta^2)^{1/2}}exp\left\{-frac{1}{2\delta^2}(x-\mu)^2\right\} \tag{2.42}
 </script></p>
 <p>&#x5176;&#x4E2D;<script type="math/tex; "> \mu, \delta^2 </script>&#x5206;&#x522B;&#x4E3A;&#x5747;&#x503C;&#x548C;&#x65B9;&#x5DEE;&#x3002;&#x5BF9;&#x4E8E;<script type="math/tex; "> D </script>&#x7EF4;&#x5411;&#x91CF;<script type="math/tex; "> x </script>&#xFF0C;&#x591A;&#x53D8;&#x91CF;&#x7684;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x5F62;&#x5F0F;&#x4E3A;&#xFF1A;    </p>
 <p><script type="math/tex; mode=display">
@@ -774,7 +849,7 @@ J_{ij} = \frac{\partial x_i}{\partial y_j} = U_{ji} \tag{2.53}
 </script></p>
 <p>&#x56E0;&#x6B64;&#xFF0C;&#x5728;<script type="math/tex; "> y_j </script>&#x5750;&#x6807;&#x7CFB;&#x4E0B;&#xFF0C;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7531;&#x4EE5;&#x4E0B;&#x5F62;&#x5F0F;&#xFF1A;    </p>
 <p><script type="math/tex; mode=display">
-p(y) = p(x)|J| = \prod\limits_{j=1}^D\frac{1}{(2\pi\lambda_j)^{1/2}}exp\{-\frac{y_j^2}{2\lambda_j}\} \tag{2.56}
+p(y) = p(x)|J| = \prod\limits_{j=1}^D\frac{1}{(2\pi\lambda_j)^{1/2}}exp\left\{-\frac{y_j^2}{2\lambda_j}\right\} \tag{2.56}
 </script></p>
 <p>&#x8FD9;&#x662F;<script type="math/tex; "> D </script>&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x4E00;&#x5143;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x4E58;&#x79EF;&#x3002;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x5E73;&#x79FB;&#xFF0C;&#x65CB;&#x8F6C;&#x53D8;&#x6362;&#xFF0C;&#x4F7F;&#x8054;&#x5408;&#x6982;&#x7387;&#x5206;&#x5E03;&#x8F6C;&#x884C;&#x4E3A;&#x72EC;&#x7ACB;&#x5206;&#x5E03;&#x7684;&#x4E58;&#x79EF;&#x3002;&#x5206;&#x5E03;&#x5173;&#x4E8E;<script type="math/tex; "> y </script>&#x5750;&#x6807;&#x7CFB;&#x7684;&#x79EF;&#x5206;&#x4E3A;&#xFF1A;</p>
 <p><script type="math/tex; mode=display">
@@ -784,8 +859,8 @@ p(y) = p(x)|J| = \prod\limits_{j=1}^D\frac{1}{(2\pi\lambda_j)^{1/2}}exp\{-\frac{
 <p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x8003;&#x5BDF;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x52A8;&#x5DEE;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x53C2;&#x6570;<script type="math/tex; "> \mu, \Sigma </script>&#x7684;&#x89E3;&#x91CA;&#x3002;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;<script type="math/tex; "> x </script>&#x7684;&#x671F;&#x671B;&#x662F;&#xFF1A;    </p>
 <p><script type="math/tex; mode=display">
 \begin{eqnarray}
-\mathbb{E}[X] = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}(X - \mu)^T\Sigma^{-1}(X - \mu)\}XdX \\
-= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}Z^T\Sigma^{-1}Z\}(Z+\mu)dZ  \tag{2.58}
+\mathbb{E}[X] = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}(X - \mu)^T\Sigma^{-1}(X - \mu)\right\}XdX \\
+= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}Z^T\Sigma^{-1}Z\right\}(Z+\mu)dZ  \tag{2.58}
 \end{eqnarray}
 </script></p>
 <p>&#x5176;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;<script type="math/tex; "> Z = X - \mu </script>&#x66FF;&#x6362;&#x4E86;&#x53D8;&#x91CF;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x6307;&#x6570;&#x51FD;&#x6570;&#x662F;&#x5173;&#x4E8E;<script type="math/tex; "> Z </script>&#x7684;&#x5076;&#x51FD;&#x6570;&#xFF0C;&#x4E14;&#x79EF;&#x5206;&#x8303;&#x56F4;&#x662F;<script type="math/tex; "> (-\infty, \infty) </script>&#xFF0C;&#x6839;&#x636E;&#x5BF9;&#x79F0;&#x6027;&#x9879;<script type="math/tex; "> (Z + \mu) </script>&#x4E2D;&#x7684;<script type="math/tex; "> Z </script>&#x53EF;&#x4EE5;&#x6D88;&#x53BB;&#x3002;&#x56E0;&#x6B64;&#xFF1A;</p>
@@ -796,8 +871,9 @@ p(y) = p(x)|J| = \prod\limits_{j=1}^D\frac{1}{(2\pi\lambda_j)^{1/2}}exp\{-\frac{
 <p>&#x73B0;&#x5728;&#xFF0C;&#x8003;&#x8651;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x7684;&#x4E8C;&#x9636;&#x52A8;&#x5DEE;&#x3002;&#x5728;&#x4E00;&#x5143;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E8C;&#x9636;&#x52A8;&#x5DEE;&#x7531;<script type="math/tex; "> \mathbb{E}[x^2] </script>&#x7ED9;&#x51FA;&#x3002;&#x5BF9;&#x4E8E;&#x591A;&#x5143;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#xFF0C;&#x6709;<script type="math/tex; "> D^2 </script>&#x4E2A;&#x4E8C;&#x9636;&#x52A8;&#x5DEE;&#xFF0C;&#x7531;<script type="math/tex; "> \mathbb{E}[x_ix_j] </script>&#x7ED9;&#x51FA;&#xFF0C;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x5F97;&#x5230;&#x77E9;&#x9635;<script type="math/tex; "> \mathbb{E}[XX^T] </script>&#x3002;&#x8FD9;&#x4E2A;&#x77E9;&#x9635;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#xFF1A;    </p>
 <p><script type="math/tex; "> 
 \begin{eqnarray}
-\mathbb{E}[XX^T] = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}(X - \mu)^T\Sigma^{-1}(X - \mu)\}XX^TdX \\
-= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}Z^T\Sigma^{-1}Z\}(Z+\mu)(Z+\mu)^TdZ  \end{eqnarray}
+\mathbb{E}[XX^T] = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}(X - \mu)^T\Sigma^{-1}(X - \mu)\right\}XX^TdX \\
+= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}Z^T\Sigma^{-1}Z\right\}(Z+\mu)(Z+\mu)^TdZ
+\end{eqnarray}
 </script></p>
 <p>&#x5728;&#x4E00;&#x6B21;&#x4F7F;&#x7528;&#x4E86;<script type="math/tex; "> Z = X - \mu </script>&#x66FF;&#x6362;&#x4E86;&#x53D8;&#x91CF;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x4EA4;&#x53C9;&#x9879;<script type="math/tex; "> \mu z^T, \mu^Tz </script>&#x7531;&#x5BF9;&#x79F0;&#x6027;&#x518D;&#x4E00;&#x6B21;&#x6D88;&#x53BB;&#x3002;&#x9879;<script type="math/tex; "> \mu\mu^T </script>&#x662F;&#x4E0D;&#x53D8;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x53D6;&#x51FA;&#x6765;&#x653E;&#x5230;&#x79EF;&#x5206;&#x7684;&#x5916;&#x9762;&#x3002;&#x56E0;&#x4E3A;&#x9AD8;&#x65AF;&#x5206;&#x5E03;&#x662F;&#x6807;&#x51C6;&#x5316;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x81EA;&#x5DF1;&#x662F;&#x7B49;&#x4E8E;&#x5355;&#x4F4D;&#x77E9;&#x9635;&#x3002;&#x8003;&#x8651;&#x6D89;&#x53CA;<script type="math/tex; "> ZZ^T </script>&#x7684;&#x9879;&#x3002;&#x53EF;&#x4EE5;&#x518D;&#x6B21;&#x4F7F;&#x7528;&#x516C;&#x5F0F;&#xFF08;2.45&#xFF09;&#x7ED9;&#x51FA;&#x7684;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x5C55;&#x5F00;&#xFF0C;&#x548C;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x7684;&#x5B8C;&#x5907;&#x6027;&#xFF0C;&#x5F97;&#x5230;&#xFF1A;</p>
 <p><script type="math/tex; mode=display">
@@ -806,9 +882,9 @@ Z = \sum\limits_{j=1}^Dy_ju_j  \tag{2.60}
 <p>&#x5176;&#x4E2D;<script type="math/tex; "> y_j = u_j^TZ </script>&#xFF0C;&#x63A8;&#x51FA;&#xFF1A;    </p>
 <p><script type="math/tex; mode=display">
 \begin{eqnarray}
-\frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\{-\frac{1}{2}Z^T\Sigma^{-1}Z\}ZZ^TdZ \\
-= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\sum\limits_{i=1}^D\sum\limits_{j=1}^D\int exp\{-\sum\limits_{k=1}^D\frac{y_k^2}{2\lambda_k}\}y_iy_jdy \\
-= \sum\limits_{i=1}^Du_iu_i^T\lambda_i = \Sigma \tag{2.61}
+& & \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}Z^T\Sigma^{-1}Z\right\}ZZ^TdZ \\
+&=& \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\sum\limits_{i=1}^D\sum\limits_{j=1}^D\int exp\left\{-\sum\limits_{k=1}^D\frac{y_k^2}{2\lambda_k}\right\}y_iy_jdy \\
+&=& \sum\limits_{i=1}^Du_iu_i^T\lambda_i = \Sigma \tag{2.61}
 \end{eqnarray}
 </script></p>
 <p>&#x5176;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x65B9;&#x7A0B;&#xFF08;2.45&#xFF09;&#xFF0C;&#x4EE5;&#x53CA;&#x4E2D;&#x95F4;&#x4E00;&#x884C;&#x53F3;&#x4FA7;&#x7684;&#x79EF;&#x5206;&#x9664;&#x4E86;<script type="math/tex; "> i = j</script>&#x5176;&#x4ED6;&#x53EF;&#x4EE5;&#x7531;&#x5BF9;&#x79F0;&#x6027;&#x6D88;&#x53BB;&#x3002;&#x6700;&#x540E;&#x4E00;&#x884C;&#x4F7F;&#x7528;&#x4E86;&#x516C;&#x5F0F;&#xFF08;1.50&#xFF09;&#xFF0C;&#xFF08;2.55&#xFF09;&#x7684;&#x7ED3;&#x679C;&#x548C;&#x516C;&#x5F0F;&#xFF08;2.48&#xFF09;&#x4E00;&#x8D77;&#xFF0C;&#x5F97;&#x5230;&#xFF1A;    </p>

@@ -4,10 +4,10 @@
 
 $$
 \begin{eqnarray}
-\mu_{ML}^{(N)} = \frac{1}{N}\sum\limits_{n=1}^Nx_n \\
-= \frac{1}{N}x_N + \frac{1}{N}\sum_limits_{n=1}^{N-1}x_n \\
-= \frac{1}{N}x_N + \frac{N-1}{N}\mu_{ML}^{(N-1)} \\
-= \mu_{ML}^{(N-1)} + \frac{1}{N}(x_N - \mu_{ML}^{(N-1)}) \tag{2.126}
+\mu_{ML}^{(N)} &=& \frac{1}{N}\sum\limits_{n=1}^Nx_n \\
+&=& \frac{1}{N}x_N + \frac{1}{N}\sum_limits_{n=1}^{N-1}x_n \\
+&=& \frac{1}{N}x_N + \frac{N-1}{N}\mu_{ML}^{(N-1)} \\
+&=& \mu_{ML}^{(N-1)} + \frac{1}{N}(x_N - \mu_{ML}^{(N-1)}) \tag{2.126}
 \end{eqnarray}
 $$
 
@@ -15,7 +15,7 @@ $$
 
 式（2.126）的结果显然与式（2.121）的批量结果一样，因为这两个公式相等。但是，我们不是总能使用这种方法推导出一个顺序的算法，这就需要找到一种更通用的顺序学习方法，这就是Robbins-Monro算法。考虑一对有联合分布$$ p(z, \theta) $$控制的随机变量$$ \theta , z $$。$$ \theta $$上的$$ z $$的期望由去定函数$$ f(\theta) $$给出：     
 
-$$ f(\theat) \equiv \mathbb{E}[z|\theta] = \int zp(z|\theta) dz \tag{2.127} $$
+$$ f(\theta) \equiv \mathbb{E}[z|\theta] = \int zp(z|\theta) dz \tag{2.127} $$
 
 图2.10给出了图形化的说明。通过这种方式定义的函数被称为回归函数(regression function)。
 
@@ -26,7 +26,7 @@ $$ f(\theat) \equiv \mathbb{E}[z|\theta] = \int zp(z|\theta) dz \tag{2.127} $$
 
 $$ \mathbb{E}[(z-f)^2|\theta] < \infty \tag{2.128} $$    
 
-并且不失一般性的假设当$$ \theta > \theta^∗ $$时$$ f(\theta) > \theta $$,当$$ \theta < \theta^∗ $$时$$ f(\theta) < \tehta $$，如图2.10所示。Robbins-Monro方法定义对根$$ \theta^* $$的一些列顺序估计：    
+并且不失一般性的假设当$$ \theta > \theta^∗ $$时$$ f(\theta) > \theta $$,当$$ \theta < \theta^∗ $$时$$ f(\theta) < \theta $$，如图2.10所示。Robbins-Monro方法定义对根$$ \theta^* $$的一些列顺序估计：    
 
 $$ \theta^{(N)} = \theta^{(N-1)} + a_{N-1}z(\theta^{(N-1)}) \tag{2.129} $$    
 
@@ -34,9 +34,9 @@ $$ \theta^{(N)} = \theta^{(N-1)} + a_{N-1}z(\theta^{(N-1)}) \tag{2.129} $$
 
 $$
 \begin{eqnarray}
-lim\limits_{N to \infty}a_N = 0 \tag{2.130} \\
-\sum_\limits_{N=1}^\infty a_N = \infty \tag{2.131} \\
-\sum_\limits_{N=1}^\infty a_N^2 = \infty \tag{2.132}
+\lim\limits_{N \to \infty}a_N &=& 0 \tag{2.130} \\
+\sum\limits_{N=1}^\infty a_N &=& \infty \tag{2.131} \\
+\sum\limits_{N=1}^\infty a_N^2 &=& \infty \tag{2.132}
 \end{eqnarray}
 $$
 
@@ -45,19 +45,19 @@ $$
 现在，我们讨论Robbins-Monro算法能解决多一般的顺序最大似然问题。根据定义，最大似然解$$ \theta_{ML} $$是对数似然函数的驻点。因此满足：    
 
 $$
-\frac{\partial}{\partial \theta}\left{\frac{1}{N}\sum_{n=1}^N\ln p(x_n|\theta) \right}\|_\theta_{ML} = 0 \tag{2.133}
+\frac{\partial}{\partial\theta}\left\{\frac{1}{N}\sum\limits_{n=1}^N\ln p(x_n|\theta) \right\}\vert_{\theta_{ML}} = 0 \tag{2.133}
 $$
 
 交换求导与求和顺序，且令极限$$ N \to \infty $$得到： 
 
 $$
-lim\limits_{N \to \infty}\frac{1}{N}\sum\limits_{n=1}^N\frac{\partial}{\partial\theta}\ln p(x_n|\theta) = \matchbb{E}_x\left[\frac{\partial}{\partial\theta}\ln p(x_n|\theta)\right] \tag{2.134}
+\lim\limits_{N \to \infty}\frac{1}{N}\sum\limits_{n=1}^N\frac{\partial}{\partial\theta}\ln p(x_n|\theta) = \mathbb{E}_x\left[\frac{\partial}{\partial\theta}\ln p(x_n|\theta)\right] \tag{2.134}
 $$
 
 所以求最大似然的解对应求解回归函数的根。因此我们可以应用Robbins-Monro方法，现在，它的公式是：    
 
 $$
-\theat^{(\theta)} = \theta^{(N-1)} + a_{N-1}\frac{\partial}{\partial\theta^{(N-1)}}\ln p(x_N|\theta^{(N-1)}) \tag{2.135}
+\theta^{(N)} = \theta^{(N-1)} + a_{N-1}\frac{\partial}{\partial\theta^{(N-1)}}\ln p(x_N|\theta^{(N-1)}) \tag{2.135}
 $$
 
 作为一个特殊的例子，再次考虑高斯分布均值的顺序估计问题。在这种情况下,参数$$ \theta^{(N)} $$是高斯分布均值$$ \mu_{ML}^{(N)} $$的估计，随机变量$$ z $$的形式为：    

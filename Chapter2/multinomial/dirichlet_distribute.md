@@ -35,8 +35,8 @@ $$
 
 $$
 \begin{eqnarray}
-p(\mu|D, \alpha) = Dir(\mu|\alpha + m) \\
-= \frac{\Gamma(\alpha_0 + N)}{\Gamma(\alpha_1+m_1)...+\Gamma(\alpha_K+m_K)}\prod\limits_{k=1}^K\mu_k^{\alpha_k + m_k - 1} \tag{2.41}
+p(\mu|D, \alpha) &=& Dir(\mu|\alpha + m) \\
+&=& \frac{\Gamma(\alpha_0 + N)}{\Gamma(\alpha_1+m_1)...+\Gamma(\alpha_K+m_K)}\prod\limits_{k=1}^K\mu_k^{\alpha_k + m_k - 1} \tag{2.41}
 \end{eqnarray}
 $$
 

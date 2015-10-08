@@ -19,8 +19,8 @@ $$
 其中均值和方差：
 $$
 \begin{eqnarray}
-\mathbb{E}[\mu] = \frac{a}{a + b} \tag{2.15} \\
-var[\mu] = \frac{ab}{(a+b)^2(a+b+1)} \tag{2.16}
+\mathbb{E}[\mu] &=& \frac{a}{a + b} \tag{2.15} \\
+var[\mu] &=& \frac{ab}{(a+b)^2(a+b+1)} \tag{2.16}
 \end{eqnarray}
 $$
 
@@ -75,8 +75,8 @@ $$
 其中
 $$
 \begin{eqnarray}
-\mathbb{E}_\theta[\theta] \equiv \int p(\theta)\theta d\theta \tag{2.22} \\
-\mathbb{E}_D[\mathbb{E}_\theta[\theta|D]] \equiv \int\{\int\theta p(\theta|D)d\theta\}p(D)dD \tag{2.23}
+\mathbb{E}_\theta[\theta] &\equiv& \int p(\theta)\theta d\theta \tag{2.22} \\
+\mathbb{E}_D[\mathbb{E}_\theta[\theta|D]] &\equiv& \int\left\{\int\theta p(\theta|D)d\theta\right\}p(D)dD \tag{2.23}
 \end{eqnarray}
 $$
 

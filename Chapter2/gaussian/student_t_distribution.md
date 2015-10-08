@@ -2,16 +2,16 @@
 
 $$
 \begin{eqnarray}
-p(x|\mu,a,b) = \int\limits_0^\infty\mathcal{N}(x|\mu,\tau^{-1})Gam(\tau|a,b)d\tau \\
-=  \int\limits_0^\infty\frac{b^ae^{(-br)}\tau^{a-1}}{\Lambda(a)}\left(\frac{\tau}{2\pi}\right)^{1/2}exp\left{-\frac{\tau}{2}(x-\mu)^2\right}d\tau \\
-= \frac{b^a}{\Lambda(a)}\left(\frac{\tau}{2\pi}\right)^{1/2}\left[b+\frac{(x-\mu)^2}{2}\right]^{-a-1/2}\Lambda(a+1/2) \tag{2.158}
+p(x|\mu,a,b) &=& \int\limits_0^\infty\mathcal{N}(x|\mu,\tau^{-1})Gam(\tau|a,b)d\tau \\
+&=&  \int\limits_0^\infty\frac{b^ae^{(-br)}\tau^{a-1}}{\Lambda(a)}\left(\frac{\tau}{2\pi}\right)^{1/2}exp\left\{-\frac{\tau}{2}(x-\mu)^2\right\}d\tau \\
+&=& \frac{b^a}{\Lambda(a)}\left(\frac{\tau}{2\pi}\right)^{1/2}\left[b+\frac{(x-\mu)^2}{2}\right]^{-a-1/2}\Lambda(a+1/2) \tag{2.158}
 \end{eqnarray}
 $$
 
 其中我们使用了变量替换$$ z = \tau[b+(x-\mu)^2/2] $$。为了方便，我们定义了新变量$$ v = 2a, \lambda = a/b $$那么分布$$ p(x|\mu,a,b) $$就可以写成：    
 
 $$
-St(x|\mu,\lambda,v) = \frac{\Lambda(v/2+1/2)}{\Lambda(v/2)}\left(\face{\lambda}{\pi v}\right)^{1/2}\left[1+\frac{\lambda(x-\mu)^2}{v}\right]^{-v/2-1/2}  \tga{2.159}
+St(x|\mu,\lambda,v) = \frac{\Lambda(v/2+1/2)}{\Lambda(v/2)}\left(\frac{\lambda}{\pi v}\right)^{1/2}\left[1+\frac{\lambda(x-\mu)^2}{v}\right]^{-v/2-1/2}  \tag{2.159}
 $$
 
 这就是学生t分布。参数$$ \lambda $$有时被称为t分布的精度，虽然它并不总是等于方差的逆。参数$$ v $$表示自由度，图2.15展示了它的影响。
@@ -44,7 +44,7 @@ $$
 使用与一元变量相同的方法，求解这个积分，得：    
 
 $$
-St(x|\mu,\Lambda,v) = \frac{\Gamma(D/2+v/2)}{\Gamma(v/2)}\frac{|\Lambda|^{1/2}}{(\piv)^{D/2}}\left[1+\frac{\Delta^2}{v}\right]^{-D/2-v/2} \tag{2.162}
+St(x|\mu,\Lambda,v) = \frac{\Gamma(D/2+v/2)}{\Gamma(v/2)}\frac{|\Lambda|^{1/2}}{(\pi v)^{D/2}}\left[1+\frac{\Delta^2}{v}\right]^{-D/2-v/2} \tag{2.162}
 $$
 
 其中$$ D $$是向量$$ x $$的维数，$$ \Delta^2 $$是由
@@ -57,9 +57,9 @@ $$
 
 $$
 \begin{eqnarray}
-\mathbb{E}[x] = \mu, if v > 1 \tag{2.164} \\
-cov[x] = \frac{v}{(v-2)}\Lambda^{-1}  if v > 2 \tag{2.165} \\
-mode[x] = \mu \tag{2.166}
+\mathbb{E}[x] &=& \mu, & \text{if } v > 1 \tag{2.164} \\
+cov[x] &=& \frac{v}{(v-2)}\Lambda^{-1}, & \text{if } v > 2 \tag{2.165} \\
+mode[x] &=& \mu \tag{2.166}
 \end{eqnarray}
 $$
 

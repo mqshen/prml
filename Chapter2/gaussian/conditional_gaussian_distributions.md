@@ -36,7 +36,7 @@ $$
 \right) \tag{2.67}
 $$
 
-注意，协方差矩阵是对称的即$$ \Sigma^T = \Sigma $$，可得$$ \Sigma_{aa},\Sigam_{bb} $$也是对称的，且$$ \Sigma_{ba} = \Sigma_{ab}^T $$。
+注意，协方差矩阵是对称的即$$ \Sigma^T = \Sigma $$，可得$$ \Sigma_{aa},\Sigma_{bb} $$也是对称的，且$$ \Sigma_{ba} = \Sigma_{ab}^T $$。
 
 在很多情况下，使用协方差的逆矩阵会比较方便，记：
 
@@ -62,9 +62,9 @@ $$
 
 $$
 \begin{eqnarray}
--\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu) = \\
--\frac{1}{2}(x_a - \mu_a)^T\Lambda_{aa}(x_a - \mu_a) -\frac{1}{2}(x_a - \mu_a)^T\Lambda_{ab}(x_b - \mu_b) \\
--\frac{1}{2}(x_b - \mu_b)^T\Lambda_{ba}(x_a - \mu_a) -\frac{1}{2}(x_b - \mu_b)^T\Lambda_{bb}(x_b - \mu_b) \tag{2/70}
+&-\frac{1}{2}&(x-\mu)^T\Sigma^{-1}(x-\mu) = \\
+&-\frac{1}{2}&(x_a - \mu_a)^T\Lambda_{aa}(x_a - \mu_a) -\frac{1}{2}(x_a - \mu_a)^T\Lambda_{ab}(x_b - \mu_b) \\
+&-\frac{1}{2}&(x_b - \mu_b)^T\Lambda_{ba}(x_a - \mu_a) -\frac{1}{2}(x_b - \mu_b)^T\Lambda_{bb}(x_b - \mu_b) \tag{2.70}
 \end{eqnarray}
 $$
 
@@ -88,14 +88,14 @@ $$ \Sigma_{a|b} = \Lambda_{aa}^{-1} \tag{2.73} $$
 
 现在，考虑式（2.70）中$$ x_a $$的所有线性项：
 
-$$ x_a^T\left{ \Lambda_{aa}\mu_a - \Lambda_{ab}(x_b - \mu_b)\right} \tag{2.74} $$
+$$ x_a^T\left\{ \Lambda_{aa}\mu_a - \Lambda_{ab}(x_b - \mu_b)\right\} \tag{2.74} $$
 
 其中我们使用了$$ \Lambda_{ba}^T = \Lambda_{ab} $$。根据通用公式（2.71）这个表达始中$$ x_a $$的系数必须等于$$ \Sigma_{a|b}^{-1}\mu_{a|b} $$，推出：    
 
 $$
 \begin{eqnarray}
-\mu_{a|b} = \Sigma_{a|b}\left{\Lambda_{aa}\mu_a - \Lambda_{ab}(x_b - \mu_b)\right} \\
-= \mu_a - \Lambda_{aa}^{-1}\Lambda_{ab}(x_b - \mu_b) \tag{2.75}
+\mu_{a|b} &=& \Sigma_{a|b}\left\{\Lambda_{aa}\mu_a - \Lambda_{ab}(x_b - \mu_b)\right\} \\
+&=& \mu_a - \Lambda_{aa}^{-1}\Lambda_{ab}(x_b - \mu_b) \tag{2.75}
 \end{eqnarray}
 $$
 
@@ -144,16 +144,16 @@ $$
 
 $$
 \begin{eqnarray}
-\Lambda_{aa} = (\Sigma_{aa} - \Sigma_{ab}\Sigma_{bb}^{-1}\Sigma_{ba} )^{-1} \tag{2.79}
-\Lambda_{ab} = -(\Sigma_{aa} - \Sigma_{ab}\Sigma_{bb}^{-1}\Sigma_{ba} )^{-1}\Sigma_{ab}\Sigma_{bb}^{-1} \tag{2.80}
+\Lambda_{aa} &=& (\Sigma_{aa} - \Sigma_{ab}\Sigma_{bb}^{-1}\Sigma_{ba} )^{-1} \tag{2.79} \\
+\Lambda_{ab} &=& -(\Sigma_{aa} - \Sigma_{ab}\Sigma_{bb}^{-1}\Sigma_{ba} )^{-1}\Sigma_{ab}\Sigma_{bb}^{-1} \tag{2.80}
 \end{eqnarray}
 $$
 
 从这些公式中，得到条件概率$$ p(x_a|x_b) $$的均值和方差的表达式为：
 $$
 \begin{eqnarray}
-\mu_{a|b} = \mu_a + \Sigma_{ab}\Sigma_{bb}^{-1}(x_b - \mu_b) \tag{2.81}
-\Sigma_{a|b} = \Sigma_{aa} - \Sigma_{ab}\Sigma_{bb}^{-1}\Sigma_{ba} \tag{2.82}
+\mu_{a|b} &=& \mu_a + \Sigma_{ab}\Sigma_{bb}^{-1}(x_b - \mu_b) \tag{2.81} \\
+\Sigma_{a|b} &=& \Sigma_{aa} - \Sigma_{ab}\Sigma_{bb}^{-1}\Sigma_{ba} \tag{2.82}
 \end{eqnarray}
 $$
 

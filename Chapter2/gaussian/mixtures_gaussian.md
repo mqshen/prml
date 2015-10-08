@@ -51,9 +51,9 @@ $$
 
 $$
 \begin{eqnarray}
-\gamma_k(x) \equiv p(k|x) \\
-= \frac{p(k)p(x|k)}{\sum_lp(l)p(x|l)} \\
-= \frac{\pi_k\mathcal{N}(x|\mu_k, \Sigma_k)}{\sum_l\pi_l\mathcal{N}(x|\mu_l, \Sigma_l)} \tag{2.192}
+\gamma_k(x) &\equiv& p(k|x) \\
+&=& \frac{p(k)p(x|k)}{\sum_lp(l)p(x|l)} \\
+&=& \frac{\pi_k\mathcal{N}(x|\mu_k, \Sigma_k)}{\sum_l\pi_l\mathcal{N}(x|\mu_l, \Sigma_l)} \tag{2.192}
 \end{eqnarray}
 $$
 
@@ -62,7 +62,7 @@ $$
 控制混合高斯分布的参数$$ \pi,\mu,\Sigma $$，被记为$$ \pi \equiv \{\pi_1,...,\pi_K\}, \mu \equiv \{\mu_1,...,\mu_K\}, \Sigma \equiv \{\Sigma_1,...,\Sigma_K\} $$。确定这些参数值的一种方法是使用最大似然。根据公式（2.188）得到对数似然函数：    
 
 $$
-\ln p(X|\pi, \mu, \Sigma) = \sum\limits_{n=1}^N \ln\left{\sum\limits_{k=1}^K\pi_k\mathcal{N}(x_n|\mu_k,\Sigma_k)\right} \tag{2.193}
+\ln p(X|\pi, \mu, \Sigma) = \sum\limits_{n=1}^N \ln\left\{\sum\limits_{k=1}^K\pi_k\mathcal{N}(x_n|\mu_k,\Sigma_k)\right\} \tag{2.193}
 $$
 
 其中 $$ X = \{x_1,...,x_N\} $$。因为对数中存在一个根据$$ k $$的求和公式，这比一元高斯分布复杂得多。这导致参数的最大似然解不再是一个封闭形式的解析解。最大化这个似然函数的一种方法是使用迭代数值优化法（Fletcher, 1987; Nocedal and Wright, 1999; Bishop and Nabney, 2008）。另一种方法是使用一种被称为期望最大化（expectation maximization）的强大的框架，将在第9章详细讨论。

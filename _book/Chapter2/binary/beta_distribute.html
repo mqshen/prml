@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="2.1.1" data-basepath="../.." data-revision="Mon Oct 05 2015 00:23:38 GMT+0800 (CST)">
+    <div class="book" data-level="2.1.1" data-basepath="../.." data-revision="Thu Oct 08 2015 16:40:37 GMT+0800 (CST)">
     
 
 <div class="book-summary">
@@ -559,6 +559,81 @@
             
         </li>
     
+        <li class="chapter " data-level="2.3.5" data-path="Chapter2/gaussian/sequential_estimation.html">
+            
+                
+                    <a href="../../Chapter2/gaussian/sequential_estimation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.5.</b>
+                        
+                        顺序估计
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="Chapter2/gaussian/bayesian_inference_gaussian.html">
+            
+                
+                    <a href="../../Chapter2/gaussian/bayesian_inference_gaussian.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.6.</b>
+                        
+                        高斯分布的贝叶斯推断
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="Chapter2/gaussian/student_t_distribution.html">
+            
+                
+                    <a href="../../Chapter2/gaussian/student_t_distribution.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.7.</b>
+                        
+                        学生t分布
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="Chapter2/gaussian/periodic_variables.html">
+            
+                
+                    <a href="../../Chapter2/gaussian/periodic_variables.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.8.</b>
+                        
+                        周期变量
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="Chapter2/gaussian/mixtures_gaussian.html">
+            
+                
+                    <a href="../../Chapter2/gaussian/mixtures_gaussian.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.9.</b>
+                        
+                        混合高斯模型
+                    </a>
+            
+            
+        </li>
+    
 
             </ul>
             
@@ -721,8 +796,8 @@ Beta(\mu|a, b) = \frac{\Gamma(a + b)}{\Gamma(a)\Gamma(b)}\mu^{a-1}(q-\mu)^{b-1} 
 <p>&#x5176;&#x4E2D;&#x5747;&#x503C;&#x548C;&#x65B9;&#x5DEE;&#xFF1A;
 <script type="math/tex; mode=display">
 \begin{eqnarray}
-\mathbb{E}[\mu] = \frac{a}{a + b} \tag{2.15} \\
-var[\mu] = \frac{ab}{(a+b)^2(a+b+1)} \tag{2.16}
+\mathbb{E}[\mu] &=& \frac{a}{a + b} \tag{2.15} \\
+var[\mu] &=& \frac{ab}{(a+b)^2(a+b+1)} \tag{2.16}
 \end{eqnarray}
 </script></p>
 <p>&#x7531;&#x4E8E;<script type="math/tex; "> a,b </script>&#x63A7;&#x5236;&#x4E86;&#x5206;&#x5E03;&#x7684;&#x53C2;&#x6570;<script type="math/tex; "> \mu </script>&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x822C;&#x88AB;&#x79F0;&#x4E3A;&#x8D85;&#x53C2;&#x6570;&#xFF08;hyperparameters&#xFF09;&#x3002;&#x56FE;2.2&#x5C55;&#x793A;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x8D85;&#x53C2;&#x6570;&#x7684;beta&#x5206;&#x5E03;&#x3002;</p>
@@ -757,8 +832,8 @@ p(x=1|D) = \frac{m+a}{m+a+l+b} \tag{2.20}
 &#x5176;&#x4E2D;
 <script type="math/tex; mode=display">
 \begin{eqnarray}
-\mathbb{E}_\theta[\theta] \equiv \int p(\theta)\theta d\theta \tag{2.22} \\
-\mathbb{E}_D[\mathbb{E}_\theta[\theta|D]] \equiv \int\{\int\theta p(\theta|D)d\theta\}p(D)dD \tag{2.23}
+\mathbb{E}_\theta[\theta] &\equiv& \int p(\theta)\theta d\theta \tag{2.22} \\
+\mathbb{E}_D[\mathbb{E}_\theta[\theta|D]] &\equiv& \int\left\{\int\theta p(\theta|D)d\theta\right\}p(D)dD \tag{2.23}
 \end{eqnarray}
 </script></p>
 <p><script type="math/tex; "> \theta </script>&#x7684;&#x540E;&#x9A8C;&#x5747;&#x503C;&#xFF08;&#x5728;&#x4EA7;&#x751F;&#x6570;&#x636E;&#x96C6;&#x7684;&#x5206;&#x5E03;&#x4E0A;&#x7684;&#x5E73;&#x5747;&#xFF09;&#x7B49;&#x4E8E;<script type="math/tex; "> \theta </script>&#x7684;&#x5148;&#x9A8C;&#x5747;&#x503C;&#x3002;&#x540C;&#x6837;&#x7684;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#xFF1A;    </p>

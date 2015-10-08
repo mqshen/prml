@@ -1,12 +1,12 @@
 给定一个数据集 $$ X = (x_1,...,x_N)^T $$，其中假定观测$$ \{x_n\} $$是独立地从多元高斯分布中抽取的，我们可以使用最大似然来估计分布的参数。对数似然函数为：    
 
 $$
-\ln p(X|\mu, \Sigma) = -\frac{ND}(2)\ln(2\pi)-\frac{N}{2}\ln |\Sigma| - \frac{1}{2}\sum\limits_{n=1}{N}(x_n - \mu)^T\Sigma^{-1}(x_n - \mu) \tag{2.118}
+\ln p(X|\mu, \Sigma) = -\frac{ND}{2}\ln(2\pi)-\frac{N}{2}\ln |\Sigma| - \frac{1}{2}\sum\limits_{n=1}{N}(x_n - \mu)^T\Sigma^{-1}(x_n - \mu) \tag{2.118}
 $$
 
 通过简单的从新排列，得到最大似然函数只依赖于数据集的两个量：    
 
-$$ \sum\limits_{n=1}^Nx_n , \sum\limits_{n=1}{=^Nx_nx_n^T \tag{2.119} $$ 
+$$ \sum\limits_{n=1}^Nx_n , \sum\limits_{n=1}^Nx_nx_n^T \tag{2.119} $$ 
 
 这些被称为高斯分布的充分统计量（sufficient statistics）。使用式（C.19）对数似然关于$$ \mu $$的导数为：    
 
@@ -32,15 +32,15 @@ $$
 
 $$
 \begin{eqnarray}
-\mathbb{E}[\mu_{ML}] = \mu \tag{2.123} \\
-\mathbb{E}[\Sigma_{ML}] = \frac{N - 1}{N}\Sigma \tag{2.124}
+\mathbb{E}[\mu_{ML}] &=& \mu \tag{2.123} \\
+\mathbb{E}[\Sigma_{ML}] &=& \frac{N - 1}{N}\Sigma \tag{2.124}
 \end{eqnarray}
 $$    
 
 得到最大似然估计的均值的期望等于真实的均值。但是，它对于协方差的估计的期望小于真实的方差，所以这是有偏的。我们可以定义一个不同的估计值    
 
 $$
-\widetild{\Sigma} = \frac{1}{N-1}\sum\limits_{n=1}^N(x_n - \mu_{ML})(x_n - \mu_{ML})^T \tag{2.125}
+\widetilde{\Sigma} = \frac{1}{N-1}\sum\limits_{n=1}^N(x_n - \mu_{ML})(x_n - \mu_{ML})^T \tag{2.125}
 $$
 
-通过式（2.122），（2.124）可以显然的得到$$ \widetild{\Sigma} $$的期望等于$$ \Sigma $$。
+通过式（2.122），（2.124）可以显然的得到$$ \widetilde{\Sigma} $$的期望等于$$ \Sigma $$。
