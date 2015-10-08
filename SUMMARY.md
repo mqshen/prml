@@ -36,4 +36,5 @@
         * [周期变量](Chapter2/gaussian/periodic_variables.md)
         * [混合高斯模型](Chapter2/gaussian/mixtures_gaussian.md)
     * [指数族](Chapter2/the_exponential_family.md)
+        * [最大似然和充分统计量](Chapter2/exponential/maximum_likelihood.md)
     * [非参数方法](Chapter2/nonparametric_method.md)
