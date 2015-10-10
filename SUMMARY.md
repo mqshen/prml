@@ -40,3 +40,4 @@
         * [共轭先验](Chapter2/exponential/conjugate_priors.md)
         * [无信息先验](Chapter2/exponential/noninformative_priors.md)
     * [非参数方法](Chapter2/nonparametric_method.md)
+        * [核密度估计](Chapter2/nonparametric/kernel_density_estimators.md)
