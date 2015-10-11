@@ -41,3 +41,4 @@
         * [无信息先验](Chapter2/exponential/noninformative_priors.md)
     * [非参数方法](Chapter2/nonparametric_method.md)
         * [核密度估计](Chapter2/nonparametric/kernel_density_estimators.md)
+        * [近邻算法](Chapter2/nonparametric/nearest_neighbour_method.md)
