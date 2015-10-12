@@ -44,3 +44,4 @@
         * [近邻算法](Chapter2/nonparametric/nearest_neighbour_method.md)
 * [回归的线性模型](Chapter3/README.md)
     * [线性基函数模型](Chapter3/linear_basis_function.md)
+        * [近邻算法](Chapter3/basis/maximum_likelihood_least_square.md)
