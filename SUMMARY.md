@@ -48,3 +48,4 @@
         * [最小二乘的集合解释](Chapter3/basis/geometry_least_square.md)
         * [顺序学习](Chapter3/basis/sequential_learning.md)
         * [正则化最小二乘](Chapter3/basis/regularized_least_squares.md)
+        * [多输出](Chapter3/basis/multiple_outputs.md)
