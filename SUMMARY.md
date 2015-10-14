@@ -44,4 +44,7 @@
         * [近邻算法](Chapter2/nonparametric/nearest_neighbour_method.md)
 * [回归的线性模型](Chapter3/README.md)
     * [线性基函数模型](Chapter3/linear_basis_function.md)
-        * [近邻算法](Chapter3/basis/maximum_likelihood_least_square.md)
+        * [最大似然和最小二乘](Chapter3/basis/maximum_likelihood_least_square.md)
+        * [最小二乘的集合解释](Chapter3/basis/geometry_least_square.md)
+        * [顺序学习](Chapter3/basis/sequential_learning.md)
+        * [正则化最小二乘](Chapter3/basis/regularized_least_squares.md)
