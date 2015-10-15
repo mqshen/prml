@@ -49,3 +49,4 @@
         * [顺序学习](Chapter3/basis/sequential_learning.md)
         * [正则化最小二乘](Chapter3/basis/regularized_least_squares.md)
         * [多输出](Chapter3/basis/multiple_outputs.md)
+    * [偏置方差分解](Chapter3/bias_variance_decomposition.md)
