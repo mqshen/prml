@@ -3,13 +3,13 @@
 我们可以通过随机梯度下降（stochastic gradient descent）在后面也被称为顺序梯度下降（sequential grad ient descent）来得到顺序学习算法。如果误差函数由数据点的和$$ E = \sum_nE_n $$组成，那么在$$ n $$次这样的观测之后随机梯度算法使用    
 
 $$
-w^{(\tao+1)} = w^{(\tao)} - \eta\Delta E_n \tag{3.22}
+w^{(\tau+1)} = w^{(\tau)} - \eta\Delta E_n \tag{3.22}
 $$
 
-来更新参数向量$$ w $$。其中$$ \tao $$是迭代次数，$$ \eta $$是学习率参数。稍后会讨论$$ \eta $$的选择问题。$$ w $$被初始化为某个起始向量$$ w^{(0)} $$。在平方和误差函数（3.12）的情况下，得到：    
+来更新参数向量$$ w $$。其中$$ \tau $$是迭代次数，$$ \eta $$是学习率参数。稍后会讨论$$ \eta $$的选择问题。$$ w $$被初始化为某个起始向量$$ w^{(0)} $$。在平方和误差函数（3.12）的情况下，得到：    
 
 $$
-w^{(\tao+1)} = w^{(\tao)} - \eta(t_n - w^{(\tao)T}\phi_n)\phi_n \tag{3.23}
+w^{(\tau+1)} = w^{(\tau)} - \eta(t_n - w^{(\tau)T}\phi_n)\phi_n \tag{3.23}
 $$
 
 其中$$ \phi_n = \phi(x_n) $$。这就是最小均方（least-mean-squares）或LMS算法。需要小心的选择$$ \eta $$的值来确保算法收敛（Bishop and Nabney, 2008）。    

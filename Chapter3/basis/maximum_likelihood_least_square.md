@@ -62,6 +62,7 @@ $$
 这被称为最小二乘问题的正规方程组（normal equations）。其中$$ \Phi $$是被称为设计矩阵（design matrix）的一个$$ N \times M $$的矩阵，其中$$ \Phi_{nj} = \phi_j(x_n) $$，即
 
 $$
+\begin{eqnarray}
 \Phi = 
 \left(
 \begin{array}{cccc}
@@ -69,7 +70,9 @@ $$
 \phi_0(x_2) & \phi_1(x_2) & \cdots & \phi_{M-1}(x_2) \\
 \vdots & \vdots & \ddots & \vdots \\
 \phi_0(x_N) & \phi_1(x_N) & \cdots & \phi_{M-1}(x_N) 
+\end{array}
 \right) \tag{3.16}
+\end{eqnarray}
 $$
 
 量
@@ -83,7 +86,7 @@ $$
 现在，我们可以更加深刻地认识偏置参数$$ w_0 $$。如果显式地写出偏置参数，那么误差函数（3.12）变为：    
 
 $$
-E_D(w) = \frac{1}{2}\sum\limits_{n=1}^N{t_n - w_0 - \sum\limits_{j=1}^{M-1}w_j\phi_j(x_n)\}^2 \tag{3.18}
+E_D(w) = \frac{1}{2}\sum\limits_{n=1}^N\{t_n - w_0 - \sum\limits_{j=1}^{M-1}w_j\phi_j(x_n)\}^2 \tag{3.18}
 $$
 
 对于$$ w_0 $$求导并使其等于0，求解$$ w_0 $$可得：    
@@ -95,7 +98,7 @@ $$
 其中定义了：    
 
 $$
-\bat{t} = \frac{1}{N}\sum\limits_{n=1}^Nt_n , \bar{\phi}_j = \frac{1}{N}\sum\limits_{n=1}^N\phi_j(x_n) \tag{3.20}
+\bar{t} = \frac{1}{N}\sum\limits_{n=1}^Nt_n , \bar{\phi}_j = \frac{1}{N}\sum\limits_{n=1}^N\phi_j(x_n) \tag{3.20}
 $$
 
 因此偏置$$ w_0 $$补偿了目标值的均值(在训练集上的)与基函数的值的加权均值之间的差。    

@@ -50,3 +50,5 @@
         * [正则化最小二乘](Chapter3/basis/regularized_least_squares.md)
         * [多输出](Chapter3/basis/multiple_outputs.md)
     * [偏置方差分解](Chapter3/bias_variance_decomposition.md)
+    * [贝叶斯线性回归](Chapter3/bayesian_linear_regression.md)
+        * [参数分布](Chapter3/bayesian/parameter_distribution.md)
