@@ -54,3 +54,4 @@
         * [参数分布](Chapter3/bayesian/parameter_distribution.md)
         * [预测分布](Chapter3/bayesian/predictive_distribution.md)
         * [等价核](Chapter3/bayesian/equivalent_kernel.md)
+    * [贝叶斯模型比较](Chapter3/bayesian_model_comparison.md)

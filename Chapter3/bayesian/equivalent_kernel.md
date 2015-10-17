@@ -59,3 +59,5 @@ k(x,z) = \psi(x)^T\psi(z) \tag{3.65}
 $$
 
 其中$$ \psi(x) = \beta^{1/2}S_N^{1/2}\phi(x) $$。
+
+
