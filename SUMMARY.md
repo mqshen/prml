@@ -53,3 +53,4 @@
     * [贝叶斯线性回归](Chapter3/bayesian_linear_regression.md)
         * [参数分布](Chapter3/bayesian/parameter_distribution.md)
         * [预测分布](Chapter3/bayesian/predictive_distribution.md)
+        * [等价核](Chapter3/bayesian/equivalent_kernel.md)
