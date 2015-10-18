@@ -55,3 +55,5 @@
         * [预测分布](Chapter3/bayesian/predictive_distribution.md)
         * [等价核](Chapter3/bayesian/equivalent_kernel.md)
     * [贝叶斯模型比较](Chapter3/bayesian_model_comparison.md)
+    * [证据近似](Chapter3/evidence_approximation.md)
+        * [计算证据函数](Chapter3/evidence/evaluation_evidence_function.md)
