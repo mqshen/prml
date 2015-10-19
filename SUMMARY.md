@@ -57,3 +57,7 @@
     * [贝叶斯模型比较](Chapter3/bayesian_model_comparison.md)
     * [证据近似](Chapter3/evidence_approximation.md)
         * [计算证据函数](Chapter3/evidence/evaluation_evidence_function.md)
+        * [最大化证据函数](Chapter3/evidence/maximizing_evidence_function.md)
+        * [有效参数数量](Chapter3/evidence/effective_number_parameter.md)
+    * [固定基函数的局限性](Chapter3/limitations_fixed_basis_functions.md)
+* [回归的线性模型](Chapter4/README.md)
