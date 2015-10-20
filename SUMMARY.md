@@ -61,3 +61,7 @@
         * [有效参数数量](Chapter3/evidence/effective_number_parameter.md)
     * [固定基函数的局限性](Chapter3/limitations_fixed_basis_functions.md)
 * [回归的线性模型](Chapter4/README.md)
+    * [判别函数](Chapter4/discriminant_functions.md)
+        * [二分类](Chapter4/discriminant/two_classes.md)
+        * [多分类](Chapter4/discriminant/multiple_classes.md)
+        * [最小二乘分类法](Chapter4/discriminant/least_squares.md)
