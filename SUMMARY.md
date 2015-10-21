@@ -65,3 +65,4 @@
         * [二分类](Chapter4/discriminant/two_classes.md)
         * [多分类](Chapter4/discriminant/multiple_classes.md)
         * [最小二乘分类法](Chapter4/discriminant/least_squares.md)
+        * [Fisher线性判别式](Chapter4/discriminant/fisher_linear_discriminant.md)
