@@ -68,3 +68,4 @@
         * [Fisher线性判别式](Chapter4/discriminant/fisher_linear_discriminant.md)
         * [与最小二乘的关系](Chapter4/discriminant/relation_least_squares.md)
         * [多分类的Fisher判别式](Chapter4/discriminant/fisher_discriminant_multiple_classes.md)
+        * [感知器算法](Chapter4/discriminant/perceptron_algorithm.md)
