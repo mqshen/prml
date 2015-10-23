@@ -74,3 +74,4 @@
         * [最大似然解](Chapter4/probabilistic/maximum_likelihood_solution.md)
         * [离散特征](Chapter4/probabilistic/discrete_features.md)
         * [指数族](Chapter4/probabilistic/exponential_family.md)
+    * [概率判别模型](Chapter4/probabilistic_discriminative_models.md)
