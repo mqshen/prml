@@ -71,3 +71,6 @@
         * [感知器算法](Chapter4/discriminant/perceptron_algorithm.md)
     * [概率生成模型](Chapter4/probabilistic_generative_model.md)
         * [连续输入](Chapter4/probabilistic/continuous_inputs.md)
+        * [最大似然解](Chapter4/probabilistic/maximum_likelihood_solution.md)
+        * [离散特征](Chapter4/probabilistic/discrete_features.md)
+        * [指数族](Chapter4/probabilistic/exponential_family.md)
