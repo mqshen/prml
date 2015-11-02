@@ -75,3 +75,4 @@
         * [离散特征](Chapter4/probabilistic/discrete_features.md)
         * [指数族](Chapter4/probabilistic/exponential_family.md)
     * [概率判别模型](Chapter4/probabilistic_discriminative_models.md)
+        * [固定基函数](Chapter4/probabilistic_discriminant/fixed_basis_functions.md)
