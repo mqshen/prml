@@ -79,3 +79,4 @@
         * [Logistic回归](Chapter4/probabilistic_discriminant/logistic_regression.md)
         * [迭代再加权最小平方](Chapter4/probabilistic_discriminant/iterative_reweighted_least_squares.md)
         * [多类别logistic回归](Chapter4/probabilistic_discriminant/multiclass_logistic_regression.md)
+        * [probit回归](Chapter4/probabilistic_discriminant/probit_regression.md)
