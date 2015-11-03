@@ -57,7 +57,7 @@ $$
 
 $$
 \begin{eqnarray}
-&\int& exp{-E(w)\}dw \\
+\int & & exp\{-E(w)\}dw \\
 &=& exp\{-E(m_N)\}\int exp\left\{-\frac{1}{2}(w-m_N)^TA(w-m_N)\right\}dw \\
 &=& exp\{-E(m_N)\}(2\pi)^{M/2}\vert{A}^{-1/2} \tag{3.85}
 \end{eqnarray}

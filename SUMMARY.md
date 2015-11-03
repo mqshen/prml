@@ -77,3 +77,4 @@
     * [概率判别模型](Chapter4/probabilistic_discriminative_models.md)
         * [固定基函数](Chapter4/probabilistic_discriminant/fixed_basis_functions.md)
         * [Logistic回归](Chapter4/probabilistic_discriminant/logistic_regression.md)
+        * [迭代再加权最小平方](Chapter4/probabilistic_discriminant/iterative_reweighted_least_squares.md)

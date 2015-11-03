@@ -1,7 +1,7 @@
 让我们假设类条件密度是高斯分布，然后探讨后验概率的形式。首先，我们假设所有类别共享相同的协方差矩阵。那么类$$ C_k $$的密度由
 
 $$
-p(x|C_k) = \frac{1}{(2\pi)^{D/2}\frac{1}{\vert \Sigma \vert^{1/2}}exp\left\{-\frac{1}{2}(x-\mu_k)^T\Sigma^{-1}(x-\mu_k)\right\} \tag{4.64}
+p(x|C_k) = \frac{1}{(2\pi)^{D/2}}\frac{1}{\vert \Sigma \vert^{1/2}}exp\left\{-\frac{1}{2}(x-\mu_k)^T\Sigma^{-1}(x-\mu_k)\right\} \tag{4.64}
 $$
 
 首先，考虑二分类情形。根据式（4.57）（4.58）得到
@@ -29,7 +29,7 @@ $$
 对于$$ K $$个类别的一般情形，根据式（4.62）和（4.63），得到
 
 $$
-a_k(x) = w_k^Tx + w_{k0} \tag{4.68|
+a_k(x) = w_k^Tx + w_{k0} \tag{4.68}
 $$
 
 其中我们定义了
@@ -37,7 +37,7 @@ $$
 $$
 \begin{eqnarray}
 w_k &=& \Sigma^{-1}\mu_k \tag{4.69} \\
-w_{k0} &=& =\frac{1}{2}\mu_k^T\Simg^{-1}\mu_k + \ln p(C_k) \tag{4.70}
+w_{k0} &=& =\frac{1}{2}\mu_k^T\Sigma^{-1}\mu_k + \ln p(C_k) \tag{4.70}
 \end{eqnarray}
 $$
 
