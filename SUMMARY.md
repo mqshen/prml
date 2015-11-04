@@ -81,3 +81,4 @@
         * [多类别logistic回归](Chapter4/probabilistic_discriminant/multiclass_logistic_regression.md)
         * [probit回归](Chapter4/probabilistic_discriminant/probit_regression.md)
         * [标准链接函数](Chapter4/probabilistic_discriminant/canonical_link_functions.md)
+    * [拉普拉斯近似](Chapter4/the_laplace_approximation.md)
