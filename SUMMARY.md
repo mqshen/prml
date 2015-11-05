@@ -86,3 +86,4 @@
     * [贝叶斯Logistic回归](Chapter4/bayesian_logistic_regression.md)
         * [拉普拉斯近似](Chapter4/bayesian/laplace.md)
         * [预测分布](Chapter4/bayesian/predictive.md)
+* [神经网络](Chapter5/README.md)
