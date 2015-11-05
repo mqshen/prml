@@ -87,7 +87,7 @@ $$所有可以调节这些参数使它精确的匹配训练集中的10个数据�
 
 $$
 \begin{equation}
-\widetilde{E}(w) = \frac{1}{2} \sum\limits_{n=1}^\{y(x_n, w) - t_n\}^2 + \frac{\lambda}{2}||w||^2 \tag{1.4}
+\widetilde{E}(w) = \frac{1}{2} \sum\limits_{n=1}^N\{y(x_n, w) - t_n\}^2 + \frac{\lambda}{2}||w||^2 \tag{1.4}
 \end{equation}
 $$    
 

@@ -82,3 +82,7 @@
         * [probit回归](Chapter4/probabilistic_discriminant/probit_regression.md)
         * [标准链接函数](Chapter4/probabilistic_discriminant/canonical_link_functions.md)
     * [拉普拉斯近似](Chapter4/the_laplace_approximation.md)
+        * [模型对比和BIC](Chapter4/laplace/model_comparison_bic.md)
+    * [贝叶斯Logistic回归](Chapter4/bayesian_logistic_regression.md)
+        * [拉普拉斯近似](Chapter4/bayesian/laplace.md)
+        * [预测分布](Chapter4/bayesian/predictive.md)
