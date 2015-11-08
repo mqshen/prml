@@ -94,3 +94,5 @@
         * [局部二次近似](Chapter5/training/local_quadratic_approximation.md)
         * [使用梯度信息](Chapter5/training/use_gradient_information.md)
         * [梯度下降最优化](Chapter5/training/gradient_descent_optimization.md)
+    * [误差反向传播](Chapter5/error_backpropagation.md)
+        * [误差函数导数计算](Chapter5/backpropagation/error_function_derivatives.md)
