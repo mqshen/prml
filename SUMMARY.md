@@ -103,3 +103,6 @@
         * [对角近似](Chapter5/hessian/diagonal_approximation.md)
         * [外积近似](Chapter5/hessian/outer_product_approximation.md)
         * [Hessian矩阵的逆](Chapter5/hessian/inverse_hessian.md)
+        * [有限差](Chapter5/hessian/finite_differences.md)
+        * [精确计算Hessian矩阵](Chapter5/hessian/exact_evaluation_hessian.md)
+        * [Hessian快速乘法](Chapter5/hessian/fast_multiplication_hessian.md)
