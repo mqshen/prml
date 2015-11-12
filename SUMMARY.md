@@ -114,3 +114,8 @@
         * [用变换后的数据训练](Chapter5/regularization/training_with_transformed_data.md)
         * [卷积网络](Chapter5/regularization/convolutional_networks.md)
         * [软权值共享](Chapter5/regularization/soft_weight_sharing.md)
+    * [混合密度网络](Chapter5/mixture_density_networks.md)
+    * [贝叶斯神经网络](Chapter5/bayesian_neural_networks.md)
+        * [后验参数分布](Chapter5/bayesian/posterior_parameter_distribution.md)
+        * [超参数优化](Chapter5/bayesian/hyperparameter_optimization.md)
+        * [分类的贝叶斯神经网络](Chapter5/bayesian/bayesian_network_classification.md)
