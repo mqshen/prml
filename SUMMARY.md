@@ -112,3 +112,5 @@
         * [不变性](Chapter5/regularization/invariances.md)
         * [切线传播](Chapter5/regularization/tangent_propagation.md)
         * [用变换后的数据训练](Chapter5/regularization/training_with_transformed_data.md)
+        * [卷积网络](Chapter5/regularization/convolutional_networks.md)
+        * [软权值共享](Chapter5/regularization/soft_weight_sharing.md)
