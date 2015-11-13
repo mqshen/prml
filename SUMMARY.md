@@ -119,3 +119,6 @@
         * [后验参数分布](Chapter5/bayesian/posterior_parameter_distribution.md)
         * [超参数优化](Chapter5/bayesian/hyperparameter_optimization.md)
         * [分类的贝叶斯神经网络](Chapter5/bayesian/bayesian_network_classification.md)
+* [核方法](Chapter6/README.md)
+    * [对偶表示](Chapter6/dual_representations.md)
+    * [核构造](Chapter6/constructing_kernels.md)
