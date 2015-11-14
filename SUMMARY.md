@@ -122,3 +122,8 @@
 * [核方法](Chapter6/README.md)
     * [对偶表示](Chapter6/dual_representations.md)
     * [核构造](Chapter6/constructing_kernels.md)
+    * [径向基函数网络](Chapter6/radial_basis_funcation_networks.md)
+        * [分类的贝叶斯神经网络](Chapter6/radial/Nadaraya_Watson_model.md)
+    * [高斯过程](Chapter6/gaussian_processes.md)
+        * [线性回归再探](Chapter6/gaussian/linear_regression_revisited.md)
+        * [回归的高斯过程](Chapter6/gaussian/gaussian_processes_regression.md)
