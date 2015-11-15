@@ -127,3 +127,6 @@
     * [高斯过程](Chapter6/gaussian_processes.md)
         * [线性回归再探](Chapter6/gaussian/linear_regression_revisited.md)
         * [回归的高斯过程](Chapter6/gaussian/gaussian_processes_regression.md)
+        * [超参数学习](Chapter6/gaussian/learning_hyperparameters.md)
+        * [自动相关性确定](Chapter6/gaussian/automatic_relevance_determination.md)
+        * [分类的高斯过程](Chapter6/gaussian/gaussian_processes_classification.md)
