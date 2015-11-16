@@ -130,3 +130,5 @@
         * [超参数学习](Chapter6/gaussian/learning_hyperparameters.md)
         * [自动相关性确定](Chapter6/gaussian/automatic_relevance_determination.md)
         * [分类的高斯过程](Chapter6/gaussian/gaussian_processes_classification.md)
+        * [拉普拉斯近似](Chapter6/gaussian/laplace_approximation.md)
+        * [与神经网络的联系](Chapter6/gaussian/connection_neural_networks.md)
