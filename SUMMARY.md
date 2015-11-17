@@ -132,3 +132,7 @@
         * [分类的高斯过程](Chapter6/gaussian/gaussian_processes_classification.md)
         * [拉普拉斯近似](Chapter6/gaussian/laplace_approximation.md)
         * [与神经网络的联系](Chapter6/gaussian/connection_neural_networks.md)
+* [稀疏核机](Chapter7/README.md)
+    * [最大边缘分类器](Chapter7/maximum_margin_classifiers.md)
+        * [重合类分布](Chapter7/margin/overlapping_class_distributions.md)
+        * [与logistic回归的关系](Chapter7/margin/logistic_regression_relation.md)
