@@ -136,3 +136,5 @@
     * [最大边缘分类器](Chapter7/maximum_margin_classifiers.md)
         * [重合类分布](Chapter7/margin/overlapping_class_distributions.md)
         * [与logistic回归的关系](Chapter7/margin/logistic_regression_relation.md)
+        * [多类别SVM](Chapter7/margin/multiclass_svm.md)
+        * [回归问题的SVM](Chapter7/margin/svm_for_regression.md)
