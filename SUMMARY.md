@@ -138,3 +138,8 @@
         * [与logistic回归的关系](Chapter7/margin/logistic_regression_relation.md)
         * [多类别SVM](Chapter7/margin/multiclass_svm.md)
         * [回归问题的SVM](Chapter7/margin/svm_for_regression.md)
+        * [计算学习理论](Chapter7/margin/computational_learning_theory.md)
+    * [相关向量机](Chapter7/relevance_vector_machines.md)
+        * [用于回归的RVM](Chapter7/relevance/rvm_for_regression.md)
+        * [稀疏性分析](Chapter7/relevance/analysis_sparsity.md)
+        * [用于分类的RVM](Chapter7/relevance/rvm_classification.md)
