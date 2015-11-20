@@ -166,3 +166,7 @@
         * [一般图的精确推断](Chapter8/inference/inference_general_graph.md)
         * [循环置信传播](Chapter8/inference/loopy_belief_propagation.md)
         * [学习图结构](Chapter8/inference/learning_graph_structure.md)
+* [混合模型及EM](Chapter9/README.md)
+    * [K均值聚类](Chapter9/k_means_clustering.md)
+        * [图像分割与压缩](Chapter9/means/image_segmentation_compression.md)
+    * [混合高斯](Chapter9/mixtures_gaussian.md)
