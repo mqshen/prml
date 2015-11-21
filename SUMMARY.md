@@ -178,3 +178,6 @@
         * [伯努利分布混合](Chapter9/alternative/mixture_bernoulli.md)
         * [贝叶斯线性回归的EM](Chapter9/alternative/bayesian_regression_em.md)
     * [一般的EM算法](Chapter9/general_em.md)
+* [近似推断](Chapter10/README.md)
+    * [变分推断](Chapter10/variational_inference.md)
+        * [分解分布](Chapter10/variational/factorized_distributions.md)
