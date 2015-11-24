@@ -220,3 +220,6 @@
         * [马尔科夫链](Chapter11/monte/dynamical_systems.md)
         * [混合蒙特卡罗](Chapter11/monte/hybrid_monte_carlo.md)
     * [划分函数估计](Chapter11/partition_function_estimating.md)
+* [连续潜在变量](Chapter12/README.md)
+    * [主成分分析](Chapter12/principal_component_analysis.md)
+        * [最大方差形式](Chapter12/pca/maximum_variance.md)
