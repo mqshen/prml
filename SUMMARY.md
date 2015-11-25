@@ -232,3 +232,7 @@
         * [贝叶斯PCA](Chapter12/probabilistic/bayesian.md)
         * [因子分析](Chapter12/probabilistic/factor_analysis.md)
     * [核PCA](Chapter12/kernel_pca.md)
+    * [非线性隐含变量模型](Chapter12/nolinear_latent.md)
+        * [独立成分分析](Chapter12/nolinear/independent_component.md)
+        * [自联想神经](Chapter12/nolinear/autoassociative.md)
+        * [非线性流形建模](Chapter12/nolinear/manifolds_modelling.md)
