@@ -236,3 +236,7 @@
         * [独立成分分析](Chapter12/nolinear/independent_component.md)
         * [自联想神经](Chapter12/nolinear/autoassociative.md)
         * [非线性流形建模](Chapter12/nolinear/manifolds_modelling.md)
+* [顺序数据](Chapter13/README.md)
+    * [马尔科夫模型](Chapter13/markob_model.md)
+    * [隐马尔科夫模型](Chapter13/hidden_markob_model.md)
+        * [HMM的最大似然](Chapter13/hmm/maimum_likelihood.md)
