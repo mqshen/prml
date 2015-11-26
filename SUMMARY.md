@@ -240,3 +240,8 @@
     * [马尔科夫模型](Chapter13/markob_model.md)
     * [隐马尔科夫模型](Chapter13/hidden_markob_model.md)
         * [HMM的最大似然](Chapter13/hmm/maimum_likelihood.md)
+        * [向前向后算法](Chapter13/hmm/forward_backward.md)
+        * [HMM的加-乘算法](Chapter13/hmm/sum_product.md)
+        * [缩放因子](Chapter13/hmm/scaling_factors.md)
+        * [Viterbi算法](Chapter13/hmm/viterbi.md)
+        * [隐马尔科夫模型扩展](Chapter13/hmm/markov_extensions.md)
