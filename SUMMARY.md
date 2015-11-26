@@ -245,3 +245,8 @@
         * [缩放因子](Chapter13/hmm/scaling_factors.md)
         * [Viterbi算法](Chapter13/hmm/viterbi.md)
         * [隐马尔科夫模型扩展](Chapter13/hmm/markov_extensions.md)
+    * [线性动态系统](Chapter13/linear_dynamical.md)
+        * [LDS推断](Chapter13/linear/lds_inference.md)
+        * [LDS学习](Chapter13/linear/lds_learning.md)
+        * [LDS推广](Chapter13/linear/lds_extensions.md)
+        * [粒子滤波](Chapter13/linear/particle_filters.md)
