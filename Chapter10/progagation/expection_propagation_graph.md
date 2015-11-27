@@ -18,13 +18,13 @@ $$
 我们寻找具有相同分解方式的一个近似$$ q(x) $$，即    
 
 $$
-q(x) \proto \tilde{f}_a(x_1, x_2)\tilde{f}_b(x_2, x_3)\tilde{f}_c(x_2, x_4) \tag{10.226}
+q(x) \propto \tilde{f}_a(x_1, x_2)\tilde{f}_b(x_2, x_3)\tilde{f}_c(x_2, x_4) \tag{10.226}
 $$    
 
 注意，标准化常数被省略，这些可以在计算的最后使用局部标准化的方法计算出来，正如我们在置信传播中经常做的那样。现在，假设我们将注意力集中于近似分布上，其中因子本身可以关于各个变量进行分解，即     
 
 $$
-q(x) \proto \tilde{f}_{a1}(x_1)\tilde{f}_{a2}(x_2)\tilde{f}_{b2}(x_2)\tilde{f}_{b3}(x_3)\tilde{f}_{c2}(x_2)\tilde{f}_{c4}(x_4) \tag{10.227}
+q(x) \propto \tilde{f}_{a1}(x_1)\tilde{f}_{a2}(x_2)\tilde{f}_{b2}(x_2)\tilde{f}_{b3}(x_3)\tilde{f}_{c2}(x_2)\tilde{f}_{c4}(x_4) \tag{10.227}
 $$    
 
 它对应于图10.18右手边的因子图。由于各个独立的因子是分解的，因此整体概率分布$$ q(x) $$本身是完全分解的。    
@@ -32,7 +32,7 @@ $$
 现在，我们使用这个完全分解的近似，应用EP算法。假设我们已经初始化了所有的因子，并且我们选择优化因子$$ \tilde{f}_b(x_2, x_3) = \tilde{f}_{b2}(x_2)\tilde{f}_{b3}(x_3) $$。首先，我们将这个因子从近似分布中移除，得到    
 
 $$
-q^{\\b}(x) \proto \tilde{f}_{a1}(x_1)\tilde{f}_{a2}(x_2)\tilde{f}_{c2}(x_2)\tilde{f}_{c4}(x_4) \tag{10.228}
+q^{\\b}(x) \propto \tilde{f}_{a1}(x_1)\tilde{f}_{a2}(x_2)\tilde{f}_{c2}(x_2)\tilde{f}_{c4}(x_4) \tag{10.228}
 $$    
 
 然后我们乘以精确因子$$ f_b(x_2, x_3) $$，可得     
@@ -45,9 +45,9 @@ $$
 
 $$
 \begin{eqnarray}
-\hat{p}(x_1) &\proto& \tilde{f}_{a1}(x_1) \tag{10.230} \\
-\hat{p}(x_2) &\proto& \tilde{f}_{a1}(x_2)\tilde{f}_{c2}(x_2)\sum\limits_{x_3}f_b(x_2,x_3) \tag{10.231} \\
-\hat{p}(x_3) &\proto& \sum\limits_{x_2}\left\{f_b(x_2, x_3)\tilde{f}_{a2}(x_2)\tilde{f}_{c2}(x_2)\right\} \tag{10.232} \\
+\hat{p}(x_1) &\propto& \tilde{f}_{a1}(x_1) \tag{10.230} \\
+\hat{p}(x_2) &\propto& \tilde{f}_{a1}(x_2)\tilde{f}_{c2}(x_2)\sum\limits_{x_3}f_b(x_2,x_3) \tag{10.231} \\
+\hat{p}(x_3) &\propto& \sum\limits_{x_2}\left\{f_b(x_2, x_3)\tilde{f}_{a2}(x_2)\tilde{f}_{c2}(x_2)\right\} \tag{10.232} \\
 \hat{p}(x_4) \propto \tilde{f}_{c4}(x_4) \tag{10.233}
 \end{eqnarray}
 $$     
@@ -75,13 +75,13 @@ $$
 其中$$ \theta_i $$表示与因子$$ f_i $$关联的变量的子集。我们使用一个完全分解的概率分布来近似它，形式为     
 
 $$
-q(\theta) \proto \prod\limits_i\prod\limits_k\tilde{f}_{ik}(\theta_k) \tag{10.237}
+q(\theta) \propto \prod\limits_i\prod\limits_k\tilde{f}_{ik}(\theta_k) \tag{10.237}
 $$    
 
-其中$$ \theta_k $$对应于一个单独的变量结点。假设我们希望优化特定的项$$ \tilde{f}_{kl}(\theta_l) $$，保持其他所有的项不变。首先，我们从$$ q(\theta) $$中移除项\tilde{f}_j(\theta_j) $$，可得     
+其中$$ \theta_k $$对应于一个单独的变量结点。假设我们希望优化特定的项$$ \tilde{f}_{kl}(\theta_l) $$，保持其他所有的项不变。首先，我们从$$ q(\theta) $$中移除项$$ \tilde{f}_j(\theta_j) $$，可得     
 
 $$
-q^{\\j}(\theta) \proto \prod\limits_{i \neq j}\prod\limits_k\tilde{f}_{ik}(\theta_k) \tag{10.238}
+q^{\\j}(\theta) \propto \prod\limits_{i \neq j}\prod\limits_k\tilde{f}_{ik}(\theta_k) \tag{10.238}
 $$    
 
 然后乘以精确因子$$ f_j(\theta_j) $$。为了确定优化项$$ \tilde{f}_{jl}(\theta_l) $$，我们只需考虑对$$ \theta_l $$的函数依赖，因此我们只需寻找     
@@ -93,7 +93,7 @@ $$
 对应的边缘概率分布。忽略一个可以做乘法的常数，这涉及到对$$ f_j(\theta_j) $$与任意来自$$ q^{\\j}(\theta) $$中的属于$$ \theta_j $$中任意变量的函数的项进行相乘得到的结果求边缘概率分布。当我们接下来除以$$ q^{\\j}(\theta) $$时，对应于$$ i \neq j $$的其它因子$$ \tilde{f}_i(\theta_i) $$的项会在分子和分母之间消去。因此我们有    
 
 $$
-\tilde{f}_{jl}(\theta_l) \proto \sum\limits_{\theta_{m \neq l} \in \theta_j}f_j(\theta_j)\prod\limits_k\prod\limits_{m \neq l}\tilde{f}_{km}(\theta_m) \tag{10.240}
+\tilde{f}_{jl}(\theta_l) \propto \sum\limits_{\theta_{m \neq l} \in \theta_j}f_j(\theta_j)\prod\limits_k\prod\limits_{m \neq l}\tilde{f}_{km}(\theta_m) \tag{10.240}
 $$    
 
 我们将这个式子看做是加-乘规则的形式，其中，从变量结点到因子结点的信息被消除，正如图8.50中给出的例子那样。$$ \tilde{f}_{jm}(\theta_m) $$对应于信息$$ \mu_{f_j \to \theta_m} (\theta_m) $$，其中因子结点$$ j $$向变量结点$$ m $$发送信息，且式（10.240）中的在$$ k $$上的乘积作用于所有依赖于与因子$$ f_j(\theta_j) $$有相同变量（除了变量$$ \theta_l $$）的变量$$ \theta_m

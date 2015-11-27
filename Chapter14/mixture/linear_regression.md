@@ -35,7 +35,7 @@ $$
 然后，“责任”被用于确定完整数据对数似然函数关于后验概率分布$$ p(Z|t, \theta^{old}）$$的期望，形式为    
 
 $$
-Q(\theta,\theta^{old}) = \mathbb{E}_Z[\n p(t,Z|\theta)] = \sum\limits_{n=1}^N\sum\limits_{k=1}^K\gamma_{nk}\{\ln\pi_k + \ln\mathcal{N}(t_n|w_k^T\phi_n,\beta^{-1})\}
+Q(\theta,\theta^{old}) = \mathbb{E}_Z[\ln p(t,Z|\theta)] = \sum\limits_{n=1}^N\sum\limits_{k=1}^K\gamma_{nk}\{\ln\pi_k + \ln\mathcal{N}(t_n|w_k^T\phi_n,\beta^{-1})\}
 $$    
 
 在M步骤中，我们关于$$ \theta $$最大化函数$$ Q(\theta, \theta^{old}) $$，保持$$ \gamma_{nk} $$不变。对于关于混合系数$$ \pi_k $$的最优化， 我们需要考虑限制条件$$ \sum_k\pi_k = 1 $$  这使用拉格朗日乘数法即可完成，得到了$$ \pi_k $$的M步骤重估计方程，形式为    
@@ -62,7 +62,7 @@ $$
 它可以用矩阵的记号表示为     
 
 $$
-p = \Phi^TR_k(t - \Phiw_k) \tag{14.41}
+p = \Phi^TR_k(t - \Phi w_k) \tag{14.41}
 $$    
 
 其中$$ R_k = diag(\gamma_{nk}) $$是一个$$ N \times N $$的对角矩阵。解出$$ w_k $$，我们有    

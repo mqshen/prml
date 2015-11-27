@@ -16,7 +16,7 @@ $$
 其中$$ I(y_m(x_n) \neq t_n）$$是一个示性函数，当$$ y_m(x_n) \neq t_n $$时，值为1，其他情况下值为0。    
 * 计算    
 $$
-\epsilon_m = \frac{\sum\limits_{n=1}^N w_n^{(m)}I(y_m(x_n) \neq t_n)}{\sum\limits_{n=1}^N w_n^{(m)} \tag{14.16}
+\epsilon_m = \frac{\sum\limits_{n=1}^N w_n^{(m)}I(y_m(x_n) \neq t_n)}{\sum\limits_{n=1}^N w_n^{(m)}} \tag{14.16}
 $$    
 然后计算    
 $$
@@ -28,7 +28,7 @@ w_n^{(m+1)} = w_n^{(m)}exp\{\alpha_mI(y_m(x_n) \neq t_n)\} \tag{14.18}
 $$    
 3. 使用最终的模型进行预测，形式为    
 $$
-Y_M(x) = sign(\sum\limits_{m=1}^M\alpha_my_m(x)\right) \tag{14.19}
+Y_M(x) = sign\left(\sum\limits_{m=1}^M\alpha_my_m(x)\right) \tag{14.19}
 $$    
 
 我们看到第一个基分类器$$ y_1(x) $$使用全部相等的加权系数$$ w_n^{(1)} $$进行训练，因此它对应于训练单一的分类器的通常的步骤。根据（14.18），我们看到在后续的迭代过程中，权系数$$ w_n^{(m)} $$对于误分类的数据点会增大，对于正确分类的数据点不改变。因此后续的分类器就会更关注那些被前一个分类器错误分类的数据点。$$ \epsilon_m $$表示每个基分类器在数据集上的错误率的加权度量。于是我们看到式（14.17）定义的权系数$$ \alpha_m $$会在计算整体输出（14.19）时，为更准确的分类器赋予更高的权值。    

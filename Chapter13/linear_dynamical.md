@@ -46,9 +46,11 @@ $$
 其中噪声项的概率分布为    
 
 $$
+\begin{eqnarray}
 w \sim \mathcal{N}(w|0, \Gamma) \tag{13.81} \\
-v \sim \mathcal{N}(v|0, \Sigma) \tag{13.81} \\
-u \sim \mathcal{N}(u|0, P_0) \tag{13.81} \\
+v \sim \mathcal{N}(v|0, \Sigma) \tag{13.82} \\
+u \sim \mathcal{N}(u|0, P_0) \tag{13.83} 
+\end{eqnarray}
 $$    
 
 模型的参数被记作$$ \theta = \{A, \Gamma, C, \Sigma, \mu_0, P_0\} $$，可以通过EM算法使用最大似然的方法确定。在E步骤中，我们需要求解确定潜在变量的局部后验边缘概率的推断问题，这可以使用加-乘算法高效地求出，我们将在下一节讨论。

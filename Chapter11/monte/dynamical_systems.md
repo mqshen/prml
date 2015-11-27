@@ -60,7 +60,7 @@ $$
 $$
 \begin{eqnarray}
 div V &=& \sum\limits_i\left\{\frac{\partial}{\partial z_i}\frac{dz_i}{d\tau} + \frac{\partial}{\partial r_i}\frac{dr_i}{d\tau}\right\} \\
-&=& \sum\limits_i\left\{+\frac{\partial}{\partial z_i}\frac{\partial H}{\partial r_i} - \frac{\partial}{\partial r_i}\frac{\partial H}{\partial z_i} = 0 \tag{11.62}
+&=& \sum\limits_i\left\{+\frac{\partial}{\partial z_i}\frac{\partial H}{\partial r_i} - \frac{\partial}{\partial r_i}\frac{\partial H}{\partial z_i}\right\} = 0 \tag{11.62}
 \end{eqnarray}
 $$
 
@@ -88,7 +88,7 @@ $$
 $$
 
 我们看到，这种方法对动量变量的更新形式是半步更新，步长为$$ \epsilon $$，接着是对位置变量的整步更新，步长为$$ \epsilon $$，然后是对动量变量的第二个半步更新。如果我们连续地使用几次蛙跳，那么可以看到，对动量变量的半步更新可以结合到步长为$$ \epsilon
-$$的整步更新中。于是，位置变量的更新和动量变量的更新互相之间以蛙跳的形式结合。为了将动态系统跪进一个时间间隔$$ \tau $$，我们需要进行$$ \tau / \epsilon $$个步骤。对连续时间动态系统的离散化近似引入的误差会在极限$$ \epslon \to 0 $$的情况下趋于0，假设函数$$ E(Z) $$是光滑的。然而，对于实际应用中使用的一个非零的$$ \epsilon $$，一些保留的误差仍然会存在。我们会在11.5.2节看到在混合蒙特卡罗算法中，这些误差的影响如何被消除。    
+$$的整步更新中。于是，位置变量的更新和动量变量的更新互相之间以蛙跳的形式结合。为了将动态系统跪进一个时间间隔$$ \tau $$，我们需要进行$$ \tau / \epsilon $$个步骤。对连续时间动态系统的离散化近似引入的误差会在极限$$ \epsilon \to 0 $$的情况下趋于0，假设函数$$ E(Z) $$是光滑的。然而，对于实际应用中使用的一个非零的$$ \epsilon $$，一些保留的误差仍然会存在。我们会在11.5.2节看到在混合蒙特卡罗算法中，这些误差的影响如何被消除。    
 
 总结一下，哈密顿动力学方法涉及到交替地进行一系列蛙跳更新以及根据动量变量的边缘分布进行重新采样。    
 

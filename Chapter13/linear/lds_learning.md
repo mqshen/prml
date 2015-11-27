@@ -58,8 +58,8 @@ $$
 $$
 \begin{eqnarray}
 A^{new} &=& \left(\sum\limits_{n=2}^N\mathbb{E}[z_nz_{n-1}^T]\right)\left(\sum\limits_{n=2}^N\mathbb{E}[z_{n-1}z_{n-1}^T]\right)^{-1} \tag{13.113} \\
-\Gamma^{new} &=& \frac{1}{N-1}\limits_{n=2}^N\left\{\mathbb{E}[z_nz-n^T] - A^{new}\mathbb{E}[z_{n-1}z_n^T] \\
-& & -\mathbb{E}[z_nz_{n-1}^T](A^{new})^T + A^{new}\mathbb{E}[z_{n-1}z_{n-1}^T](A^{new})^T\right\} \tag{13.114}
+\Gamma^{new} &=& \frac{1}{N-1}\sum\limits_{n=2}^N\Bigg\{\mathbb{E}[z_nz-n^T] - A^{new}\mathbb{E}[z_{n-1}z_n^T] \\
+& & -\mathbb{E}[z_nz_{n-1}^T](A^{new})^T + A^{new}\mathbb{E}[z_{n-1}z_{n-1}^T](A^{new})^T\Bigg\} \tag{13.114}
 \end{eqnarray}
 $$    
 

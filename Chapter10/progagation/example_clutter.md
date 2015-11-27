@@ -43,7 +43,7 @@ $$的维度。式（10.191）定义的初始的$$ q(\theta) $$因此就等于先
 $$
 \begin{eqnarray}
 m^{\\n} = m + v^{\\n}v_n^{−1}(m−m_n) \tag{10.214} \\
-(v^{\\n})^{-1} = v^{-1} - v_n^{-1} \tag{10.215}
+(v^{\\n})^{-1} = v^{-1} - v_n^{-1} \tag{10.215}  
 \end{eqnarray}
 $$     
 
@@ -72,9 +72,9 @@ $$
 
 $$
 \begin{eqnarray}
-v_n^{-1} &=& (v^{new})^{-1} - (v^{\\n}^{-1} \tag{10.220} \\
+v_n^{-1} &=& (v^{new})^{-1} - (v^{\\n})^{-1} \tag{10.220} \\
 m_n &=& m^{\\n} + (v_n + v^{\\n})(v^{\\n})^{-1}(m^{new} - m^{\\n}) \tag{10.221} \\
-s_n &=& \frac{Z_n}{(2\pi v_n)^{D/2}\mathcal{N}(m_n|m^{\\n},(v_n + v^{\\n})I} \tag{10.222}
+s_n &=& \frac{Z_n}{(2\pi v_n)^{D/2}\mathcal{N}(m_n|m^{\\n},(v_n + v^{\\n})I)} \tag{10.222}
 \end{eqnarray}
 $$    
 
@@ -87,7 +87,7 @@ $$
 其中    
 
 $$
-B = \frac{(m^{new}^Tm^{new})}{v} - \sum\limits_{n=1}^N\frac{m_n^Tm_n}{v_n} \tag{10.224}
+B = \frac{(m^{new})^Tm^{new}}{v} - \sum\limits_{n=1}^N\frac{m_n^Tm_n}{v_n} \tag{10.224}
 $$    
 
 图10.16给出了对于一维参数空间$$ \theta $$的杂波问题的因子近似的例子。    

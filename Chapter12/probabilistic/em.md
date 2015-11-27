@@ -10,9 +10,9 @@ $$
 
 $$
 \begin{eqnarray}
-\mathbb{E}[\ln p(X,Z|\mu,W,\sigma^2)] &=& -\sum\limits_{n=1}^N\left\{\frac{D}{2}\ln(2\pi\sigma^2)+\frac{1}{2}Tr(\mathbb{E}[z_nz_n^T]) \\
+\mathbb{E}[\ln p(X,Z|\mu,W,\sigma^2)] &=& -\sum\limits_{n=1}^N\Bigg\{\frac{D}{2}\ln(2\pi\sigma^2)+\frac{1}{2}Tr(\mathbb{E}[z_nz_n^T]) \\
 & & +\frac{1}{2\sigma^2}\Vert x_n - \mu \Vert^2 - \frac{1}{2\sigma^2}\mathbb{E}[z_n]^TW^T(x_n - \mu) \\
-& & +\frac{1}{2\sigma^2}Tr(\mathbb{E}[z_nz_n^T]W^TW) + \frac{M}{2}\ln(2\pi)\right\} \tag{12.53}
+& & +\frac{1}{2\sigma^2}Tr(\mathbb{E}[z_nz_n^T]W^TW) + \frac{M}{2}\ln(2\pi)\Bigg\} \tag{12.53}
 \end{eqnarray}
 $$    
 
@@ -33,7 +33,7 @@ $$
 \begin{eqnarray}
 W_{new} &=& \left[\sum\limits_{n=1}^N(x_n - \bar{x})\mathbb{E}[z_n]^T\right]\left[\sum\limits_{n=1}^N\mathbb{E}[z_nz_n^T]\right]^{-1} \tag{12.56} \\
 \sigma_{new}^2 &=& \frac{1}{ND}\sum\limits_{n=1}^N\{\Vert x_n - \bar{x} \Vert^2 - 2\mathbb{E}[z_n]^TW_{new}^T(x_n - \bar{x}) \\
-+ Tr(\mathbb{E}[z_nz_n^T]W_{new}^TW_{new})\} \tag{12.57}
+& & + Tr(\mathbb{E}[z_nz_n^T]W_{new}^TW_{new})\} \tag{12.57}
 \end{eqnarray}
 $$    
 

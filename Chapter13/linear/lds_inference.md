@@ -115,7 +115,8 @@ $$
 $$
 \begin{eqnarray}
 \hat{\mu}_n &=& \mu_n + J_n(\hat{\mu}_{n+1} + A\mu_n) \tag{13.100} \\
-\hat{V}_n = V_n + J_n\left(\hat{V}_{n+1} - P_n\right)J_n^T \tag{13.101}
+\hat{V}_n &=& V_n + J_n\left(\hat{V}_{n+1} - P_n\right)J_n^T \tag{13.101} \\
+&=& \frac{\mathcal{N}(z_{n-1}|\mu_{n-1},V_{n-1})\mathcal{N}(z_n|Az_{n-1},\Gamma)\mathcal{N}(x_n|Cz_n,\Sigma)\mathcal{N}(z_n|\hat{\mu}_n,\hat{V}_n)}{c_n\hat{\alpha}(z_n)} \tag{13.103}
 \end{eqnarray}
 $$    
 
@@ -132,11 +133,10 @@ $$
 $$
 \begin{eqnarray}
 \xi(z_{n-1},z_n) &=& (c_n)^{-1}\hat{\alpha}(z_{n-1})p(x_n|z_n)p(z_n|z_{n-1})\hat{\beta}(z_n) \\
-&=& \frac{\mathcal{N}(z_{n-1}|\mu_{n-1},V_{n-1})\mathcal{N}(z_n|Az_{n-1},\Gamma)\mathcal{N}(x_n|Cz_n,\Sigma)\mathcal{N}(z_n|\hat{\mu}_n,\hat{V}_n)}{c_n\hat{\alpha}(z_n) \tag{13.103}
 \end{eqnarray}
 $$    
 
-使用式（13.84）消去$$ \hat{\alpha}(z_n) $$，整理，我们看到$$ \xi(z_{n−1}, z_n) $$是一个高斯分布，均值为$$ [\hat{\mu_{n−1},\hat{\mu}_n]^T $$，$$ z_n $$和$$ z_{n−1} $$之间的协方差为
+使用式（13.84）消去$$ \hat{\alpha}(z_n) $$，整理，我们看到$$ \xi(z_{n−1}, z_n) $$是一个高斯分布，均值为$$ [\hat{\mu}_{n−1},\hat{\mu}_n]^T $$，$$ z_n $$和$$ z_{n−1} $$之间的协方差为
 
 $$
 cov[z_{n-1},z_n] = J_{n-1}\hat{V}_n \tag{13.104}
