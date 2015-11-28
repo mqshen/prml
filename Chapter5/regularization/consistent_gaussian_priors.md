@@ -1,4 +1,4 @@
-式（5.112）给出的简单权值衰减的一个局限性是，它与网络映射的确定缩放性质不一致。为了说明这一点，考虑具有两层权值和线性输出单元的多层感知网络，它给出了从输入变量集合## \{x_i\} $$到输出变量集合$$ \{y_k\} $$的映射。第一个隐藏层的隐藏单元的激活的形式为
+式（5.112）给出的简单权值衰减的一个局限性是，它与网络映射的确定缩放性质不一致。为了说明这一点，考虑具有两层权值和线性输出单元的多层感知网络，它给出了从输入变量集合$$ \{x_i\} $$到输出变量集合$$ \{y_k\} $$的映射。第一个隐藏层的隐藏单元的激活的形式为
 
 $$
 z_j = h\left(\sum\limits_i w_{ji}x_i + w_{j0}\right) \tag{5.113}
@@ -55,7 +55,7 @@ $$
 正则化项（5.121）对应
 
 $$
-p(w|\alpha_1, \alpha_2) \proto exp\left(-\frac{\alpha_1}{2}\sum\limits_{w \in W_1}w^2 - \frac{\alpha_2}{2}\sum\limits_{w \in W_2}w^2\right) \tag{5.122}
+p(w|\alpha_1, \alpha_2) \propto exp\left(-\frac{\alpha_1}{2}\sum\limits_{w \in W_1}w^2 - \frac{\alpha_2}{2}\sum\limits_{w \in W_2}w^2\right) \tag{5.122}
 $$
 
 这样形式的先验。    
@@ -68,7 +68,7 @@ $$
 更一般地，我们可以考虑权值被分为任意数量的组$$ W_k $$的情况下的先验，即    
 
 $$
-p(w) \proto exp\left(-\frac{1}{2}\sum\limits_k\alpha_k\Vert w \Vert_k^2\right) \tag{5.123}
+p(w) \propto exp\left(-\frac{1}{2}\sum\limits_k\alpha_k\Vert w \Vert_k^2\right) \tag{5.123}
 $$
 
 其中

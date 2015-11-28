@@ -121,10 +121,10 @@ $$
 现在我们可以用加法和乘法规则来计算选到苹果的总的概率。
 
 $$ 
-\begin{equation}
-p(F =a) = p(F =a|B=r)p(B=r)+p(F =a|B=b)p(B=b) \\
-= \frac{1}{4} × \frac{4}{10} + \frac{3}{4} × \frac{6}{10} = \frac{11}{20} \tag{1.22}
-\end{equation}
+\begin{eqnarray}
+p(F =a) &=& p(F =a|B=r)p(B=r)+p(F =a|B=b)p(B=b) \\
+&=& \frac{1}{4} × \frac{4}{10} + \frac{3}{4} × \frac{6}{10} = \frac{11}{20} \tag{1.22}
+\end{eqnarray}
 $$
 
 然后我们根据加法规则就可以得到：$$ p(F = o) = 1 − \frac{11}{20} = \frac{9}{20} $$。

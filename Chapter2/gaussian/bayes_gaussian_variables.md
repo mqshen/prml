@@ -38,8 +38,8 @@ $$
 
 $$
 \begin{eqnarray}
--\frac{1}{2}x^T(\Lambda + A^TLA)x - \frac{1}{2}y^TLy + \frac{1}{2}y^TLAx + \frac{1}{2}x^TA^TLy \\
-= -frac{1}{2}
+&-&\frac{1}{2}x^T(\Lambda + A^TLA)x - \frac{1}{2}y^TLy + \frac{1}{2}y^TLAx + \frac{1}{2}x^TA^TLy \\
+& & = -\frac{1}{2}
 \left(
 \begin{array}{c}  
 x \\

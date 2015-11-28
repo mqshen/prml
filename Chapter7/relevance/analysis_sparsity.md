@@ -3,10 +3,10 @@
 关于贝叶斯线性模型的稀疏性的来源，在进行数学的分析之前，我们首先给出一些非形式化的观点。考虑一个数据集，这个数据集由$$ N = 2 $$个观测$$ t_1 $$和$$ t_2 $$组成。我们有一个基函数为$$ \phi(x) $$，超参数为$$ \alpha $$的模型，以及一个精度为$$ \beta $$的各向同性的噪声。根据式（7.85），边缘似然函数为$$ p(t|\alpha,\beta) = \mathcal{N}(t|0,C) $$，其中协方差矩阵的形式为    
 
 $$
-C = \frac{1}{\beta}I + \frac{1}{\alpha}\vphi\vphi^T \tag{7.92}
+C = \frac{1}{\beta}I + \frac{1}{\alpha}\varphi\varphi^T \tag{7.92}
 $$
 
-其中$$ \vphi $$表示$$N $$维向量$$ (\vphi(x_1), \vphi(x2_))^T $$，类似地$$ t = (t_1, t_2)^T $$。注意，这是上的一个零均值的高斯过程模型，协方差为$$ C $$。给定的一个特定的观测，我们的目标是通过最大化边缘似然函数的方法找到$$ \alpha^*, \beta^* $$。从图7.10中，我们看到，如果$$ \phi $$的方向与训练数据向量之间没有很好的对齐的话，那么对应的超参数$$ \alpha $$会趋于$$ \infty
+其中$$ \varphi $$表示$$N $$维向量$$ (\varphi(x_1), \varphi(x2_))^T $$，类似地$$ t = (t_1, t_2)^T $$。注意，这是上的一个零均值的高斯过程模型，协方差为$$ C $$。给定的一个特定的观测，我们的目标是通过最大化边缘似然函数的方法找到$$ \alpha^*, \beta^* $$。从图7.10中，我们看到，如果$$ \phi $$的方向与训练数据向量之间没有很好的对齐的话，那么对应的超参数$$ \alpha $$会趋于$$ \infty
 $$，基向量会被从模型中剪枝掉。
 
 ![图 7-10](images/sparsity.png)      
@@ -22,8 +22,8 @@ $$没有很好地对齐，那么它很可能被从模型中剪枝掉。
 
 $$
 \begin{eqnarray}
-C &=& \beta^{-1}I + \sum\limits_{j \neq i}\alpha_j^{-1}\vphi_j\vphi_j^T + \alpha_i^{-1}\vphi_i\vphi_i^T \\
-&=& C_{-i} + \alpha_i^{-1}\vphi_i\vphi_i^T \tag{7.93}
+C &=& \beta^{-1}I + \sum\limits_{j \neq i}\alpha_j^{-1}\varphi_j\varphi_j^T + \alpha_i^{-1}\varphi_i\varphi_i^T \\
+&=& C_{-i} + \alpha_i^{-1}\varphi_i\varphi_i^T \tag{7.93}
 \end{eqnarray}
 $$
 
@@ -31,8 +31,8 @@ $$
 
 $$
 \begin{eqnarray}
-\vert C \vert = \vert C_{-i} \vert(1+\alpha_i^{-1}\vphi_i^TC_{-i}^{-1}\vphi_i) \tag{7.94} \\
-C^{-1} = C_{-i}^{-1} - \frac{C_{-i}^{-1}\vphi_i\vphi_i^TC_{-i}^{-1}}{\alpha_i + \vphi_i^TC_{-i}^{-1}\vphi_i} \tag{7.95}
+\vert C \vert = \vert C_{-i} \vert(1+\alpha_i^{-1}\varphi_i^TC_{-i}^{-1}\varphi_i) \tag{7.94} \\
+C^{-1} = C_{-i}^{-1} - \frac{C_{-i}^{-1}\varphi_i\varphi_i^TC_{-i}^{-1}}{\alpha_i + \varphi_i^TC_{-i}^{-1}\varphi_i} \tag{7.95}
 \end{eqnarray}
 $$    
 
@@ -52,12 +52,12 @@ $$
 
 $$
 \begin{eqnarray}
-s_i &=& \vphi_i^TC_{-i}^{-1}\vphi_i \tag{7.98} \\
-q_i &=& \vphi_i^TC_{-i}^{-1}t \tag{7.99}
-\begin{eqnarray}
+s_i &=& \varphi_i^TC_{-i}^{-1}\varphi_i \tag{7.98} \\
+q_i &=& \varphi_i^TC_{-i}^{-1}t \tag{7.99}
+\end{eqnarray}
 $$    
 
-这里$$ s_i $$被称为稀疏度（sparsity），$$ q_i $$被称为$$ \vphi_i $$的质量（quality），并且正如我们将要看到的那样，$$ s_i $$的值相对于$$ q_i $$的值较大意味着基函数$$ \vphi_i $$更可能被模型剪枝掉。“稀疏度”度量了基函数$$ \vphi_i $$与模型中其他基函数重叠的程度，“质量”度量了基向量$$ \vphi_i $$与误差向量之间的对齐程度，其中误差向量是训练值$$ t = (t_1,...,t_N)^T $$与会导致$$ \vphi_i $$从模型中被删除掉的预测向量$$ y_{−i} $$之间的差值（Tipping and Faul, 2003）。   
+这里$$ s_i $$被称为稀疏度（sparsity），$$ q_i $$被称为$$ \varphi_i $$的质量（quality），并且正如我们将要看到的那样，$$ s_i $$的值相对于$$ q_i $$的值较大意味着基函数$$ \varphi_i $$更可能被模型剪枝掉。“稀疏度”度量了基函数$$ \varphi_i $$与模型中其他基函数重叠的程度，“质量”度量了基向量$$ \varphi_i $$与误差向量之间的对齐程度，其中误差向量是训练值$$ t = (t_1,...,t_N)^T $$与会导致$$ \varphi_i $$从模型中被删除掉的预测向量$$ y_{−i} $$之间的差值（Tipping and Faul, 2003）。   
 
 在边缘似然函数关于$$ \alpha_i $$的驻点处，导数    
 
@@ -81,12 +81,12 @@ $$
 注意，在给定其他超参数的值的情况下，这种方法产生了$$ \alpha_i $$的一个解析解。结合对于RVM中稀疏性来源的分析，上述分析也产生了一个高速最优化超参数的实用算法。这种算法使用固定的候选基向量集合，然后在集合上循环，确定每个向量是否应该被包含在模型中。最终的顺序稀疏贝叶斯学习算法描述如下。    
 
 * 如果求解回归问题，初始化$$ \beta $$。    
-* 使用一个基函数$$ \phi_1 $$进行初始化，用式（7.101）确定超参数$$ \alpha_1 $$，其余的$$ j \neq 1 $$的超参数$$ \alpha_j $$被初始化为无穷大，从而只有$$ \vphi_1 $$被包含在模型中。    
+* 使用一个基函数$$ \phi_1 $$进行初始化，用式（7.101）确定超参数$$ \alpha_1 $$，其余的$$ j \neq 1 $$的超参数$$ \alpha_j $$被初始化为无穷大，从而只有$$ \varphi_1 $$被包含在模型中。    
 * 对于所有基函数，计算$$ \Sigma, m $$，以及$$ q_i $$和$$ s_i $$。    
-* 选择一个候选的基函数$$ \vphi_i $$。    
-* 如果$$ q-i^2 > s_i $$且$$ \alpha_i < \infty $$，从而基向量$$ \vphi_i $$已经被包含在了模型中，那么使用式（7.101)更新$$ \alpha_i $$ 。    
-* 如果$$ q-i^2 > s_i $$且$$ \alpha_i = \infty $$，那么将$$ \vphi_i $$添加到模型中，使用式（7.101）计算$$ \alpha_i $$。    
-* 如果$$ q-i^2 \leq s_i $$且$$ a_i < \infty $$，那么从模型中删除基函数$$ \vphi_i $$，令$$ \alpha_i = \infty $$。    
+* 选择一个候选的基函数$$ \varphi_i $$。    
+* 如果$$ q-i^2 > s_i $$且$$ \alpha_i < \infty $$，从而基向量$$ \varphi_i $$已经被包含在了模型中，那么使用式（7.101)更新$$ \alpha_i $$ 。    
+* 如果$$ q-i^2 > s_i $$且$$ \alpha_i = \infty $$，那么将$$ \varphi_i $$添加到模型中，使用式（7.101）计算$$ \alpha_i $$。    
+* 如果$$ q-i^2 \leq s_i $$且$$ a_i < \infty $$，那么从模型中删除基函数$$ \varphi_i $$，令$$ \alpha_i = \infty $$。    
 * 如果求解回归问题，更新$$ \beta $$。    
 * 如果收敛，则算法终止，否则回到第3步。    
 
@@ -96,8 +96,8 @@ $$
 
 $$
 \begin{eqnarray}
-Q_i &=& \vphi_i^TC^{-1}t \tag{7.102} \\
-S_i &=& \vphi_i^TC^{-1}\vphi_i \tag{7.103}
+Q_i &=& \varphi_i^TC^{-1}t \tag{7.102} \\
+S_i &=& \varphi_i^TC^{-1}\varphi_i \tag{7.103}
 \end{eqnarray}
 $$
 
@@ -116,8 +116,8 @@ $$
 
 $$
 \begin{eqnarray}
-Q_i &=& \beta\vphi_i^Tt - \beta^2\vphi_i^T\Phi\Sigma\Phi^Tt \tag{7.106} \\
-S_i &=& \beta\vphi_i^T\vphi_i - \beta^2\vphi_i^T\Phi\Sigma\Phi^T\vphi_i \tag{7.107}
+Q_i &=& \beta\varphi_i^Tt - \beta^2\varphi_i^T\Phi\Sigma\Phi^Tt \tag{7.106} \\
+S_i &=& \beta\varphi_i^T\varphi_i - \beta^2\varphi_i^T\Phi\Sigma\Phi^T\varphi_i \tag{7.107}
 \end{eqnarray}
 $$    
 

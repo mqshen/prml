@@ -10,7 +10,7 @@ $$
 的对数似然函数很容易计算。对于非线性最优化，我们也需要对数似然函数关于参数向量$$ \theta $$的梯度。我们假设计算$$ C_N $$的导数就是比较简单的，本章中讨论的协方差函数的情形。使用式（C.21）给出的$$ C_N^{-1} $$的导数，以及式（C.22）给出的$$ \ln\vert C_N \vert $$的结果，得到    
 
 $$
-\frac{\partial}{\partial \theta_i}\ln p(t|\theta) = -\frac{1}{2}\Tr\left(C_N^{-1}\frac{\partial C_N}{\partial\theta_i}\right) + \frac{1}{2}t^TC_N^{-1}\frac{\partial C_N}{\partial\theta_i}C_N^{-1}t \tag{6.70}
+\frac{\partial}{\partial \theta_i}\ln p(t|\theta) = -\frac{1}{2} Tr\left(C_N^{-1}\frac{\partial C_N}{\partial\theta_i}\right) + \frac{1}{2}t^TC_N^{-1}\frac{\partial C_N}{\partial\theta_i}C_N^{-1}t \tag{6.70}
 $$
 
 由于$$ \ln p(t|\theta) $$通常是一个非凸函数，因此它由多个极大值点。     

@@ -3,8 +3,8 @@ surfaces）。注意一个决策区域不一定要连续的，可以由几个分
 
 $$
 \begin{eqnarray}
-p(mistake) = p(x \belong R_1, C_2) + p(x \ belong R_2, C_1) \\ 
-= \int_{R_1} p(x, C_2)dx + \int_{R_2} p(x, C_1)dx  \tag{1.78}
+p(mistake) &=& p(x \in R_1, C_2) + p(x \in R_2, C_1) \\ 
+&=& \int_{R_1} p(x, C_2)dx + \int_{R_2} p(x, C_1)dx  \tag{1.78}
 \end{eqnarray}
 $$
 
@@ -17,8 +17,8 @@ $$
 
 $$
 \begin{eqnarray}
-p(correct) = \sum\limits_{k=1}^K p(x \belong R_k, C_k) \\
-= \sum\limits_{k=1}^K\int_{R_k}p(x, C_k)dx \tag{1.79}
+p(correct) &=& \sum\limits_{k=1}^K p(x \in R_k, C_k) \\
+&=& \sum\limits_{k=1}^K\int_{R_k}p(x, C_k)dx \tag{1.79}
 \end{eqnarray}
 $$
 

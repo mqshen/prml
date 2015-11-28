@@ -62,7 +62,7 @@ $$展示在右手边。注意，这些直线样本都穿过数据点的附近。
 其他形式的参数先验也可以被考虑。例如，我们可以推广高斯先验分布，得到：
 
 $$
-p(w|\alpha) = \left[\frac{q}{2}\left(\frac{\alpha}{2}\right)^{1/q}\frac{1}{\Gamma(1/q)}\left]^Mexp\left(-\frac{\alpha}{2}\sum\limits_{j=1}{M}\vert{w_j}^q\right) \tag{3.56}
+p(w|\alpha) = \left[\frac{q}{2}\left(\frac{\alpha}{2}\right)^{1/q}\frac{1}{\Gamma(1/q)}\right]^Mexp\left(-\frac{\alpha}{2}\sum\limits_{j=1}{M}\vert{w_j}^q\right) \tag{3.56}
 $$
 
 当$$ q = 2 $$时对应着高斯分布，并且只有在这种情形下的先验才与式（3.10）给出的 似然函数共轭。找到$$ w $$的后验概率分布的最大值等价于找到正则化误差函数（3.29）的最小值。在高斯先验的情况下，后验概率分布的众数等于均值，但是当$$ q \neq 2 $$时这个性质就不成立了。    

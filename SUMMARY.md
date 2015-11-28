@@ -107,7 +107,7 @@
         * [精确计算Hessian矩阵](Chapter5/hessian/exact_evaluation_hessian.md)
         * [Hessian快速乘法](Chapter5/hessian/fast_multiplication_hessian.md)
     * [神经网络中的正则化](Chapter5/regularization_neural_networks.md)
-        * [Hessian快速乘法](Chapter5/regularization/consistent_gaussian_priors.md)
+        * [相容高斯先验](Chapter5/regularization/consistent_gaussian_priors.md)
         * [早期停止](Chapter5/regularization/early_stopping.md)
         * [不变性](Chapter5/regularization/invariances.md)
         * [切线传播](Chapter5/regularization/tangent_propagation.md)

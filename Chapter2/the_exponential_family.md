@@ -3,7 +3,7 @@
 给定参数$$ \eta $$的$$ x $$上的指数族分布是具有
 
 $$
-p(x|\eta) = h(x)g(\eta)exp\{\eta^Tu(x)} \tag{2.194}
+p(x|\eta) = h(x)g(\eta)exp\{\eta^Tu(x)\} \tag{2.194}
 $$
 
 形式的概率分布的集合。其中$$ x $$可以是标量也可以是向量，可以是连续的也可以是离散的。$$ \eta $$是分布的自然参数（natural parameters），$$ u(x) $$是关于$$ x $$的某个函数。函数$$ g(\eta) $$可以解释为是为了保证分布标准化的系数，且满足：    
@@ -133,8 +133,8 @@ $$
 
 $$
 \begin{eqnarray}
-p(x|\mu,\delta^2) &=& \frac{1}{(2\pi\delta^2)^{1/2}}exp\left\{-\frac{1}{2\delta^2}(x-\mu)^2\right} \tag{2.218} \\
-&=& \frac{1}{(2\pi\delta^2)^{1/2}}exp\left\{-\frac{1}{2\delta^2}x^2 + \frac{\mu}{\delta^2}x - \frac{1}{2\delta^2}\mu^2 \right} \tag{2.219}
+p(x|\mu,\delta^2) &=& \frac{1}{(2\pi\delta^2)^{1/2}}exp\left\{-\frac{1}{2\delta^2}(x-\mu)^2\right\} \tag{2.218} \\
+&=& \frac{1}{(2\pi\delta^2)^{1/2}}exp\left\{-\frac{1}{2\delta^2}x^2 + \frac{\mu}{\delta^2}x - \frac{1}{2\delta^2}\mu^2 \right\} \tag{2.219}
 \end{eqnarray}
 $$
 
@@ -145,7 +145,7 @@ $$
 \eta &=& \left( \begin{array}{c} \mu/\delta^2 \\ -1/2\delta^2 \end{array} \right) \tag{2.220}  \\
 u(x) &=& \left( \begin{array}{c} x \\ x^2 \end{array} \right) \tag{2.221}  \\
 h(x) &=& (2\pi)^{-1/2} \tag{2.222} \\
-g(\eta) &=& = (-2\eta_2)^{1/2}exp\left(\frac{\eta_1^2}{4\eta_2}\right) \tag{2.223}
+g(\eta) &=& (-2\eta_2)^{1/2}exp\left(\frac{\eta_1^2}{4\eta_2}\right) \tag{2.223}
 \end{eqnarray}
 $$
 

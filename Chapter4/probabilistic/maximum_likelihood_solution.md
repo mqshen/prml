@@ -58,7 +58,7 @@ $$
 \begin{eqnarray}
 &-&\frac{1}{2}\sum\limits_{n=1}^Nt_n\ln \vert \Sigma \vert - \frac{1}{2}\sum\limits_{n=1}^Nt_n(x_n-\mu_1)^T\Sigma^{-1}(x_n-\mu_1) \\
 &-&\frac{1}{2}\sum\limits_{n=1}^N(1-t_n)\ln\vert \Sigma \vert - \frac{1}{2}\sum\limits_{n=1}^N(1-t_n)(x_n-\mu_2)^T\Sigma^{-1}(x_n-\mu_2) \\
-&=& -\frac{N}{2}\ln\vert \Sigma \vert - \frac{N}{2}\Tr\left\{\Sigma^{-1}S\right\} \tag{4.77}
+&=& -\frac{N}{2}\ln\vert \Sigma \vert - \frac{N}{2} Tr\left\{\Sigma^{-1}S\right\} \tag{4.77}
 \end{eqnarray}
 $$
 

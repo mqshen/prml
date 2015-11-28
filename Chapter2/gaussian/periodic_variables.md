@@ -36,9 +36,9 @@ $$
 
 $$
 \begin{eqnarray}
-p(\theta) \geq 0 \tag{2.170} \\
-\int_0^{2\pi}p(\theta)d\theta = 1 \tag{2.171} \\
-p(\theta + 2\pi) = p(\theta) \tag{2.172}
+p(\theta) &\geq& 0 \tag{2.170} \\
+\int_0^{2\pi}p(\theta)d\theta &=& 1 \tag{2.171} \\
+p(\theta + 2\pi) &=& p(\theta) \tag{2.172}
 \end{eqnarray}
 $$
 
@@ -72,9 +72,9 @@ $$
 
 $$
 \begin{eqnarray}
-& & -\frac{1}{2\delta^2}\{(r\cos \theta - r_0\cos \theta_0)^2 + (r\sin \theta - r_0\sin \theta_0)^2\} \\
-&=& -\frac{1}{2\delta^2}\{1+r_0^2-2r_0\cos \theta \cos \theta_0 - 2r_0\sin \theta \sin \theta_0\} \\ 
-&=& \frac{r_0}{\delta^2}\cos (\theta - \theta_0) + const \tag{2.176}
+&-&\frac{1}{2\delta^2}\{(r\cos \theta - r_0\cos \theta_0)^2 + (r\sin \theta - r_0\sin \theta_0)^2\} \\
+& & = -\frac{1}{2\delta^2}\{1+r_0^2-2r_0\cos \theta \cos \theta_0 - 2r_0\sin \theta \sin \theta_0\} \\ 
+& & = \frac{r_0}{\delta^2}\cos (\theta - \theta_0) + const \tag{2.176}
 \end{eqnarray}
 $$
 
@@ -82,8 +82,8 @@ $$
 
 $$
 \begin{eqnarray}
-\cos ^2A + \sin ^2 A = 1 \tag{2.177} \\
-\cos A\cos B + \sin A\sin B = \cos (A-B) \tag{2.178}
+\cos ^2A + \sin ^2 A &=& 1 \tag{2.177} \\
+\cos A\cos B + \sin A\sin B &=& \cos (A-B) \tag{2.178}
 \end{eqnarray}
 $$
 

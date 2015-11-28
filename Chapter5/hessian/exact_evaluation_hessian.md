@@ -3,7 +3,7 @@
 这里我们考虑具有两层权值（待求的方程很容易推导）的网络。我们将使用下标$$ i, i' $$表示输入，用下标$$ j, j' $$表示隐藏单元，用下标$$ k, k' $$表示输出。首先定义     
 
 $$
-\delta_k = \frac{\partial E_n}{\partial a_k}  , M_{kk'} \equiv \frac{\partial^2 E_n}{\partial a_k\partial a_{k'} \tag{5.92}
+\delta_k = \frac{\partial E_n}{\partial a_k}  , M_{kk'} \equiv \frac{\partial^2 E_n}{\partial a_k\partial a_{k'}} \tag{5.92}
 $$
 
 其中$$ E_n $$表示数据点$$ n $$对误差的贡献。这个网络的Hessian矩阵可以可以被看成三个独立的项：

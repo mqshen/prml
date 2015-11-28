@@ -50,7 +50,7 @@ $$
 它具有简单的直观含义，因为它使用大小为第j个高斯分量产生的权值参数的后验概率的力把$$ \mu_j $$拉向了权值的平均值。类似地，关于方差的导数为    
 
 $$
-\frac{\partial\tilde{E}}{\partial\sigma_j} =  \lambda\sum\limits_i\gamma_j(w_i)\left(\frac{1}{\sigma_j} - \frac{(w_j - \mu_j)^2}{\sigma_j^3}\rgith) \tag{5.143}
+\frac{\partial\tilde{E}}{\partial\sigma_j} =  \lambda\sum\limits_i\gamma_j(w_i)\left(\frac{1}{\sigma_j} - \frac{(w_j - \mu_j)^2}{\sigma_j^3}\right) \tag{5.143}
 $$
 
 它将$$ \sigma_j $$拉向权值在对应的中心$$ mu_j $$附近的偏差的平方的加权平均，加权平均的权系数与之前一样，等于由第$$ j $$个高斯分量产生的权值参数的后验概率。注意，在实际执行过程中，我们会引入一个由

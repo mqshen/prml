@@ -17,7 +17,7 @@ $$
 令它关于$$ \alpha $$的导数等于0，我们得到了M步骤的重新估计方程     
 
 $$
-\alpha = \frac{M}{\mathbb{E}[w^Tw]} = \frac{M}{m_N^Tm_N + \Tr(S_N)} \tag{9.63}
+\alpha = \frac{M}{\mathbb{E}[w^Tw]} = \frac{M}{m_N^Tm_N + Tr(S_N)} \tag{9.63}
 $$     
 
 对于$$ beta $$，结果类似。     
@@ -27,13 +27,13 @@ $$
 这两种确定$$ \alpha $$的方法显然应该收敛到同样的结果（假设它们找到证据函数的同一个局部极大值）。可以用下面的方法验证。首先注意到$$ \gamma $$的定义为     
 
 $$
-\gamma = M - \alpha\sum\limits_{i=1}^M\frac{1}{\lambda_i + \alpha} = M - \alpha\Tr(S_N) \tag{9.64}
+\gamma = M - \alpha\sum\limits_{i=1}^M\frac{1}{\lambda_i + \alpha} = M - \alpha Tr(S_N) \tag{9.64}
 $$    
 
 在证据函数的驻点处，重估计方程（3.92）一定成立，因此我们可以将$$ \gamma $$替换掉，得到     
 
 $$
-\alpha m_N^Tm_N = \gamma = M - \alpha\Tr(S_N) \tag{9.65}
+\alpha m_N^Tm_N = \gamma = M - \alpha Tr(S_N) \tag{9.65}
 $$     
 
 解出$$ \alpha $$，我们得到了式（9.63）的结果，这就是EM的重新估计方程。     

@@ -48,7 +48,7 @@ p(t|\alpha) &=& \int p(t|w)p(w|\alpha)dw \\
 \end{eqnarray}
 $$
 
-如果我们代入$$ p(t|w^*) $$和p(w^*|\alpha) $$的表达式，然后令边缘似然函数关于$$ \alpha_i $$的导数等于0，得到    
+如果我们代入$$ p(t|w^*) $$和$$ p(w^*|\alpha) $$的表达式，然后令边缘似然函数关于$$ \alpha_i $$的导数等于0，得到    
 
 $$
 -\frac{1}{2}(w_i^*)^2 + \frac{1}{2\alpha_i} - \frac{1}{2}\Sigma_{ii} = 0 \tag{7.115}

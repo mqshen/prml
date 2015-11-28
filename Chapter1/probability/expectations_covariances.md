@@ -10,7 +10,9 @@ $$ \mathbb{E}[f] = \int p(x)f(x)dx \tag{1.34} $$
 两种情形下,如果我们给定有限的$$ N $$个点，这些点满足某个概率分布或概率密度函数,
 那么期望可以通过求和的方式估计：    
 
-$$ \mathbb{E}[f] \simeq \frac{1}{N}\sum\limits_{n=1}^{N}f(x_n) $$    
+$$ 
+\mathbb{E}[f] \simeq \frac{1}{N}\sum\limits_{n=1}^{N}f(x_n) \tag{1.35}
+$$    
 
 在第11章中讨论取样方法时，我们会广泛使用这个方法。当$$ N \to \infty $$时，公式(1.35)的估计就精确了。    
 有时,我们会考虑多变量函数的期望。这种情形下,我们可以使用下标来表明根据哪个变量进行的平均,例如：    
@@ -43,8 +45,8 @@ $$
 
 $$
 \begin{eqnarray}
-cov[x, y] = \mathbb{E}_{x,y}[\{x − \mathbb{E}[x]\} \{y − \mathbb{E}[y]\}]  \\
-= \mathbb{E}_{x,y}[xy] − \mathbb{E}[x]\mathbb{E}[y] \tag{1.41}
+cov[x, y] &=& \mathbb{E}_{x,y}[\{x − \mathbb{E}[x]\} \{y − \mathbb{E}[y]\}]  \\
+&=& \mathbb{E}_{x,y}[xy] − \mathbb{E}[x]\mathbb{E}[y] \tag{1.41}
 \end{eqnarray}
 $$  
 
@@ -54,8 +56,8 @@ $$
 
 $$
 \begin{eqnarray}
-cov[x, y] = \mathbb{E}_{x,y}[\{x − \mathbb{E}[x]\} \{y^T − \mathbb{E}[y^T]\}]  \\
-= \mathbb{E}_{x,y}[xy^T] − \mathbb{E}[x]\mathbb{E}[y^T] \tag{1.42}
+cov[x, y] &=& \mathbb{E}_{x,y}[\{x − \mathbb{E}[x]\} \{y^T − \mathbb{E}[y^T]\}]  \\
+&=& \mathbb{E}_{x,y}[xy^T] − \mathbb{E}[x]\mathbb{E}[y^T] \tag{1.42}
 \end{eqnarray}
 $$  
 

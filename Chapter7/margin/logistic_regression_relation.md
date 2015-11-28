@@ -3,7 +3,7 @@
 我们已经看到，对于位于边缘边界正确一侧的数据点，即满足$$ y_nt_n \geq 1 $$的数据点，我们有$$ \xi_n = 0 $$，对于剩余的数据点，有$$ \xi_n = 1 − y_nt_n $$。因此目标函数（7.21）可以写成（忽略整体的具有可乘性的常数）
 
 $$
-\sum\limigs_{n=1}^NE_{SV}(y_nt_n) + \lambda\Vert w \Vert^2 \tag{7.44}
+\sum\limits_{n=1}^NE_{SV}(y_nt_n) + \lambda\Vert w \Vert^2 \tag{7.44}
 $$
 
 这样的形式。其中$$ \lambda = (2C)^{−1} $$，$$ E_{SV}(\dot) $$是定义为

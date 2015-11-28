@@ -27,7 +27,7 @@ $$
 其中$$ y_{nk} = y_k(\phi_n) $$，且$$ T $$是元素为目标变量$$ t_{nk} $$的$$ N \times K $$的矩阵。取对数的负得到
 
 $$
-E(w_1,...,w_K) = -\ln p(T|w_1,...,w_K) = -\sum\limits_{n=1}^N\limits_{k=1}^K t_{nk}\ln y_{nk} \tag{4.108}
+E(w_1,...,w_K) = -\ln p(T|w_1,...,w_K) = -\sum\limits_{n=1}^N\sum\limits_{k=1}^K t_{nk}\ln y_{nk} \tag{4.108}
 $$
 
 这被称为多类别分类问题的交叉熵（cross-entropy）误差函数。    

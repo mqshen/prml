@@ -27,7 +27,7 @@ $$
 现在考虑一个具有8种可能状态$$ \{a,b,c,d,e,f,g,h\} $$的随机变量，每个状态各自的概率为$$ (\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{16},\frac{1}{64},\frac{1}{64},\frac{1}{64},\frac{1}{64}) $$(Cover and Thomas, 1991)。这种情形下的熵为
 
 $$
-H[x] = -\frac{1}{2}log_2\frac{1}{2} -\frac{1}{4}log_2\frac{1}{4} -\frac{1}{8}log_2\frac{1}{8} -\frac{1}{16}log_2\frac{1}{16} -\frac{1}{64}log_2\frac{1}{64} -\frac{1}{64}log_2\frac{1}{64} -\frac{1}{64}log_2\frac{1}{64} -\frac{1}{64}log_2\frac{1}{64}
+H[x] = -\frac{1}{2}log_2\frac{1}{2} -\frac{1}{4}log_2\frac{1}{4} -\frac{1}{8}log_2\frac{1}{8} -\frac{1}{16}log_2\frac{1}{16} -\frac{4}{64}log_2\frac{1}{64} = 2bits
 $$
 
 我们得到，非均匀分布比均匀分布的熵要小。后面当根据无序程度来讨论熵的概念时，会获得一些更深刻的认识。现在，考虑如何把变量状态传递给接收者。可以和之前一样，使用3比特来完成。但是，我们可以利用非均匀分布这个特点，使用更短的编码来描述更可能的事件，更长的编码来描述不太可能的事件。希望这样做能够得到一个更短的平均编码长度。使用下面的编码串：0、10、110、1110、 111100、111101、111110、111111来表示状态$$ \{a, b, c, d, e, f, g, h\} $$。传输的编码的平均长度就是
@@ -67,7 +67,7 @@ $$
 H = - \lim\limits_{N \to \infty}\sum\limits_{i}(\frac{n_i}{N})\ln(\frac{n_i}{N}) = -\sum\limits_ip_i\ln p_i \tag{1.97}
 $$
 
-其中$$ \sum_in_i = N $$，$$ p_i = \lim_{N \to \infty}(\frac{n_i}{N})是一个物体被分配到第i个箱子的概率。使用物理的术语，箱子中物体的具体分配方案被称为微观态（microstate），整体的占有数分布，表示为比值$$ n_i / N $$叫做宏观态（macrostate）。多重性W也被称为宏观态的权重。    
+其中$$ \sum_in_i = N $$，$$ p_i = \lim_{N \to \infty}(\frac{n_i}{N}) $$是一个物体被分配到第$$ i $$个箱子的概率。使用物理的术语，箱子中物体的具体分配方案被称为微观态（microstate），整体的占有数分布，表示为比值$$ n_i / N $$叫做宏观态（macrostate）。多重性W也被称为宏观态的权重。    
 
 我们可以用离散随机变量$$ X $$的状态$$ x_i $$来表示箱子，其中$$ p(X = x_i) = p_i $$。随机变量X的熵为：    
 
@@ -103,7 +103,7 @@ $$
 我们现在可以这样量化连续变量x：只要x落在第i个箱子中，我们就把x赋值为$$ x_i $$。因此观察到值$$ x_i $$的概率为$$ p(x_i )\Delta $$。这就变成了离散的分布，这种情形下熵为：    
 
 $$
-H_\Delta = -\sum\limits_ip(x_i)\Delta\ln(p(x_i)\Delta) = -\sum\limits_ip(x_i)\Deltap(x_i) - \ln \Delta \tag{1.102}
+H_\Delta = -\sum\limits_ip(x_i)\Delta\ln(p(x_i)\Delta) = -\sum\limits_ip(x_i)\Delta \ln p(x_i) - \ln \Delta \tag{1.102}
 $$
 
 推导时我们使用了$$ \sum_ip(x_i)\Delta = 1 $$，这可以由公式(1.101)得出。我们现在省略公式(1.102)右侧的第二项$$ \ln\Delta $$，然后考虑极限$$ \Delta \to 0 $$。在这种极限下，公式(1.102)右侧的第一项就变成了$$ p(x)\ln p(x) $$的积分，因此
@@ -132,9 +132,10 @@ $$
 
 $$
 \begin{eqnarray}
--\int_{-\infty}^{\infty} p(x)\ln p(x)dx + \lambda_1(\int_{-\infty}^{\infty}p(x)dx - 1) \\
-+ \lambda_2(\int_{-\infty}^{\infty} xp(x)dx - \mu) + \lambda_3(\int_{-\infty}^{\infty} (x - \mu)^2p(x)dx - \delta^2)
+&-& \int_{-\infty}^{\infty} p(x)\ln p(x)dx + \lambda_1(\int_{-\infty}^{\infty}p(x)dx - 1) \\
+&+& \lambda_2(\int_{-\infty}^{\infty} xp(x)dx - \mu) + \lambda_3(\int_{-\infty}^{\infty} (x - \mu)^2p(x)dx - \delta^2)
 \end{eqnarray}
+$$
 
 使用变分法（calculus of variations），令这个函数的导数等于零，我们有：
 
@@ -145,7 +146,7 @@ $$
 将这个结果代入三个限制方程中，即可求出拉格朗日乘数，最终的结果为
 
 $$
-p(x) = \frac{1}{(2\pi\delta^2)^{1/2}}exp\{-\frac{(x - \mu)^2}{2\delta^2}\} \tag{1.109}
+p(x) = \frac{1}{(2\pi\delta^2)^{1/2}}exp\left\{-\frac{(x - \mu)^2}{2\delta^2}\right\} \tag{1.109}
 $$
 
 因此最大化微分熵的分布是高斯分布。注意，在最大化熵的时候，我们没有限制概率分布非负。然而，求出的分布确实是非负的，因此可以得出结论：这种限制是不必要的。
@@ -156,9 +157,9 @@ $$
 H[x] = \frac{1}{2}\{1 + \ln(2\pi\delta^2)\} \tag{1.110}
 $$
 
-因此我们看到熵随着分布宽度（即$$ \delta^2 $$）的增加而增加。与离散熵不同，当$$ \delta^2 < 1 / (2\pi e)是，熵为负。    
+因此我们看到熵随着分布宽度（即$$ \delta^2 $$）的增加而增加。与离散熵不同，当$$ \delta^2 < 1 / (2\pi e) $$是，熵为负。    
 
-假设我们有一个联合概率分布$$ p(x, y) $$。我们从这个概率分布中抽取了一对x和y。如果x的值已知,那么需要确定对应的y值所需的附加的信息就是$$−\ln p(y|x) $$。因此，用来确定y值的平均附加信息可以写成：    
+假设我们有一个联合概率分布$$ p(x, y) $$。我们从这个概率分布中抽取了一对$$ x $$和$$ y $$。如果$$ x $$的值已知,那么需要确定对应的y值所需的附加的信息就是$$−\ln p(y|x) $$。因此，用来确定y值的平均附加信息可以写成：    
 
 $$
 H[y|x] = - \int\int p(y,x)\ln p(y|x)dydx \tag{1.111}

@@ -8,9 +8,9 @@ KL(p||q) = -\int p(x) \ln q(x)dx - (-\int p(x)\ln p(x)dx) \\
 \end{eqnarray}
 $$
 
-这被称为分布$$ p(x) $$和分布$$ q(x) $$之间的相对熵(relative entropy) 或者Kullback-Leibler散度 (Kullback-Leibler divergence)，或者KL散度(Kullback and Leibler, 1951)。注意这不是一个 对称量，即KL(p||q) \nequiv KL(q||p) $$。    
+这被称为分布$$ p(x) $$和分布$$ q(x) $$之间的相对熵(relative entropy) 或者Kullback-Leibler散度 (Kullback-Leibler divergence)，或者KL散度(Kullback and Leibler, 1951)。注意这不是一个对称量，即$$ KL(p||q) \not\equiv KL(q||p) $$。    
 
-现在要证明，Kullback-Leibler散度满足$$ KL(p || q) \leq 0 $$，并且当且仅当$$ p(x) = q(x) $$时等号成立。为了证明这一点，我们首先介绍凸函数(convex function)的概念。如果一个函数具有如 下性质:每条弦都位于函数图像或其上方(如图1.31所示)，那么我们说这个函数是凸函数。位于$$ x = a  $$$$到$$ x = b $$之间的任何一个$$ x $$值都可以写成$$ \lambda a + (1 − \lambda)b $$的形式，其中$$ 0 ≤ \lambda ≤ 1 $$。弦上的对 应点可以写成$$ \lambda f (a) + (1 − \lambda )f (b) $$，函数的对应值为$$ f
+现在要证明，Kullback-Leibler散度满足$$ KL(p || q) \leq 0 $$，并且当且仅当$$ p(x) = q(x) $$时等号成立。为了证明这一点，我们首先介绍凸函数(convex function)的概念。如果一个函数具有如 下性质:每条弦都位于函数图像或其上方(如图1.31所示)，那么我们说这个函数是凸函数。位于$$ x = a  $$到$$ x = b $$之间的任何一个$$ x $$值都可以写成$$ \lambda a + (1 − \lambda)b $$的形式，其中$$ 0 ≤ \lambda ≤ 1 $$。弦上的对 应点可以写成$$ \lambda f (a) + (1 − \lambda )f (b) $$，函数的对应值为$$ f
 (\lambda a + (1 − \lambda )b) $$。这样，凸函数的性质就可以表示为
 
 $$
@@ -31,7 +31,7 @@ $$
 f(\mathbb{E}[x]) \leq \mathbb{E}[f(x)] \tag{1.116}
 $$
 
-其中，$$ \matchbb{E}[·] $$表示期望。对于连续变量，Jensen不等式的形式为
+其中，$$ \mathbb{E}[·] $$表示期望。对于连续变量，Jensen不等式的形式为
 
 $$
 f(\int xp(x)dx) \leq \int f(x)p(x)dx \tag{1.117}
@@ -43,11 +43,11 @@ $$
 KL(p||q) = -\int p(x)\ln \{\frac{q(x)}{p(x)}\}dx \geq -\ln \int q(x)dx = 0 \tag{1.118}
 $$
 
-推导过程中，我们使用了$$ −\lnx $$是凸函数的事实，以及标准化条件$$ q(x)dx = 1 $$。实际上，$$ −\ln x $$是严格凸函数，因此只有$$ q(x) = p(x) $$对于所有x都成立时，等号才成立。因此我们可以把Kullback-Leibler散度看做两个分布$$ p(x) $$和$$ q(x) $$之间不相似程度的度量。    
+推导过程中，我们使用了$$ −\ln x $$是凸函数的事实，以及标准化条件$$ q(x)dx = 1 $$。实际上，$$ −\ln x $$是严格凸函数，因此只有$$ q(x) = p(x) $$对于所有x都成立时，等号才成立。因此我们可以把Kullback-Leibler散度看做两个分布$$ p(x) $$和$$ q(x) $$之间不相似程度的度量。    
 
 我们看到，在数据压缩和密度估计（即对未知概率分布建模）之间有一种隐含的关系，因为当我们知道真实的概率分布之后，我们可以给出最有效的压缩。如果我们使用了不同于真实分布的概率分布，那么我们一定会损失编码效率，并且在传输时增加的平均额外信息量至少等于两个分布之间的Kullback-Leibler散度。    
 
-假设数据通过未知分布$$ p(x) $$生成，我们想要对$$ p(x) $$建模。我们可以试着使用一些参数分布$$ q(x | θ) $$来近似这个分布。$$ q(x | \theta) $$由可调节的参数$$ \theta $$控制(例如一个多元高斯分布)。一种确定$$ \theta $$的方式是最小化$$ p(x) $$和q(x | \theta) $$之间关于$$ \theta $$的Kullback-Leibler散度。我们不能直接这么做，因为我们不知道$$ p(x) $$。但是，假设我们已经观察到了服从分布p(x)的有限数量的训练点$$ x_n
+假设数据通过未知分布$$ p(x) $$生成，我们想要对$$ p(x) $$建模。我们可以试着使用一些参数分布$$ q(x | θ) $$来近似这个分布。$$ q(x | \theta) $$由可调节的参数$$ \theta $$控制(例如一个多元高斯分布)。一种确定$$ \theta $$的方式是最小化$$ p(x) $$和$$ q(x | \theta) $$之间关于$$ \theta $$的Kullback-Leibler散度。我们不能直接这么做，因为我们不知道$$ p(x) $$。但是，假设我们已经观察到了服从分布p(x)的有限数量的训练点$$ x_n
 $$，其中$$ n = 1,...,N $$。那么，关于$$ p(x) $$的期望就可以通过这些点的有限加和，使用公式(1.35)来近似，即
 
 $$
@@ -60,8 +60,8 @@ $$
 
 $$
 \begin{eqnarray}
-I[x,y] \equiv KL(p(x, y) || p(x)p(y)) \\
-= −\int\int p(x,y)\ln(\frac{p(x)p(y)}{p(x,y)})dxdy \tag{1.120}
+I[x,y] &\equiv& KL(p(x, y) || p(x)p(y)) \\
+&=& −\int\int p(x,y)\ln(\frac{p(x)p(y)}{p(x,y)})dxdy \tag{1.120}
 \end{eqnarray}
 $$
 

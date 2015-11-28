@@ -11,7 +11,7 @@ $$
 $$
 \begin{eqnarray}
 \mathbb{E}[x] &=& \mu \tag{9.45} \\
-cov[x] &=& \diag\{\mu_i(1 - \mu_i)\} \tag{9.46}
+cov[x] &=& diag\{\mu_i(1 - \mu_i)\} \tag{9.46}
 \end{eqnarray}
 $$    
 
@@ -21,7 +21,7 @@ $$
 p(x|\mu,\pi) = \sum\limits_{k=1}^K\pi_kp(x|\mu_k) \tag{9.47}
 $$
 
-其中$$ \mu = \{\mu_1,...,\mu_K\}, \pi = {\pi_1,...,\pi_K\} $$，且    
+其中$$ \mu = \{\mu_1,...,\mu_K\}, \pi = \{\pi_1,...,\pi_K\} $$，且    
 
 $$
 p(x|\mu_k) = \prod\limits_{i=1}^D\mu_{ki}^{x_i}(1 - \mu_{ki})^{1-x_i} \tag{9.48}
@@ -36,7 +36,7 @@ cov[x] &=& \sum\limits_{k=1}^K\pi_k\{\Sigma_k + \mu_k\mu_k^T\} - \mathbb{E}[x]\m
 \end{eqnarray}
 $$     
 
-其中$$ \Sigma_k = diag\{\mu_{ki}(1 − \mu_{ki})} $$。由于协方差矩阵$$ cov[x] $$不再是对角矩阵，因此混合分布可以描述变量之间的相关性，这与单一的伯努利分布不同。    
+其中$$ \Sigma_k = diag\{\mu_{ki}(1 − \mu_{ki})\} $$。由于协方差矩阵$$ cov[x] $$不再是对角矩阵，因此混合分布可以描述变量之间的相关性，这与单一的伯努利分布不同。    
 
 如果我们有一个数据集$$ X = \{x_1,...,x_N\} $$，那么这个模型的对数似然函数为     
 
@@ -82,7 +82,7 @@ $$
 
 $$
 \begin{eqnarray}
-\gamma(z_{nk}) = \mathbb{E}[z_{nk}] &=& \frac{\sum\limits_z_{nk}[\pi_kp(x_n|\mu_k)]^{z_{nk}}}{\sum\limits_{z_{nj}}[\pi_jp(x_n|\mu_j)]^{z_{nj}}} \\
+\gamma(z_{nk}) = \mathbb{E}[z_{nk}] &=& \frac{\sum\limits_{z_n}z_{nk}\prod_{k'}[\pi_{k'}p(x_n|\mu_{k'})]^{z_{nk'}}}{\sum\limits_{z_n}\prod_j[\pi_jp(x_n|\mu_j)]^{z_{nj}}} \\
 &=& \frac{\pi_kp(x_n|\mu_k)}{\sum\limits_{j=1}^K\pi_jp(x_n|\mu_j)} \tag{9.56}
 \end{eqnarray}
 $$

@@ -37,7 +37,7 @@ $$
 观测到$$ \{t_n\} $$的值后，如果必要的话，我们可以计算系数$$ w $$的的后验概率，就像1.2.5节讨论的那样。现阶段，我们注意到，这是贝叶斯定理的一个直接应用：    
 
 $$
-p(w|T) \proto p(w)\prod\limits_{n=1}^Np(t_n|w) \tag{8.7}
+p(w|T) \propto p(w)\prod\limits_{n=1}^Np(t_n|w) \tag{8.7}
 $$
 
 其中为了记号简洁，我们再一次省略了确定性参数。    
@@ -56,7 +56,7 @@ $$
 然后，根据概率的加法规则，对模型参数$$ w $$积分，得到$$ \hat{t} $$的预测分布    
 
 $$
-p(\hat{t}|\hat{x},x,t,\alpha,\sigma^2) \proto \int p(\hat{t},t,w|\hat{x},x,\alpha,\sigma^2)dw
+p(\hat{t}|\hat{x},x,t,\alpha,\sigma^2) \propto \int p(\hat{t},t,w|\hat{x},x,\alpha,\sigma^2)dw
 $$
 
 其中我们隐式地将$$ t $$中的随机变量设置为数据集中观测到的具体值。计算的细节已经在第3章中讨论过。

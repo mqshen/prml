@@ -24,7 +24,7 @@ $$
 使得在数据点的邻域之内具有不变性。其中$$ \lambda $$是正则化系数，且
 
 $$
-\omega = \frac{1}{2}\sum\limits_n\sum\limits_k\left(\left.\frac{\partial y_{nk}}{\partial \xi}\vphantom{\Big|}\right| _{\xi = 0}\right)^2 = \frac{1}{2}\sum\limits_n\sum\limits_k\left{\sum\limits_{i=1}^DJ_{nki}\tau_{ni}\right)^2 \tag{5.128}
+\omega = \frac{1}{2}\sum\limits_n\sum\limits_k\left(\left.\frac{\partial y_{nk}}{\partial \xi}\vphantom{\Big|}\right| _{\xi = 0}\right)^2 = \frac{1}{2}\sum\limits_n\sum\limits_k\left(\sum\limits_{i=1}^DJ_{nki}\tau_{ni}\right)^2 \tag{5.128}
 $$
 
 当网络映射函数在每个模式向量的邻域内都具有变换不变性时，正则化函数等于零。$$ \lambda $$的值确定了训练数据和学习不变性之间的平衡。    

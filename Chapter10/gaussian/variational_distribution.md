@@ -69,7 +69,7 @@ $$
 \begin{eqnarray}
 N_k &=& \sum\limits_{n=1}^Nr_{nk} \tag{10.51} \\
 \bar{x}_k &=& \frac{1}{N_k}\sum\limits_{n=1}^Nr_{nk}x_n \tag{10.52} \\
-S_k &=& \frac{1}{N_k}\sum\limits_{n=1}^Nr_{nk}(x_n - \bar{x}_k)(x_n -\var{x}_k)^T \tag{10.53}
+S_k &=& \frac{1}{N_k}\sum\limits_{n=1}^Nr_{nk}(x_n - \bar{x}_k)(x_n -\bar{x}_k)^T \tag{10.53}
 \end{eqnarray}
 $$     
 
@@ -93,7 +93,7 @@ $$
 分离出式（10.54）右侧的与$$ \pi $$相关的项，我们有     
 
 $$
-\ln q^*(\pi) = (\alpha_0 - 1)\sum\limits_{k=1}^K\ln\i_k + \sum\limits_{k=1}^K\sum\limits_{n=1}^Nr_{nk}\ln\pi_k + const \tag{10.56}
+\ln q^*(\pi) = (\alpha_0 - 1)\sum\limits_{k=1}^K\ln\pi_k + \sum\limits_{k=1}^K\sum\limits_{n=1}^Nr_{nk}\ln\pi_k + const \tag{10.56}
 $$     
 
 其中我们使用了式（10.50）。两边取指数，我们将$$ q^*(\pi) $$看成狄利克雷分布    
@@ -127,11 +127,11 @@ $$
 
 更新方程类似于混合高斯模型的最大似然解的EM算法的M步骤的方程。我们看到，为了更新模型参数上的变分后验概率分布，必须进行的计算涉及到的在数据集上的求和操作与最大似然方法中的求和操作相同。     
 
-为了进行这个变分M步骤，我们需要得到表示“责任”的期望$$ E[z_{nk}] = r_{nk}。这些可以通过对式（10.46）给出的$$ ρ\rho_{nk} $$进行标准化的方式得到。我们看到，这个表达式涉及到关于变分分布的参数求期望，这些期望很容易求出，从而可得     
+为了进行这个变分M步骤，我们需要得到表示“责任”的期望$$ E[z_{nk}] = r_{nk} $$。这些可以通过对式（10.46）给出的$$ ρ\rho_{nk} $$进行标准化的方式得到。我们看到，这个表达式涉及到关于变分分布的参数求期望，这些期望很容易求出，从而可得     
 $$
 \begin{eqnarray}
 \mathbb{E}_{\mu_k,\Lambda_k}[(x_n - \mu_k)^T\Lambda_k(x_n - \mu_k)] &=& D\beta_k^{-1} + v_k(x_n - m_k)^TW_k(x_n - m_k) \tag{10.64} \\
-\ln\tilde{\Lambda}_k \equiv \mathbb{E}[\ln|\Lambda_k|] &=& \sum\limits_{i=1}^D\psi\left(\frac{v_k + 1 -i}{2} + D\ln 2 + \ln| W_k | \tag{10.65}} \\
+\ln\tilde{\Lambda}_k \equiv \mathbb{E}[\ln|\Lambda_k|] &=& \sum\limits_{i=1}^D\psi\left(\frac{v_k + 1 -i}{2}\right) + D\ln 2 + \ln| W_k | \tag{10.65} \\
 \ln\tilde{\pi}_k \equiv \mathbb{E}[\ln\pi_k] &=& \psi(\alpha_k) - \psi(\hat{\alpha}) \tag{10.66}
 \end{eqnarray}
 $$    
@@ -141,13 +141,13 @@ $$
 如果我们将式（10.64）、（10.65）和（10.66）代入式（10.46），然后使用式（10.49），我们得到了下面的“责任”的结果     
 
 $$
-r_{nk} \proto \tilde{\pi}_k\tilde{\Lambda}_k^{1/2}exp\left\{-\frac{D}{2\beta_k} - \frac{v_k}{2}(x_n - m_k)^T(x_n - m_k)\right\} \tag{10.67}
+r_{nk} \propto \tilde{\pi}_k\tilde{\Lambda}_k^{1/2}exp\left\{-\frac{D}{2\beta_k} - \frac{v_k}{2}(x_n - m_k)^T(x_n - m_k)\right\} \tag{10.67}
 $$     
 
 注意这个结果与最大似然EM算法得到的“责任”的对应结果的相似性，后者根据式（9.13）可以写成     
 
 $$
-r_{nk} \proto \pi_k|\Lambda_k|^{1/2}exp\left\{-\frac{1}{2}(x_n - \mu_k)^T(x_n - \mu_k)\right\} \tag{10.68}
+r_{nk} \propto \pi_k|\Lambda_k|^{1/2}exp\left\{-\frac{1}{2}(x_n - \mu_k)^T(x_n - \mu_k)\right\} \tag{10.68}
 $$     
 
 其中我们使用精度代替了协方差，来强调它与式（10.67）之间的相似性。     
@@ -161,7 +161,7 @@ $$
 \mathbb{E}[\pi_k] = \frac{\alpha_0 + N_k}{K\alpha_0 + N} \tag{10.69}
 $$     
 
-考虑一个分量其中$$ N_k \simeq 0 $$且$$ \alpha_k \simeq \alpha_0 $$。如果先验概率分布很宽，从而$$ \alpha_0 \tp 0 $$，那么$$ \mathbb{E}[\pi_k] \to 0 $$，分量对模型不起作用。而如果先验概率与混合系数密切相关，即$$ \alpha_0 \to \infty $$，那在图10.6中，混合系数上的先验概率分布是一个狄利克雷分布，形式为（10.39）。回忆一 下，根据图2.5，对于$$ \alpha_0 < 1 $$，先验概率分布倾向于选择某些混合系数趋近于零的解。     
+考虑一个分量其中$$ N_k \simeq 0 $$且$$ \alpha_k \simeq \alpha_0 $$。如果先验概率分布很宽，从而$$ \alpha_0 \to 0 $$，那么$$ \mathbb{E}[\pi_k] \to 0 $$，分量对模型不起作用。而如果先验概率与混合系数密切相关，即$$ \alpha_0 \to \infty $$，那在图10.6中，混合系数上的先验概率分布是一个狄利克雷分布，形式为（10.39）。回忆一 下，根据图2.5，对于$$ \alpha_0 < 1 $$，先验概率分布倾向于选择某些混合系数趋近于零的解。     
 
 ![图 10-6](images/10_6.png)      
 图 10.6 $$ K = 6 $$个高斯分布的变分贝叶斯混合，应用于老忠实间歇喷泉数据集，其中椭圆表示每个分量的概率密度的一个标准差位置的轮廓线，每个椭圆内部的红点对应于每个分量的混合系数的均值。每张图中左上角的数字表示变分推断迭代的次数。混合系数的期望在数值上与零无法区分的分量没有画出。    

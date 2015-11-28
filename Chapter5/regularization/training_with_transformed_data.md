@@ -33,8 +33,8 @@ $$
 \begin{eqnarray}
 \tilde{E} &=& \frac{1}{2}\int\int\{y(x) - t\}^2p(t|x)p(x)dxdt \\
 &+& \mathbb{E}[\xi]\int\int\{y(x) - t\}\tau^T\nabla y(x)p(t|x)p(x)dxdt \\
-&+& \mathbb{E}[\xi^2]\frac{1}{2}\int\int\left[\{y(x) - t\}\left\{(\tau')^T\nabla y(x) + \tau^T\nabla\nabla y(x)\tau\right\} \\
-&+& \left(\tau^T\nabla y(x)\right)^2\right]p(t|x)p(x)dxdt + O(\xi^3)
+&+& \mathbb{E}[\xi^2]\frac{1}{2}\int\int\Bigg[\{y(x) - t\}\left\{(\tau')^T\nabla y(x) + \tau^T\nabla\nabla y(x)\tau\right\} \\
+&+& \left(\tau^T\nabla y(x)\right)^2\Bigg]p(t|x)p(x)dxdt + O(\xi^3)
 \end{eqnarray}
 $$
 
@@ -48,8 +48,8 @@ $$
 
 $$
 \begin{eqnarray}
-\omega &=& \frac{1}{2}\int\left[\{y(x) - \mathbb{E}[t|x]\}\left\{(\tau')^T\nabla y(x) + \tau^T\nabla\nabla y(x)\tau\right} \\
-&+& \left(\tau^T\nabla y(x)\right)^2\right]p(x)dx \tag{5.132}
+\omega &=& \frac{1}{2}\int\Bigg[\{y(x) - \mathbb{E}[t|x]\}\left\{(\tau')^T\nabla y(x) + \tau^T\nabla\nabla y(x)\tau\right\} \\
+&+& \left(\tau^T\nabla y(x)\right)^2\Bigg]p(x)dx \tag{5.132}
 \end{eqnarray}
 $$
 

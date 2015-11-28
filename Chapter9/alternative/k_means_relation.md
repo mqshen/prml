@@ -9,7 +9,7 @@ $$
 我们现在考虑$$ K $$个这种形式的高斯分布组成的混合模型的EM算法，其中我们将$$ \epsilon $$看做一个固定的常数，而不是一个需要重新估计的参数。根据式（9.13），对于一个特定的数据点$$ x_n $$，后验概率（或“责任”）为    
 
 $$
-\gamma(z_{nk}) = \frac{\pi_kexp\left\{-\frac{\Vert x_n - \mu_k\Vert^2}{2\epsilon}}{\sum_j\pi_jexp\left\{-\frac{\Vert x_n - \mu_j\Vert^2}{2\epsilon}} \tag{9.42}
+\gamma(z_{nk}) = \frac{\pi_kexp\left\{-\frac{\Vert x_n - \mu_k\Vert^2}{2\epsilon}\right\}}{\sum_j\pi_jexp\left\{-\frac{\Vert x_n - \mu_j\Vert^2}{2\epsilon}\right\}} \tag{9.42}
 $$
 
 如果我们考虑极限情况$$ \epsilon \to 0 $$，那么我们看到，在分母中，$$ \Vert x_n − \mu_j\Vert^2 $$最小的项将会最慢地趋近于0，因此对于数据点$$ x_n $$，只有项j的“责任”$$ \gamma(z_{nj}) $$趋近于1，其他的项的“责任””$$ \gamma(z_{nj}) $$都趋近于0。因此，在这种极限情况下，我们得到了对数据点聚类的一个硬分配，与K-均值算法相同，从而”$$ \gamma(z_{nj}) \to r_{nk} $$，其中$$ r_{nk}

@@ -1,7 +1,7 @@
 高斯也称为正态分布，是连续变量分布上广泛使用的一种模型。对于单变量$$ x $$，高斯分布可以写成：    
 
 $$
-\mathcal{N}(x|\mu, \delta^2) = \frac{1}{(2\pi\delta^2)^{1/2}}exp\left\{-frac{1}{2\delta^2}(x-\mu)^2\right\} \tag{2.42}
+\mathcal{N}(x|\mu, \delta^2) = \frac{1}{(2\pi\delta^2)^{1/2}}exp\left\{-\frac{1}{2\delta^2}(x-\mu)^2\right\} \tag{2.42}
 $$
 
 其中$$ \mu, \delta^2 $$分别为均值和方差。对于$$ D $$维向量$$ x $$，多变量的高斯分布形式为：    

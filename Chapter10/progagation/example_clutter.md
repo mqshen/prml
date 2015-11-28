@@ -42,23 +42,23 @@ $$的维度。式（10.191）定义的初始的$$ q(\theta) $$因此就等于先
 
 $$
 \begin{eqnarray}
-m^{\\n} = m + v^{\\n}v_n^{−1}(m−m_n) \tag{10.214} \\
-(v^{\\n})^{-1} = v^{-1} - v_n^{-1} \tag{10.215}  
+m^{\backslash n} = m + v^{\backslash n}v_n^{−1}(m − m_n) \tag{10.214} \\
+(v^{\backslash n})^{-1} = v^{-1} - v_n^{-1} \tag{10.215}  
 \end{eqnarray}
 $$     
 
 接下来，我们使用式（10.206）计算标准化常数，结果为     
 
 $$
-Z_n =(1−w)\mathcal{N}(x_n|m^{\\n},(v^{\\n} +1)I) + w\mathcal{N}(x_n|0,\alpha I) \tag{10.216}
+Z_n =(1−w)\mathcal{N}(x_n|m^{\backslash n},(v^{\backslash n} +1)I) + w\mathcal{N}(x_n|0,\alpha I) \tag{10.216}
 $$
 
-类似的，我们通过寻找$$ q^{\\n}(\theta)f_n(\theta) $$的均值，计算$$ q^{new}(\theta) $$的均值和方差，结果为    
+类似的，我们通过寻找$$ q^{\backslash n}(\theta)f_n(\theta) $$的均值，计算$$ q^{new}(\theta) $$的均值和方差，结果为    
 
 $$
 \begin{eqnarray}
-m^{new} = m^{\\n} + \rho_n\frac{v^{\\n}}{v^{\\n} + 1}(x_n - m^{\\n}) \tag{10.217} \\
-v^{new} = v^{\\n} - \rho_n\frac{(v^{\\n})^2}{v^{\\n} + 1} + \rho_n(1-\rho_n)\frac{(v^{\\n})^2\Vert x_n -m^{\\n}\Vert^2}{D(v^{\\n} +1)^2} \tag{10.218}
+m^{new} &=& m^{\backslash n} + \rho_n\frac{v^{\backslash n}}{v^{\backslash n} + 1}(x_n - m^{\backslash n}) \tag{10.217} \\
+v^{new} &=& v^{\backslash n} - \rho_n\frac{(v^{\backslash n})^2}{v^{\backslash n} + 1} + \rho_n(1-\rho_n)\frac{(v^{\backslash n})^2\Vert x_n -m^{\backslash n}\Vert^2}{D(v^{\backslash n} +1)^2} \tag{10.218}
 \end{eqnarray}
 $$    
 
@@ -72,9 +72,9 @@ $$
 
 $$
 \begin{eqnarray}
-v_n^{-1} &=& (v^{new})^{-1} - (v^{\\n})^{-1} \tag{10.220} \\
-m_n &=& m^{\\n} + (v_n + v^{\\n})(v^{\\n})^{-1}(m^{new} - m^{\\n}) \tag{10.221} \\
-s_n &=& \frac{Z_n}{(2\pi v_n)^{D/2}\mathcal{N}(m_n|m^{\\n},(v_n + v^{\\n})I)} \tag{10.222}
+v_n^{-1} &=& (v^{new})^{-1} - (v^{\backslash n})^{-1} \tag{10.220} \\
+m_n &=& m^{\backslash n} + (v_n + v^{\backslash n})(v^{\backslash n})^{-1}(m^{new} - m^{\backslash n}) \tag{10.221} \\
+s_n &=& \frac{Z_n}{(2\pi v_n)^{D/2}\mathcal{N}(m_n|m^{\backslash n},(v_n + v^{\backslash n})I)} \tag{10.222}
 \end{eqnarray}
 $$    
 
@@ -93,7 +93,7 @@ $$
 图10.16给出了对于一维参数空间$$ \theta $$的杂波问题的因子近似的例子。    
 
 ![图 10-16](images/10_16.png)      
-图 10.16 对于杂波问题的一维版本，具体因子的近似的例子。图中用蓝色表示$$ f_n(\theta) $$，用红色表示$$ \tilde{f}(\theta) $$，用绿色表示$$ q^{\\n}(\theta) $$。注意$$ q^{\\n}(\theta) $$现在的形式控制了$$ \theta $$的取值范围，在这个范围上，$$ \tilde{f}(\theta) $$是$$ f_n(\theta) $$的一个很好的近似。
+图 10.16 对于杂波问题的一维版本，具体因子的近似的例子。图中用蓝色表示$$ f_n(\theta) $$，用红色表示$$ \tilde{f}(\theta) $$，用绿色表示$$ q^{\backslash n}(\theta) $$。注意$$ q^{\backslash n}(\theta) $$现在的形式控制了$$ \theta $$的取值范围，在这个范围上，$$ \tilde{f}(\theta) $$是$$ f_n(\theta) $$的一个很好的近似。
 
 注意，因子近似可以有无穷大的或者负数的“方差”参数$$ v_n $$。这仅仅对应于曲线向上弯曲而不是向下弯曲的情形，并且只要所有的近似后验概率$$ q(\theta) $$有正的方差，这种情形就未必有问题。图10.17对比了在杂波问题中，EP的表现、变分贝叶斯（平均场理论）的表现以及拉普拉斯近似的表现。
 

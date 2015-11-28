@@ -1,7 +1,7 @@
 我们现在使用一元变量$$ x $$上的高斯分布来说明分解变分近似（MacKay, 2003）。我们的目标是在给定$$ x $$的观测值的数据集$$ D = \{x_1,...,x_N\} $$的情况下，推断均值$$ \mu $$和精度$$ \tau $$的后验概率分布。其中，我们假设数据是独立地从高斯分布中抽取的。似然函数为     
 
 $$
-p(D|\mu,\tau) = \left(\frac{\tau}{2\pi}\right)^{N/2}exp\left\{-\frac{tau}{2}\sum\limits_{n=1}^N(x_n - \mu)^2\right\} \tag{10.21}
+p(D|\mu,\tau) = \left(\frac{\tau}{2\pi}\right)^{N/2}exp\left\{-\frac{\tau}{2}\sum\limits_{n=1}^N(x_n - \mu)^2\right\} \tag{10.21}
 $$    
 
 我们现在引入$$ \mu, \tau $$的共轭先验分布，形式为     
@@ -48,7 +48,7 @@ $$
 \begin{eqnarray}
 \ln q_\tau^*(\tau) &=& \mathbb{E}_\mu[\ln p(D|\mu,\tau) + \ln p(\mu|\tau)] + \ln p(\tau) + const \\
 &=& (a_0 - 1)\ln\tau - b_0\tau + \frac{N + 1}{2}\ln\tau \\
-& & -\frac{\tai}{2}\mathbb{E}_\mu\left[\sum\limits_{n=1}^N(x_n - \mu)^2 + \lambda_0(\mu - \mu_0)^2\right] + const \tag{10.28}
+& & -\frac{\tau}{2}\mathbb{E}_\mu\left[\sum\limits_{n=1}^N(x_n - \mu)^2 + \lambda_0(\mu - \mu_0)^2\right] + const \tag{10.28}
 \end{eqnarray}
 $$     
 
@@ -76,7 +76,7 @@ $$，以此类推。由于这个例子中，隐含变量空间是二维的，因
 $$。虽然这些参数设置对应于一个反常先验，但是我们看到后验概率分布仍然具有良好的定义。使用Gamma分布的均值的标准结果$$ \mathbb{E}[\tau] = a_N $$，以及式（10.29）和式（10.30），我们有    
 
 $$
-\frac{1}{\mathbb{E}[\tau] = \mathbb{E}\left[\frac{1}{N + 1}\sum\limits_{n=1}^N(x_n - \mu)^2\right] + \frac{N}{N + 1}(\bar{x}^2 - 2\bar{x}\mathbb{E}[\mu]+\mathbb{E}[\mu^2]) \tag{10.31}
+\frac{1}{\mathbb{E}[\tau]} = \mathbb{E}\left[\frac{1}{N + 1}\sum\limits_{n=1}^N(x_n - \mu)^2\right] + \frac{N}{N + 1}(\bar{x^2} - 2\bar{x}\mathbb{E}[\mu]+\mathbb{E}[\mu^2]) \tag{10.31}
 $$
 
 之后，使用式（10.26）和式（10.27），我们得到了$$ q_\mu(\mu) $$的一阶矩和二阶矩，形式为     
@@ -85,10 +85,10 @@ $$
 \mathbb{E}[\mu] = \bar{x}, \mathbb{E}[\mu^2] = \bar{x}^2 + \frac{1}{N\mathbb{E}[\tau]} \tag{10.32}
 $$     
 
-现在，我们可以将这些矩代入式（10.31），然后解出$$ \mathbb{E}[\tau]，可得     
+现在，我们可以将这些矩代入式（10.31），然后解出$$ \mathbb{E}[\tau] $$，可得     
 
 $$
-\frac{1}{\mathbb{E}[\tau]} = (\bar{x^2} - \bat{x}^2) = \frac{1}{N}\sum\limits_{n=1}^N(x_n - \bar{x})^2 \tag{10.33}
+\frac{1}{\mathbb{E}[\tau]} = (\bar{x^2} - \bar{x}^2) = \frac{1}{N}\sum\limits_{n=1}^N(x_n - \bar{x})^2 \tag{10.33}
 $$     
 
 对于高斯分布的贝叶斯推断的可理解的介绍，包括与最大似然方法的相比的优势的讨论，可以参考Minka(1998)。

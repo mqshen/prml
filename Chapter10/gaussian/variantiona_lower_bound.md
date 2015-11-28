@@ -15,12 +15,12 @@ $$
 
 $$
 \begin{eqnarray}
-\mathbb{E}[\ln p(X|Z,\mu,\Lambda)] &=& \frac{1}{2}\sum\limits_{k=1}^KN_k\left\{\ln\tilde{\Lambda}_k - D\beta_k^{-1} - v_k Tr(S_kW_k) \\    
-& & - v_k(\bar{x}_k - m_k)^TW_k(\bar{x}_k - m_k) - D\ln(2\pi)\right\} \tag{10.71} \\
+\mathbb{E}[\ln p(X|Z,\mu,\Lambda)] &=& \frac{1}{2}\sum\limits_{k=1}^KN_k\Bigg\{\ln\tilde{\Lambda}_k - D\beta_k^{-1} - v_k Tr(S_kW_k) \\    
+& & - v_k(\bar{x}_k - m_k)^TW_k(\bar{x}_k - m_k) - D\ln(2\pi)\Bigg\} \tag{10.71} \\
 \mathbb{E}[\ln p(Z|\pi)] &=& \sum\limits_{n=1}^N\sum\limits_{k=1}^Kr_{nk}\ln\bar{\pi}_k \tag{10.72} \\
 \mathbb{E}[\ln p(\pi)] &=& \ln C()\alpha_0) + (\alpha_0 - 1)\sum\limits_{k=1}^K\ln\tilde{\pi}_k \tag{10.73} \\
-\mathbb{E}[\ln p(\mu,\Lambda) &=& \frac{1}{2}\sum\limits_{k=1}^K\left\{D\ln\left(\frac{\beta_0}{2\pi}\right) + \ln\tilde{\Lambda}_k - \frac{D\beta_0}{\beta_k} \\ 
-& & -\beta_0v_0(m_k - m_0)^TW_k(m_k - m_0)\right\} + K\ln B(W_0,v_0) \\
+\mathbb{E}[\ln p(\mu,\Lambda) &=& \frac{1}{2}\sum\limits_{k=1}^K\Bigg\{D\ln\left(\frac{\beta_0}{2\pi}\right) + \ln\tilde{\Lambda}_k - \frac{D\beta_0}{\beta_k} \\ 
+& & -\beta_0v_0(m_k - m_0)^TW_k(m_k - m_0)\Bigg\} + K\ln B(W_0,v_0) \\
 & & +\frac{v_0 - D - 1}{2}\sum\limits_{k=1}^K\ln\tilde{\Lambda}_k - \frac{1}{2}\sum\limits_{k=1}{K}v_k Tr(W_0^{-1}W_k) \tag{10.74} \\
 \mathbb{E}[\ln q(Z)] &=& \sum\limits_{n=1}^N\sum\limits_{k=1}^Kr_{nk}\ln r_{nk} \tag{10.75} \\
 \mathbb{E}[\ln q(\pi)] &=& \sum\limits_{k=1}^K(\alpha_k - 1)\ln\tilde{\pi}_k + \ln C(\alpha) \tag{10.76} \\

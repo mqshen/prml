@@ -19,7 +19,7 @@ $$
 因此最终的后验概率为
 
 $$
-p(w|D,\alpha,\beta) \proto p(w|\alpha)p(D|w,\beta) \tag{5.164}
+p(w|D,\alpha,\beta) \propto p(w|\alpha)p(D|w,\beta) \tag{5.164}
 $$
 
 由于$$ y(x, w) $$与$$ w $$的关系是非线性的，因此后验概率不是高斯分布。    

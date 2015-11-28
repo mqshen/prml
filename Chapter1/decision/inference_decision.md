@@ -21,8 +21,8 @@ $$。这对那些由于低概率导致的预测准确率可能会很低的新数
 
 如果只想进行分类的决策，那么这种方法很浪费计算资源。为了计算联合分布$$ p(x, C_k) $$我们需要大量的数据，而实际上我们只需要使用方法（b）就能直接求出的后验概率$$ p(C_k|x) $$。实际上，类别条件密度可能包含很多对后验概率几乎没有影 响的结构,如图1.27所示。    
 
-![图 1-27](images/class_conditional_densitie.png)      
-图 1.26: 类别条件密度
+![图 1-27](images/class_conditional_densities.png)      
+图 1.27: 类别条件密度
 
 机器学习中的生成式方法和判别式方法的相对优势，以及如何将两者结合，有很多有趣的研究成果(Jebara, 2004; Lasserre et al., 2006)。    
 
@@ -50,9 +50,9 @@ $$ p(X_I, X_B|C_k) = p(X_I|C_k)p(X_B|C_k) \tag{1.84} $$
 
 $$
 \begin{eqnarray}
-p(C_k|X_I, X_B) \propto p(X_I, X_B|C_k)p(C_k) \\
-\propto p(X_I|C_k)p(X_B|C_k )p(C_k ) \\
-\propto \frac{p(C_k|X_I)p(C_k|X_B)}{p(C_k)} \tag{1.85}
+p(C_k|X_I, X_B) &\propto& p(X_I, X_B|C_k)p(C_k) \\
+&\propto& p(X_I|C_k)p(X_B|C_k )p(C_k ) \\
+&\propto& \frac{p(C_k|X_I)p(C_k|X_B)}{p(C_k)} \tag{1.85}
 \end{eqnarray}
 $$
 

@@ -3,9 +3,9 @@
 $$
 \begin{eqnarray}
 p(a_{N+1}|t_N) &=& \int p(a_{N+1},a_N|t_N)da_N \\
-&=& \frac{1}{p(a_{N+1},a_N)p(t_N|a_{N+1},a_N)da_N \\
-&=& \frac{1}{p(a_{N+1},a_N)p(a_N)p(t_N|a_N)da_N \\
-&=& \intp(a_{N+1}|a_N)p(a_N|t_N)da_N \tag{6.77}
+&=& \frac{1}{p(t_N)}\int p(a_{N+1},a_N)p(t_N|a_{N+1},a_N)da_N \\
+&=& \frac{1}{p(t_N)}\int p(a_{N+1}|a_N)p(a_N)p(t_N|a_N)da_N \\
+&=& \int p(a_{N+1}|a_N)p(a_N|t_N)da_N \tag{6.77}
 \end{eqnarray}
 $$
 
@@ -102,7 +102,7 @@ $$
 $$
 \begin{eqnarray}
 \frac{\partial\ln p(t_N|\theta)}{\partial\theta_j} = &\frac{1}{2}&a_N^*C_N^{-1}\frac{\partial C_N}{\partial\theta_j}C_N^{-1}a_N^* \\
-& & -\frac{1}{2}\Tr \left[(I + C_NW_N)^{-1}W_N\frac{\partial C_N}{\partial \theta_j}\right] \tag{6.91}
+& & -\frac{1}{2} Tr \left[(I + C_NW_N)^{-1}W_N\frac{\partial C_N}{\partial \theta_j}\right] \tag{6.91}
 \end{eqnarray}
 $$
 
@@ -111,7 +111,7 @@ $$
 $$
 \begin{eqnarray}
 &-&\frac{1}{2}\sum\limits_{n=1}^N\frac{\partial\ln\vert W_N + C_N^{-1} \vert}{\partial a_n^*}\frac{\partial a_n^*}{\partial\theta_j} \\
-&=& -\frac{1}{2}\sum\limits_{n=1}^N\left[\left(I + C_NW_N\rigjt)^{-1}C_N\right]_{nn}\sigma_n^*(1-\sigma_n^*)(1-2\sigma_n^*)\frac{\partial a_n^*}{\partial\theta_j} \tag{6.92}
+&=& -\frac{1}{2}\sum\limits_{n=1}^N\left[\left(I + C_NW_N\right)^{-1}C_N\right]_{nn}\sigma_n^*(1-\sigma_n^*)(1-2\sigma_n^*)\frac{\partial a_n^*}{\partial\theta_j} \tag{6.92}
 \end{eqnarray}
 $$    
 

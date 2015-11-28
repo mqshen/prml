@@ -79,7 +79,7 @@ $$
 为了确定公式（7.1）中的参数$$ b $$，我们注意到$$ 0 < a_n < C $$的支持向量满足$$ \xi_n = 0 $$即$$ t_ny(x_n) = 1 $$，因此满足     
 
 $$
-t_n\left\(\sum\limits_{m \in S}a_mt_mk(x_n,x_m) + b\right) = 1 \tag{7.36}
+t_n\left(\sum\limits_{m \in S}a_mt_mk(x_n,x_m) + b\right) = 1 \tag{7.36}
 $$
 
 与之前一样，一个对于数值计算比较稳定的解可以通过求平均的方式得到，结果为：    

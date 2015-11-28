@@ -90,7 +90,7 @@ $$
 类似地，关于控制分量均值的网络输出激活的导数为
 
 $$
-\frac{\partial E_n}{\partial a_{kl}^\mu} = \gamma_k\left\{\frac{\mu_{kl} - t_{nl}}{\sigmma_k^2}\right\} \tag{5.156}
+\frac{\partial E_n}{\partial a_{kl}^\mu} = \gamma_k\left\{\frac{\mu_{kl} - t_{nl}}{\sigma_k^2}\right\} \tag{5.156}
 $$
 
 最后，关于控制分量方差的网络激活函数为    

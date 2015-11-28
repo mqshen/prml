@@ -12,7 +12,7 @@ $$
 \begin{eqnarray}
 y(x) &=& \mathbb{E}[t|x] = \int_{-\infty}^\infty tp(t|x)dt \\
 &=& \frac{\int tp(x,t)dt}{\int p(x,t)dt} \\
-&=& \frac{\sum\limits_n\int tf(x-x_n,t-t_n)dt}{\sum\limits_m\int f(x-x_m,t-t_m)dt \tag{6.43}
+&=& \frac{\sum\limits_n\int tf(x-x_n,t-t_n)dt}{\sum\limits_m\int f(x-x_m,t-t_m)dt} \tag{6.43}
 \end{eqnarray}
 $$
 
@@ -40,7 +40,7 @@ $$
 我们还定义了     
 
 $$
-g(x) = \int_\{-\infty}^\infty f(x,t)dt \tag{6.47}
+g(x) = \int_{-\infty}^\infty f(x,t)dt \tag{6.47}
 $$
 
 式（6.45）被称为Nadaraya-Watson模型或核回归（kernel regression）（Nadaraya, 1964; Watson, 1964）。对于局部核函数，它具有给距离$$ x $$较近的数据点$$ x_n $$较高的权重的性质。注意，核（6.46）满足加和限制：    

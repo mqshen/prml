@@ -50,7 +50,7 @@ $$
 最终，第一层和第二层的关于权值的导数为：
 
 $$
-\frac{\partial E_n}{\partial w_{ji}^{(1)}} = \delta_jx_i , \frac{\partial E_n}{\partial w_{kj}^{(2)} = \delta_kz_j \tag{5.67}
+\frac{\partial E_n}{\partial w_{ji}^{(1)}} = \delta_jx_i , \frac{\partial E_n}{\partial w_{kj}^{(2)}} = \delta_kz_j \tag{5.67}
 $$
 
 

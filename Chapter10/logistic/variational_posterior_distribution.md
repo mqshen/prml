@@ -25,13 +25,13 @@ $$
 其中     
 
 $$
-\lambda(\xi) = \frac{1}{2\xi}\lrft[\sigma(\xi) - \frac{1}{2}\right] \tag{10.150}
+\lambda(\xi) = \frac{1}{2\xi}\left[\sigma(\xi) - \frac{1}{2}\right] \tag{10.150}
 $$     
 
 于是，得到
 
 $$
-p(t|w) = e^{at}\sigma(-a) \geq e^{at}\sgima(\xi)exp\left\{-\frac{a+\xi}{2} - \lambda(\xi)(a^2 - \xi^2)\right\} \tag{10.151}
+p(t|w) = e^{at}\sigma(-a) \geq e^{at}\sigma(\xi)exp\left\{-\frac{a+\xi}{2} - \lambda(\xi)(a^2 - \xi^2)\right\} \tag{10.151}
 $$    
 
 注意，由于这个下界分别作用于似然函数的每一项，因此存在一个变分参数$$ \xi_n $$，对应于训练集的每个观测$$ (\phi_n, t_n) $$。使用$$ a = w^T\phi $$，乘以先验概率分布，我们可以得到下面的$$ t $$和$$ w $$的联合概率分布。    

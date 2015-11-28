@@ -10,7 +10,7 @@ $$
 p(\hat{x}|X) = \sum\limits_{k=1}^K\int\int\int\pi_k\mathcal{N}(\hat{x}|\mu_k,\Lambda_k^{-1})p(\pi,\mu,\Lambda|X)d\pi d\mu d\Lambda \tag{10.79}
 $$      
 
-由于剩下的积分是无法计算的，因此我们通过将真实后验概率分布$$ p(\pi, \mu, \Lmabda | X) $$用它的变分近似$$ q(\pi)q(\mu, \Lambda) $$替换的方式来近似预测概率分布，结果为      
+由于剩下的积分是无法计算的，因此我们通过将真实后验概率分布$$ p(\pi, \mu, \Lambda | X) $$用它的变分近似$$ q(\pi)q(\mu, \Lambda) $$替换的方式来近似预测概率分布，结果为      
 
 $$
 p(\hat{x}|X) \simeq \sum\limits_{k=1}^K\int\int\int\pi_k\mathcal{N}(\hat{x}|\mu_k,\Lambda_k)d\pi d\mu_kd\Lambda_k \tag{10.80}
