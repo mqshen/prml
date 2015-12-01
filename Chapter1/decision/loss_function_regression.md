@@ -7,7 +7,7 @@ $$
 在回归问题中，损失函数通常选择为平方误差：$$ L(t,y(x)) = \{y(x) - t\}^2 $$。在这个例子中，误差期望就可以写成
 
 $$
-\mathbb{E}[L] = \int\int{y(x) - t}^2p(x, t)dxdt \tag{1.87}
+\mathbb{E}[L] = \int\int\{y(x) - t\}^2p(x, t)dxdt \tag{1.87}
 $$
 
 我们的目标是选择$$ y(x) $$使得$$ \mathbb{E}[L] $$最小。假设$$ y(x) $$的选择完全自由，我们可以使用微积分来形式化的得到它：    
@@ -19,13 +19,13 @@ $$
 使用概率的加法，乘法规则求解$$ y(x) $$：
 
 $$
-y(x) = \frac{\int p(x,t)dt}{p(x)} = \int p(t|x)dt = \mathbb{E}_t[t|x] \tag{1.89} 
+y(x) = \frac{\int t p(x,t)dt}{p(x)} = \int t p(t|x)dt = \mathbb{E}_t[t|x] \tag{1.89} 
 $$
 
 这是条件$$ x $$下$$ t $$的条件均值，被称为回归函数（regression function）。结果如图1.28展示。
 
 ![图 1-28](images/loss_function_regression.png)      
-图 1.28: 最小化了平方损失期望的回归函数
+图 1.28: 最小化了期望平方损失的回归函数$$ y(x) $$由条件概率分布$$ p(t|x) $$的均值给出。
 
 这可以很容易的扩展到用向量$$ t $$表示的多目标变量的情形。这种情况下，最优解是条件均值$$ y(x) = E_t[t|x] $$。    
 
@@ -38,7 +38,7 @@ $$
 \end{eqnarray}
 $$
 
-其中,为了不让符号过于复杂,我们使用$$ E[t|x] $$来表示$$ E_t[t|x] $$。代入损失函数中，对$$ t $$进行积分，我们看到交叉项消失，因而得到损失函数:   
+其中，为了不让符号过于复杂，我们使用$$ E[t|x] $$来表示$$ E_t[t|x] $$。代入损失函数中，对$$ t $$进行积分，我们看到交叉项消失（详细证明参看本节最后），因而得到损失函数:   
 
 $$
 \mathbb{E}[L] = \int\{y(x) − E[t|x]\}^2p(x)dx + \int var[t|x]p(x)dx \tag{1.90}
@@ -62,3 +62,57 @@ $$ \mathbb{E}[L_q] = \int\int|y(x) - t|^qp(x)p(x,t)dxdt \tag{1.91} $$
 
 ![图 1-29](images/minkowski_loss.png)      
 图 1.29: 闵可夫斯基损失函数
+
+
+
+
+####一些证明    
+
+#####交叉项消去    
+
+展开
+
+$$
+\{y(x) − E[t|x]\}\{E[t|x] − t\}
+$$
+
+得到
+
+$$
+y(x)E[t|x] - y(x)t - \{E[t|x]\}^2 + E[t|x]t
+$$    
+
+代入（1.87）得到
+$$
+\int\int (y(x)E[t|x] - y(x)t - \{E[t|x]\}^2 + E[t|x]t)p(x,t)dxdt
+$$    
+
+分别对各项求积分可得    
+
+$$
+\begin{eqnarray}
+\int\int y(x)E[t|x]p(x,t)dxdt &=& \int y(x)E[t|x]p(x)dx \\
+\int\int y(x)tp(x,t)dxdt &=& \int\int y(x)tp(t|x)p(x)dxdt \\
+&=& \int y(x)E[t|x]p(x)dx \\
+\int\int \{E[t|x]\}^2p(x,t)dxdt &=& \int \{E[t|x]\}^2p(x)dx \\
+\int\int E[t|x]tp(x,t)dxdt &=& \int  E[t|x]tp(t|x)p(x)dxdt \\
+&=& \int\{E[t|x]\}^2p(x)dx 
+\end{eqnarray}
+$$
+
+其中我们使用了式（1.89），这样它们就可以两两消去。
+
+
+#####第三项展开    
+
+$$
+\begin{eqnarray}
+\int \int \{ E[t|x] - t \}^2 p(x,t) dxdt &=& \int \int \{ E[t|x] - t \}^2 p(t|x) p(x) dxdt \\
+&=& \int \left(\int\{E[t|x]\}^2p(t|x)dt - \int 2E[t|x]tp(t|x)dt + \int t^2p(t|x)dt\right)p(x)dx \\
+&=& \int \left(\{E[t|x]\}^2 - 2\{E[t|x]\}^2 + E[t^2|x]\right)p(x)dx \\
+&=& \int \left(E[t^2|x] - \{E[t|x]\}^2\right)  p(x) dx \\
+&=& \int Var(t|x) p(x) dx
+\end{eqnarray}
+$$
+
+

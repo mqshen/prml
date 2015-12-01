@@ -11,7 +11,7 @@ $$
 
 $$
 \begin{eqnarray}
-p(x) \leq 0 \tag{1.25} \\
+p(x) \geq 0 \tag{1.25} \\
 \int_{-\infty}^{\infty} p(x) dx = 1 \tag{1.26}
 \end{eqnarray}
 $$  
@@ -19,24 +19,26 @@ $$
 在变量的非线性变化下，概率密度由一个简单的函数通过Jacobian因子变换得到。例如：一个变量 $$ x = g(y) $$，那么函数$$ f(x) $$ 就变成 $$ \widetilde{f}(y) = f(g(y)) $$。现在，考虑概率密度$$ p_x(x) $$，与它对应的关于新变量$$ y $$的密度$$ p_y(y) $$，其中不同的下标表示$$ p_x(x), p_y(y) $$ 是不同的两个密度函数。观测区间$$ (x, x + \delta x) $$变换为区间$$ (y, y + \delta y) $$，当$$ \delta x $$很小时，我们有$$ p_x(x)\delta x \simeq p_y(y)\delta y $$ 即：    
 
 $$
-p_y(y) = p_x(x)|\frac{dx}{dy}| = p_x(g(y))|g^\prime(y)| \tag{1.27}
+\begin{eqnarray}
+p_y(y) &=& p_x(x)\big|\frac{dx}{dy}\big|  \\
+&=& p_x(g(y))|g^\prime(y)| \tag{1.27}
+\end{eqnarray}
 $$  
 
 这个性质的一个结果就是：概率密度的最大值取决于变量的选择。    
 
 $$ x $$位于区间$$ (-\infty, z) $$的概率是由累计分布函数（cumulative distribution function）给出的：    
 $$
-P(z) = \int_{-infty}^z p(x)dx \tag{1.28}
+P(z) = \int_{-\infty}^z p(x)dx \tag{1.28}
 $$
 
 它就像图1.12那样满足$$ P^\prime(x) = p(x) $$。     
 
-果我们有几个连续变量$$ x_1,...,x_D $$，一起被记作向量$$ x $$，那么我们就定义：联合概率密
-度$$ p(x) = p(x_1,...,x_D) $$是使得落在包含点$$ x $$的无穷小体积$$ \delta x $$的点的概率等于$$ p(x)\delta x $$。多变量概率密度必须满足    
+如果我们有几个连续变量$$ x_1,...,x_D $$，一起被记作向量$$ x $$，那么我们就定义：联合概率密度$$ p(x) = p(x_1,...,x_D) $$是使得落在包含点$$ x $$的无穷小体积$$ \delta x $$的点的概率等于$$ p(x)\delta x $$。多变量概率密度必须满足    
 
 $$
 \begin{eqnarray}
-p(x) \leq 0 \tag{1.29} \\
+p(x) \geq 0 \tag{1.29} \\
 \int p(x) dx = 1\tag{1.30}
 \end{eqnarray}
 $$  
