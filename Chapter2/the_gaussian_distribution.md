@@ -19,17 +19,17 @@ $$
 ![图 2-6](images/sum_distribution.png)      
 图 2.6 均匀分布的和的均值的直方图
 
-在实际应用中，随着N的增加，分布会很快的收敛于高斯分布。有这个结论可得：公式（2.9）定义的二元随机变 量$$ x $$在$$ N $$次观测中出现$$ m $$次的二项分布将会在$$ N \to \infty $$时趋向于高斯分布（图2.1给出了$$ N = 10 $$的情形)。    
+在实际应用中，随着N的增加，分布会很快的收敛于高斯分布。由这个结论可得：式（2.9）定义的二元随机变 量$$ x $$在$$ N $$次观测中出现$$ m $$次的二项分布将会在$$ N \to \infty $$时趋向于高斯分布（图2.1给出了$$ N = 10 $$的情形)。    
 
 现在详细讨论讨论，高斯分布的其中一些重要的分析性质。这就使得这节内容依赖于之前所介绍的技术，并且需要对各种矩阵性质比较熟悉。我们强烈鼓励读者能够使用这里介绍的技术熟练操作高斯分布，因为这对于理解后续章节中出现的更加复杂的模型非常有帮助。    
 
-首先，考虑高斯分布的集合形式。高斯通过出现在指数位置上的
+首先，考虑高斯分布的几何形式。高斯通过出现在指数位置上的
 
 $$
 \Delta^2 = (x-\mu)^T\Sigma^{-1}(x-\mu) \tag{2.44}
 $$
 
-这个二次型依赖于$$ x $$。$$ \Delta $$被称为$$ \mu $$到$$ x $$的马氏距离（ Mahalanobis distance），当$$ \Sigma $$是单位矩阵时，退化成欧式距离。当这个二次型是常数的时候，高斯分布$$ x $$空间中的去面上是不变的。    
+这个二次型依赖于$$ x $$。$$ \Delta $$被称为$$ \mu $$到$$ x $$的马氏距离（ Mahalanobis distance），当$$ \Sigma $$是单位矩阵时，退化成欧式距离。当这个二次型在$$ x $$空间中是常数的时候，高斯分布的曲面也是常数。    
 
 首先，我们注意到矩阵$$ \Sigma $$可以不失一般性的取为对称矩阵，因为任何非对称项都会从指数中消失。现在考虑，协方差矩阵的特征向量方程：
 
@@ -85,7 +85,7 @@ $$
 ![图 2-7](images/elliptical.png)      
 图 2.7 椭球面
 
-为了很好的定义高斯分布，需要协方差矩阵的特征值严格为正，不然分布就不能标准化。一个特征值都严格为正的矩阵被称为正定的（positive definite）。在12章中，我们会遇到一个或者多个特征值为零的高斯分布，那种情况下分布是奇异的，被限制在低维的子空间中。一个特征值都非负的矩阵被称为半正定的（positive semidefinite）。    
+为了很好的定义高斯分布，需要协方差矩阵的特征值严格为正，不然分布就不能标准化。每一个特征值都严格为正的矩阵被称为正定的（positive definite）。在12章中，我们会遇到一个或者多个特征值为零的高斯分布，那种情况下分布是奇异的，被限制在低维的子空间中。每一个特征值都非负的矩阵被称为半正定的（positive semidefinite）。    
 
 现在，在由$$ y_i $$定义的新坐标系中，高斯分布的形式。从$$ x $$坐标系转换到$$ y $$坐标系的Jacobian矩阵$$ J $$为：    
 
@@ -123,8 +123,8 @@ $$
 
 $$
 \begin{eqnarray}
-\mathbb{E}[X] = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}(X - \mu)^T\Sigma^{-1}(X - \mu)\right\}XdX \\
-= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}Z^T\Sigma^{-1}Z\right\}(Z+\mu)dZ  \tag{2.58}
+\mathbb{E}[X] &=& \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}(X - \mu)^T\Sigma^{-1}(X - \mu)\right\}XdX \\
+&=& \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}Z^T\Sigma^{-1}Z\right\}(Z+\mu)dZ  \tag{2.58}
 \end{eqnarray}
 $$
 
@@ -140,8 +140,8 @@ $$
 
 $$ 
 \begin{eqnarray}
-\mathbb{E}[XX^T] = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}(X - \mu)^T\Sigma^{-1}(X - \mu)\right\}XX^TdX \\
-= \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}Z^T\Sigma^{-1}Z\right\}(Z+\mu)(Z+\mu)^TdZ
+\mathbb{E}[XX^T] &=& \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}(X - \mu)^T\Sigma^{-1}(X - \mu)\right\}XX^TdX \\
+&=& \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}Z^T\Sigma^{-1}Z\right\}(Z+\mu)(Z+\mu)^TdZ \tag{-}
 \end{eqnarray}
 $$
 
@@ -155,9 +155,9 @@ $$
 
 $$
 \begin{eqnarray}
-& & \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}Z^T\Sigma^{-1}Z\right\}ZZ^TdZ \\
-&=& \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\sum\limits_{i=1}^D\sum\limits_{j=1}^D\int exp\left\{-\sum\limits_{k=1}^D\frac{y_k^2}{2\lambda_k}\right\}y_iy_jdy \\
-&=& \sum\limits_{i=1}^Du_iu_i^T\lambda_i = \Sigma \tag{2.61}
+& &\frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}Z^T\Sigma^{-1}Z\right\}ZZ^TdZ \\
+&  & = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\sum\limits_{i=1}^D\sum\limits_{j=1}^D\int exp\left\{-\sum\limits_{k=1}^D\frac{y_k^2}{2\lambda_k}\right\}y_iy_jdy \\
+&  & = \sum\limits_{i=1}^Du_iu_i^T\lambda_i = \Sigma \tag{2.61}
 \end{eqnarray}
 $$
 

@@ -3,7 +3,7 @@ $$
 p(\mu|\alpha) \propto \prod\limits_{k=1}^{K}\mu_k^{\alpha_k - 1}
 $$
 
-其中$$ 0 \leq \mu_k \leq 1 , \sum_k\mu_k = 1 $$，$$ (\alpha_1,...,\alpha_K)^T $$记作$$ mathbb{\alpha} $$是分布的参数。注意，由于总和的限制，$$ \{\mu_k\} $$空间上的分布被限制在$$ K − 1 $$维的单纯形（simplex）中。图2.4展示了$$ K = 3 $$的情形。
+其中$$ 0 \leq \mu_k \leq 1 , \sum_k\mu_k = 1 $$，$$ (\alpha_1,...,\alpha_K)^T $$记作$$ \alpha $$是分布的参数。注意，由于总和的限制，$$ \{\mu_k\} $$空间上的分布被限制在$$ K − 1 $$维的单纯形（simplex）中。图2.4展示了$$ K = 3 $$的情形。
 
 ![图 2-4](images/simplex.png)      
 图 2.4 三个变量上的狄利克雷分布被限制在一个单纯形中
@@ -28,7 +28,7 @@ $$
 公式（2.38）的先验乘以公式（2.34）的似然函数，得到参数$$ \{\mu_k\} $$的后验分布公式：    
 
 $$
-p(\mu|D,\alpha) \propto p(D|\mu)p(\mu|D) \propto \prod\limits_{k=1}^K\mu_k^{\alpha_k + m_k - 1} \tag{2.40}
+p(\mu|D,\alpha) \propto p(D|\mu)p(\mu|\alpha) \propto \prod\limits_{k=1}^K\mu_k^{\alpha_k + m_k - 1} \tag{2.40}
 $$
 
 我们看到后验分布还是狄利克雷分布，这说明，狄利克雷分布确实是多项式分布的共轭先验。这让我们能够通过与公式（2.38）比较，确定标准化参数。得到：

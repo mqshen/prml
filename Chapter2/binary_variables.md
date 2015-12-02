@@ -25,7 +25,7 @@ $$
 p(D|\mu) = \prod\limits_{n=1}^Np(x_n|\mu) = \prod\limits_{n=1}^{N}\mu^{x_n}(1-\mu)^{1-x_n} \tag{2.5}
 $$
 
-在频率学的观点中，可以通过最大化似然函数来估计$$ \mu $$的值，或者等价地，最大化对数似然函数。在伯努利分布的情形下，对数似然函数为：    
+在频率学的观点中，可以通过最大化似然函数来估计$$ \mu $$的值，或等价的，最大化对数似然函数。在伯努利分布的情形下，对数似然函数为：    
 
 $$
 \ln p(D|\mu) = \sum\limits_{n=1}^N\ln p(x_n|\mu) = \sum\limits_{n=1}^N\{x_n\ln \mu + (1 - x_n)\ln(1-\mu)\} \tag{2.6}
@@ -63,12 +63,12 @@ $$
 ![图 2-1](images/binomal.png)      
 图 2.1 二项式分布    
 
-二项式分布的均值和方差可以从练习1.10的结果：独立事件的均值的和等于和的均值、方差的和等于和的方差来获得。根据$$ m = x_1 + ... + x_N $$，且对于由公式（2.3）（2.4）给出的每个观测值的均值和方差，我们得到：    
+二项式分布的均值和方差可以从练习1.10的结果：独立事件的和的均值等于均值的和、和的方差等于方差的和来获得。根据$$ m = x_1 + ... + x_N $$，且对于由公式（2.3）（2.4）给出的每个观测值的均值和方差，我们得到：    
 
 $$
 \begin{eqnarray}
-\mathbb{E}[m] &=& \sum\limits_{m=0}^{N} m Bin(m|N, \mu) = N_{\mu} \tag{2.11} \\
-var[m] &\equiv& \sum\limits_{m=0}^{N}(m - \mathbb{E}[m])^2Bin(m|N, \mu) = N_\mu(1-\mu) \tag{2.12}
+\mathbb{E}[m] &=& \sum\limits_{m=0}^{N} m Bin(m|N, \mu) = N\mu \tag{2.11} \\
+var[m] &\equiv& \sum\limits_{m=0}^{N}(m - \mathbb{E}[m])^2Bin(m|N, \mu) = N\mu(1-\mu) \tag{2.12}
 \end{eqnarray}
 $$
 

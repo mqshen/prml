@@ -11,7 +11,7 @@ $$
 其中$$ \mu = (\mu_1,...,\mu_K)^T $$，由于参数$$ \mu_k $$表示概率，所以需要满足$$ \mu_k \geq 0 $$且$$ \sum_k\mu_k = 1 $$。公式（2.26）分布可以看作伯努利分布在多于两种输出时的泛化。很容易证明这个分布是标准化的。
 
 $$
-\sum\limits_xp(x|\mu) = \sum\limits_{k=1}{K}\mu_k = 1 \tag{2.27}
+\sum\limits_xp(x|\mu) = \sum\limits_{k=1}^K\mu_k = 1 \tag{2.27}
 $$
 
 且
@@ -36,7 +36,7 @@ $$
 为了得到$$ \mu $$的最大似然解，我们需要在$$ \mu_k $$的和等于1的约束下，关于$$ \mu_k $$最大化$$ \ln p(D|\mu) $$。这可以通过拉格朗日乘数法得到，即：    
 
 $$
-\sum\limits_{k=1}^{K}m_k\ln\mu_k + \lambda(\sum\limits_{k=1}{K}\mu_k - 1 ) \tag{2.31}
+\sum\limits_{k=1}^{K}m_k\ln\mu_k + \lambda(\sum\limits_{k=1}^K\mu_k - 1 ) \tag{2.31}
 $$
 
 对公式（2.31）关于$$ \mu_k $$求导并使之等于0得到：    
@@ -68,5 +68,5 @@ $$
 注意，$$ m_k $$满足下面的约束：    
 
 $$
-\sum\limits_{k=1}{K}m_k = N \tag{2.36}
+\sum\limits_{k=1}^Km_k = N \tag{2.36}
 $$
