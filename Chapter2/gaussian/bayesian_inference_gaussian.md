@@ -55,12 +55,12 @@ $$
 p(\mu|D) \propto \left[p(\mu)\prod\limits_{n=1}^{N-1}p(x_n|\mu)\right]p(x_N|\mu) \tag{2.144}
 $$
 
-方括号中的项（忽略标准化系数）是观测到$$ N − 1 $$个数据点之后的后验概率分布。把它看成一个先验分布,然后使用贝叶斯定理与和$$ x_N $$相关的似然函数结合到了一起，得到了观测到$$ N $$个数据点之后的后验概率。这种贝叶斯推断的顺序观点是非常通用的，可以应用于任何独立同分布的观测数据问题中。    
+方括号中的项（忽略标准化系数）是观测到$$ N − 1 $$个数据点之后的后验概率分布。把它看成一个先验分布，然后使用贝叶斯定理与和$$ x_N $$相关的似然函数结合到了一起，得到了观测到$$ N $$个数据点之后的后验概率。这种贝叶斯推断的顺序观点是非常通用的，可以应用于任何独立同分布的观测数据问题中。    
 
-目前为止，我们假设高斯分布的数据的方差是已知的，目标是推断出均值。现在假设均值是已知的，希望推断出方差。同样的，如果选择先验分布的共轭形式，我们的计算会得到大量简化。使用精度$$ \lambda \equiv 1 $$进行计算是最方便的。关于$$ \lambda $$的似然函数为：     
+目前为止，我们假设高斯分布的数据的方差是已知的，目标是推断出均值。现在假设均值是已知的，希望推断出方差。同样的，如果选择先验分布的共轭形式，我们的计算会得到大量简化。使用精度$$ \lambda \equiv 1 / \sigma^2 $$进行计算是最方便的。关于$$ \lambda $$的似然函数为：     
 
 $$
-p(X|\lambda) = \prod\limits_{n=1}^N\mathcal{N}(x_n|\mu, \lambda^{-1} \propto \lambda^{N/2}exp\left\{-\frac{\lambda}{2}\sum\limits_{n=1}^N(x_n - \mu)^2\right\} \tag{2.145}
+p(X|\lambda) = \prod\limits_{n=1}^N\mathcal{N}(x_n|\mu, \lambda^{-1}) \propto \lambda^{N/2}exp\left\{-\frac{\lambda}{2}\sum\limits_{n=1}^N(x_n - \mu)^2\right\} \tag{2.145}
 $$
 
 因此，对应的共轭先验正比于$$ \lambda $$的幂次数和$$ \lambda $$的线性函数的指数。这就是Gamma分布，定义为：    
@@ -118,12 +118,12 @@ $$
 
 $$
 \begin{eqnarray}
-p(\mu,\lambda) &\propto& \left[\lambda^{1/2}exp\left(-\frac{\lambda\mu^2}{2}\right)\right]^\beta exp{c\lambda\mu - d\lambda} \\
+p(\mu,\lambda) &\propto& \left[\lambda^{1/2}exp\left(-\frac{\lambda\mu^2}{2}\right)\right]^\beta exp\{c\lambda\mu - d\lambda\} \\
 &=& exp\left\{-\frac{\beta\lambda}{2}(\mu-c/\beta)^2\right\}\lambda^{\beta/2}exp\left\{-\left(d-\frac{c^2}{2\beta}\right)\lambda\right\} \tag{2.153}
 \end{eqnarray}
 $$
 
-其中$$ c, d, \beta $$是常量。由于总有$$ p(\mu,\lambda) = p(\mu|\lambda)p(\lambda) $$，我们可以通过检验找到$$ p(\mu|\lambda), p(\lambda) $$。特别的，当$$ p(\mu|\lambda) $$是一个精度为关于$$ \lambda $$的线性函数的高斯分布，$$ p(\lambda) $$是一个gamma分布时，得到的标准化的先验形式为：    
+其中$$ c, d, \beta $$是常量。由于总有$$ p(\mu,\lambda) = p(\mu|\lambda)p(\lambda) $$，我们可以通过观察找到$$ p(\mu|\lambda), p(\lambda) $$。特别的，当$$ p(\mu|\lambda) $$是一个精度为关于$$ \lambda $$的线性函数的高斯分布，$$ p(\lambda) $$是一个gamma分布时，得到的标准化的先验形式为：    
 
 $$
 p(\mu,\lambda) = \mathcal{N}(\mu|\mu_0,(\beta\lambda)^{-1})Gam(\lambda|a,b) \tag{2.154}

@@ -11,13 +11,13 @@ $$ \sum\limits_{n=1}^Nx_n , \sum\limits_{n=1}^Nx_nx_n^T \tag{2.119} $$
 这些被称为高斯分布的充分统计量（sufficient statistics）。使用式（C.19）对数似然关于$$ \mu $$的导数为：    
 
 $$
-\frac{\partial}{\partial\mu}\ln p(X|\mu,\Sigma) = \sum\limits_{n=1}{N}\Sigma^{-1}(x_n - \mu) \tag{2.120}
+\frac{\partial}{\partial\mu}\ln p(X|\mu,\Sigma) = \sum\limits_{n=1}^N\Sigma^{-1}(x_n - \mu) \tag{2.120}
 $$
 
 并设导数为0，得到了均值的最大似然估计为：    
 
 $$
-\mu_{ML} = \frac{1}{N}\sum\limits_{n=1}{N}x_n \tag{2.121}
+\mu_{ML} = \frac{1}{N}\sum\limits_{n=1}^Nx_n \tag{2.121}
 $$
 
 这是数据观测集合的均值。式（2.118）关于$$ \Sigma $$的最大化会比较复杂。最简单的方法是忽略对称性的约束，然后证明结果像我们要求的那样对称的。另一种推导方式是显示的利用对称性和正定性约束，就像Magnus and Neudecker (1999)那样。符合预期的结果的形式为：    

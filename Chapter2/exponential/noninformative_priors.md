@@ -6,7 +6,7 @@ $$的积分是发散的，所以先验分布不能被正确的标准化。这样
 第二个困难来自于变量的非线性改变下的概率密度变换行为，由式（1.27）给出。如果函数$$ h(\lambda) $$是常数，且进行变量替换$$ \lambda = \eta^2 $$，那么$$ \hat{h}(\eta) = h(\eta^2) $$也会常数。但是，如果选择密度$$ p_\lambda(\lambda) $$等于常数，那么根据式（1.27），$$ \eta $$的概率密度为：    
 
 $$
-p_\eta(\eta) = p_\lambda(\lambda)\vert\frac{d\lambda}{d\eta}\vert = p_\lambda(\eta^2)2\eta \propto \eta \tag{2.231}
+p_\eta(\eta) = p_\lambda(\lambda)\Bigg\vert\frac{d\lambda}{d\eta}\Bigg\vert = p_\lambda(\eta^2)2\eta \propto \eta \tag{2.231}
 $$
 
 这时$$ \eta $$的概率密度就不再是常数了。由于似然函数$$ p(x|\lambda) $$是关于$$ \lambda $$的简单函数，所以这个问题不会出现在最大似然中，所以可以自由的使用任意方便的参数化方法。如果选择了常数作为先验分布，那么必须注意对参数要使用一个合适的表达法。     
