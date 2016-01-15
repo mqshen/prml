@@ -33,7 +33,7 @@ $$
 有时会使用一种正则化误差形式为    
 
 $$
-\frac{1}{2}\sum\limits_{n=1}^N{t_n - w^T\phi(x_n)}^2 + \frac{\lambda}{2}\sum\limits_{j=1}^M\|w_j\|^q 
+\frac{1}{2}\sum\limits_{n=1}^N{t_n - w^T\phi(x_n)}^2 + \frac{\lambda}{2}\sum\limits_{j=1}^M\|w_j\|^q \tag{3.29}
 $$
 
 的更加一般的正则化项。其中$$ q=2 $$对应二次正则项（3.27）。图3.3给出了不同$$ q $$值下的正则化函数的等高线。

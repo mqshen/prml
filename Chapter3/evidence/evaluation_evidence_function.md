@@ -17,7 +17,7 @@ $$
 $$
 \begin{eqnarray}
 E(w) &=& \beta E_D(w) + \alpha E_W(w) \\
-&=& \frac{\beta}{2}\Vert{\textbf{t}-\Phi w}^2 + \frac{\alpha}{2}w^Tw \tag{3.79}
+&=& \frac{\beta}{2}\Vert \textbf{t}-\Phi w \Vert^2 + \frac{\alpha}{2}w^Tw \tag{3.79}
 \end{eqnarray}
 $$
 
@@ -36,7 +36,7 @@ $$
 和
 
 $$
-E(m_N) = \frac{\beta}{2}\Vert{\textbf{t}-\Phi m_N}^2 + \frac{\alpha}{2}m_N^Tm_N \tag{3.82}
+E(m_N) = \frac{\beta}{2}\Vert \textbf{t}-\Phi m_N \Vert^2 + \frac{\alpha}{2}m_N^Tm_N \tag{3.82}
 $$
 
 注意$$ A $$对应的是误差函数的二阶导数矩阵 
@@ -57,16 +57,16 @@ $$
 
 $$
 \begin{eqnarray}
-\int & & exp\{-E(w)\}dw \\
-&=& exp\{-E(m_N)\}\int exp\left\{-\frac{1}{2}(w-m_N)^TA(w-m_N)\right\}dw \\
-&=& exp\{-E(m_N)\}(2\pi)^{M/2}\vert{A}^{-1/2} \tag{3.85}
+&\int& exp\{-E(w)\}dw \\
+& & = exp\{-E(m_N)\}\int exp\left\{-\frac{1}{2}(w-m_N)^TA(w-m_N)\right\}dw \\
+& & = exp\{-E(m_N)\}(2\pi)^{M/2}\vert A \vert^{-1/2} \tag{3.85}
 \end{eqnarray}
 $$
 
 使用式（3.78）我们可以把对数边缘似然写成    
 
 $$
-\ln p(\textbf{t}|\alpha,\beta) = \frac{M}{2}\ln \alpha + \frac{N}{2}\ln \beta - E(m_N) - \frac{1}{2}\ln\vert{A} - \frac{N}{2}\ln(2\pi) \tag{3.86}
+\ln p(\textbf{t}|\alpha,\beta) = \frac{M}{2}\ln \alpha + \frac{N}{2}\ln \beta - E(m_N) - \frac{1}{2}\ln\vert A \vert - \frac{N}{2}\ln(2\pi) \tag{3.86}
 $$
 
 这就是证据函数所需要的表达式。    
