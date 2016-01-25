@@ -68,7 +68,7 @@ $$
 $$
 \mu_{ML} = \frac{1}{N}\sum\limits_{n=1}^{N}x_n \tag{1.55}
 $$
-这是样本均值（sample mean），即观测到样本的均值。类似地，关于$$ \sigma^2 $$的最大化函数（1.54）得到了方差的最大似然解：    
+这是样本均值（sample mean），即观测到样本的均值。类似的，关于$$ \sigma^2 $$的最大化函数（1.54）得到了方差的最大似然解：    
 
 $$
 \sigma_{ML}^2 = \frac{1}{N}\sum\limits_{n=1}^{N}(x_n - \mu_{ML})^2 \tag{1.56}
@@ -81,7 +81,7 @@ $$
 $$
 \begin{eqnarray}
 \mathbb{E}[\mu_{ML}] &=& \mu \tag{1.57} \\
-\mathbb{E}[\sigma_{ML}^2] &=& (\frac{N - 1}{N})\sigma^2 \tag{1.58}
+\mathbb{E}[\sigma_{ML}^2] &=& \left(\frac{N - 1}{N}\right)\sigma^2 \tag{1.58}
 \end{eqnarray}
 $$
 
