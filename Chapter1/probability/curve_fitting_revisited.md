@@ -43,7 +43,7 @@ $$
 现在让我们朝着贝叶斯的方法前进一步，在多项式系数$$ w $$上引入先验分布。简单起见，我们考虑高斯分布：    
 
 $$
-p(w|\alpha) = \mathcal{N}(w|0, \alpha^{-1}I) = (\frac{\alpha}{2\pi})^{(M + 1)/2}exp{-\frac{\alpha}{2}w^Tw} \tag{1.65}
+p(w|\alpha) = \mathcal{N}(w|0, \alpha^{-1}I) = (\frac{\alpha}{2\pi})^{(M + 1)/2}exp\left\{-\frac{\alpha}{2}w^Tw\right\} \tag{1.65}
 $$    
 
 其中$$ \alpha $$是分布的精度，$$ M + 1 $$是$$ M $$阶多项式的向量$$ w $$中元素个数。像$$ \alpha $$这样的控制分布的模型参数被称为超参数（hyperparameters）。使用贝叶斯定理，$$ w $$的后验分布，正比于先验分布和似然函数的乘积：
