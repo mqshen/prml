@@ -111,7 +111,7 @@ $$
 &=& \int \left(\int\{E[t|x]\}^2p(t|x)dt - \int 2E[t|x]tp(t|x)dt + \int t^2p(t|x)dt\right)p(x)dx \\
 &=& \int \left(\{E[t|x]\}^2 - 2\{E[t|x]\}^2 + E[t^2|x]\right)p(x)dx \\
 &=& \int \left(E[t^2|x] - \{E[t|x]\}^2\right)  p(x) dx \\
-&=& \int Var(t|x) p(x) dx
+&=& \int var[t|x] p(x) dx
 \end{eqnarray}
 $$
 
