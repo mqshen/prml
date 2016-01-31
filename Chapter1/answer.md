@@ -4,7 +4,7 @@
 
 $$ \sum\limits_{j=0}^MA_{ij}w_j = T_i $$
 其中
-$$ A_{ij} = \sum\limits_{n=1}{N}(x_n)^{i + j} , T_i = \sum\limits_{n=1}{N}(x_n)^it_n $$
+$$ A_{ij} = \sum\limits_{n=1}^N(x_n)^{i + j} , T_i = \sum\limits_{n=1}^N(x_n)^it_n $$
 
 ##### 1.2
 代入（1.4）可得出差函数$$ (BW - y)^T(BW - y) + \frac{\lambda}{2}W^TW $$，使其微分等于0得：$$ (B^TB + \lambda I)W = B^Ty $$所以：
