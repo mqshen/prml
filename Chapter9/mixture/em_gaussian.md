@@ -3,7 +3,7 @@
 首先，让我们写下似然函数的最大值必须满足的条件。令式（9.14）中$$ \ln p(X|\pi, \mu, \Sigma) $$关于高斯分量的均值$$ \mu_k $$的均值等于0，我们有    
 
 $$
-0 = \sum\limits_{n=1}^K\underbrace{\frac{\pi_k\mathcal{N}(x_n|\mu_k,\Sigma_k)}{\sum_j\pi_j\mathcal{N}(x_n|\mu_j,\Sigma_j)}}_{\gamma(z_{nk})}\Sigma_{k}^{-1}(x_n - \mu_k) \tag{9.16}
+0 = \sum\limits_{n=1}^N\underbrace{\frac{\pi_k\mathcal{N}(x_n|\mu_k,\Sigma_k)}{\sum_j\pi_j\mathcal{N}(x_n|\mu_j,\Sigma_j)}}_{\gamma(z_{nk})}\Sigma_{k}^{-1}(x_n - \mu_k) \tag{9.16}
 $$    
 
 其中我们使用了高斯分布的式（2.43）。注意，式（9.13）给出的后验概率（或称为“责任”）很自然地出现在了等式右侧。两侧同时乘以$$ \Sigma_k $$（假设矩阵是非奇异的），整理，可得    
