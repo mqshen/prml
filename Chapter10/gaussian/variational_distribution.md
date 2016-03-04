@@ -29,7 +29,7 @@ $$
 替换右手边的两个条件分布，然后再次把与$$ Z $$无关的项整合到可加性常数中，得到     
 
 $$
-\ln p^*(Z) = \sum\limits_{n=1}^N\sum\limits_{k=1}^Kz_{nk}\ln\rho_{nk} + const \tag{10.45}
+\ln q^*(Z) = \sum\limits_{n=1}^N\sum\limits_{k=1}^Kz_{nk}\ln\rho_{nk} + const \tag{10.45}
 $$     
 
 其中我们定义了     
