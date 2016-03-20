@@ -102,3 +102,29 @@ $$
 注意，当数据点的数量$$ N $$增加时，最大似然的偏置变得越来越不重要，当$$ N \to \infty $$时，方差的最大似然的解等于生成数据的分布的方差。实际上，$$ N $$的值只要不是太小，偏置不会导致大问题。然而，在本书中，我们感兴趣的是带有很多参数的复杂模型，这时最大似然带来的偏置问题会严重的多。实际上，我们会看到，最大似然的偏置问题是我们在之前的多项式曲线拟合问题中遇到的过拟问题的核心。    
 
 
+
+#### 一些证明    
+
+#####1.58：
+
+$$
+\begin{eqnarray}
+\mathbb{E}[\sigma^2_{ML}] &=& E\left[\frac{1}{N}\sum\limits_{n=1}^N\left(x_n - \frac{1}{N}\sum\limits_{m=1}^Nx_m\right)^2\right] \\
+&=& \frac{1}{N}\sum\limits_{n=1}^N\mathbb{E}\left[x_n^2 - \frac{2}{N}x_n\sum\limits_{m=1}^Nx_m + \frac{1}{N^2}\sum\limits_{m=1}^N\sum\limits_{l=1}^Nx_mx_l\right] \\
+&=& \left{\mu^2 + \sigma^2 - 2\left(\mu^2 + \frac{1}{N}\sigma^2\right) + \mu^2 + \frac{1}{N}\sigma^2\right} \\
+&=& \left(\frac{N-1}{N}\right)\sigma^2
+\end{eqnarray}
+$$
+
+其中使用了
+
+$$
+\begin{eqnarray}
+\mathbb{E}[x_n^2] = \mu^2 + \sigma^2 \\
+\mathbb{E}[x_n]\mathbb{E}[x_m] = \mu^2 when m \neq n
+\end{eqnarray}
+$$
+
+
+
+
