@@ -111,7 +111,7 @@ $$
 \begin{eqnarray}
 \mathbb{E}[\sigma^2_{ML}] &=& E\left[\frac{1}{N}\sum\limits_{n=1}^N\left(x_n - \frac{1}{N}\sum\limits_{m=1}^Nx_m\right)^2\right] \\
 &=& \frac{1}{N}\sum\limits_{n=1}^N\mathbb{E}\left[x_n^2 - \frac{2}{N}x_n\sum\limits_{m=1}^Nx_m + \frac{1}{N^2}\sum\limits_{m=1}^N\sum\limits_{l=1}^Nx_mx_l\right] \\
-&=& \left{\mu^2 + \sigma^2 - 2\left(\mu^2 + \frac{1}{N}\sigma^2\right) + \mu^2 + \frac{1}{N}\sigma^2\right} \\
+&=& \mu^2 + \sigma^2 - 2\left(\mu^2 + \frac{1}{N}\sigma^2\right) + \mu^2 + \frac{1}{N}\sigma^2 \\
 &=& \left(\frac{N-1}{N}\right)\sigma^2
 \end{eqnarray}
 $$
@@ -120,8 +120,8 @@ $$
 
 $$
 \begin{eqnarray}
-\mathbb{E}[x_n^2] = \mu^2 + \sigma^2 \\
-\mathbb{E}[x_n]\mathbb{E}[x_m] = \mu^2 when m \neq n
+\mathbb{E}[x_n^2] &=& \mu^2 + \sigma^2 \\
+\mathbb{E}[x_n]\mathbb{E}[x_m] &=& \mu^2 \ when \ m \neq n
 \end{eqnarray}
 $$
 
