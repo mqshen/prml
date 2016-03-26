@@ -91,22 +91,22 @@ $$
 
 $$
 x^T\Lambda\mu - x^TA^TLb + y^TLb = 
-\left( \begin{array}{cc} x & y \end{array} \right)^T
-\left( \begin{array}{cc} \Lambda\mu - A^TLb & Lb \end{array} \right) \tag{2.106}
+\left( \begin{array}{c} x \\ y \end{array} \right)^T
+\left( \begin{array}{c} \Lambda\mu - A^TLb \\ Lb \end{array} \right) \tag{2.106}
 $$
 
 使用之前在多元高斯分布中，通过配出平方项得到的的二次项的结果（2.71），可以得到$$ z $$的均值：    
 
 $$
 \mathbb{E}[z] = R^{-1}
-\left( \begin{array}{c} \Lambda\mu - A^TLb & Lb \end{array} \right) \tag{2.107}
+\left( \begin{array}{c} \Lambda\mu - A^TLb \\ Lb \end{array} \right) \tag{2.107}
 $$
 
 使用式（2.105）得到：    
 
 $$
 \mathbb{E}[z] = 
-\left( \begin{array}{c} \mu & A\mu + b \end{array} \right) \tag{2.108}
+\left( \begin{array}{c} \mu \\ A\mu + b \end{array} \right) \tag{2.108}
 $$
 
 接下来通过对$$ x $$积分得到边缘分布$$ p(y) $$的表达式。回忆一下，高斯随机向量的分量的边缘分布可以相当简单的使用分区协方差矩阵表示出来。具体来说，它的均值和协方差分别有式（2.92）（2.93）给出。使用式（2.105）和（2.108）可以得到边缘分布$$ p(y) $$的均值和方差：    
