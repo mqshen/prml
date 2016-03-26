@@ -34,7 +34,7 @@ $$
 \end{eqnarray}
 $$
 
-其中‘const’ 表示与$$ x,y $$无关的项。和之前一样，我们得到这是关于$$ z $$的分量的二次函数，因此$$ p(z) $$是高斯分布。为了得到这个分布的精度，考虑式（2.102）中的二次项，它可以写成：     
+其中$$ const $$表示与$$ x,y $$无关的项。和之前一样，我们得到这是关于$$ z $$的分量的二次函数，因此$$ p(z) $$是高斯分布。为了得到这个分布的精度，考虑式（2.102）中的二次项，它可以写成：     
 
 $$
 \begin{eqnarray}
@@ -91,8 +91,8 @@ $$
 
 $$
 x^T\Lambda\mu - x^TA^TLb + y^TLb = 
-\left( \begin{array}{c} x & y \end{array} \right)^T
-\left( \begin{array}{c} \Lambda\mu - A^TLb & Lb \end{array} \right) \tag{2.106}
+\left( \begin{array}{cc} x & y \end{array} \right)^T
+\left( \begin{array}{cc} \Lambda\mu - A^TLb & Lb \end{array} \right) \tag{2.106}
 $$
 
 使用之前在多元高斯分布中，通过配出平方项得到的的二次项的结果（2.71），可以得到$$ z $$的均值：    
