@@ -6,7 +6,7 @@ $$
 
 接下来，证明这也是高斯的。同样的，计算这个分布的策略是把注意力集中在联合分布的指数中的二次型上面，然后确定边缘分布$$ p(x_a) $$的均值和方差。    
 
-在式（2.70）中，用分区精度矩阵来表示联合分布的二次型。由于目标是积分掉$$ x_b $$，达到这个目的最简单的方法是：首先为例方便分分只考虑涉及到$$ x_b $$的项，然后配出平方项。拿出只设计$$ x_b $$的项：
+在式（2.70）中，用分区精度矩阵来表示联合分布的二次型。由于目标是积分掉$$ x_b $$，达到这个目的最简单的方法是：首先为了积分计算的方便，只考虑涉及到$$ x_b $$的项，然后配出平方项。拿出只涉及$$ x_b $$的项：
 
 $$
 -\frac{1}{2}x_b^T\Lambda_{bb}x_b + x_b^Tm = -\frac{1}{2}(x_b-\Lambda_{bb}^{-1}m)^T\Lambda_{bb}(x_b-\Lambda_{bb}^{-1}m) + \frac{1}{2}m^T\Lambda_{bb}^{-1}m \tag{2.84}
@@ -35,7 +35,7 @@ $$
 \end{eqnarray}
 $$
 
-其中‘const’是与$$ x_a $$无关的量。再次与式（2.71）比较。得到边缘分布$$ p(x_a) $$的协方差：    
+其中$$ const $$是与$$ x_a $$无关的量。再次与式（2.71）比较。得到边缘分布$$ p(x_a) $$的协方差：    
 
 $$
 \Sigma_a = (\Lambda_{aa} - \Lambda_{ab}\Lambda_{bb}^{-1}\Lambda_{ba})^{-1} \tag{2.88}
@@ -86,7 +86,7 @@ $$
 
 > #### 分区高斯    
 > 对于联合高斯分布$$ \mathcal{N}(x|\mu,\Sigma) , \Lambda \equiv \Sigma^{-1} $$和
-> $$ x = \left( \begin{array}{c}  x_a \\ x_b \end{array} \right), \mu = \left( \begin{array}{c}  \mu_a \\ \mu_b \end{array} \right)  \tag(2.94) $$
+> $$ x = \left( \begin{array}{c}  x_a \\ x_b \end{array} \right), \mu = \left( \begin{array}{c}  \mu_a \\ \mu_b \end{array} \right)  \tag{2.94} $$
 > $$ \Sigma = \left( \begin{array}{cc}  \Sigma_{aa} & \Sigma_{ab} \\ \Sigma_{ba} & \Sigma_{bb} \\ \end{array} \right), \Lambda = \left( \begin{array}{cc}  \Lambda_{aa} & \Lambda_{ab} \\ \Lambda_{ba} & \Lambda_{bb} \\ \end{array} \right) \tag{2.95} $$
 > 
 > 条件分布：    
