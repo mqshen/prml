@@ -7,7 +7,7 @@ $$
 其中$$ \mu, \delta^2 $$分别为均值和方差。对于$$ D $$维向量$$ x $$，多变量的高斯分布形式为：    
 
 $$
-\mathcal{N}(x|\mu, \Sigma) = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}exp{-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)} \tag{2.43}
+\mathcal{N}(X|\mu, \Sigma) = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}exp{-\frac{1}{2}(X-\mu)^T\Sigma^{-1}(X-\mu)} \tag{2.43}
 $$
 
 其中$$ \mu $$为$$ D $$维均值向量，$$ \Sigma $$为$$ D \times D $$的协方差矩阵。$$ |\Sigma| $$是$$ \Sigma $$的行列式。
@@ -26,7 +26,7 @@ $$
 首先，考虑高斯分布的几何形式。高斯通过出现在指数位置上的
 
 $$
-\Delta^2 = (x-\mu)^T\Sigma^{-1}(x-\mu) \tag{2.44}
+\Delta^2 = (X-\mu)^T\Sigma^{-1}(X-\mu) \tag{2.44}
 $$
 
 这个二次型依赖于$$ x $$。$$ \Delta $$被称为$$ \mu $$到$$ x $$的马氏距离（ Mahalanobis distance），当$$ \Sigma $$是单位矩阵时，退化成欧式距离。当这个二次型在$$ x $$空间中是常数的时候，高斯分布的曲面也是常数。    
@@ -72,10 +72,10 @@ $$
 $$
 y_i = u_i^T(x - \mu) \tag{2.51}
 $$
-我们可以把$$ \{y_i\} $$解释为由正交向量$$ u_i $$关于原来的$$ x_i $$坐标系平移和旋转之后得到的新坐标系。记$$ y = (y_1,...,y_D)^T $$，可得：    
+我们可以把$$ \{y_i\} $$解释为由正交向量$$ u_i $$关于原来的$$ x_i $$坐标系平移和旋转之后得到的新坐标系。记$$ Y = (y_1,...,y_D)^T $$，可得：    
 
 $$
-y = U(x - \mu) \tag{2.52}
+Y = U(X - \mu) \tag{2.52}
 $$
 
 其中$$ U $$是由行向量$$ u_i^T $$组成的。根据公式（2.46）可得$$ U $$是正交矩阵，即它满足$$ UU^T = I, U^TU = I $$,其中$$ I $$是单位矩阵。    
@@ -108,13 +108,13 @@ $$
 因此，在$$ y_j $$坐标系下，高斯分布由以下形式：    
 
 $$
-p(y) = p(x)|J| = \prod\limits_{j=1}^D\frac{1}{(2\pi\lambda_j)^{1/2}}exp\left\{-\frac{y_j^2}{2\lambda_j}\right\} \tag{2.56}
+p(Y) = p(X)|J| = \prod\limits_{j=1}^D\frac{1}{(2\pi\lambda_j)^{1/2}}exp\left\{-\frac{y_j^2}{2\lambda_j}\right\} \tag{2.56}
 $$
 
 这是$$ D $$个独立的一元高斯分布的乘积。特征向量定义了一系列平移，旋转变换，使联合概率分布转行为独立分布的乘积。分布关于$$ y $$坐标系的积分为：
 
 $$
-\int p(y)dy = \prod\limits_{j=1}^D\int_{-\infty}^\infty \frac{1}{(2\pi\lambda_j)^{1/2}}exp\left\{-\frac{y_j^2}{2\lambda_j}\right\}dy_j = 1 \tag{2.57}
+\int p(Y)dY = \prod\limits_{j=1}^D\int_{-\infty}^\infty \frac{1}{(2\pi\lambda_j)^{1/2}}exp\left\{-\frac{y_j^2}{2\lambda_j}\right\}dy_j = 1 \tag{2.57}
 $$
 
 其中使用了公式（1.48）的结果来标准化一元高斯分布。多元高斯分布公式（2.43）必然是标准化的。    
@@ -156,7 +156,7 @@ $$
 $$
 \begin{eqnarray}
 & &\frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\int exp\left\{-\frac{1}{2}Z^T\Sigma^{-1}Z\right\}ZZ^TdZ \\
-&  & = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\sum\limits_{i=1}^D\sum\limits_{j=1}^Du_iu_j^T\int exp\left\{-\sum\limits_{k=1}^D\frac{y_k^2}{2\lambda_k}\right\}y_iy_jdy \\
+&  & = \frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}\sum\limits_{i=1}^D\sum\limits_{j=1}^Du_iu_j^T\int exp\left\{-\sum\limits_{k=1}^D\frac{y_k^2}{2\lambda_k}\right\}y_iy_jdY \\
 &  & = \sum\limits_{i=1}^Du_iu_i^T\lambda_i = \Sigma \tag{2.61}
 \end{eqnarray}
 $$
