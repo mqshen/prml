@@ -1,7 +1,7 @@
 给定一个数据集 $$ X = (x_1,...,x_N)^T $$，其中假定观测$$ \{x_n\} $$是独立地从多元高斯分布中抽取的，我们可以使用最大似然来估计分布的参数。对数似然函数为：    
 
 $$
-\ln p(X|\mu, \Sigma) = -\frac{ND}{2}\ln(2\pi)-\frac{N}{2}\ln |\Sigma| - \frac{1}{2}\sum\limits_{n=1}{N}(x_n - \mu)^T\Sigma^{-1}(x_n - \mu) \tag{2.118}
+\ln p(X|\mu, \Sigma) = -\frac{ND}{2}\ln(2\pi)-\frac{N}{2}\ln |\Sigma| - \frac{1}{2}\sum\limits_{n=1}^{N}(x_n - \mu)^T\Sigma^{-1}(x_n - \mu) \tag{2.118}
 $$
 
 通过简单的从新排列，得到最大似然函数只依赖于数据集的两个量：    
