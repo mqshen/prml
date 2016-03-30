@@ -165,14 +165,17 @@ $$
 $$
 \begin{eqnarray}
 t &=& 1-\sum_j\mu_j \\
-&=& 1 - \sum_jt exp(\eta_j)
+&=& 1 - \sum_jt exp(\eta_j) \\
 &=& 1 - t\sum_jexp(\eta_j)
 \end{eqnarray}
 $$
 
 整理可得
 
-$$ t = \frac{1}{1+\sum_je^{\eta_j}} $$
+$$ 
+t = \frac{1}{1+\sum_jexp(\eta_j)} 
+$$
+
 带回前式我们就得到
 
 $$
