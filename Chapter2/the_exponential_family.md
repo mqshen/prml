@@ -51,9 +51,9 @@ $$
 
 $$
 \begin{eqnarray}
-u(x) = x \tag{2.201} \\
-h(x) = 1 \tag{2.202} \\
-g(\eta) = \delta(-\eta) \tag{2.203}
+u(x) &=& x \tag{2.201} \\
+h(x) &=& 1 \tag{2.202} \\
+g(\eta) &=& \delta(-\eta) \tag{2.203}
 \end{eqnarray}
 $$
 
@@ -123,9 +123,9 @@ $$
 
 $$
 \begin{eqnarray}
-u(x) = x \tag{2.215} \\
-h(x) = 1 \tag{2.216} \\
-g(\eta) = \left(1+\sum\limits_{k=1}^{M-1}exp(\eta_k)\right)^{-1} \tag{2.217} 
+u(x) &=& x \tag{2.215} \\
+h(x) &=& 1 \tag{2.216} \\
+g(\eta) &=& \left(1+\sum\limits_{k=1}^{M-1}exp(\eta_k)\right)^{-1} \tag{2.217} 
 \end{eqnarray}
 $$
 
@@ -149,3 +149,32 @@ g(\eta) &=& (-2\eta_2)^{1/2}exp\left(\frac{\eta_1^2}{4\eta_2}\right) \tag{2.223}
 \end{eqnarray}
 $$
 
+
+#### 一些证明    
+
+##### 2.213      
+
+由式2.212可得
+
+$$
+\mu_k=\left(1-\sum_j\mu_j\right)exp(\eta_k)
+$$
+
+令$$ t = 1-\sum_j\mu_j $$那么我们就有$$ \mu_k = texp(\eta_k) $$    
+于是
+$$
+\begin{eqnarray}
+t &=& 1-\sum_j\mu_j \\
+&=& 1 - \sum_jt exp(\eta_j)
+&=& 1 - t\sum_jexp(\eta_j)
+\end{eqnarray}
+$$
+
+整理可得
+
+$$ t = \frac{1}{1+\sum_je^{\eta_j}} $$
+带回前式我们就得到
+
+$$
+\mu_k = \frac{exp(\eta_j)}{1+\sum_jexp(\eta_j)}
+$$
