@@ -2,7 +2,7 @@
 
 $$
 \begin{eqnarray}
-&\Delta& g(\eta)\int h(x)exp\{\eta^Tu(x)\}dx \\
+&\nabla& g(\eta)\int h(x)exp\{\eta^Tu(x)\}dx \\
 &+& g(\eta)\int h(x)exp\{\eta^Tu(x)\}u(x)dx = 0 \tag{2.224}
 \end{eqnarray}
 $$
@@ -10,13 +10,13 @@ $$
 重排列，并再次使用式（2.195）得到：    
 
 $$
--\frac{1}{g(\eta)}\delta g(\eta) = g(\eta)\int h(x)exp\{\eta^Tu(x)\}u(x)dx = \mathbb{E}[u(x)] \tag{2.225}
+-\frac{1}{g(\eta)}\nabla g(\eta) = g(\eta)\int h(x)exp\{\eta^Tu(x)\}u(x)dx = \mathbb{E}[u(x)] \tag{2.225}
 $$
 
 其中使用了式（2.194）。于是得到：    
 
 $$
--\Delta\ln g(\eta) = \mathbb{E}[u(x)] \tag{2.226}
+-\nabla\ln g(\eta) = \mathbb{E}[u(x)] \tag{2.226}
 $$
 
 注意，$$ u(x) $$的协方差可以由$$ g(\eta) $$的二阶导数来表达。对于高阶动差的情形类似。因此，如果能标准化来自指数族的分布，那么就可以通过简单的微分来找到它的动差。    
