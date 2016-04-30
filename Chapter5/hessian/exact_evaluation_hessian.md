@@ -9,24 +9,24 @@ $$
 其中$$ E_n $$表示数据点$$ n $$对误差的贡献。这个网络的Hessian矩阵可以被看成三个独立的项：
 
 1. 两个权值都在第二层
-
-$$
-\frac{\partial^2 E_n}{\partial w_{kj}^{(2)}\partial w_{k'j'}^{(2)}} = z_jz_{j'}M_{kk'} \tag{5.93}
-$$
-
+    
+    $$
+    \frac{\partial^2 E_n}{\partial w_{kj}^{(2)}\partial w_{k'j'}^{(2)}} = z_jz_{j'}M_{kk'} \tag{5.93}
+    $$
+    
 2. 两个权值都在第一层    
-
-$$
-\begin{eqnarray}
-\frac{\partial^2 E_n}{\partial w_{ji}^{(1)}\partial w_{j'i'}^{(1)}} = x_ix_{i'}h''(a_{j'})I_{jj'}\sum\limits_kw_{kj'}^{(2)}\delta_k \\
-+ x_ix_{i'}h'(a_{j'})h'(a_j)\sum\limits_k\sum\limits_{k'}w_{k'j'}^{(2)}w_{kj}^{(2)}M_{kk'} \tag{5.94}
-\end{eqnarray}
-$$
-
+    
+    $$
+    \begin{eqnarray}
+    \frac{\partial^2 E_n}{\partial w_{ji}^{(1)}\partial w_{j'i'}^{(1)}} = x_ix_{i'}h''(a_{j'})I_{jj'}\sum\limits_kw_{kj'}^{(2)}\delta_k \\
+    + x_ix_{i'}h'(a_{j'})h'(a_j)\sum\limits_k\sum\limits_{k'}w_{k'j'}^{(2)}w_{kj}^{(2)}M_{kk'} \tag{5.94}
+    \end{eqnarray}
+    $$
+    
 3. 权值分别在两层    
 
-$$
-\frac{\partial^2 E_n}{\partial w_{ji}^{(1)}\partial w_{kj'}^{(2)}} = x_ih'(a_{j'})\left\{\delta_kI_{jj'} + z_j\sum\limits_{k'}w_{k'j'}^{(2)}H_{kk'}\right\} \tag{5.95}
-$$
+    $$
+    \frac{\partial^2 E_n}{\partial w_{ji}^{(1)}\partial w_{kj'}^{(2)}} = x_ih'(a_{j'})\left\{\delta_kI_{jj'} + z_j\sum\limits_{k'}w_{k'j'}^{(2)}H_{kk'}\right\} \tag{5.95}
+    $$
 
 这里$$ I_{jj'} $$是单位矩阵的第$$ j, j' $$个元素。如果权值中的一个或两个是偏置项，那么只需将激活设为1就可以得到对应的表达式。很容易将这个结果推广到网络包含跨层连接的情形。
