@@ -6,7 +6,7 @@ $$
 \delta_k = \frac{\partial E_n}{\partial a_k}  , M_{kk'} \equiv \frac{\partial^2 E_n}{\partial a_k\partial a_{k'}} \tag{5.92}
 $$
 
-其中$$ E_n $$表示数据点$$ n $$对误差的贡献。这个网络的Hessian矩阵可以可以被看成三个独立的项：
+其中$$ E_n $$表示数据点$$ n $$对误差的贡献。这个网络的Hessian矩阵可以被看成三个独立的项：
 
 1. 两个权值都在第二层
 

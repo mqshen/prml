@@ -28,7 +28,7 @@ $$
 我们同样可以得到关于条件分布的条件期望（conditional expectation）:
 
 $$ 
-\mathbb{E}[f|y] ＝ \sum\limits_x p(x|y)f(y)  \tag{1.37} 
+\mathbb{E}[f|y] ＝ \sum\limits_x p(x|y)f(x)  \tag{1.37} 
 $$     
 
 连续变量的定义于此类似。     
