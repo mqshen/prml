@@ -106,7 +106,7 @@ $$
 我们也可以对于噪声精度参数$$ \beta $$最大化对数似然函数（3.11），得到：    
 
 $$
-\frac{1}{\beta_{ML}} = \frac{1}{N}\sum\limits_{n=1}^N\{t_n - w_ML^T\phi(x_n)\}^2 \tag{3.21}
+\frac{1}{\beta_{ML}} = \frac{1}{N}\sum\limits_{n=1}^N\{t_n - w_{ML}^T\phi(x_n)\}^2 \tag{3.21}
 $$
 
 因此，我们看到噪声精度的逆是由目标值在回归函数周围的残差的方差给出。
