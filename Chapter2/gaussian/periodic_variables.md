@@ -61,7 +61,7 @@ $$
 x_1 = r\cos \theta, x_2 = r\sin \theta \tag{2.174}
 $$
 
-同时，把$$ \mu $$映射到即坐标中：    
+同时，把$$ \mu $$映射到极坐标中：    
 
 $$
 \mu_1 = r_0\cos \theta_0 , \mu_2 = r_0\sin \theta_0 \tag{2.175}
