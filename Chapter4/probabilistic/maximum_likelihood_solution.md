@@ -15,7 +15,7 @@ $$
 因此似然函数由
 
 $$
-p(\textbf{t}|\pi,\mu_1,\mu_2,\Sigma) = \prod\limits_{n=1}^N[\pi\mathcal{N}(x_n|\mu_1,\Sigma)]^{t_n}[\pi\mathcal{N}(x_n|\mu_2,\Sigma)]^{1 - t_n} \tag{4.71}
+p(\textbf{t},X|\pi,\mu_1,\mu_2,\Sigma) = \prod\limits_{n=1}^N[\pi\mathcal{N}(x_n|\mu_1,\Sigma)]^{t_n}[(1- \pi)\mathcal{N}(x_n|\mu_2,\Sigma)]^{1 - t_n} \tag{4.71}
 $$
 
 其中$$ \textbf{t} = (t_1,...,t_N)^T $$。通常最大化似然函数的对数比较方便。首先考虑关于$$ \pi $$来最大化。对数似然函数中依赖$$ \pi $$的项是

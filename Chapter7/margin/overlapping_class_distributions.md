@@ -33,9 +33,11 @@ $$
 $$
 \begin{eqnarray}
 a_n &\geq& 0 \tag{7.23} \\
-t_ny(x_n) - 1 + \xi_n \geq 0 \tag{7.24} \\
+t_ny(x_n) - 1 + \xi_n &\geq& 0 \tag{7.24} \\
 a_n(t_ny(x_n) - 1 + \xi_n) &=& 0 \tag{7.25} \\
-\mu_n
+\mu_n &\geq& 0 \tag{7.26} \\
+\xi_n &\geq& 0 \tag{7.27} \\
+\mu_n\xi_n &=& 0 \tag{7.28}
 \end{eqnarray}
 $$
 

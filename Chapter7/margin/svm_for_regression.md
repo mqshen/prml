@@ -45,7 +45,7 @@ $$
 这样，支持向量回归的误差函数就可以写成    
 
 $$
-C\sum\limits_{n=1}^N(\xi_n + \hat{\xi_n} + \frac{1}{2}\Vert w \Vert^2 \tag{7.55}
+C\sum\limits_{n=1}^N(\xi_n + \hat{\xi_n} + \frac{1}{2}\Vert w \Vert^2) \tag{7.55}
 $$
 
 它必须在限制条件$$ \xi_n \geq 0 $$和$$ \hat{\xi_n} \geq 0 $$和式（7.53），（7.54）下进行最小化。通过引入拉格朗日乘数$$ a_n \geq 0, a_n \geq 0, \mu_n \geq 0 $$以及$$ \mu_n \geq 0 $$，然后最优化拉格朗日函数    
@@ -63,8 +63,8 @@ $$
 
 $$
 \begin{eqnarray}
-\frac{\partial L}{\partial w} = 0 &\rightarrow& w = \sum\limits_{n=1}^N(a_n = \hat{a}_n)\phi(x_n) \tag{7.57} \\
-\frac{\partial L}{\partial b} = 0 &\rightarrow& \sum\limits_{n=1}^N(a_n = \hat{a}_n) = 0 \tag{7.58} \\
+\frac{\partial L}{\partial w} = 0 &\rightarrow& w = \sum\limits_{n=1}^N(a_n - \hat{a}_n)\phi(x_n) \tag{7.57} \\
+\frac{\partial L}{\partial b} = 0 &\rightarrow& \sum\limits_{n=1}^N(a_n - \hat{a}_n) = 0 \tag{7.58} \\
 \frac{\partial L}{\partial \xi_n} = 0 &\rightarrow& a_n + \mu_n = C \tag{7.59} \\
 \frac{\partial L}{\partial \hat{\xi_n}} = 0 &\rightarrow& \hat{a}_n + \hat{\mu}_n = C \tag{7.60}
 \end{eqnarray}
@@ -111,7 +111,7 @@ $$
 
 根据这些条件，我们能得到一些有用的结果。首先，我们注意到如果$$ \epsilon + \xi_n + y_n − t_n = 0 $$，那么系数$$ a_n $$只能非零，这表明数据点要么位于$$ \epsilon $$-管道的上边界上（$$ \xi_n = 0 $$），要么位于上边界的上方（$$ \xi > 0 $$）。类似地，$$ \hat{a}_n $$的非零值表示$$ \epsilon + \xi − y_n + t_n = 0 $$，这些点必须位于$$ \epsilon $$-管道的下边界上或下边界的下方。     
 
-此外，由于将两式相加，注意到$$ \xi_n $$和$$ \hat{\xi}_n $$是非负的，而$$ \xi $$是严格为正的，因此对于每个数据点$$ x_n,a_n $$或$$ a_n $$至少一个为0，或都为0。所以$$ \epsilon + \xi_n + y_n − t_n = 0 $$和$$ \epsilon + \xi_n − y_n + t_n = 0 $$这两个限制是不兼容的。    
+此外，由于将两式相加，注意到$$ \xi_n $$和$$ \hat{\xi}_n $$是非负的，而$$ \epsilon $$是严格为正的，因此对于每个数据点$$ x_n,a_n $$或$$ \hat{\a_n} $$至少一个为0，或都为0。所以$$ \epsilon + \xi_n + y_n − t_n = 0 $$和$$ \epsilon + \xi_n − y_n + t_n = 0 $$这两个限制是不兼容的。    
 
 支持向量是对于由式（7.64）给出的预测有贡献的数据点，换句话说，就是那些使得$$ a_n \neq 0 $$或$$ \hat{a}_n \neq 0 $$成立的数据点。这些数据点位于$$ \epsilon $$-管道边界上或者管道外部。管道内部的所有点都有$$ a_n =  \hat{a}_n = 0 $$。我们又一次得到一个稀疏解，在预测模型（7.64）中唯一必须计算的项就是涉及到支持向量的项。    
 
@@ -120,7 +120,7 @@ $$
 $$
 \begin{eqnarray}
 b &=& t_n - \epsilon - w^T\phi(x_n) \\
-&=& t_n \epsilon - \sum\limits_{m=1}^N(a_m - \hat{a}_mk(x_n,x_m) \tag{7.69}
+&=& t_n \epsilon - \sum\limits_{m=1}^N(a_m - \hat{a}_m)k(x_n,x_m) \tag{7.69}
 \end{eqnarray}
 $$    
 
