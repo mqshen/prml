@@ -20,7 +20,7 @@ $$
 $$
 \begin{eqnarray}
 L(q) &=& \int q(Z)\ln\frac{p(X,Z)}{q(Z)}dZ \tag{10.3} \\
-KL(q |Vert p) &=& - \int q(Z)\ln\frac{p(Z|X)}{q(Z)}dZ \tag{10.4}
+KL(q \Vert p) &=& - \int q(Z)\ln\frac{p(Z|X)}{q(Z)}dZ \tag{10.4}
 \end{eqnarray}
 $$
 
@@ -35,5 +35,3 @@ $$可以取得的概率分布的类别范围，使得这个范围中的所有概
 
 ![图 10-1](images/approximation.png)      
 图 10.1 对于之前在图4.14中考虑过的例子进行变分近似的结果。左图给出了原始的概率分布（黄色）以及拉普拉斯近似（红色）和变分近似（绿色），右图给出了对应曲线的负对数。
-
-

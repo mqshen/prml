@@ -15,7 +15,7 @@ $$
 首先，我们求出$$ x,y $$的联合分布的表达式。为了达到这个目的，我们定义：    
 
 $$
-z = 
+z =
 \left(
 \begin{array}{c}  
 x \\
@@ -51,7 +51,7 @@ y
 \Lambda + A^TLA & -A^TL\\
 -LA & L
 \end{array}
-\right) 
+\right)
 \left(
 \begin{array}{c}  
 x \\
@@ -66,7 +66,7 @@ $$
 得到$$ z $$的高斯分布的精度矩阵（协方差矩阵的逆）为：
 
 $$
-R = 
+R =
 \left(
 \begin{array}{cc}  
 \Lambda + A^TLA & -A^TL\\
@@ -78,7 +78,7 @@ $$
 通过矩阵求逆公式（2.76）对精度矩阵求逆可以得到协方差矩阵：    
 
 $$
-cov[z] = R^{-1} = 
+cov[z] = R^{-1} =
 \left(
 \begin{array}{cc}  
 \Lambda^{-1} & \Lambda^{-1}A^T  \\
@@ -90,7 +90,7 @@ $$
 同样的，我们可以通过确定式（2.102）中的线性项来得到$$ z $$上的高斯分布的均值：    
 
 $$
-x^T\Lambda\mu - x^TA^TLb + y^TLb = 
+x^T\Lambda\mu - x^TA^TLb + y^TLb =
 \left( \begin{array}{c} x \\ y \end{array} \right)^T
 \left( \begin{array}{c} \Lambda\mu - A^TLb \\ Lb \end{array} \right) \tag{2.106}
 $$
@@ -105,7 +105,7 @@ $$
 使用式（2.105）得到：    
 
 $$
-\mathbb{E}[z] = 
+\mathbb{E}[z] =
 \left( \begin{array}{c} \mu \\ A\mu + b \end{array} \right) \tag{2.108}
 $$
 
@@ -133,18 +133,17 @@ $$
 
 > #### 边缘和条件高斯    
 > 对于$$ x $$的边缘高斯分布和$$ y $$关于$$ x $$的条件高斯分布：    
-> 
+>
 > $$ p(x) = \mathcal{N}(x|\mu,\Lambda^{-1}) \tag{2.113} $$
-> 
-> $$ p(y|x) = \mathcal{N}(y|Ax +bb,L^{-1}) \tag{2.114} $$
-> 
+>
+> $$ p(y|x) = \mathcal{N}(y|Ax + b,L^{-1}) \tag{2.114} $$
+>
 > 那么$$ y $$的边缘分布和$$ x $$关于$$ y $$的条件高斯分布为：
-> 
+>
 > $$ p(y) = \mathcal{N}(y|A\mu + b,L^{-1} + A\Lambda^{-1}A^T) \tag{2.115} $$
-> 
+>
 > $$ p(x|y) = \mathcal{N}(x|\Sigma\left\{A^TL(y-b) + \Lambda\mu \right\},\Sigma) \tag{2.116} $$
-> 
+>
 > 其中
-> 
+>
 > $$ \Sigma = (\Lambda + A^TLA)^{-1} \tag{2.117} $$
-

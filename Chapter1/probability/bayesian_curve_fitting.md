@@ -19,7 +19,7 @@ $$
 $$
 \begin{eqnarray}
 m(x) = \beta \phi(x)^TS\sum\limits_{n=1}^N\phi(x_n)t_n  \tag{1.70} \\
-s^2(x) = \beta^{-1} + \phi(x)^TS\phi(x)t_n  \tag{1.71} 
+s^2(x) = \beta^{-1} + \phi(x)^TS\phi(x)  \tag{1.71} 
 \end{eqnarray}
 $$
 

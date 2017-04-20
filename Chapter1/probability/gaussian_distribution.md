@@ -5,12 +5,12 @@
 $$
 \mathcal{N}(x|\mu ,\sigma) = \frac{1}{(2\pi \sigma^2)^{1 / 2}}exp\left\{-\frac{1}{2\sigma^2}(x - \mu)^2\right\} \tag{1.46}
 $$
-它是由均值（mean）$$ \mu $$和方差（variance）$$ \sigma^2 $$控制的。方差的平方根，也就是$$ \sigma $$被称为标准差（standard deviation）。方差的导数写作：$$ \beta = 1/\sigma^2 $$被称为精度（precision）。我们很快就能看到使用这些项的动机。图1.13展示了高斯分布的图像：
+它是由均值（mean）$$ \mu $$和方差（variance）$$ \sigma^2 $$控制的。方差的平方根，也就是$$ \sigma $$被称为标准差（standard deviation）。方差的倒数写作：$$ \beta = 1/\sigma^2 $$被称为精度（precision）。我们很快就能看到使用这些项的动机。图1.13展示了高斯分布的图像：
 
 ![图 1-13](images/gaussian_distribution.png)      
 图 1.13: 高斯分布
 
-从公式（1.46）可以得到高斯分布满足： 
+从公式（1.46）可以得到高斯分布满足：
 $$
 \mathcal{N}(x|\mu, \sigma^2) > 0 \tag{1.47}
 $$
@@ -124,7 +124,3 @@ $$
 \mathbb{E}[x_n]\mathbb{E}[x_m] &=& \mu^2 \ when \ m \neq n
 \end{eqnarray}
 $$
-
-
-
-
